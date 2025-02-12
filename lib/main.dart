@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:mumin/src/screens/about/about_page.dart';
 import 'package:mumin/src/screens/hajj/hajj_page.dart';
 import 'package:mumin/src/screens/home/home_page.dart';
+import 'package:mumin/src/screens/kalima/kalima_screen.dart';
 import 'package:mumin/src/theme/colors.dart';
 
 void main() {
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/home', page: () => const HomePage()),
         GetPage(name: '/about', page: () => const AboutScreen()),
         GetPage(name: '/hajj', page: () => const HajjPage()),
+        GetPage(name: '/kalima', page: () => const KalimaScreen()),
       ],
       initialRoute: '/home',
       defaultTransition: Transition.leftToRight,
