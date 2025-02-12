@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:get/route_manager.dart';
 import 'package:intl/intl.dart';
 import 'package:mumin/src/theme/colors.dart';
 import 'package:mumin/src/theme/shadows.dart';
@@ -76,7 +77,7 @@ class _HomePageState extends State<HomePage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
+                      const Text(
                         'Tangail',
                         style: TextStyle(
                           fontSize: 16,
@@ -209,7 +210,9 @@ class _HomePageState extends State<HomePage> {
                       borderRadius: MyAppShapes.borderRadius,
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.toNamed(cards[index]['route']!);
+                  },
                   child: Container(
                     height: 105,
                     width: 95,
