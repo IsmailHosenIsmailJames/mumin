@@ -6,6 +6,8 @@ import 'package:mumin/src/screens/home/home_page.dart';
 import 'package:mumin/src/screens/kalima/kalima_screen.dart';
 import 'package:mumin/src/theme/colors.dart';
 
+import 'src/screens/mosque_view/mosque_view.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -26,6 +28,7 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/about', page: () => const AboutScreen()),
         GetPage(name: '/hajj', page: () => const HajjPage()),
         GetPage(name: '/kalima', page: () => const KalimaScreen()),
+        GetPage(name: '/mosque', page: () => const MosqueScreen()),
       ],
       initialRoute: '/home',
       defaultTransition: Transition.leftToRight,
