@@ -47,7 +47,7 @@ class _HomePageState extends State<HomePage> {
     {
       'img': 'assets/images/zakat.png',
       'name': 'Zakat Calculator',
-      'route': '/zakat_calculator',
+      'route': '/zakat_screen',
     },
     {'img': 'assets/images/qaba.png', 'name': 'Hajj', 'route': '/hajj'},
     {'img': 'assets/images/about.png', 'name': 'About', 'route': '/about'},

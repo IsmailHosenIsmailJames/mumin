@@ -4,11 +4,6 @@ import 'package:gap/gap.dart';
 import 'package:mumin/src/theme/colors.dart';
 import 'package:mumin/src/theme/shapes.dart';
 
-class AppColors {
-  static const Color bgColor = Color(0xFF007BFF);
-  static const Color blue = Color(0xFF0288D1);
-}
-
 class TasbeehScreen extends StatefulWidget {
   const TasbeehScreen({super.key});
 
