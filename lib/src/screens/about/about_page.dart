@@ -28,7 +28,7 @@ class AboutScreen extends StatelessWidget {
                   const SizedBox(height: 20),
                   const Text('Courtesy -'),
                   Image.asset(
-                    'assets/images/radiant_logo.png', // Replace with your actual image path
+                    'assets/images/radiant_logo.png',
                     fit: BoxFit.contain,
                   ),
                   const SizedBox(height: 5),

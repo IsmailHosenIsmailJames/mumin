@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mumin/src/screens/about/about_page.dart';
+import 'package:mumin/src/screens/hajj/hajj_page.dart';
 import 'package:mumin/src/screens/home/home_page.dart';
 import 'package:mumin/src/theme/colors.dart';
 
@@ -22,8 +23,10 @@ class MyApp extends StatelessWidget {
       getPages: [
         GetPage(name: '/home', page: () => const HomePage()),
         GetPage(name: '/about', page: () => const AboutScreen()),
+        GetPage(name: '/hajj', page: () => const HajjPage()),
       ],
       initialRoute: '/home',
+      defaultTransition: Transition.leftToRight,
     );
   }
 }
