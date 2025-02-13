@@ -22,6 +22,7 @@ dependencies:
   webview_flutter: ^4.10.0
   fluentui_system_icons: ^1.1.273
   toastification: ^2.3.0
+  shared_preferences: ^2.5.2
 
 dev_dependencies:
   flutter_test:

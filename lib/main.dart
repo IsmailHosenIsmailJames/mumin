@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mumin/src/screens/about/about_page.dart';
+import 'package:mumin/src/screens/auth/login_page.dart';
 import 'package:mumin/src/screens/hajj/hajj_page.dart';
 import 'package:mumin/src/screens/home/home_page.dart';
 import 'package:mumin/src/screens/kalima/kalima_screen.dart';
@@ -33,6 +34,7 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/mosque', page: () => const MosqueScreen()),
         GetPage(name: '/tasbeeh', page: () => const TasbeehScreen()),
         GetPage(name: '/zakat_screen', page: () => const ZakatScreen()),
+        GetPage(name: '/login', page: () => const LoginScreen()),
       ],
       initialRoute: '/home',
       defaultTransition: Transition.leftToRight,
