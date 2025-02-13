@@ -23,6 +23,7 @@ dependencies:
   fluentui_system_icons: ^1.1.273
   toastification: ^2.3.0
   shared_preferences: ^2.5.2
+  google_fonts: ^6.2.1
 
 dev_dependencies:
   flutter_test:
@@ -34,7 +35,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/
-    - assets/Fonts/
     - assets/icons/
     - assets/images/
+    - assets/quran/
 

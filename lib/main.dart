@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:mumin/src/screens/about/about_page.dart';
 import 'package:mumin/src/screens/auth/login_page.dart';
 import 'package:mumin/src/screens/hajj/hajj_page.dart';
 import 'package:mumin/src/screens/home/home_page.dart';
 import 'package:mumin/src/screens/kalima/kalima_screen.dart';
+import 'package:mumin/src/screens/quran/surah_list_screen.dart';
 import 'package:mumin/src/screens/tasbeeh/tasbeeh_screen.dart';
 import 'package:mumin/src/screens/zakkat/zakkat_screen.dart';
 import 'package:mumin/src/theme/colors.dart';
@@ -24,7 +26,28 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Mumin',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: MyAppColors.primaryColor),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: MyAppColors.primaryColor,
+          brightness: Brightness.light,
+        ),
+        textButtonTheme: TextButtonThemeData(
+          style: TextButton.styleFrom(foregroundColor: Colors.black),
+        ),
+        textTheme: GoogleFonts.notoSansTextTheme(),
+      ),
+      darkTheme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: MyAppColors.primaryColor,
+          brightness: Brightness.dark,
+        ),
+        textButtonTheme: TextButtonThemeData(
+          style: TextButton.styleFrom(foregroundColor: Colors.white),
+        ),
+        textTheme: GoogleFonts.notoSansTextTheme().apply(
+          bodyColor: Colors.white,
+          displayColor: Colors.white,
+          decorationColor: Colors.white,
+        ),
       ),
       getPages: [
         GetPage(name: '/home', page: () => const HomePage()),
@@ -35,6 +58,7 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/tasbeeh', page: () => const TasbeehScreen()),
         GetPage(name: '/zakat_screen', page: () => const ZakatScreen()),
         GetPage(name: '/login', page: () => const LoginScreen()),
+        GetPage(name: '/quran', page: () => const SurahListScreen()),
       ],
       initialRoute: '/home',
       defaultTransition: Transition.leftToRight,
