@@ -4,7 +4,6 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
-import 'package:get/utils.dart';
 import 'package:mumin/src/theme/colors.dart';
 import 'package:mumin/src/theme/shapes.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -91,9 +90,9 @@ class LoginScreenState extends State<LoginScreen> {
                         ),
                         const Gap(10),
 
-                        Text(
+                        const Text(
                           'Just enter your phone number to log in your account',
-                          style: Theme.of(context).textTheme.titleMedium,
+                          style: TextStyle(fontSize: 16, color: Colors.black),
                           textAlign: TextAlign.center,
                         ),
                         const Gap(10),
@@ -102,6 +101,11 @@ class LoginScreenState extends State<LoginScreen> {
                           keyboardType: TextInputType.phone,
                           decoration: InputDecoration(
                             labelText: 'Phone Number',
+
+                            labelStyle: const TextStyle(
+                              fontSize: 16,
+                              color: Colors.black,
+                            ),
 
                             enabledBorder: OutlineInputBorder(
                               borderRadius: MyAppShapes.borderRadius,
@@ -143,6 +147,10 @@ class LoginScreenState extends State<LoginScreen> {
                                     title: const Text('Validation'),
                                     content: const Text(
                                       'Please enter your mobile number',
+                                      style: TextStyle(
+                                        fontSize: 16,
+                                        color: Colors.black,
+                                      ),
                                     ),
                                     actions: [
                                       TextButton(
@@ -171,17 +179,21 @@ class LoginScreenState extends State<LoginScreen> {
                         ),
                         const Gap(15),
 
-                        Text(
+                        const Text(
                           "Don't have an account?",
-                          style: Theme.of(context).textTheme.bodyMedium,
+                          style: TextStyle(color: Colors.black),
                           textAlign: TextAlign.center,
                         ),
                         TextButton(
-                          onPressed: () {},
-
+                          onPressed: () {
+                            Get.offNamed('/registration');
+                          },
                           child: Text(
                             'Register Now',
-                            style: TextStyle(fontWeight: FontWeight.w700),
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: MyAppColors.primaryColor,
+                            ),
                           ),
                         ),
                       ],

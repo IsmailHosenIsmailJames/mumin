@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
+import 'package:get/instance_manager.dart';
 import 'package:get/route_manager.dart';
 import 'package:intl/intl.dart';
 import 'package:mumin/src/theme/colors.dart';
 import 'package:mumin/src/theme/shadows.dart';
 import 'package:mumin/src/theme/shapes.dart';
+import 'package:mumin/src/theme/theme_controller.dart';
+import 'package:mumin/src/theme/theme_icon_button.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -52,6 +56,8 @@ class _HomePageState extends State<HomePage> {
     {'img': 'assets/images/qaba.png', 'name': 'Hajj', 'route': '/hajj'},
     {'img': 'assets/images/about.png', 'name': 'About', 'route': '/about'},
   ];
+
+  AppThemeController appThemeController = Get.find();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -94,7 +100,7 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                   const Spacer(),
-                  IconButton(onPressed: () {}, icon: const Icon(Icons.refresh)),
+                  themeIconButton,
                 ],
               ),
             ),
@@ -187,15 +193,60 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           const Gap(10),
+          Obx(
+            () => Container(
+              height: 70,
+              decoration: BoxDecoration(
+                color:
+                    appThemeController.isDark.value
+                        ? MyAppColors.backgroundDarkColor.withValues(alpha: 0.5)
+                        : MyAppColors.backgroundLightColor,
+                borderRadius: MyAppShapes.borderRadius,
+              ),
+              child: Image.asset('assets/images/banner.gif'),
+            ),
+          ),
+
           Container(
-            height: 70,
+            padding: const EdgeInsets.all(8),
+            margin: const EdgeInsets.only(top: 10, bottom: 10),
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: const Color.fromARGB(255, 3, 29, 51),
               borderRadius: MyAppShapes.borderRadius,
             ),
-            child: Image.asset('assets/images/banner.gif'),
+            child: Row(
+              children: [
+                const Icon(Icons.calendar_month, color: Colors.white),
+                const Gap(10),
+                const Text(
+                  '30 Day Plan',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+                const Spacer(),
+                TextButton(
+                  style: TextButton.styleFrom(
+                    padding: EdgeInsets.zero,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: MyAppShapes.borderRadius,
+                    ),
+                  ),
+                  onPressed: () {},
+                  child: Text(
+                    'See All',
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: MyAppColors.primaryColor,
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
-          const Gap(10),
+
           Wrap(
             alignment: WrapAlignment.center,
             runAlignment: WrapAlignment.spaceBetween,
@@ -213,34 +264,43 @@ class _HomePageState extends State<HomePage> {
                   onPressed: () {
                     Get.toNamed(cards[index]['route']!);
                   },
-                  child: Container(
-                    height: 105,
-                    width: 95,
-                    padding: const EdgeInsets.all(5),
-                    decoration: BoxDecoration(
-                      color: MyAppColors.backgroundLightColor,
-                      borderRadius: MyAppShapes.borderRadius,
-                      boxShadow: [MyAppShadows.commonShadow],
-                    ),
+                  child: Obx(
+                    () => Container(
+                      height: 105,
+                      width: 95,
+                      padding: const EdgeInsets.all(5),
+                      decoration: BoxDecoration(
+                        color:
+                            appThemeController.isDark.value
+                                ? MyAppColors.backgroundDarkColor
+                                : MyAppColors.backgroundLightColor,
+                        borderRadius: MyAppShapes.borderRadius,
+                        boxShadow: [
+                          appThemeController.isDark.value
+                              ? MyAppShadows.commonShadowDark
+                              : MyAppShadows.commonShadowLight,
+                        ],
+                      ),
 
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        SizedBox(
-                          height: 45,
-                          width: 45,
-                          child: Image.asset(
-                            cards[index]['img']!,
-                            fit: BoxFit.fill,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          SizedBox(
+                            height: 45,
+                            width: 45,
+                            child: Image.asset(
+                              cards[index]['img']!,
+                              fit: BoxFit.fill,
+                            ),
                           ),
-                        ),
-                        const Gap(5),
-                        Text(
-                          cards[index]['name']!,
-                          textAlign: TextAlign.center,
-                        ),
-                      ],
+                          const Gap(5),
+                          Text(
+                            cards[index]['name']!,
+                            textAlign: TextAlign.center,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
