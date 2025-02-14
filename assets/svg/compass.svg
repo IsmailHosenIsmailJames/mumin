@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 485 485" style="enable-background:new 0 0 485 485;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;stroke:#808080;stroke-width:10;}
+	.st1{fill:none;stroke:#000000;stroke-width:2;}
+	.st2{font-family:'ArialMT';}
+	.st3{font-size:20px;}
+	.st4{font-size:15px;}
+	.st5{fill:none;stroke:#000000;}
+</style>
+<circle class="st0" cx="242.6" cy="246.5" r="190"/>
+<g id="ticks">
+	<g transform="rotate(0)">
+		<line class="st1" x1="412.6" y1="246.5" x2="432.6" y2="246.5"/>
+		<text transform="matrix(1 0 0 1 388.1934 256.5)" class="st2 st3">N</text>
+		<text transform="matrix(1 0 0 1 447.6367 251.5)" class="st2 st4">0</text>
+	</g>
+	<g transform="rotate(10)">
+		<line class="st5" x1="461.8" y1="200.6" x2="471.8" y2="200.6"/>
+		<text transform="matrix(1 0 0 1 486.7547 205.6219)" class="st2 st4">10</text>
+	</g>
+	<g transform="rotate(20)">
+		<line class="st5" x1="492.3" y1="148.6" x2="502.3" y2="148.6"/>
+		<text transform="matrix(1 0 0 1 517.3115 153.6477)" class="st2 st4">20</text>
+	</g>
+	<g transform="rotate(30)">
+		<line class="st1" x1="503.4" y1="92.2" x2="523.4" y2="92.2"/>
+		<text transform="matrix(1 0 0 1 538.3799 97.1568)" class="st2 st4">30</text>
+	</g>
+	<g transform="rotate(40)">
+		<line class="st5" x1="524.3" y1="32.9" x2="534.3" y2="32.9"/>
+		<text transform="matrix(1 0 0 1 549.3171 37.866)" class="st2 st4">40</text>
+	</g>
+	<g transform="rotate(50)">
+		<line class="st5" x1="524.8" y1="-27.4" x2="534.8" y2="-27.4"/>
+		<text transform="matrix(1 0 0 1 549.7939 -22.4229)" class="st2 st4">50</text>
+	</g>
+	<g transform="rotate(60)">
+		<line class="st1" x1="504.8" y1="-86.9" x2="524.8" y2="-86.9"/>
+		<text transform="matrix(1 0 0 1 539.7941 -81.8798)" class="st2 st4">60</text>
+	</g>
+	<g transform="rotate(70)">
+		<line class="st5" x1="494.6" y1="-143.7" x2="504.6" y2="-143.7"/>
+		<text transform="matrix(1 0 0 1 519.6205 -138.6958)" class="st2 st4">70</text>
+	</g>
+	<g transform="rotate(80)">
+		<line class="st5" x1="464.9" y1="-196.1" x2="474.9" y2="-196.1"/>
+		<text transform="matrix(1 0 0 1 489.8883 -191.1465)" class="st2 st4">80</text>
+	</g>
+	<g transform="rotate(90)">
+		<line class="st1" x1="416.5" y1="-242.6" x2="436.5" y2="-242.6"/>
+		<text transform="matrix(1 0 0 1 393.1602 -232.6367)" class="st2 st3">E</text>
+		<text transform="matrix(1 0 0 1 451.5 -237.6367)" class="st2 st4">90</text>
+	</g>
+	<g transform="rotate(100)">
+		<line class="st5" x1="380.6" y1="-281.8" x2="390.6" y2="-281.8"/>
+		<text transform="matrix(1 0 0 1 405.6216 -276.7554)" class="st2 st4">100</text>
+	</g>
+	<g transform="rotate(110)">
+		<line class="st5" x1="328.6" y1="-312.3" x2="338.6" y2="-312.3"/>
+		<text transform="matrix(1 0 0 1 353.6475 -307.3112)" class="st2 st4">110</text>
+	</g>
+	<g transform="rotate(120)">
+		<line class="st1" x1="262.2" y1="-333.4" x2="282.2" y2="-333.4"/>
+		<text transform="matrix(1 0 0 1 297.1573 -328.3793)" class="st2 st4">120</text>
+	</g>
+	<g transform="rotate(130)">
+		<line class="st5" x1="212.9" y1="-344.3" x2="222.9" y2="-344.3"/>
+		<text transform="matrix(1 0 0 1 237.8659 -339.3168)" class="st2 st4">130</text>
+	</g>
+	<g transform="rotate(140)">
+		<line class="st5" x1="152.6" y1="-344.8" x2="162.6" y2="-344.8"/>
+		<text transform="matrix(1 0 0 1 177.5769 -339.7936)" class="st2 st4">140</text>
+	</g>
+	<g transform="rotate(150)">
+		<line class="st1" x1="83.1" y1="-334.8" x2="103.1" y2="-334.8"/>
+		<text transform="matrix(1 0 0 1 118.1208 -329.794)" class="st2 st4">150</text>
+	</g>
+	<g transform="rotate(160)">
+		<line class="st5" x1="36.3" y1="-314.6" x2="46.3" y2="-314.6"/>
+		<text transform="matrix(1 0 0 1 61.3031 -309.6208)" class="st2 st4">160</text>
+	</g>
+	<g transform="rotate(170)">
+		<line class="st5" x1="-16.1" y1="-284.9" x2="-6.1" y2="-284.9"/>
+		<text transform="matrix(1 0 0 1 8.8546 -279.8885)" class="st2 st4">170</text>
+	</g>
+	<g transform="rotate(180)">
+		<line class="st1" x1="-72.6" y1="-246.5" x2="-52.6" y2="-246.5"/>
+		<text transform="matrix(1 0 0 1 -95.9766 -236.5)" class="st2 st3">S</text>
+		<text transform="matrix(1 0 0 1 -37.6367 -241.5)" class="st2 st4">180</text>
+	</g>
+	<g transform="rotate(190)">
+		<line class="st5" x1="-101.8" y1="-200.6" x2="-91.8" y2="-200.6"/>
+		<text transform="matrix(1 0 0 1 -71.7549 -195.6215)" class="st2 st4">190</text>
+	</g>
+	<g transform="rotate(200)">
+		<line class="st5" x1="-132.3" y1="-148.6" x2="-122.3" y2="-148.6"/>
+		<text transform="matrix(1 0 0 1 -102.3125 -143.648)" class="st2 st4">200</text>
+	</g>
+	<g transform="rotate(210)">
+		<line class="st1" x1="-163.4" y1="-92.2" x2="-143.4" y2="-92.2"/>
+		<text transform="matrix(1 0 0 1 -123.3793 -87.1565)" class="st2 st4">210</text>
+	</g>
+	<g transform="rotate(220)">
+		<line class="st5" x1="-164.3" y1="-32.9" x2="-154.3" y2="-32.9"/>
+		<text transform="matrix(1 0 0 1 -134.3177 -27.8664)" class="st2 st4">220</text>
+	</g>
+	<g transform="rotate(230)">
+		<line class="st5" x1="-164.8" y1="27.4" x2="-154.8" y2="27.4"/>
+		<text transform="matrix(1 0 0 1 -134.794 32.4234)" class="st2 st4">230</text>
+	</g>
+	<g transform="rotate(240)">
+		<line class="st1" x1="-164.8" y1="86.9" x2="-144.8" y2="86.9"/>
+		<text transform="matrix(1 0 0 1 -124.7937 91.8796)" class="st2 st4">240</text>
+	</g>
+	<g transform="rotate(250)">
+		<line class="st5" x1="-134.6" y1="143.7" x2="-124.6" y2="143.7"/>
+		<text transform="matrix(1 0 0 1 -104.6208 148.6959)" class="st2 st4">250</text>
+	</g>
+	<g transform="rotate(260)">
+		<line class="st5" x1="-104.9" y1="196.1" x2="-94.9" y2="196.1"/>
+		<text transform="matrix(1 0 0 1 -74.8897 201.146)" class="st2 st4">260</text>
+	</g>
+	<g transform="rotate(270)">
+		<line class="st1" x1="-76.5" y1="242.6" x2="-56.5" y2="242.6"/>
+		<text transform="matrix(1 0 0 1 -105.377 252.6367)" class="st2 st3">W</text>
+		<text transform="matrix(1 0 0 1 -36.5 247.6367)" class="st2 st4">270</text>
+	</g>
+	<g transform="rotate(280)">
+		<line class="st5" x1="-20.6" y1="281.8" x2="-10.6" y2="281.8"/>
+		<text transform="matrix(1 0 0 1 9.378 286.7547)" class="st2 st4">280</text>
+	</g>
+	<g transform="rotate(290)">
+		<line class="st5" x1="31.4" y1="312.3" x2="41.4" y2="312.3"/>
+		<text transform="matrix(1 0 0 1 61.3518 317.3118)" class="st2 st4">290</text>
+	</g>
+	<g transform="rotate(300)">
+		<line class="st1" x1="77.8" y1="333.4" x2="97.8" y2="333.4"/>
+		<text transform="matrix(1 0 0 1 117.8433 338.3797)" class="st2 st4">300</text>
+	</g>
+	<g transform="rotate(310)">
+		<line class="st5" x1="147.1" y1="344.3" x2="157.1" y2="344.3"/>
+		<text transform="matrix(1 0 0 1 177.1344 349.3176)" class="st2 st4">310</text>
+	</g>
+	<g transform="rotate(320)">
+		<line class="st5" x1="207.4" y1="344.8" x2="217.4" y2="344.8"/>
+		<text transform="matrix(1 0 0 1 237.4231 349.7941)" class="st2 st4">320</text>
+	</g>
+	<g transform="rotate(330)">
+		<line class="st1" x1="256.9" y1="334.8" x2="276.9" y2="334.8"/>
+		<text transform="matrix(1 0 0 1 296.8796 339.7939)" class="st2 st4">330</text>
+	</g>
+	<g transform="rotate(340)">
+		<line class="st5" x1="323.7" y1="314.6" x2="333.7" y2="314.6"/>
+		<text transform="matrix(1 0 0 1 353.6959 319.6206)" class="st2 st4">340</text>
+	</g>
+	<g transform="rotate(350)">
+		<line class="st5" x1="376.1" y1="284.9" x2="386.1" y2="284.9"/>
+		<text transform="matrix(1 0 0 1 406.1462 289.8884)" class="st2 st4">350</text>
+	</g>
+</g>
+<g id="direction-letters">
+	<text transform="matrix(1 0 0 1 313.7451 161.5)" class="st2 st3">NE</text>
+	<text transform="matrix(1 0 0 1 314.2969 331.5)" class="st2 st3">SE</text>
+	<text transform="matrix(1 0 0 1 141.5283 331.5)" class="st2 st3">SW</text>
+	<text transform="matrix(1 0 0 1 140.9766 161.5)" class="st2 st3">NW</text>
+</g>
+</svg>
