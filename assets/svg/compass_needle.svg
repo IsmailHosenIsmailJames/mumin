@@ -1,7 +1,0 @@
-<svg viewBox="-200 -200 400 400" xmlns="http://www.w3.org/2000/svg">
-  <g id="needle">
-    <polygon points="-15,-15 0,-190 15,-15" fill="red"/>
-    <polygon points="-15,15 0,190 15,15" fill="blue"/>
-    <circle cx="0" cy="0" r="20" fill="white" stroke="black" stroke-width="1"/>
-  </g>
-</svg>
