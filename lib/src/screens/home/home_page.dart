@@ -4,6 +4,7 @@ import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:get/instance_manager.dart';
 import 'package:get/route_manager.dart';
 import 'package:intl/intl.dart';
+import 'package:mumin/src/screens/quran/surah_list_screen.dart';
 import 'package:mumin/src/theme/colors.dart';
 import 'package:mumin/src/theme/shadows.dart';
 import 'package:mumin/src/theme/shapes.dart';
@@ -262,6 +263,13 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   onPressed: () {
+                    if (cards[index]['route'] == '/read_practice') {
+                      Get.to(
+                        () => const SurahListScreen(practiceMode: true),
+                        routeName: '/read_practice',
+                      );
+                      return;
+                    }
                     Get.toNamed(cards[index]['route']!);
                   },
                   child: Obx(

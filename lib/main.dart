@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:just_audio_background/just_audio_background.dart';
-import 'package:mumin/core/audio/manage_audio.dart';
+import 'package:mumin/src/core/audio/manage_audio.dart';
 import 'package:mumin/src/screens/about/about_page.dart';
 import 'package:mumin/src/screens/auth/login_page.dart';
 import 'package:mumin/src/screens/auth/registation_page.dart';

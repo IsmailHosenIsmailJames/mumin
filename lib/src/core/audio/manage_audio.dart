@@ -2,9 +2,9 @@ import 'package:get/get.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:just_audio_background/just_audio_background.dart'
     show MediaItem;
-import 'package:mumin/core/audio/api/base_api.dart';
+import 'package:mumin/src/core/audio/api/base_api.dart';
 
-import '../../src/screens/quran/resources/chapters_ayah_count.dart';
+import '../../screens/quran/resources/chapters_ayah_count.dart';
 
 class ManageAudioController extends GetxController {
   RxBool isPlaying = false.obs;

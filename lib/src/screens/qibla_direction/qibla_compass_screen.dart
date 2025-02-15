@@ -10,8 +10,8 @@ import 'package:mumin/src/screens/qibla_direction/controller/compass_value_contr
 import 'package:mumin/src/theme/theme_controller.dart';
 import 'package:vector_math/vector_math.dart' show radians;
 
-import '../../../core/compass/compass_service.dart';
-import '../../../core/location/location_service.dart';
+import '../../core/compass/compass_service.dart';
+import '../../core/location/location_service.dart';
 import 'features/calculate_qibla_direction.dart';
 
 class QiblaCompassScreen extends StatefulWidget {
