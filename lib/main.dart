@@ -10,6 +10,7 @@ import 'package:mumin/src/screens/auth/registation_page.dart';
 import 'package:mumin/src/screens/hajj/hajj_page.dart';
 import 'package:mumin/src/screens/home/home_page.dart';
 import 'package:mumin/src/screens/kalima/kalima_screen.dart';
+import 'package:mumin/src/screens/qibla_direction/qibla_compass_screen.dart';
 import 'package:mumin/src/screens/quran/surah_list_screen.dart';
 import 'package:mumin/src/screens/tasbeeh/tasbeeh_screen.dart';
 import 'package:mumin/src/screens/zakkat/zakkat_screen.dart';
@@ -92,6 +93,10 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/login', page: () => const LoginScreen()),
         GetPage(name: '/registration', page: () => const RegistrationScreen()),
         GetPage(name: '/quran', page: () => const SurahListScreen()),
+        GetPage(
+          name: '/qibla_direction',
+          page: () => const QiblaCompassScreen(),
+        ),
       ],
       initialRoute: '/home',
       defaultTransition: Transition.leftToRight,
