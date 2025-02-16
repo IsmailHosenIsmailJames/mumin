@@ -37,12 +37,18 @@ class AppThemeController extends GetxController {
         themeModeName.value = 'dark';
         await themePrefer.put('theme_preference', themeModeName.value);
       } else if (userTheme == 'system') {
-        Get.changeThemeMode(ThemeMode.system);
         themeModeName.value = 'system';
         Get.changeThemeMode(ThemeMode.system);
+        Future.delayed(const Duration(seconds: 1)).then((value) {
+          isDark.value =
+              MediaQuery.of(Get.context!).platformBrightness == Brightness.dark;
+        });
       }
     } else {
       await themePrefer.put('theme_preference', 'system');
+      isDark.value =
+          MediaQuery.of(Get.context!).platformBrightness == Brightness.dark;
+      themeModeName.value = 'system';
       initTheme();
     }
   }
