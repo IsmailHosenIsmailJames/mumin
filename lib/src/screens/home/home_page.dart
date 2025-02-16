@@ -119,7 +119,6 @@ class _HomePageState extends State<HomePage> {
                 Column(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   crossAxisAlignment: CrossAxisAlignment.start,
-
                   children: [
                     Text(
                       DateFormat.yMMMMEEEEd().format(DateTime.now()),
@@ -184,7 +183,6 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
                 const Spacer(),
-
                 SizedBox(
                   width: 80,
                   height: 80,
@@ -198,16 +196,14 @@ class _HomePageState extends State<HomePage> {
             () => Container(
               height: 70,
               decoration: BoxDecoration(
-                color:
-                    appThemeController.isDark.value
-                        ? MyAppColors.backgroundDarkColor.withValues(alpha: 0.5)
-                        : MyAppColors.backgroundLightColor,
+                color: appThemeController.isDark.value
+                    ? MyAppColors.backgroundDarkColor.withValues(alpha: 0.5)
+                    : MyAppColors.backgroundLightColor,
                 borderRadius: MyAppShapes.borderRadius,
               ),
               child: Image.asset('assets/images/banner.gif'),
             ),
           ),
-
           Container(
             padding: const EdgeInsets.all(8),
             margin: const EdgeInsets.only(top: 10, bottom: 10),
@@ -247,11 +243,9 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           ),
-
           Wrap(
             alignment: WrapAlignment.center,
             runAlignment: WrapAlignment.spaceBetween,
-
             children: List.generate(cards.length, (index) {
               return Padding(
                 padding: const EdgeInsets.all(7.0),
@@ -278,10 +272,9 @@ class _HomePageState extends State<HomePage> {
                       width: 95,
                       padding: const EdgeInsets.all(5),
                       decoration: BoxDecoration(
-                        color:
-                            appThemeController.isDark.value
-                                ? MyAppColors.backgroundDarkColor
-                                : MyAppColors.backgroundLightColor,
+                        color: appThemeController.isDark.value
+                            ? MyAppColors.backgroundDarkColor
+                            : MyAppColors.backgroundLightColor,
                         borderRadius: MyAppShapes.borderRadius,
                         boxShadow: [
                           appThemeController.isDark.value
@@ -289,7 +282,6 @@ class _HomePageState extends State<HomePage> {
                               : MyAppShadows.commonShadowLight,
                         ],
                       ),
-
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,

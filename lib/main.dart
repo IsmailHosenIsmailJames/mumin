@@ -7,6 +7,7 @@ import 'package:mumin/src/core/audio/manage_audio.dart';
 import 'package:mumin/src/screens/about/about_page.dart';
 import 'package:mumin/src/screens/auth/login_page.dart';
 import 'package:mumin/src/screens/auth/registation_page.dart';
+import 'package:mumin/src/screens/hadith/hadith_page.dart';
 import 'package:mumin/src/screens/hajj/hajj_page.dart';
 import 'package:mumin/src/screens/home/home_page.dart';
 import 'package:mumin/src/screens/kalima/kalima_screen.dart';
@@ -93,6 +94,7 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/login', page: () => const LoginScreen()),
         GetPage(name: '/registration', page: () => const RegistrationScreen()),
         GetPage(name: '/quran', page: () => const SurahListScreen()),
+        GetPage(name: '/hadith', page: () => const HadithPage()),
         GetPage(
           name: '/qibla_direction',
           page: () => const QiblaCompassScreen(),
