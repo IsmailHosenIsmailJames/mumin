@@ -88,7 +88,7 @@ class _HadithPdfViewState extends State<HadithPdfView> {
                 const Gap(10),
                 Text(
                     'Progress: ${(downloadProgress * 100).toStringAsFixed(2)}%'),
-                const Text('Please wait. Doenloading...')
+                const Text('Please wait. Downloading...')
               ],
             ))
           : pdfPath == null
