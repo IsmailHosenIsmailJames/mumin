@@ -1,15 +1,24 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:gap/gap.dart';
+import 'package:geocoding/geocoding.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:get/instance_manager.dart';
 import 'package:get/route_manager.dart';
+import 'package:hive/hive.dart';
 import 'package:intl/intl.dart';
+import 'package:mumin/src/core/location/location_service.dart';
+import 'package:mumin/src/screens/home/controller/user_location.dart';
 import 'package:mumin/src/screens/quran/surah_list_screen.dart';
 import 'package:mumin/src/theme/colors.dart';
 import 'package:mumin/src/theme/shadows.dart';
 import 'package:mumin/src/theme/shapes.dart';
 import 'package:mumin/src/theme/theme_controller.dart';
 import 'package:mumin/src/theme/theme_icon_button.dart';
+import 'package:toastification/toastification.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -59,6 +68,46 @@ class _HomePageState extends State<HomePage> {
   ];
 
   AppThemeController appThemeController = Get.find();
+  UserLocationController userLocationController =
+      Get.put(UserLocationController());
+
+  @override
+  void initState() {
+    getUserLocation();
+    super.initState();
+  }
+
+  getUserLocation() async {
+    try {
+      Position? location = await LocationService().getCurrentLocation();
+      if (location != null) {
+        List<Placemark> placemarks = await placemarkFromCoordinates(
+            location.latitude, location.longitude);
+        UserLocationData userLocationData = UserLocationData(
+            latitude: location.latitude,
+            longitude: location.longitude,
+            division: 'division',
+            district: 'district');
+        for (Placemark placemark in placemarks) {
+          if (placemark.administrativeArea != null) {
+            userLocationData.division = placemark.administrativeArea!;
+          }
+          if (placemark.subAdministrativeArea != null) {
+            userLocationData.district = placemark.subAdministrativeArea!;
+          }
+        }
+        await Hive.box('user_db')
+            .put('user_location', userLocationData.toJson());
+        userLocationController.locationData.value = userLocationData;
+        setState(() {});
+      } else {
+        log('Location is null');
+      }
+    } catch (e) {
+      log(e.toString());
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,45 +115,59 @@ class _HomePageState extends State<HomePage> {
         padding: const EdgeInsets.all(10.0),
         children: [
           SafeArea(
-            child: SizedBox(
-              height: 80,
-              child: Row(
-                children: [
-                  const SizedBox(
-                    width: 50,
-                    height: 50,
-                    child: Icon(
-                      Icons.location_pin,
-                      color: Colors.red,
-                      size: 30,
+            child: userLocationController.locationData.value == null
+                ? Container(
+                    decoration: BoxDecoration(
+                      color: Colors.grey.withValues(alpha: 0.2),
+                    ),
+                    height: 80,
+                    width: double.infinity,
+                  )
+                    .animate(onPlay: (controller) => controller.repeat())
+                    .shimmer(
+                      duration: 1200.ms,
+                      color: const Color(0xFF80DDFF),
+                    )
+                : SizedBox(
+                    height: 80,
+                    child: Row(
+                      children: [
+                        const SizedBox(
+                          width: 50,
+                          height: 50,
+                          child: Icon(
+                            Icons.location_pin,
+                            color: Colors.red,
+                            size: 30,
+                          ),
+                        ),
+                        const Gap(10),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              userLocationController
+                                  .locationData.value!.district,
+                              style: const TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Text(
+                              '${userLocationController.locationData.value!.division}, Bangladesh',
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: MyAppColors.secondaryColor,
+                              ),
+                            ),
+                          ],
+                        ),
+                        const Spacer(),
+                        themeIconButton,
+                      ],
                     ),
                   ),
-                  const Gap(10),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Text(
-                        'Tangail',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      Text(
-                        'Dhaka, Bangaladesh',
-                        style: TextStyle(
-                          fontSize: 16,
-                          color: MyAppColors.secondaryColor,
-                        ),
-                      ),
-                    ],
-                  ),
-                  const Spacer(),
-                  themeIconButton,
-                ],
-              ),
-            ),
           ),
           const Gap(10),
           Container(
@@ -134,7 +197,7 @@ class _HomePageState extends State<HomePage> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             const Text(
-                              "Sahari",
+                              'Sahari',
                               style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
@@ -159,7 +222,7 @@ class _HomePageState extends State<HomePage> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             const Text(
-                              "Iftar",
+                              'Iftar',
                               style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
@@ -262,6 +325,18 @@ class _HomePageState extends State<HomePage> {
                         () => const SurahListScreen(practiceMode: true),
                         routeName: '/read_practice',
                       );
+                      return;
+                    }
+                    if (cards[index]['route'] == '/qibla_direction' ||
+                        cards[index]['route'] == '/prayer_time') {
+                      if (userLocationController.locationData.value == null) {
+                        toastification.show(
+                          context: context,
+                          title: const Text('Location Data is loading...'),
+                        );
+                      } else {
+                        Get.toNamed(cards[index]['route']!);
+                      }
                       return;
                     }
                     Get.toNamed(cards[index]['route']!);
