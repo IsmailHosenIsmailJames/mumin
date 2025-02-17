@@ -6,6 +6,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:just_audio_background/just_audio_background.dart';
 import 'package:mumin/src/core/audio/manage_audio.dart';
 import 'package:mumin/src/screens/about/about_page.dart';
+import 'package:mumin/src/screens/auth/controller/auth_controller.dart';
 import 'package:mumin/src/screens/auth/login_page.dart';
 import 'package:mumin/src/screens/auth/registation_page.dart';
 import 'package:mumin/src/screens/hadith/hadith_page.dart';
@@ -41,6 +42,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final AuthController authController = Get.put(AuthController());
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Mumin',
@@ -103,10 +105,11 @@ class MyApp extends StatelessWidget {
           page: () => const QiblaCompassScreen(),
         ),
       ],
-      initialRoute: '/home',
+      initialRoute: authController.user.value == null ? '/login' : '/home',
       defaultTransition: Transition.leftToRight,
       onInit: () async {
         Get.put(ManageAudioController());
+
         final AppThemeController appThemeController = Get.put(
           AppThemeController(),
         );

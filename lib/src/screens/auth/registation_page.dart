@@ -1,11 +1,9 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:http/http.dart' as http;
-import 'dart:convert';
+import 'package:mumin/src/screens/auth/controller/auth_controller.dart';
+
+import 'package:toastification/toastification.dart';
 
 class RegistrationScreen extends StatefulWidget {
   const RegistrationScreen({super.key});
@@ -16,44 +14,28 @@ class RegistrationScreen extends StatefulWidget {
 
 class RegistrationScreenState extends State<RegistrationScreen> {
   final _formKey = GlobalKey<FormState>();
-  String _name = '';
-  String _mobile = '';
-  String _pin = '';
-
-  Future<void> _save(String key, String value) async {
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setString(key, value);
-  }
+  final TextEditingController _name = TextEditingController();
+  final TextEditingController _mobile = TextEditingController();
+  final TextEditingController _pin = TextEditingController();
 
   Future<void> _register() async {
     if (_formKey.currentState!.validate()) {
-      _formKey.currentState!.save(); // Trigger onSaved for all fields
-      final url = Uri.parse('YOUR_REGISTRATION_API_ENDPOINT');
-      try {
-        final response = await http.post(
-          url,
-          headers: {'Content-Type': 'application/json'},
-          body: jsonEncode({'name': _name, 'mobile': _mobile, 'pin': _pin}),
+      final res = await authController.registration(
+          _name.text.trim(), _mobile.text.trim(), _pin.text.trim());
+      if (res) {
+        Get.offNamed('/home');
+      } else {
+        toastification.show(
+          context: context,
+          title: const Text('Unable to register'),
+          type: ToastificationType.success,
+          autoCloseDuration: const Duration(seconds: 3),
         );
-
-        final data = jsonDecode(response.body);
-        if (response.statusCode == 200 && data['success']) {
-          await _save('userDetails', jsonEncode(data['result']));
-          Get.offNamed('/home');
-        } else {
-          _showError(data['message'] ?? 'Registration failed');
-        }
-      } catch (e) {
-        _showError('Network error');
       }
     }
   }
 
-  void _showError(String message) {
-    ScaffoldMessenger.of(
-      context,
-    ).showSnackBar(SnackBar(content: Text(message)));
-  }
+  AuthController authController = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -73,7 +55,6 @@ class RegistrationScreenState extends State<RegistrationScreen> {
                   child: Image.asset('assets/images/mumin_logo.png'),
                 ),
               ),
-
               const Center(child: Text('Sign up for new users')),
               const Gap(15),
               TextFormField(
@@ -81,9 +62,9 @@ class RegistrationScreenState extends State<RegistrationScreen> {
                   labelText: 'Full Name',
                   hintText: 'Enter your name',
                 ),
-                validator:
-                    (value) => value!.isEmpty ? 'Please enter your name' : null,
-                onSaved: (value) => _name = value!,
+                validator: (value) =>
+                    value!.isEmpty ? 'Please enter your name' : null,
+                controller: _name,
               ),
               TextFormField(
                 decoration: const InputDecoration(
@@ -91,10 +72,9 @@ class RegistrationScreenState extends State<RegistrationScreen> {
                   hintText: 'Enter your mobile number',
                 ),
                 keyboardType: TextInputType.phone,
-                validator:
-                    (value) =>
-                        value!.isEmpty ? 'Please enter your mobile' : null,
-                onSaved: (value) => _mobile = value!,
+                validator: (value) =>
+                    value!.isEmpty ? 'Please enter your mobile' : null,
+                controller: _mobile,
               ),
               TextFormField(
                 decoration: const InputDecoration(
@@ -102,9 +82,9 @@ class RegistrationScreenState extends State<RegistrationScreen> {
                   hintText: 'Enter your code',
                 ),
                 keyboardType: TextInputType.number,
-                validator:
-                    (value) => value!.isEmpty ? 'Please enter your code' : null,
-                onSaved: (value) => _pin = value!,
+                validator: (value) =>
+                    value!.isEmpty ? 'Please enter your code' : null,
+                controller: _pin,
               ),
               const SizedBox(height: 20),
               SizedBox(
