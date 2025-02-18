@@ -63,6 +63,7 @@ class LoginScreenState extends State<LoginScreen> {
                           const Gap(10),
                           TextFormField(
                             keyboardType: TextInputType.phone,
+                            style: const TextStyle(color: Colors.black),
                             decoration: InputDecoration(
                               labelText: 'Phone Number',
                               labelStyle: const TextStyle(

@@ -9,8 +9,10 @@ import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:get/instance_manager.dart';
 import 'package:get/route_manager.dart';
 import 'package:hive/hive.dart';
+import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
 import 'package:intl/intl.dart';
 import 'package:mumin/src/core/location/location_service.dart';
+import 'package:mumin/src/screens/daily_plan/daily_ramadan_plan.dart';
 import 'package:mumin/src/screens/home/controller/user_location.dart';
 import 'package:mumin/src/screens/quran/surah_list_screen.dart';
 import 'package:mumin/src/theme/colors.dart';
@@ -294,7 +296,41 @@ class _HomePageState extends State<HomePage> {
                       borderRadius: MyAppShapes.borderRadius,
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () async {
+                    bool result = await InternetConnection().hasInternetAccess;
+                    if (result) {
+                      int day = 1;
+                      if (DateTime.now().month == 3) {
+                        day = DateTime.now().day;
+                      }
+                      Get.to(() => DailyRamadanPlan(day: day));
+                    } else {
+                      showDialog(
+                        context: context,
+                        builder: (context) {
+                          return AlertDialog(
+                            insetPadding: const EdgeInsets.all(10),
+                            title: const Text(
+                              'No internet connection!',
+                              style: TextStyle(
+                                color: Colors.red,
+                              ),
+                            ),
+                            content: const Text(
+                                'To access 30 days Ramadan Plan, you will require internet connection.'),
+                            actions: [
+                              ElevatedButton(
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                                child: const Text('Ok'),
+                              ),
+                            ],
+                          );
+                        },
+                      );
+                    }
+                  },
                   child: Text(
                     'See All',
                     style: TextStyle(

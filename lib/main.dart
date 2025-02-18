@@ -103,7 +103,7 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/hadith', page: () => const HadithPage()),
         GetPage(
             name: '/qibla_direction', page: () => const QiblaCompassScreen()),
-        GetPage(name: '/prayer_time', page: () => const PrayerTime())
+        GetPage(name: '/prayer_time', page: () => const PrayerTime()),
       ],
       initialRoute: authController.user.value == null ? '/login' : '/home',
       defaultTransition: Transition.leftToRight,
