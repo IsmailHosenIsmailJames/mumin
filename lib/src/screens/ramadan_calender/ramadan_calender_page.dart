@@ -30,7 +30,7 @@ class _RamadanCalenderPageState extends State<RamadanCalenderPage> {
                 child: SizedBox(
                   width: 100,
                   height: 100,
-                  child: Image.asset('assets/images/mosque.png'),
+                  child: Image.asset('assets/images/ramadan2.png'),
                 ),
               ),
               Expanded(
@@ -48,7 +48,7 @@ class _RamadanCalenderPageState extends State<RamadanCalenderPage> {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        Gap(18),
+                        const Gap(18),
                         Text(
                           DateFormat.yMMMEd().format(
                             DateTime.now(),
@@ -69,7 +69,7 @@ class _RamadanCalenderPageState extends State<RamadanCalenderPage> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Gap(5),
+                          const Gap(5),
                           const Text(
                             'Sehri',
                             style: TextStyle(
@@ -77,7 +77,7 @@ class _RamadanCalenderPageState extends State<RamadanCalenderPage> {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          Gap(20),
+                          const Gap(20),
                           Text(TimeOfDay.now().format(context))
                         ],
                       ),
@@ -95,7 +95,7 @@ class _RamadanCalenderPageState extends State<RamadanCalenderPage> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Gap(5),
+                          const Gap(5),
                           const Text(
                             'Ifter',
                             style: TextStyle(
@@ -103,7 +103,7 @@ class _RamadanCalenderPageState extends State<RamadanCalenderPage> {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          Gap(25),
+                          const Gap(25),
                           Text(TimeOfDay.now().format(context))
                         ],
                       ),

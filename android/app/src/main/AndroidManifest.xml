@@ -14,7 +14,7 @@
         android:usesCleartextTraffic="true"
         android:label="Mumin"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/launcher_icon">
 
         <activity 
             android:name="com.linusu.flutter_web_auth_2.CallbackActivity"
