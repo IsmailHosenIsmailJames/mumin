@@ -1,6 +1,8 @@
+import 'dart:convert';
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:gap/gap.dart';
 import 'package:geocoding/geocoding.dart';
@@ -11,9 +13,13 @@ import 'package:get/route_manager.dart';
 import 'package:hive/hive.dart';
 import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
 import 'package:intl/intl.dart';
+import 'package:mumin/main.dart';
 import 'package:mumin/src/core/location/location_service.dart';
 import 'package:mumin/src/screens/daily_plan/daily_ramadan_plan.dart';
+import 'package:mumin/src/screens/home/controller/model/user_calander_day_model.dart';
+import 'package:mumin/src/screens/home/controller/model/user_location_data.dart';
 import 'package:mumin/src/screens/home/controller/user_location.dart';
+import 'package:mumin/src/screens/home/controller/user_location_calender.dart';
 import 'package:mumin/src/screens/quran/surah_list_screen.dart';
 import 'package:mumin/src/theme/colors.dart';
 import 'package:mumin/src/theme/shadows.dart';
@@ -73,6 +79,7 @@ class _HomePageState extends State<HomePage> {
   UserLocationController userLocationController =
       Get.put(UserLocationController());
 
+  UserLocationCalender userLocationCalender = Get.put(UserLocationCalender());
   @override
   void initState() {
     getUserLocation();
@@ -80,6 +87,28 @@ class _HomePageState extends State<HomePage> {
   }
 
   getUserLocation() async {
+    // load Ramadan calender
+    String json = await rootBundle
+        .loadString('assets/calender_data/ramadan_calendar2024.json');
+    Map ramadanCalendar = jsonDecode(json);
+    if (userLocationController.locationData.value != null) {
+      String district = userLocationController.locationData.value!.district
+          .split(' ')
+          .first
+          .toLowerCase();
+      List<RamadanDayModel> ramadanDaysList = [];
+      for (String key in ramadanCalendar.keys) {
+        if (key.toString().toLowerCase() == district) {
+          List temList = ramadanCalendar[key] as List;
+          for (int i = 0; i < (temList).length; i++) {
+            ramadanDaysList.add(
+                RamadanDayModel.fromMap(Map<String, dynamic>.from(temList[i])));
+          }
+        }
+      }
+      userLocationCalender.userLocationCalender.value = ramadanDaysList;
+    }
+
     try {
       Position? location = await LocationService().getCurrentLocation();
       if (location != null) {
@@ -108,6 +137,7 @@ class _HomePageState extends State<HomePage> {
     } catch (e) {
       log(e.toString());
     }
+    setState(() {});
   }
 
   @override

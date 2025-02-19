@@ -8,6 +8,7 @@ import 'package:hive/hive.dart';
 import 'package:http/http.dart';
 import 'package:intl/intl.dart';
 import 'package:mumin/src/screens/home/controller/user_location.dart';
+import 'package:mumin/src/screens/prayer_time/model/prayer_time_calculator.dart';
 import 'package:mumin/src/screens/prayer_time/model/prayer_time_model.dart';
 import 'package:mumin/src/theme/colors.dart';
 import 'package:mumin/src/theme/shapes.dart';
@@ -49,6 +50,8 @@ class _PrayerTimeState extends State<PrayerTime> {
     }
   }
 
+  PrayerTimeCalculator prayerTimeCalculator = PrayerTimeCalculator();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -70,7 +73,7 @@ class _PrayerTimeState extends State<PrayerTime> {
                       style: TextStyle(fontSize: 18),
                     ),
                     Text(
-                      '${getNextPrayerTime(prayerTimeModel!).name} ${getNextPrayerTime(prayerTimeModel!).timeOfDay.format(context)}',
+                      '${prayerTimeCalculator.getNextPrayerTime(prayerTimeModel!).name} ${prayerTimeCalculator.getNextPrayerTime(prayerTimeModel!).timeOfDay.format(context)}',
                       style: const TextStyle(fontSize: 32),
                     ),
                     const Gap(20),
@@ -90,10 +93,12 @@ class _PrayerTimeState extends State<PrayerTime> {
                       ],
                     ),
                     ...List.generate(
-                      getAllPrayerTime(prayerTimeModel!).length,
+                      prayerTimeCalculator
+                          .getAllPrayerTime(prayerTimeModel!)
+                          .length,
                       (index) {
-                        SinglePrayerTime singlePrayerTime =
-                            getAllPrayerTime(prayerTimeModel!)[index];
+                        SinglePrayerTime singlePrayerTime = prayerTimeCalculator
+                            .getAllPrayerTime(prayerTimeModel!)[index];
                         return Container(
                           height: 60,
                           padding: const EdgeInsets.all(5),
@@ -136,67 +141,5 @@ class _PrayerTimeState extends State<PrayerTime> {
               ),
       ),
     );
-  }
-
-  List<SinglePrayerTime> getAllPrayerTime(PrayerTimeModel prayerTimeModel) {
-    List<SinglePrayerTime> listOfSinglePrayerTime = [];
-    listOfSinglePrayerTime.add(
-      SinglePrayerTime(
-        name: 'Fajr',
-        timeOfDay: getTimeOfDayFormTimeString(prayerTimeModel.fajr),
-      ),
-    );
-    listOfSinglePrayerTime.add(
-      SinglePrayerTime(
-        name: 'Dhuhr',
-        timeOfDay: getTimeOfDayFormTimeString(prayerTimeModel.dhuhr),
-      ),
-    );
-    listOfSinglePrayerTime.add(
-      SinglePrayerTime(
-        name: 'Asr',
-        timeOfDay: getTimeOfDayFormTimeString(prayerTimeModel.asr),
-      ),
-    );
-    listOfSinglePrayerTime.add(
-      SinglePrayerTime(
-        name: 'Maghrib',
-        timeOfDay: getTimeOfDayFormTimeString(prayerTimeModel.maghrib),
-      ),
-    );
-    listOfSinglePrayerTime.add(
-      SinglePrayerTime(
-        name: 'Isha',
-        timeOfDay: getTimeOfDayFormTimeString(prayerTimeModel.isha),
-      ),
-    );
-    return listOfSinglePrayerTime;
-  }
-
-  SinglePrayerTime getNextPrayerTime(PrayerTimeModel prayerTimeModel) {
-    List<SinglePrayerTime> listOfSinglePrayerTime =
-        getAllPrayerTime(prayerTimeModel);
-
-    final now = TimeOfDay.now();
-    for (int i = 0; i < 4; i++) {
-      SinglePrayerTime singlePrayerTime = listOfSinglePrayerTime[i];
-      if ((singlePrayerTime.timeOfDay.hour *
-              singlePrayerTime.timeOfDay.minute) >=
-          (now.hour * now.minute)) {
-        return listOfSinglePrayerTime[i + 1];
-      }
-    }
-    return listOfSinglePrayerTime[0];
-  }
-
-  TimeOfDay getTimeOfDayFormTimeString(String timeString) {
-    List<String> parts = timeString.split(' ');
-    String amOrPm = parts.last;
-    int hour = int.parse(parts[0].split(':')[0]);
-    int min = int.parse(parts[0].split(':')[1]);
-    if (amOrPm == 'pm') {
-      hour += 12;
-    }
-    return TimeOfDay(hour: hour, minute: min);
   }
 }

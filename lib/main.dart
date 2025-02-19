@@ -1,4 +1,8 @@
+import 'dart:convert';
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -16,6 +20,7 @@ import 'package:mumin/src/screens/prayer_time/prayer_time.dart';
 import 'package:mumin/src/screens/kalima/kalima_screen.dart';
 import 'package:mumin/src/screens/qibla_direction/qibla_compass_screen.dart';
 import 'package:mumin/src/screens/quran/surah_list_screen.dart';
+import 'package:mumin/src/screens/ramadan_calender/ramadan_calender_page.dart';
 import 'package:mumin/src/screens/tasbeeh/tasbeeh_screen.dart';
 import 'package:mumin/src/screens/zakkat/zakkat_screen.dart';
 import 'package:mumin/src/theme/colors.dart';
@@ -104,6 +109,8 @@ class MyApp extends StatelessWidget {
         GetPage(
             name: '/qibla_direction', page: () => const QiblaCompassScreen()),
         GetPage(name: '/prayer_time', page: () => const PrayerTime()),
+        GetPage(
+            name: '/ramadan_calender', page: () => const RamadanCalenderPage())
       ],
       initialRoute: authController.user.value == null ? '/login' : '/home',
       defaultTransition: Transition.leftToRight,
@@ -114,6 +121,7 @@ class MyApp extends StatelessWidget {
           AppThemeController(),
         );
         appThemeController.initTheme();
+
         FlutterNativeSplash.remove();
       },
     );

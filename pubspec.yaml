@@ -58,6 +58,7 @@ flutter:
     - assets/icons/
     - assets/images/
     - assets/quran/
+    - assets/calender_data/
 
 
 flutter_native_splash:
