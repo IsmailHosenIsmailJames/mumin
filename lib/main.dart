@@ -1,8 +1,4 @@
-import 'dart:convert';
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -28,6 +24,8 @@ import 'package:mumin/src/theme/shapes.dart';
 import 'package:mumin/src/theme/theme_controller.dart';
 
 import 'src/screens/mosque_view/mosque_view.dart';
+
+bool isUpdateChecked = false;
 
 void main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();

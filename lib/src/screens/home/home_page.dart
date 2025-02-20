@@ -13,7 +13,6 @@ import 'package:get/route_manager.dart';
 import 'package:hive/hive.dart';
 import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
 import 'package:intl/intl.dart';
-import 'package:mumin/main.dart';
 import 'package:mumin/src/core/location/location_service.dart';
 import 'package:mumin/src/screens/daily_plan/daily_ramadan_plan.dart';
 import 'package:mumin/src/screens/home/controller/model/user_calander_day_model.dart';
@@ -27,6 +26,8 @@ import 'package:mumin/src/theme/shapes.dart';
 import 'package:mumin/src/theme/theme_controller.dart';
 import 'package:mumin/src/theme/theme_icon_button.dart';
 import 'package:toastification/toastification.dart';
+
+import '../../core/in_app_update/in_app_android_update/in_app_update_android.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -82,6 +83,7 @@ class _HomePageState extends State<HomePage> {
   UserLocationCalender userLocationCalender = Get.put(UserLocationCalender());
   @override
   void initState() {
+    inAppUpdateAndroid(context);
     getUserLocation();
     super.initState();
   }

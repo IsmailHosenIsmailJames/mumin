@@ -4,7 +4,6 @@ import 'dart:developer' as dev;
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_compass/flutter_compass.dart';
-import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 import 'package:mumin/src/screens/home/controller/user_location.dart';
 import 'package:mumin/src/screens/qibla_direction/controller/compass_value_controller.dart';
@@ -12,7 +11,6 @@ import 'package:mumin/src/theme/theme_controller.dart';
 import 'package:vector_math/vector_math.dart' show radians;
 
 import '../../core/compass/compass_service.dart';
-import '../../core/location/location_service.dart';
 import 'features/calculate_qibla_direction.dart';
 
 class QiblaCompassScreen extends StatefulWidget {
@@ -23,7 +21,6 @@ class QiblaCompassScreen extends StatefulWidget {
 }
 
 class _QiblaCompassScreenState extends State<QiblaCompassScreen> {
-  final LocationService _locationService = LocationService();
   final QiblaCalculator _qiblaCalculator = QiblaCalculator();
   final CompassService _compassService = CompassService();
 
