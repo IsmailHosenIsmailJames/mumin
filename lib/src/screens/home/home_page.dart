@@ -18,6 +18,7 @@ import 'package:mumin/src/core/background/background_setup.dart';
 import 'package:mumin/src/core/location/location_service.dart';
 import 'package:mumin/src/core/notifications/requiest_permission.dart';
 import 'package:mumin/src/screens/daily_plan/daily_ramadan_plan.dart';
+import 'package:mumin/src/screens/daily_plan/get_ramadan_number.dart';
 import 'package:mumin/src/screens/home/controller/model/user_calander_day_model.dart';
 import 'package:mumin/src/screens/home/controller/model/user_location_data.dart';
 import 'package:mumin/src/screens/home/controller/user_location.dart';
@@ -88,34 +89,37 @@ class _HomePageState extends State<HomePage> {
   final userBox = Hive.box('user_db');
   @override
   void initState() {
-    inAppUpdateAndroid(context);
-    getUserLocation();
-    requestPermissionsAwesomeNotifications();
+    startupCalls();
+    super.initState();
+  }
+
+  Future<void> startupCalls() async {
+    await inAppUpdateAndroid(context);
+    await getUserLocation();
+    await requestPermissionsAwesomeNotifications();
     FlutterForegroundTask.addTaskDataCallback(onReceiveTaskData);
 
-    WidgetsBinding.instance.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
       // Request permissions and initialize the service.
-      requestPermissions().then((value) {
+      await requestPermissions().then((value) {
         initService().then((value) {
           startService();
         });
       });
-    });
-
-    if (userBox.get(
+      if (userBox.get(
+              'daily_plan_popup${DateFormat('yyyy-MM-dd').format(DateTime.now())}',
+              defaultValue: null) ==
+          null) {
+        await showDailyPlanDialog();
+        userBox.put(
             'daily_plan_popup${DateFormat('yyyy-MM-dd').format(DateTime.now())}',
-            defaultValue: null) ==
-        null) {
-      showDailyPlanDialog();
-      userBox.put(
-          'daily_plan_popup${DateFormat('yyyy-MM-dd').format(DateTime.now())}',
-          true);
-    }
-    super.initState();
+            true);
+      }
+    });
   }
 
-  void showDailyPlanDialog() {
-    showDialog(
+  Future<void> showDailyPlanDialog() async {
+    await showDialog(
       context: context,
       builder: (context) {
         return AlertDialog(
@@ -128,7 +132,7 @@ class _HomePageState extends State<HomePage> {
               icon: const Icon(Icons.close),
               label: const Text('Close'),
             ),
-            TextButton.icon(
+            ElevatedButton.icon(
               onPressed: () {
                 routeTo30DayPlan(context, isPopUp: true);
               },
@@ -140,7 +144,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  getUserLocation() async {
+  Future<void> getUserLocation() async {
     // load Ramadan calender
     String json = await rootBundle
         .loadString('assets/calender_data/ramadan_calendar2024.json');
@@ -480,12 +484,8 @@ class _HomePageState extends State<HomePage> {
       {bool isPopUp = false}) async {
     bool result = await InternetConnection().hasInternetAccess;
     if (result) {
-      int day = 1;
-      if (DateTime.now().month == 3) {
-        day = DateTime.now().day;
-      }
       if (isPopUp) Navigator.pop(context);
-      Get.to(() => DailyRamadanPlan(day: day));
+      Get.to(() => DailyRamadanPlan(day: getRamadanNumber()));
     } else {
       showDialog(
         context: context,

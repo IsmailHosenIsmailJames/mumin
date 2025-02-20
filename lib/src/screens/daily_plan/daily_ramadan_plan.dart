@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mumin/src/screens/daily_plan/get_ramadan_number.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class DailyRamadanPlan extends StatefulWidget {
@@ -11,12 +12,19 @@ class DailyRamadanPlan extends StatefulWidget {
 
 class _DailyRamadanPlanState extends State<DailyRamadanPlan> {
   final controllerURL = WebViewController();
+  late int day = widget.day;
   String javascript = '''
 
 var element = document.querySelector('#alim-navbar');
 if (element) {
     element.remove();
 }
+
+var element = document.querySelector('#bc-navbar');
+if (element) {
+    element.remove();
+}
+
 
 var element = document.querySelector('.donate-section');
 if (element) {
@@ -67,6 +75,14 @@ for (let i = 0; i < elements.length; i++) {
 
   @override
   void initState() {
+    load(day);
+    super.initState();
+  }
+
+  load(int day) async {
+    setState(() {
+      isLoading = true;
+    });
     controllerURL
       ..setJavaScriptMode(JavaScriptMode.unrestricted)
       ..setBackgroundColor(Colors.white)
@@ -83,10 +99,8 @@ for (let i = 0; i < elements.length; i++) {
         ),
       )
       ..loadRequest(
-        Uri.parse('https://www.alim.org/duas/ramadan-days/${widget.day}/'),
+        Uri.parse('https://www.alim.org/duas/ramadan-days/$day/'),
       );
-
-    super.initState();
   }
 
   @override
@@ -94,6 +108,34 @@ for (let i = 0; i < elements.length; i++) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('30 Days Plan'),
+        actions: [
+          if (getRamadanNumber() > 1)
+            SizedBox(
+              width: 130,
+              child: Padding(
+                padding: const EdgeInsets.only(bottom: 5, top: 5, right: 5),
+                child: DropdownButtonFormField(
+                  decoration: const InputDecoration(
+                    border: OutlineInputBorder(),
+                    contentPadding: EdgeInsets.only(left: 5, right: 2),
+                  ),
+                  value: day,
+                  items: List.generate(
+                    getRamadanNumber(),
+                    (index) {
+                      return DropdownMenuItem(
+                        value: index + 1,
+                        child: Text('Ramadan ${index + 1}'),
+                      );
+                    },
+                  ),
+                  onChanged: (value) {
+                    load(value!);
+                  },
+                ),
+              ),
+            ),
+        ],
       ),
       body: (isLoading)
           ? const Center(child: CircularProgressIndicator())
