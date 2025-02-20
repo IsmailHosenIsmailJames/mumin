@@ -53,18 +53,18 @@ class ZakatScreenState extends State<ZakatScreen> {
                           style: Theme.of(
                             context,
                           ).textTheme.titleMedium?.copyWith(
-                            fontWeight: FontWeight.w700,
-                            color: MyAppColors.backgroundDarkColor,
-                          ),
+                                fontWeight: FontWeight.w700,
+                                color: MyAppColors.backgroundDarkColor,
+                              ),
                         ),
                         Text(
                           '$nisab BDT',
                           style: Theme.of(
                             context,
                           ).textTheme.titleMedium?.copyWith(
-                            fontWeight: FontWeight.w700,
-                            color: MyAppColors.backgroundDarkColor,
-                          ),
+                                fontWeight: FontWeight.w700,
+                                color: MyAppColors.backgroundDarkColor,
+                              ),
                         ),
                       ],
                     ),
@@ -165,7 +165,9 @@ class ZakatScreenState extends State<ZakatScreen> {
                           },
                           child: Text(
                             'Calculate',
-                            style: Theme.of(context).textTheme.titleLarge
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleLarge
                                 ?.copyWith(fontWeight: FontWeight.w700),
                           ),
                         ),
@@ -178,36 +180,35 @@ class ZakatScreenState extends State<ZakatScreen> {
           ],
         ),
       ),
-      bottomSheet:
-          (payable > 0.0)
-              ? Container(
-                height: 100,
-                decoration: BoxDecoration(
-                  color: MyAppColors.primaryColor,
-                  borderRadius: const BorderRadius.only(
-                    topLeft: Radius.circular(16),
-                    topRight: Radius.circular(16),
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.2),
-                      spreadRadius: 2,
-                      blurRadius: 5,
-                      offset: const Offset(0, 3),
-                    ),
-                  ],
+      bottomSheet: (payable > 0.0)
+          ? Container(
+              height: 100,
+              decoration: BoxDecoration(
+                color: MyAppColors.primaryColor,
+                borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(16),
+                  topRight: Radius.circular(16),
                 ),
-                child: Center(
-                  child: Text(
-                    'Payable Zakat: $payable BDT',
-                    style: const TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.2),
+                    spreadRadius: 2,
+                    blurRadius: 5,
+                    offset: const Offset(0, 3),
+                  ),
+                ],
+              ),
+              child: Center(
+                child: Text(
+                  'Payable Zakat: $payable BDT',
+                  style: const TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
-              )
-              : const SizedBox.shrink(),
+              ),
+            )
+          : const SizedBox.shrink(),
     );
   }
 
@@ -248,12 +249,7 @@ class ZakatScreenState extends State<ZakatScreen> {
         keyboardType: keyboardType,
         decoration: InputDecoration(
           labelText: label,
-          enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: MyAppColors.backgroundDarkColor),
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: MyAppColors.backgroundDarkColor),
-          ),
+          border: const OutlineInputBorder(),
         ),
         initialValue: value,
         onChanged: onChanged as void Function(String)?,
@@ -294,16 +290,14 @@ class ZakatScreenState extends State<ZakatScreen> {
     }
 
     try {
-      double asset =
-          (double.tryParse(gold ?? '0') ?? 0) +
+      double asset = (double.tryParse(gold ?? '0') ?? 0) +
           (double.tryParse(silver ?? '0') ?? 0) +
           (double.tryParse(cash ?? '0') ?? 0) +
           (double.tryParse(depositHajj ?? '0') ?? 0) +
           (double.tryParse(loan ?? '0') ?? 0) +
           (double.tryParse(savBusipen ?? '0') ?? 0);
 
-      double liabilitiesAmount =
-          (double.tryParse(credit ?? '0') ?? 0) +
+      double liabilitiesAmount = (double.tryParse(credit ?? '0') ?? 0) +
           (double.tryParse(wagesDue ?? '0') ?? 0) +
           (double.tryParse(taxDue ?? '0') ?? 0);
 

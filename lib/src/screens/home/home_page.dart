@@ -16,6 +16,7 @@ import 'package:internet_connection_checker_plus/internet_connection_checker_plu
 import 'package:intl/intl.dart';
 import 'package:mumin/src/core/background/background_setup.dart';
 import 'package:mumin/src/core/location/location_service.dart';
+import 'package:mumin/src/core/notifications/requiest_permission.dart';
 import 'package:mumin/src/screens/daily_plan/daily_ramadan_plan.dart';
 import 'package:mumin/src/screens/home/controller/model/user_calander_day_model.dart';
 import 'package:mumin/src/screens/home/controller/model/user_location_data.dart';
@@ -83,10 +84,13 @@ class _HomePageState extends State<HomePage> {
       Get.put(UserLocationController());
 
   UserLocationCalender userLocationCalender = Get.put(UserLocationCalender());
+
+  final userBox = Hive.box('user_db');
   @override
   void initState() {
     inAppUpdateAndroid(context);
     getUserLocation();
+    requestPermissionsAwesomeNotifications();
     FlutterForegroundTask.addTaskDataCallback(onReceiveTaskData);
 
     WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -98,7 +102,42 @@ class _HomePageState extends State<HomePage> {
       });
     });
 
+    if (userBox.get(
+            'daily_plan_popup${DateFormat('yyyy-MM-dd').format(DateTime.now())}',
+            defaultValue: null) ==
+        null) {
+      showDailyPlanDialog();
+      userBox.put(
+          'daily_plan_popup${DateFormat('yyyy-MM-dd').format(DateTime.now())}',
+          true);
+    }
     super.initState();
+  }
+
+  void showDailyPlanDialog() {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: const Text('Your daily Ramadan plans are ready!'),
+          actions: [
+            TextButton.icon(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              icon: const Icon(Icons.close),
+              label: const Text('Close'),
+            ),
+            TextButton.icon(
+              onPressed: () {
+                routeTo30DayPlan(context, isPopUp: true);
+              },
+              label: const Text('See Plans'),
+            )
+          ],
+        );
+      },
+    );
   }
 
   getUserLocation() async {
@@ -342,39 +381,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   onPressed: () async {
-                    bool result = await InternetConnection().hasInternetAccess;
-                    if (result) {
-                      int day = 1;
-                      if (DateTime.now().month == 3) {
-                        day = DateTime.now().day;
-                      }
-                      Get.to(() => DailyRamadanPlan(day: day));
-                    } else {
-                      showDialog(
-                        context: context,
-                        builder: (context) {
-                          return AlertDialog(
-                            insetPadding: const EdgeInsets.all(10),
-                            title: const Text(
-                              'No internet connection!',
-                              style: TextStyle(
-                                color: Colors.red,
-                              ),
-                            ),
-                            content: const Text(
-                                'To access 30 days Ramadan Plan, you will require internet connection.'),
-                            actions: [
-                              ElevatedButton(
-                                onPressed: () {
-                                  Navigator.pop(context);
-                                },
-                                child: const Text('Ok'),
-                              ),
-                            ],
-                          );
-                        },
-                      );
-                    }
+                    await routeTo30DayPlan(context);
                   },
                   child: Text(
                     'See All',
@@ -467,5 +474,43 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
     );
+  }
+
+  Future<void> routeTo30DayPlan(BuildContext context,
+      {bool isPopUp = false}) async {
+    bool result = await InternetConnection().hasInternetAccess;
+    if (result) {
+      int day = 1;
+      if (DateTime.now().month == 3) {
+        day = DateTime.now().day;
+      }
+      if (isPopUp) Navigator.pop(context);
+      Get.to(() => DailyRamadanPlan(day: day));
+    } else {
+      showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            insetPadding: const EdgeInsets.all(10),
+            title: const Text(
+              'No internet connection!',
+              style: TextStyle(
+                color: Colors.red,
+              ),
+            ),
+            content: const Text(
+                'To access 30 days Ramadan Plan, you will require internet connection.'),
+            actions: [
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: const Text('Ok'),
+              ),
+            ],
+          );
+        },
+      );
+    }
   }
 }

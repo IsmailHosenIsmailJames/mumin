@@ -47,6 +47,8 @@ dependencies:
   open_file: ^3.5.10
   device_info_plus: ^11.3.0
   flutter_foreground_task: ^8.17.0
+  awesome_notifications: ^0.10.1
+  icons_launcher: ^3.0.0
 
 dependency_overrides:
   http: ^1.3.0 
@@ -70,14 +72,22 @@ flutter:
 
 flutter_native_splash:
   color: "#ffffff"
-  image: assets/images/mumin_logo.png
+  image: assets/icons/app_icon.png
   color_dark: "#121212"
-  image_dark: assets/images/mumin_logo.png
+  image_dark: assets/icons/app_icon.png
 
   android_12:
-    image: assets/images/mumin_logo.png
+    image: assets/icons/app_icon.png
     icon_background_color: "#ffffff"
-    image_dark: assets/images/mumin_logo.png
+    image_dark: assets/icons/app_icon.png
     icon_background_color_dark: "#121212"
 
   web: false
+
+icons_launcher:
+  image_path: "assets/icons/app_icon.png"
+  platforms:
+    android:
+      enable: true
+    ios:
+      enable: true

@@ -1,5 +1,9 @@
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_foreground_task/flutter_foreground_task.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:intl/intl.dart';
+import 'package:mumin/src/core/notifications/push_notification.dart';
 
 @pragma('vm:entry-point')
 void startCallback() {
@@ -15,7 +19,23 @@ class MyTaskHandler extends TaskHandler {
   // Called every [ForegroundTaskOptions.interval] milliseconds.
   @override
   Future<void> onRepeatEvent(DateTime timestamp) async {
-    // MY FOREGROUND
+    await Hive.initFlutter();
+    final box = await Hive.openBox('user_db');
+    if (TimeOfDay.now().hour == 3) {
+      if (box.get(
+              'notification_${DateFormat('yyyy-MM-dd').format(DateTime.now())}',
+              defaultValue: null) ==
+          null) {
+        await pushNotifications(
+          id: 1,
+          title: 'Today\'s Ramadan Plans are ready!',
+          body: 'Tap to see today\'s Ramadan plan...',
+        );
+        await box.put(
+            'notification_${DateFormat('yyyy-MM-dd').format(DateTime.now())}',
+            true);
+      }
+    }
   }
 
   // Called when the task is destroyed.
