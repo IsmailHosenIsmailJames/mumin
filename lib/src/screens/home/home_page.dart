@@ -4,6 +4,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_foreground_task/flutter_foreground_task.dart';
 import 'package:gap/gap.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
@@ -13,6 +14,7 @@ import 'package:get/route_manager.dart';
 import 'package:hive/hive.dart';
 import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
 import 'package:intl/intl.dart';
+import 'package:mumin/src/core/background/background_setup.dart';
 import 'package:mumin/src/core/location/location_service.dart';
 import 'package:mumin/src/screens/daily_plan/daily_ramadan_plan.dart';
 import 'package:mumin/src/screens/home/controller/model/user_calander_day_model.dart';
@@ -85,6 +87,17 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     inAppUpdateAndroid(context);
     getUserLocation();
+    FlutterForegroundTask.addTaskDataCallback(onReceiveTaskData);
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      // Request permissions and initialize the service.
+      requestPermissions().then((value) {
+        initService().then((value) {
+          startService();
+        });
+      });
+    });
+
     super.initState();
   }
 
