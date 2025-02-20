@@ -7,8 +7,7 @@ import '../model/latest_app_info.dart';
 
 Future<LatestAppInfoAPIModel> getInfoFormAPI() async {
   final response = await get(
-    Uri.parse(
-        'https://raw.githubusercontent.com/IsmailHosenIsmailJames/jbl_pill_reminder_app/refs/heads/main/info.json'),
+    Uri.parse('http://128.199.87.251:2025/mumin_app/info'),
   );
   log(response.body.toString());
   log(response.statusCode.toString());
