@@ -4,6 +4,7 @@ import 'package:flutter_foreground_task/flutter_foreground_task.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:intl/intl.dart';
 import 'package:mumin/src/core/notifications/push_notification.dart';
+import 'package:mumin/src/core/notifications/requiest_permission.dart';
 
 @pragma('vm:entry-point')
 void startCallback() {
@@ -26,14 +27,16 @@ class MyTaskHandler extends TaskHandler {
               'notification_${DateFormat('yyyy-MM-dd').format(DateTime.now())}',
               defaultValue: null) ==
           null) {
-        await pushNotifications(
-          id: 1,
-          title: 'Today\'s Ramadan Plans are ready!',
-          body: 'Tap to see today\'s Ramadan plan...',
-        );
-        await box.put(
-            'notification_${DateFormat('yyyy-MM-dd').format(DateTime.now())}',
-            true);
+        if (await requestPermissionsAwesomeNotifications()) {
+          await pushNotifications(
+            id: 1,
+            title: 'Today\'s Ramadan Plans are ready!',
+            body: 'Tap to see today\'s Ramadan plan...',
+          );
+          await box.put(
+              'notification_${DateFormat('yyyy-MM-dd').format(DateTime.now())}',
+              true);
+        }
       }
     }
   }

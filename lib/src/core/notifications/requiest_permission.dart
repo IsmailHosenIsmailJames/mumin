@@ -1,8 +1,9 @@
 import 'package:awesome_notifications/awesome_notifications.dart';
 
-Future<void> requestPermissionsAwesomeNotifications() async {
+Future<bool> requestPermissionsAwesomeNotifications() async {
   bool isAllowed = await AwesomeNotifications().isNotificationAllowed();
   if (!isAllowed) {
-    await AwesomeNotifications().requestPermissionToSendNotifications();
+    return await AwesomeNotifications().requestPermissionToSendNotifications();
   }
+  return isAllowed;
 }

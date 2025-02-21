@@ -153,7 +153,7 @@ class _QiblaCompassScreenState extends State<QiblaCompassScreen> {
                                 height: 50,
                                 width: 5,
                                 decoration: BoxDecoration(
-                                  color: Colors.green,
+                                  color: const Color.fromARGB(255, 255, 17, 0),
                                   borderRadius: BorderRadius.circular(10),
                                 ),
                               ),
@@ -162,33 +162,6 @@ class _QiblaCompassScreenState extends State<QiblaCompassScreen> {
                         ),
                       ],
                     ),
-
-                    // Transform.rotate(
-                    //   angle: radians(_getNeedleRotationAngle()),
-                    //   child: Stack(
-                    //     alignment: Alignment.center,
-                    //     children: [
-                    //       Transform.rotate(
-                    //         angle: radians(-10),
-                    //         child: Image.asset(
-                    //           'assets/images/compass.png',
-                    //           width: 300,
-                    //           height: 300,
-                    //         ),
-                    //       ),
-                    //       Container(
-                    //         height: 250,
-                    //         width: 250,
-                    //         alignment: Alignment.topCenter,
-                    //         child: Image.asset(
-                    //           'assets/images/qaba.png',
-                    //           width: 50,
-                    //           height: 50,
-                    //         ),
-                    //       ),
-                    //     ],
-                    //   ),
-                    // ),
                   ),
       ),
     );

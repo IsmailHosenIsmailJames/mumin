@@ -93,6 +93,8 @@ class _HomePageState extends State<HomePage> {
     super.initState();
   }
 
+  bool isLocationDeclined = false;
+
   Future<void> startupCalls() async {
     await inAppUpdateAndroid(context);
     await getUserLocation();
@@ -168,6 +170,14 @@ class _HomePageState extends State<HomePage> {
     }
 
     try {
+      LocationPermission locationPermission =
+          await LocationService().requestAndGetLocationPermission();
+      if (locationPermission == LocationPermission.deniedForever ||
+          locationPermission == LocationPermission.denied) {
+        setState(() {
+          isLocationDeclined = true;
+        });
+      }
       Position? location = await LocationService().getCurrentLocation();
       if (location != null) {
         List<Placemark> placemarks = await placemarkFromCoordinates(
@@ -205,20 +215,8 @@ class _HomePageState extends State<HomePage> {
         padding: const EdgeInsets.all(10.0),
         children: [
           SafeArea(
-            child: userLocationController.locationData.value == null
-                ? Container(
-                    decoration: BoxDecoration(
-                      color: Colors.grey.withValues(alpha: 0.2),
-                    ),
-                    height: 80,
-                    width: double.infinity,
-                  )
-                    .animate(onPlay: (controller) => controller.repeat())
-                    .shimmer(
-                      duration: 1200.ms,
-                      color: const Color(0xFF80DDFF),
-                    )
-                : SizedBox(
+            child: isLocationDeclined
+                ? SizedBox(
                     height: 80,
                     child: Row(
                       children: [
@@ -236,28 +234,97 @@ class _HomePageState extends State<HomePage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
-                              userLocationController
-                                  .locationData.value!.district,
-                              style: const TextStyle(
+                            const Text(
+                              'Location permission denied!',
+                              style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
+                                color: Colors.red,
                               ),
                             ),
                             Text(
-                              '${userLocationController.locationData.value!.division}, Bangladesh',
+                              'Please give app location permission\nSo that you can enjoy more features.',
                               style: TextStyle(
-                                fontSize: 16,
+                                fontSize: 12,
                                 color: MyAppColors.secondaryColor,
                               ),
                             ),
                           ],
                         ),
                         const Spacer(),
-                        themeIconButton,
+                        IconButton(
+                          onPressed: () async {
+                            LocationPermission locationPermission =
+                                await LocationService()
+                                    .requestAndGetLocationPermission();
+                            if (locationPermission ==
+                                    LocationPermission.denied ||
+                                locationPermission ==
+                                    LocationPermission.deniedForever) {
+                              Geolocator.openAppSettings();
+                            }
+                          },
+                          icon: const Icon(
+                            Icons.settings,
+                            color: Colors.green,
+                          ),
+                        )
                       ],
                     ),
-                  ),
+                  )
+                : userLocationController.locationData.value == null
+                    ? Container(
+                        decoration: BoxDecoration(
+                          color: Colors.grey.withValues(alpha: 0.2),
+                        ),
+                        height: 80,
+                        width: double.infinity,
+                      )
+                        .animate(onPlay: (controller) => controller.repeat())
+                        .shimmer(
+                          duration: 1200.ms,
+                          color: const Color(0xFF80DDFF),
+                        )
+                    : SizedBox(
+                        height: 80,
+                        child: Row(
+                          children: [
+                            const SizedBox(
+                              width: 50,
+                              height: 50,
+                              child: Icon(
+                                Icons.location_pin,
+                                color: Colors.red,
+                                size: 30,
+                              ),
+                            ),
+                            const Gap(10),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  userLocationController
+                                      .locationData.value!.district,
+                                  style: const TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                Text(
+                                  '${userLocationController.locationData.value!.division}, Bangladesh',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    color: MyAppColors.secondaryColor,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const Spacer(),
+                            themeIconButton,
+                          ],
+                        ),
+                      ),
           ),
           const Gap(10),
           Container(
@@ -419,12 +486,23 @@ class _HomePageState extends State<HomePage> {
                       );
                       return;
                     }
+
                     if (cards[index]['route'] == '/qibla_direction' ||
-                        cards[index]['route'] == '/prayer_time') {
+                        cards[index]['route'] == '/prayer_time' ||
+                        cards[index]['route'] == '/mosque' ||
+                        cards[index]['route'] == '/ramadan_calender') {
                       if (userLocationController.locationData.value == null) {
                         toastification.show(
                           context: context,
-                          title: const Text('Location Data is loading...'),
+                          title: Text(
+                            isLocationDeclined
+                                ? 'Location permission denied!'
+                                : 'Location Data is loading...',
+                          ),
+                          type: isLocationDeclined
+                              ? ToastificationType.error
+                              : null,
+                          autoCloseDuration: const Duration(seconds: 4),
                         );
                       } else {
                         Get.toNamed(cards[index]['route']!);
