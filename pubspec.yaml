@@ -3,7 +3,7 @@ description: "A new Flutter project."
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 # of the product and file versions while build-number is used as the build suffix.
-version: 1.0.2+3
+version: 1.0.3+4
 
 environment:
   sdk: ^3.6.1
@@ -71,14 +71,14 @@ flutter:
 
 
 flutter_native_splash:
-  color: "#ffffff"
+  color: "#121212"
   image: assets/icons/app_icon.png
   color_dark: "#121212"
   image_dark: assets/icons/app_icon.png
 
   android_12:
     image: assets/icons/app_icon.png
-    icon_background_color: "#ffffff"
+    icon_background_color: "#121212"
     image_dark: assets/icons/app_icon.png
     icon_background_color_dark: "#121212"
 

@@ -125,9 +125,18 @@ class _PopupWidgetState extends State<PopupWidget> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Current App version : ${widget.currentAppVersion}'),
                   Text(
-                      'Latest App version : ${widget.latestAppInfoAPIModel.version}'),
+                    'Current App version : ${widget.currentAppVersion}',
+                    style: const TextStyle(
+                      color: Colors.black,
+                    ),
+                  ),
+                  Text(
+                    'Latest App version : ${widget.latestAppInfoAPIModel.version}',
+                    style: const TextStyle(
+                      color: Colors.black,
+                    ),
+                  ),
                   if (widget.latestAppInfoAPIModel.forceToUpdate == true)
                     const Text(
                       'You have to update to latest version anyway',
@@ -163,7 +172,6 @@ class _PopupWidgetState extends State<PopupWidget> {
                     Container(
                       width: double.infinity,
                       decoration: BoxDecoration(
-                        color: Colors.grey.shade300,
                         borderRadius: BorderRadius.circular(10),
                       ),
                       padding: const EdgeInsets.all(5),
@@ -181,6 +189,7 @@ class _PopupWidgetState extends State<PopupWidget> {
                             'URL:  ${widget.apkDownloadLink}',
                             style: const TextStyle(
                               fontSize: 11,
+                              color: Colors.black,
                             ),
                           ),
                           const Gap(8),
@@ -189,7 +198,8 @@ class _PopupWidgetState extends State<PopupWidget> {
                             width: double.infinity,
                             child: ElevatedButton.icon(
                               style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.white,
+                                backgroundColor:
+                                    Colors.grey.withValues(alpha: 0.2),
                                 shadowColor: Colors.transparent,
                               ),
                               onPressed: () {
@@ -201,7 +211,7 @@ class _PopupWidgetState extends State<PopupWidget> {
                                 );
                               },
                               label: const Text(
-                                'Copy',
+                                'Copy link',
                                 style: TextStyle(
                                   fontSize: 12,
                                   color: Colors.black,
@@ -229,7 +239,15 @@ class _PopupWidgetState extends State<PopupWidget> {
                                     isUpdateChecked = true;
                                     Navigator.pop(context);
                                   },
-                        child: const Text('Not Now'),
+                        child: Text(
+                          'Not Now',
+                          style: TextStyle(
+                            color: widget.latestAppInfoAPIModel.forceToUpdate ==
+                                    true
+                                ? Colors.grey
+                                : Colors.black,
+                          ),
+                        ),
                       ),
                       const Gap(10),
                       ElevatedButton(

@@ -6,8 +6,8 @@ bool isLoggedIn = false;
 String quranScriptType = 'uthmani_tajweed';
 
 class AppThemeController extends GetxController {
-  RxString themeModeName = 'system'.obs;
-  RxBool isDark = true.obs;
+  RxString themeModeName = 'light'.obs;
+  RxBool isDark = false.obs;
 
   void initTheme() async {
     final accountBox = Hive.box('user_db');
