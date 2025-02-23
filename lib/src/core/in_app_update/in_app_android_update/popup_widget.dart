@@ -99,6 +99,8 @@ class _PopupWidgetState extends State<PopupWidget> {
                                     color: Colors.white,
                                   )
                                 : CircularProgressIndicator(
+                                    backgroundColor:
+                                        Colors.grey.withValues(alpha: 0.2),
                                     color: Colors.white,
                                     value:
                                         controllerGetx.downloadProgress.value,
@@ -265,6 +267,7 @@ class _PopupWidgetState extends State<PopupWidget> {
                                       Icon(
                                         FluentIcons.settings_24_filled,
                                         size: 20,
+                                        color: Colors.white,
                                       ),
                                       Gap(6),
                                       Text('Allow'),
