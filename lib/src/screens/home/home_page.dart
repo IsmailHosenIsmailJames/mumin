@@ -428,39 +428,32 @@ class _HomePageState extends State<HomePage> {
             padding: const EdgeInsets.all(8),
             margin: const EdgeInsets.only(top: 10, bottom: 10),
             decoration: BoxDecoration(
-              color: const Color.fromARGB(255, 3, 29, 51),
+              color: Colors.grey.withValues(alpha: 0.2),
               borderRadius: MyAppShapes.borderRadius,
             ),
             child: Row(
               children: [
-                const Icon(Icons.calendar_month, color: Colors.white),
+                const Icon(Icons.calendar_month),
                 const Gap(10),
                 const Text(
-                  '30 Day Plan',
+                  'Ramadan Plan',
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
                 const Spacer(),
-                TextButton(
-                  style: TextButton.styleFrom(
-                    padding: EdgeInsets.zero,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: MyAppShapes.borderRadius,
+                IconButton(
+                    style: TextButton.styleFrom(
+                      padding: EdgeInsets.zero,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: MyAppShapes.borderRadius,
+                      ),
                     ),
-                  ),
-                  onPressed: () async {
-                    await routeTo30DayPlan(context);
-                  },
-                  child: Text(
-                    'See All',
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: MyAppColors.primaryColor,
-                    ),
-                  ),
-                ),
+                    onPressed: () async {
+                      await routeTo30DayPlan(context);
+                    },
+                    icon: Icon(Icons.arrow_forward)),
               ],
             ),
           ),

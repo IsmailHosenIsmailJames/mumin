@@ -107,7 +107,7 @@ for (let i = 0; i < elements.length; i++) {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('30 Days Plan'),
+        title: Text('Ramadan Day - ${widget.day}'),
         actions: [
           if (getRamadanNumber() > 1)
             SizedBox(
