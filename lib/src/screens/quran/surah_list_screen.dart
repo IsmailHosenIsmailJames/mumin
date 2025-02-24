@@ -35,7 +35,6 @@ class _SurahListScreenState extends State<SurahListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Holy Quran')),
-
       body: Column(
         children: [
           if (widget.practiceMode == true)
@@ -46,14 +45,12 @@ class _SurahListScreenState extends State<SurahListScreen> {
                   Expanded(
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor:
-                            selectedTab == 0
-                                ? MyAppColors.primaryColor
-                                : Colors.black,
-                        foregroundColor:
-                            selectedTab == 0
-                                ? Colors.white
-                                : MyAppColors.primaryColor,
+                        backgroundColor: selectedTab == 0
+                            ? MyAppColors.primaryColor
+                            : Colors.black,
+                        foregroundColor: selectedTab == 0
+                            ? Colors.white
+                            : MyAppColors.primaryColor,
                       ),
                       onPressed: () {
                         setState(() {
@@ -67,14 +64,12 @@ class _SurahListScreenState extends State<SurahListScreen> {
                   Expanded(
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor:
-                            selectedTab == 1
-                                ? MyAppColors.primaryColor
-                                : Colors.black,
-                        foregroundColor:
-                            selectedTab == 1
-                                ? Colors.white
-                                : MyAppColors.primaryColor,
+                        backgroundColor: selectedTab == 1
+                            ? MyAppColors.primaryColor
+                            : Colors.black,
+                        foregroundColor: selectedTab == 1
+                            ? Colors.white
+                            : MyAppColors.primaryColor,
                       ),
                       onPressed: () {
                         setState(() {
@@ -88,241 +83,237 @@ class _SurahListScreenState extends State<SurahListScreen> {
               ),
             ),
           Expanded(
-            child:
-                (!(widget.practiceMode == true && selectedTab == 1))
-                    ? ListView.builder(
-                      padding: const EdgeInsets.all(10),
-                      itemCount: allChaptersInfo.length,
-                      itemBuilder: (context, index) {
-                        final chapterModel = QuranSurahInfoModel.fromMap(
-                          allChaptersInfo[index],
-                        );
-                        return Padding(
-                          padding: const EdgeInsets.all(5.0),
-                          child: TextButton(
-                            style: TextButton.styleFrom(
-                              padding: EdgeInsets.zero,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: MyAppShapes.borderRadius,
-                              ),
+            child: (!(widget.practiceMode == true && selectedTab == 1))
+                ? ListView.builder(
+                    padding: const EdgeInsets.all(10),
+                    itemCount: allChaptersInfo.length,
+                    itemBuilder: (context, index) {
+                      final chapterModel = QuranSurahInfoModel.fromMap(
+                        allChaptersInfo[index],
+                      );
+                      return Padding(
+                        padding: const EdgeInsets.all(5.0),
+                        child: TextButton(
+                          style: TextButton.styleFrom(
+                            padding: EdgeInsets.zero,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: MyAppShapes.borderRadius,
                             ),
-                            onPressed: () {
-                              Get.to(
-                                () => SurahView(
-                                  surahIndex: chapterModel.id - 1,
-                                  surahName: chapterModel.nameSimple,
-                                  quranInfoModel: chapterModel,
-                                  practiceMode: widget.practiceMode,
-                                ),
-                              );
-                            },
-                            child: Container(
-                              height: 60,
-                              width: double.infinity,
-                              decoration: BoxDecoration(
-                                color: Colors.grey.withValues(alpha: 0.2),
-                                borderRadius: MyAppShapes.borderRadius,
+                          ),
+                          onPressed: () {
+                            int statAt = 0;
+                            for (int i = 0; i < chapterModel.id - 1; i++) {
+                              statAt += QuranSurahInfoModel.fromMap(
+                                      allChaptersInfo[i])
+                                  .versesCount;
+                            }
+                            Get.to(
+                              () => SurahView(
+                                surahIndex: chapterModel.id - 1,
+                                surahName: chapterModel.nameSimple,
+                                quranInfoModel: chapterModel,
+                                practiceMode: widget.practiceMode,
+                                startAt: statAt,
                               ),
-
-                              padding: const EdgeInsets.all(5),
+                            );
+                          },
+                          child: Container(
+                            height: 60,
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                              color: Colors.grey.withValues(alpha: 0.2),
+                              borderRadius: MyAppShapes.borderRadius,
+                            ),
+                            padding: const EdgeInsets.all(5),
+                            child: Row(
+                              children: [
+                                CircleAvatar(
+                                  radius: 20,
+                                  child: Text((index + 1).toString()),
+                                ),
+                                const Gap(10),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      chapterModel.nameSimple,
+                                      style: const TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    Text(surahMeaningsInEnglish[index]),
+                                  ],
+                                ),
+                                const Spacer(),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      chapterModel.nameArabic,
+                                      style: const TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    Text('${chapterModel.versesCount} Ayahs'),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      );
+                    },
+                  )
+                : FutureBuilder(
+                    future: getAudioList(),
+                    builder: (context, snapshot) {
+                      if (snapshot.connectionState == ConnectionState.waiting) {
+                        return const Center(
+                          child: CircularProgressIndicator(),
+                        );
+                      }
+                      if (snapshot.data == null) {
+                        return const Center(child: Text('No Record Found'));
+                      }
+                      if (snapshot.hasError) {
+                        return const Center(
+                          child: Text('Something went wrong'),
+                        );
+                      }
+                      if (snapshot.data!.isEmpty) {
+                        return const Center(child: Text('No Record Found'));
+                      }
+                      dev.log(snapshot.data!.length.toString());
+                      return ListView.builder(
+                        padding: const EdgeInsets.all(10),
+                        itemCount: snapshot.data!.length,
+                        itemBuilder: (context, index) {
+                          final current = snapshot.data![index];
+                          return Container(
+                            margin: const EdgeInsets.all(5),
+                            padding: const EdgeInsets.all(5),
+                            decoration: const BoxDecoration(),
+                            child: SingleChildScrollView(
+                              scrollDirection: Axis.horizontal,
                               child: Row(
                                 children: [
-                                  CircleAvatar(
-                                    radius: 20,
-                                    child: Text((index + 1).toString()),
+                                  Text(
+                                    current.path.split('/').last,
+                                    style: const TextStyle(fontSize: 12),
                                   ),
-                                  const Gap(10),
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        chapterModel.nameSimple,
-                                        style: const TextStyle(
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.bold,
-                                        ),
+                                  const Gap(20),
+                                  SizedBox(
+                                    height: 40,
+                                    width: 40,
+                                    child: IconButton(
+                                      onPressed: () async {
+                                        if (playingRecordIndex == index) {
+                                          if (audioController.isPlaying.value) {
+                                            audioController.audioPlayer.pause();
+                                            setState(() {
+                                              isPlaying = false;
+                                            });
+                                          } else {
+                                            audioController.audioPlayer.play();
+                                            setState(() {
+                                              isPlaying = true;
+                                            });
+                                          }
+                                          return;
+                                        }
+                                        setState(() {
+                                          playingRecordIndex = index;
+                                        });
+                                        audioController.audioPlayer
+                                            .setAudioSource(
+                                          AudioSource.file(
+                                            '${current.path}',
+                                            tag: MediaItem(
+                                              id: index.toString(),
+                                              title:
+                                                  current.path.split('/').last,
+                                            ),
+                                          ),
+                                        );
+                                        await audioController.audioPlayer
+                                            .play();
+                                        setState(() {
+                                          isPlaying = true;
+                                        });
+                                      },
+                                      icon: Icon(
+                                        (playingRecordIndex == index &&
+                                                isPlaying)
+                                            ? Icons.pause
+                                            : Icons.play_arrow,
                                       ),
-                                      Text(surahMeaningsInEnglish[index]),
-                                    ],
+                                    ),
                                   ),
-                                  const Spacer(),
-                                  Column(
-                                    crossAxisAlignment: CrossAxisAlignment.end,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        chapterModel.nameArabic,
-                                        style: const TextStyle(
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
-                                      Text('${chapterModel.versesCount} Ayahs'),
-                                    ],
+                                  const Gap(5),
+                                  SizedBox(
+                                    height: 40,
+                                    width: 40,
+                                    child: IconButton(
+                                      onPressed: () {
+                                        Share.shareXFiles([
+                                          XFile(current.path),
+                                        ]);
+                                      },
+                                      icon: const Icon(Icons.share),
+                                    ),
+                                  ),
+                                  const Gap(5),
+                                  SizedBox(
+                                    height: 40,
+                                    width: 40,
+                                    child: IconButton(
+                                      onPressed: () {
+                                        showDialog(
+                                          context: context,
+                                          builder: (context) => AlertDialog(
+                                            title: Text(
+                                              'Are you sure you want to delete this record?',
+                                            ),
+                                            actions: [
+                                              TextButton(
+                                                child: const Text('No'),
+                                                onPressed: () {
+                                                  Navigator.of(
+                                                    context,
+                                                  ).pop();
+                                                },
+                                              ),
+                                              TextButton(
+                                                child: const Text('Yes'),
+                                                onPressed: () async {
+                                                  await File(
+                                                    current.path,
+                                                  ).delete();
+                                                  Navigator.of(
+                                                    context,
+                                                  ).pop();
+                                                  setState(() {});
+                                                },
+                                              ),
+                                            ],
+                                          ),
+                                        );
+                                      },
+                                      icon: const Icon(Icons.delete),
+                                    ),
                                   ),
                                 ],
                               ),
                             ),
-                          ),
-                        );
-                      },
-                    )
-                    : FutureBuilder(
-                      future: getAudioList(),
-                      builder: (context, snapshot) {
-                        if (snapshot.connectionState ==
-                            ConnectionState.waiting) {
-                          return const Center(
-                            child: CircularProgressIndicator(),
                           );
-                        }
-                        if (snapshot.data == null) {
-                          return const Center(child: Text('No Record Found'));
-                        }
-                        if (snapshot.hasError) {
-                          return const Center(
-                            child: Text('Something went wrong'),
-                          );
-                        }
-                        if (snapshot.data!.isEmpty) {
-                          return const Center(child: Text('No Record Found'));
-                        }
-                        dev.log(snapshot.data!.length.toString());
-                        return ListView.builder(
-                          padding: const EdgeInsets.all(10),
-                          itemCount: snapshot.data!.length,
-                          itemBuilder: (context, index) {
-                            final current = snapshot.data![index];
-                            return Container(
-                              margin: const EdgeInsets.all(5),
-                              padding: const EdgeInsets.all(5),
-                              decoration: const BoxDecoration(),
-                              child: SingleChildScrollView(
-                                scrollDirection: Axis.horizontal,
-                                child: Row(
-                                  children: [
-                                    Text(
-                                      current.path.split('/').last,
-                                      style: const TextStyle(fontSize: 12),
-                                    ),
-                                    const Gap(20),
-                                    SizedBox(
-                                      height: 40,
-                                      width: 40,
-                                      child: IconButton(
-                                        onPressed: () async {
-                                          if (playingRecordIndex == index) {
-                                            if (audioController
-                                                .isPlaying
-                                                .value) {
-                                              audioController.audioPlayer
-                                                  .pause();
-                                              setState(() {
-                                                isPlaying = false;
-                                              });
-                                            } else {
-                                              audioController.audioPlayer
-                                                  .play();
-                                              setState(() {
-                                                isPlaying = true;
-                                              });
-                                            }
-                                            return;
-                                          }
-                                          setState(() {
-                                            playingRecordIndex = index;
-                                          });
-                                          audioController.audioPlayer
-                                              .setAudioSource(
-                                                AudioSource.file(
-                                                  '${current.path}',
-                                                  tag: MediaItem(
-                                                    id: index.toString(),
-                                                    title:
-                                                        current.path
-                                                            .split('/')
-                                                            .last,
-                                                  ),
-                                                ),
-                                              );
-                                          await audioController.audioPlayer
-                                              .play();
-                                          setState(() {
-                                            isPlaying = true;
-                                          });
-                                        },
-                                        icon: Icon(
-                                          (playingRecordIndex == index &&
-                                                  isPlaying)
-                                              ? Icons.pause
-                                              : Icons.play_arrow,
-                                        ),
-                                      ),
-                                    ),
-                                    const Gap(5),
-                                    SizedBox(
-                                      height: 40,
-                                      width: 40,
-                                      child: IconButton(
-                                        onPressed: () {
-                                          Share.shareXFiles([
-                                            XFile(current.path),
-                                          ]);
-                                        },
-                                        icon: const Icon(Icons.share),
-                                      ),
-                                    ),
-                                    const Gap(5),
-                                    SizedBox(
-                                      height: 40,
-                                      width: 40,
-                                      child: IconButton(
-                                        onPressed: () {
-                                          showDialog(
-                                            context: context,
-                                            builder:
-                                                (context) => AlertDialog(
-                                                  title: Text(
-                                                    'Are you sure you want to delete this record?',
-                                                  ),
-                                                  actions: [
-                                                    TextButton(
-                                                      child: const Text('No'),
-                                                      onPressed: () {
-                                                        Navigator.of(
-                                                          context,
-                                                        ).pop();
-                                                      },
-                                                    ),
-                                                    TextButton(
-                                                      child: const Text('Yes'),
-                                                      onPressed: () async {
-                                                        await File(
-                                                          current.path,
-                                                        ).delete();
-                                                        Navigator.of(
-                                                          context,
-                                                        ).pop();
-                                                        setState(() {});
-                                                      },
-                                                    ),
-                                                  ],
-                                                ),
-                                          );
-                                        },
-                                        icon: const Icon(Icons.delete),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            );
-                          },
-                        );
-                      },
-                    ),
+                        },
+                      );
+                    },
+                  ),
           ),
         ],
       ),

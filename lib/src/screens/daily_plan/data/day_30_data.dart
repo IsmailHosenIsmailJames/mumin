@@ -3,12 +3,12 @@ Map<int, Map<String, List<Map<String, String?>>>> all30DayData = {
     'quran': [
       {
         'surahNumber': '1',
-        'start': '0',
+        'start': '1',
         'end': null,
       },
       {
         'surahNumber': '2',
-        'start': '0',
+        'start': '1',
         'end': '141',
       }
     ],
@@ -73,7 +73,7 @@ Map<int, Map<String, List<Map<String, String?>>>> all30DayData = {
       },
       {
         'surahNumber': '3',
-        'start': '0',
+        'start': '1',
         'end': '92',
       }
     ],
@@ -109,7 +109,7 @@ Map<int, Map<String, List<Map<String, String?>>>> all30DayData = {
       },
       {
         'surahNumber': '4',
-        'start': '0',
+        'start': '1',
         'end': '23',
       }
     ],
@@ -176,7 +176,7 @@ Map<int, Map<String, List<Map<String, String?>>>> all30DayData = {
       },
       {
         'surahNumber': '5',
-        'start': '0',
+        'start': '1',
         'end': '81',
       }
     ],
@@ -211,7 +211,7 @@ Map<int, Map<String, List<Map<String, String?>>>> all30DayData = {
       },
       {
         'surahNumber': '6',
-        'start': '0',
+        'start': '1',
         'end': '110',
       }
     ],
@@ -250,7 +250,7 @@ servants.''',
       },
       {
         'surahNumber': '7',
-        'start': '0',
+        'start': '1',
         'end': '87',
       }
     ],
@@ -286,7 +286,7 @@ servants.''',
       },
       {
         'surahNumber': '8',
-        'start': '0',
+        'start': '1',
         'end': '40',
       }
     ],
@@ -322,7 +322,7 @@ servants.''',
       },
       {
         'surahNumber': '9',
-        'start': '0',
+        'start': '1',
         'end': '92',
       }
     ],
@@ -359,7 +359,7 @@ grant me from Yourself a supporting authority.''',
       },
       {
         'surahNumber': '11',
-        'start': '0',
+        'start': '1',
         'end': '5',
       }
     ],
@@ -395,7 +395,7 @@ grant me from Yourself a supporting authority.''',
       },
       {
         'surahNumber': '12',
-        'start': '0',
+        'start': '1',
         'end': '52',
       }
     ],
@@ -429,7 +429,7 @@ grant me from Yourself a supporting authority.''',
       },
       {
         'surahNumber': '14',
-        'start': '0',
+        'start': '1',
         'end': null,
       }
     ],
@@ -459,12 +459,12 @@ grant me from Yourself a supporting authority.''',
     'quran': [
       {
         'surahNumber': '15',
-        'start': '0',
+        'start': '1',
         'end': null,
       },
       {
         'surahNumber': '16',
-        'start': '0',
+        'start': '1',
         'end': '128',
       }
     ],
@@ -495,12 +495,12 @@ is] good and protect us from the punishment of the Fire.''',
     'quran': [
       {
         'surahNumber': '17',
-        'start': '0',
+        'start': '1',
         'end': null,
       },
       {
         'surahNumber': '18',
-        'start': '0',
+        'start': '1',
         'end': '74',
       }
     ],
@@ -535,7 +535,7 @@ is] good and protect us from the punishment of the Fire.''',
       },
       {
         'surahNumber': '20',
-        'start': '0',
+        'start': '1',
         'end': null,
       }
     ],
@@ -567,12 +567,12 @@ is] good and protect us from the punishment of the Fire.''',
     'quran': [
       {
         'surahNumber': '17',
-        'start': '0',
+        'start': '1',
         'end': null,
       },
       {
         'surahNumber': '22',
-        'start': '0',
+        'start': '1',
         'end': null,
       }
     ],
@@ -603,12 +603,12 @@ is] good and protect us from the punishment of the Fire.''',
     'quran': [
       {
         'surahNumber': '23',
-        'start': '0',
+        'start': '1',
         'end': null,
       },
       {
         'surahNumber': '25',
-        'start': '0',
+        'start': '1',
         'end': '20',
       }
     ],
@@ -642,7 +642,7 @@ is] good and protect us from the punishment of the Fire.''',
       },
       {
         'surahNumber': '27',
-        'start': '0',
+        'start': '1',
         'end': '55',
       }
     ],
@@ -679,7 +679,7 @@ mercy on us, we shall most surely be among the losers.''',
       },
       {
         'surahNumber': '29',
-        'start': '0',
+        'start': '1',
         'end': '45',
       }
     ],
@@ -714,7 +714,7 @@ mercy on us, we shall most surely be among the losers.''',
       },
       {
         'surahNumber': '33',
-        'start': '0',
+        'start': '1',
         'end': '30',
       }
     ],
@@ -750,7 +750,7 @@ mercy on us, we shall most surely be among the losers.''',
       },
       {
         'surahNumber': '36',
-        'start': '0',
+        'start': '1',
         'end': '27',
       }
     ],
@@ -789,7 +789,7 @@ envies.''',
       },
       {
         'surahNumber': '39',
-        'start': '0',
+        'start': '1',
         'end': '31',
       }
     ],
@@ -824,7 +824,7 @@ envies.''',
       },
       {
         'surahNumber': '41',
-        'start': '0',
+        'start': '1',
         'end': '46',
       }
     ],
@@ -860,7 +860,7 @@ envies.''',
       },
       {
         'surahNumber': '45',
-        'start': '0',
+        'start': '1',
         'end': null,
       }
     ],
@@ -891,12 +891,12 @@ envies.''',
     'quran': [
       {
         'surahNumber': '46',
-        'start': '0',
+        'start': '1',
         'end': null,
       },
       {
         'surahNumber': '51',
-        'start': '0',
+        'start': '1',
         'end': '30',
       }
     ],
@@ -932,7 +932,7 @@ envies.''',
       },
       {
         'surahNumber': '57',
-        'start': '0',
+        'start': '1',
         'end': '29',
       }
     ],
@@ -963,12 +963,12 @@ envies.''',
     'quran': [
       {
         'surahNumber': '58',
-        'start': '0',
+        'start': '1',
         'end': null,
       },
       {
         'surahNumber': '66',
-        'start': '0',
+        'start': '1',
         'end': '12',
       }
     ],
@@ -999,12 +999,12 @@ envies.''',
     'quran': [
       {
         'surahNumber': '67',
-        'start': '0',
+        'start': '1',
         'end': null,
       },
       {
         'surahNumber': '77',
-        'start': '0',
+        'start': '1',
         'end': null,
       }
     ],
@@ -1035,12 +1035,12 @@ envies.''',
     'quran': [
       {
         'surahNumber': '78',
-        'start': '0',
+        'start': '1',
         'end': null,
       },
       {
         'surahNumber': '144',
-        'start': '0',
+        'start': '1',
         'end': null,
       }
     ],

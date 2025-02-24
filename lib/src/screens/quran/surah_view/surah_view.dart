@@ -23,12 +23,18 @@ class SurahView extends StatefulWidget {
   final int surahIndex;
   final String surahName;
   final QuranSurahInfoModel quranInfoModel;
+  final int? start;
+  final int? end;
+  final int startAt;
   const SurahView({
     super.key,
     required this.surahIndex,
     required this.surahName,
     required this.quranInfoModel,
     this.practiceMode,
+    this.start,
+    this.end,
+    required this.startAt,
   });
 
   @override
@@ -70,6 +76,17 @@ class _SurahViewState extends State<SurahView> {
     final List<String> mapIndopak = List<String>.from(jsonDecode(jsonindopak));
 
     for (int i = stat; i < end; i++) {
+      if (widget.start != null) {
+        if (((widget.start! + widget.startAt) - 1) > i) {
+          continue;
+        }
+      }
+      if (widget.end != null) {
+        if (((widget.end! + widget.startAt) - 1) < i) {
+          continue;
+        }
+      }
+      log(i.toString());
       scrollKeys.add(GlobalKey());
       ayahsWithMeaning.add({
         'quran': mapIndopak.elementAt(i),
@@ -102,17 +119,23 @@ class _SurahViewState extends State<SurahView> {
   final record = AudioRecorder();
   bool isRecording = false;
   RecordState recordingState = RecordState.stop;
+  ScrollController scrollController = ScrollController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text(widget.surahName)),
-      body:
-          ayahsWithMeaning.isEmpty
-              ? const Center(child: CircularProgressIndicator())
-              : Stack(
-                children: [
-                  ListView.builder(
+      body: ayahsWithMeaning.isEmpty
+          ? const Center(child: CircularProgressIndicator())
+          : Stack(
+              children: [
+                Scrollbar(
+                  controller: scrollController,
+                  interactive: true,
+                  radius: Radius.circular(10),
+                  thickness: 7,
+                  child: ListView.builder(
+                    controller: scrollController,
                     padding: const EdgeInsets.only(
                       top: 5,
                       bottom: 100,
@@ -122,8 +145,7 @@ class _SurahViewState extends State<SurahView> {
                     itemCount: ayahsWithMeaning.length,
                     itemBuilder: (context, index) {
                       return Obx(() {
-                        bool isPlayingCurrent =
-                            (widget.surahIndex ==
+                        bool isPlayingCurrent = (widget.surahIndex ==
                                 audioController.surahNumber.value) &&
                             (index == audioController.indexOfAyah.value);
 
@@ -169,10 +191,9 @@ class _SurahViewState extends State<SurahView> {
                                 borderRadius: MyAppShapes.borderRadius,
                                 color: Colors.grey.withValues(alpha: 0.1),
                                 border: Border.all(
-                                  color:
-                                      isPlayingCurrent
-                                          ? MyAppColors.primaryColor
-                                          : Colors.grey.withValues(alpha: 0.5),
+                                  color: isPlayingCurrent
+                                      ? MyAppColors.primaryColor
+                                      : Colors.grey.withValues(alpha: 0.5),
                                   width: isPlayingCurrent ? 2.0 : 1,
                                 ),
                               ),
@@ -183,7 +204,7 @@ class _SurahViewState extends State<SurahView> {
                                   Row(
                                     children: [
                                       Text(
-                                        'Ayah: ${index + 1}',
+                                        'Ayah: ${(widget.start ?? 1) + index}',
                                         style: const TextStyle(
                                           fontWeight: FontWeight.bold,
                                         ),
@@ -192,12 +213,10 @@ class _SurahViewState extends State<SurahView> {
                                       Icon(
                                         (audioController.isPlaying.value &&
                                                 audioController
-                                                        .surahNumber
-                                                        .value ==
+                                                        .surahNumber.value ==
                                                     widget.surahIndex &&
                                                 audioController
-                                                        .indexOfAyah
-                                                        .value ==
+                                                        .indexOfAyah.value ==
                                                     index)
                                             ? Icons.pause_rounded
                                             : Icons.play_arrow_rounded,
@@ -237,152 +256,144 @@ class _SurahViewState extends State<SurahView> {
                       });
                     },
                   ),
-                  if (widget.practiceMode == true)
-                    SafeArea(
-                      child: Align(
-                        alignment: Alignment.bottomCenter,
-                        child: TextButton(
-                          style: TextButton.styleFrom(padding: EdgeInsets.zero),
-                          onPressed: () async {
-                            log((await record.isRecording()).toString());
-                            if (await record.isRecording()) {
+                ),
+                if (widget.practiceMode == true)
+                  SafeArea(
+                    child: Align(
+                      alignment: Alignment.bottomCenter,
+                      child: TextButton(
+                        style: TextButton.styleFrom(padding: EdgeInsets.zero),
+                        onPressed: () async {
+                          log((await record.isRecording()).toString());
+                          if (await record.isRecording()) {
+                            setState(() {
+                              isRecording = true;
+                            });
+                            return;
+                          } else {
+                            // Get the app documents directory
+                            final Directory appDocumentsDir = Directory(
+                              join(
+                                (await getApplicationDocumentsDirectory()).path,
+                                'records',
+                              ),
+                            );
+
+                            if (!(await appDocumentsDir.exists())) {
+                              appDocumentsDir.create();
+                            }
+
+                            // Check and request permission if needed
+                            if (await record.hasPermission()) {
+                              // Start recording to file
+                              await record.start(
+                                const RecordConfig(encoder: AudioEncoder.wav),
+                                path: path.join(
+                                  appDocumentsDir.path,
+                                  '${widget.surahName}-${DateTime.now().toIso8601String().split('.')[0]}.wav',
+                                ),
+                              );
                               setState(() {
                                 isRecording = true;
                               });
-                              return;
-                            } else {
-                              // Get the app documents directory
-                              final Directory appDocumentsDir = Directory(
-                                join(
-                                  (await getApplicationDocumentsDirectory())
-                                      .path,
-                                  'records',
-                                ),
-                              );
-
-                              if (!(await appDocumentsDir.exists())) {
-                                appDocumentsDir.create();
-                              }
-
-                              // Check and request permission if needed
-                              if (await record.hasPermission()) {
-                                // Start recording to file
-                                await record.start(
-                                  const RecordConfig(encoder: AudioEncoder.wav),
-                                  path: path.join(
-                                    appDocumentsDir.path,
-                                    '${widget.surahName}-${DateTime.now().toIso8601String().split('.')[0]}.wav',
-                                  ),
-                                );
-                                setState(() {
-                                  isRecording = true;
-                                });
-                              }
                             }
-                          },
-                          child:
-                              isRecording
-                                  ? Container(
-                                    decoration: BoxDecoration(
-                                      color: MyAppColors.primaryColor,
-                                      borderRadius: const BorderRadius.only(
-                                        topLeft: Radius.circular(20),
-                                        topRight: Radius.circular(20),
-                                      ),
-                                    ),
-                                    height: 80,
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        Image.asset(
-                                          'assets/images/recording.gif',
-                                        ),
-                                        const Gap(10),
-                                        IconButton(
-                                          onPressed: () {
-                                            if (recordingState ==
-                                                RecordState.pause) {
-                                              record.resume();
-                                            } else {
-                                              record.pause();
-                                            }
-                                          },
-                                          icon:
-                                              recordingState ==
-                                                      RecordState.pause
-                                                  ? const Icon(Icons.play_arrow)
-                                                  : const Icon(Icons.stop),
-                                        ),
-                                        const Gap(10),
-                                        TextButton(
-                                          onPressed: () {
-                                            record.cancel();
-                                            setState(() {
-                                              isRecording = false;
-                                            });
-                                          },
-                                          child: const Text('Cancel'),
-                                        ),
-                                        const Gap(10),
-                                        TextButton(
-                                          onPressed: () async {
-                                            final dir = await record.stop();
-
-                                            toastification.show(
-                                              context: context,
-                                              title: Text('Saved to $dir'),
-                                              autoCloseDuration: const Duration(
-                                                seconds: 3,
-                                              ),
-                                              alignment: Alignment.topRight,
-                                              type: ToastificationType.success,
-                                            );
-
-                                            setState(() {
-                                              isRecording = false;
-                                            });
-                                          },
-                                          child: const Text('Save'),
-                                        ),
-                                      ],
-                                    ),
-                                  )
-                                  : Container(
-                                    decoration: BoxDecoration(
-                                      color: MyAppColors.primaryColor,
-                                      borderRadius: const BorderRadius.only(
-                                        topLeft: Radius.circular(20),
-                                        topRight: Radius.circular(20),
-                                      ),
-                                    ),
-                                    height: 80,
-                                    child: Center(
-                                      child: Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.center,
-                                        children: [
-                                          Icon(
-                                            Icons.mic,
-                                            size: 40,
-                                            color:
-                                                MyAppColors
-                                                    .backgroundLightColor,
-                                          ),
-                                          const Text('Record your recitation'),
-                                        ],
-                                      ),
-                                    ),
+                          }
+                        },
+                        child: isRecording
+                            ? Container(
+                                decoration: BoxDecoration(
+                                  color: MyAppColors.primaryColor,
+                                  borderRadius: const BorderRadius.only(
+                                    topLeft: Radius.circular(20),
+                                    topRight: Radius.circular(20),
                                   ),
-                        ),
+                                ),
+                                height: 80,
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Image.asset(
+                                      'assets/images/recording.gif',
+                                    ),
+                                    const Gap(10),
+                                    IconButton(
+                                      onPressed: () {
+                                        if (recordingState ==
+                                            RecordState.pause) {
+                                          record.resume();
+                                        } else {
+                                          record.pause();
+                                        }
+                                      },
+                                      icon: recordingState == RecordState.pause
+                                          ? const Icon(Icons.play_arrow)
+                                          : const Icon(Icons.stop),
+                                    ),
+                                    const Gap(10),
+                                    TextButton(
+                                      onPressed: () {
+                                        record.cancel();
+                                        setState(() {
+                                          isRecording = false;
+                                        });
+                                      },
+                                      child: const Text('Cancel'),
+                                    ),
+                                    const Gap(10),
+                                    TextButton(
+                                      onPressed: () async {
+                                        final dir = await record.stop();
+
+                                        toastification.show(
+                                          context: context,
+                                          title: Text('Saved to $dir'),
+                                          autoCloseDuration: const Duration(
+                                            seconds: 3,
+                                          ),
+                                          alignment: Alignment.topRight,
+                                          type: ToastificationType.success,
+                                        );
+
+                                        setState(() {
+                                          isRecording = false;
+                                        });
+                                      },
+                                      child: const Text('Save'),
+                                    ),
+                                  ],
+                                ),
+                              )
+                            : Container(
+                                decoration: BoxDecoration(
+                                  color: MyAppColors.primaryColor,
+                                  borderRadius: const BorderRadius.only(
+                                    topLeft: Radius.circular(20),
+                                    topRight: Radius.circular(20),
+                                  ),
+                                ),
+                                height: 80,
+                                child: Center(
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      Icon(
+                                        Icons.mic,
+                                        size: 40,
+                                        color: MyAppColors.backgroundLightColor,
+                                      ),
+                                      const Text('Record your recitation'),
+                                    ],
+                                  ),
+                                ),
+                              ),
                       ),
                     ),
-                ],
-              ),
+                  ),
+              ],
+            ),
     );
   }
 }

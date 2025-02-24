@@ -424,37 +424,32 @@ class _HomePageState extends State<HomePage> {
               child: Image.asset('assets/images/banner.gif'),
             ),
           ),
-          Container(
-            padding: const EdgeInsets.all(8),
-            margin: const EdgeInsets.only(top: 10, bottom: 10),
-            decoration: BoxDecoration(
-              color: Colors.grey.withValues(alpha: 0.2),
-              borderRadius: MyAppShapes.borderRadius,
-            ),
-            child: Row(
-              children: [
-                const Icon(Icons.calendar_month),
-                const Gap(10),
-                const Text(
-                  'Ramadan Plan',
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                const Spacer(),
-                IconButton(
-                    style: TextButton.styleFrom(
-                      padding: EdgeInsets.zero,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: MyAppShapes.borderRadius,
-                      ),
+          GestureDetector(
+            onTap: () async {
+              await routeTo30DayPlan(context);
+            },
+            child: Container(
+              padding: const EdgeInsets.all(15),
+              margin: const EdgeInsets.only(top: 10, bottom: 10),
+              decoration: BoxDecoration(
+                color: Colors.grey.withValues(alpha: 0.2),
+                borderRadius: MyAppShapes.borderRadius,
+              ),
+              child: const Row(
+                children: [
+                  Icon(Icons.calendar_month),
+                  Gap(10),
+                  Text(
+                    'Ramadan Plan',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
                     ),
-                    onPressed: () async {
-                      await routeTo30DayPlan(context);
-                    },
-                    icon: Icon(Icons.arrow_forward)),
-              ],
+                  ),
+                  Spacer(),
+                  Icon(Icons.arrow_forward)
+                ],
+              ),
             ),
           ),
           Wrap(
