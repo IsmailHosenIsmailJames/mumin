@@ -1,7 +1,7 @@
 
 import csv
 import json
-filename = "ramadan_calendar2024 (1).csv"
+filename = "updated_ramadan_calendar_with_District.csv"
 fields = []
 rows = []
 with open(filename, 'r') as csvfile:
@@ -16,7 +16,7 @@ print('Field names are:' + ', '.join(field for field in fields))
 dicts = dict()
 
 for row in rows:
-    data = {'date': row[1], 'sehar_start': row[4], 'sehar_end': row[4], 'ifter': row[5]}
+    data = {'date': row[1], 'sehar_end': row[3], 'ifter': row[4]}
     district = row[2]
     if(dicts.get(district) == None):
         dicts[district] = [data]
@@ -25,6 +25,6 @@ for row in rows:
 
 print('Districts are : ', len(dicts.keys()))
 
-with open('ramadan_calendar2024.json', 'w') as f:
+with open('ramadan_calendar2025.json', 'w') as f:
     json.dump(dicts, f, indent= 1)
 

@@ -8,9 +8,7 @@ import 'package:flutter_foreground_task/flutter_foreground_task.dart';
 import 'package:gap/gap.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
-import 'package:get/instance_manager.dart';
-import 'package:get/route_manager.dart';
+import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
 import 'package:intl/intl.dart';
@@ -24,6 +22,7 @@ import 'package:mumin/src/screens/home/controller/model/user_location_data.dart'
 import 'package:mumin/src/screens/home/controller/user_location.dart';
 import 'package:mumin/src/screens/home/controller/user_location_calender.dart';
 import 'package:mumin/src/screens/quran/surah_list_screen.dart';
+import 'package:mumin/src/screens/ramadan_calender/model/controller.dart';
 import 'package:mumin/src/theme/colors.dart';
 import 'package:mumin/src/theme/shadows.dart';
 import 'package:mumin/src/theme/shapes.dart';
@@ -146,16 +145,16 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Future<void> getUserLocation() async {
-    // load Ramadan calender
+  final RamadanTodayTimeController ramadanTodayTimeController =
+      Get.put(RamadanTodayTimeController());
+
+  Future<void> loadCalender(UserLocationData? userLocationData) async {
     String json = await rootBundle
-        .loadString('assets/calender_data/ramadan_calendar2024.json');
+        .loadString('assets/calender_data/ramadan_calendar2025.json');
     Map ramadanCalendar = jsonDecode(json);
-    if (userLocationController.locationData.value != null) {
-      String district = userLocationController.locationData.value!.district
-          .split(' ')
-          .first
-          .toLowerCase();
+    if (userLocationData != null) {
+      String district =
+          userLocationData.district.split(' ').first.toLowerCase();
       List<RamadanDayModel> ramadanDaysList = [];
       for (String key in ramadanCalendar.keys) {
         if (key.toString().toLowerCase() == district) {
@@ -166,9 +165,20 @@ class _HomePageState extends State<HomePage> {
           }
         }
       }
+      int ramadanDay = getRamadanNumber();
+      RamadanDayModel todaysTime = ramadanDaysList[ramadanDay - 1];
+      ramadanTodayTimeController.sehri.value = TimeOfDay.fromDateTime(
+          DateFormat("h:mm a").parse(todaysTime.seharEnd));
+      ramadanTodayTimeController.ifter.value =
+          TimeOfDay.fromDateTime(DateFormat("h:mm a").parse(todaysTime.ifter));
+      log(todaysTime.toJson());
       userLocationCalender.userLocationCalender.value = ramadanDaysList;
     }
+  }
 
+  Future<void> getUserLocation() async {
+    // load Ramadan calender
+    await loadCalender(userLocationController.locationData.value);
     try {
       LocationPermission locationPermission =
           await LocationService().requestAndGetLocationPermission();
@@ -198,6 +208,7 @@ class _HomePageState extends State<HomePage> {
         await Hive.box('user_db')
             .put('user_location', userLocationData.toJson());
         userLocationController.locationData.value = userLocationData;
+        await loadCalender(userLocationController.locationData.value);
         setState(() {});
       } else {
         log('Location is null');
@@ -341,64 +352,72 @@ class _HomePageState extends State<HomePage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      DateFormat.yMMMMEEEEd().format(DateTime.now()),
+                      'Ramadan - ${getRamadanNumber()}',
+                      style: const TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Text(
+                      DateFormat.yMMMMEEEEd().format(
+                          getDateByRamadanNumber(getRamadanNumber() - 1)),
                       style: const TextStyle(color: Colors.white),
                     ),
                     const Gap(10),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const Text(
-                              'Sahari',
-                              style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
+                    Obx(
+                      () => Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text(
+                                'Sehri',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                ),
                               ),
-                            ),
-                            Text(
-                              const TimeOfDay(
-                                hour: 3,
-                                minute: 30,
-                              ).format(context),
-                              style: TextStyle(
-                                fontSize: 16,
-                                color: MyAppColors.primaryColor,
+                              Text(
+                                ramadanTodayTimeController.sehri.value
+                                        ?.format(context) ??
+                                    '',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  color: MyAppColors.primaryColor,
+                                ),
                               ),
-                            ),
-                          ],
-                        ),
-                        const Gap(25),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const Text(
-                              'Iftar',
-                              style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
+                            ],
+                          ),
+                          const Gap(25),
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text(
+                                'Iftar',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                ),
                               ),
-                            ),
-                            Text(
-                              const TimeOfDay(
-                                hour: 18,
-                                minute: 12,
-                              ).format(context),
-                              style: TextStyle(
-                                fontSize: 16,
-                                color: MyAppColors.primaryColor,
+                              Text(
+                                ramadanTodayTimeController.ifter.value
+                                        ?.format(context) ??
+                                    '',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  color: MyAppColors.primaryColor,
+                                ),
                               ),
-                            ),
-                          ],
-                        ),
-                      ],
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),

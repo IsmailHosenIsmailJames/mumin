@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
+import 'package:mumin/src/screens/daily_plan/get_ramadan_number.dart';
 import 'package:mumin/src/screens/home/controller/model/user_calander_day_model.dart';
 import 'package:mumin/src/screens/home/controller/user_location_calender.dart';
+import 'package:mumin/src/screens/ramadan_calender/model/controller.dart';
 import 'package:mumin/src/theme/shapes.dart';
 
 class RamadanCalenderPage extends StatefulWidget {
@@ -15,6 +17,8 @@ class RamadanCalenderPage extends StatefulWidget {
 
 class _RamadanCalenderPageState extends State<RamadanCalenderPage> {
   final UserLocationCalender userLocationCalender = Get.find();
+  final RamadanTodayTimeController ramadanTodayTimeController =
+      Get.put(RamadanTodayTimeController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,26 +39,19 @@ class _RamadanCalenderPageState extends State<RamadanCalenderPage> {
               ),
               Expanded(
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Gap(13),
-                        const Text(
-                          'Today',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        const Gap(18),
-                        Text(
-                          DateFormat.yMMMEd().format(
-                            DateTime.now(),
-                          ),
-                        ),
-                      ],
+                    Text(
+                      '  Ramadan - ${getRamadanNumber()}',
+                      style: const TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Text(
+                      '   ${DateFormat.yMMMMEEEEd().format(getDateByRamadanNumber(getRamadanNumber() - 1))}',
+                      style: const TextStyle(color: Colors.white),
                     ),
                     Container(
                       decoration: BoxDecoration(
@@ -78,7 +75,9 @@ class _RamadanCalenderPageState extends State<RamadanCalenderPage> {
                             ),
                           ),
                           const Gap(20),
-                          Text(TimeOfDay.now().format(context))
+                          Text(ramadanTodayTimeController.sehri.value
+                                  ?.format(context) ??
+                              '')
                         ],
                       ),
                     ),
@@ -104,7 +103,9 @@ class _RamadanCalenderPageState extends State<RamadanCalenderPage> {
                             ),
                           ),
                           const Gap(25),
-                          Text(TimeOfDay.now().format(context))
+                          Text(ramadanTodayTimeController.ifter.value
+                                  ?.format(context) ??
+                              '')
                         ],
                       ),
                     ),
@@ -185,7 +186,7 @@ class _RamadanCalenderPageState extends State<RamadanCalenderPage> {
   }
 
   TimeOfDay parseTimeString(String timeString) {
-    DateFormat format = DateFormat("HH:mm:ss.SSS"); // Define the format
+    DateFormat format = DateFormat('h:mm a'); // Define the format
     DateTime dateTime =
         format.parse(timeString); // Parse the string into DateTime
 
