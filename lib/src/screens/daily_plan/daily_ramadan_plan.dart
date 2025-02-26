@@ -67,33 +67,35 @@ class _DailyRamadanPlanState extends State<DailyRamadanPlan> {
               tabs: myTabs,
             ),
             actions: [
-              if (getRamadanNumber() > 1)
-                SizedBox(
-                  width: 140,
-                  child: Padding(
-                    padding: const EdgeInsets.only(bottom: 5, top: 5, right: 5),
-                    child: DropdownButtonFormField(
-                      decoration: const InputDecoration(
-                        border: OutlineInputBorder(),
-                        contentPadding: EdgeInsets.only(left: 5, right: 2),
-                      ),
-                      value: day,
-                      items: List.generate(
-                        getRamadanNumber(),
-                        (index) {
-                          return DropdownMenuItem(
-                            value: index + 1,
-                            child: Text('Ramadan ${index + 1}'),
-                          );
-                        },
-                      ),
-                      onChanged: (value) {
-                        day = value ?? 1;
-                        load(day);
+              // if (getRamadanNumber() > 1)
+
+              SizedBox(
+                width: 140,
+                child: Padding(
+                  padding: const EdgeInsets.only(bottom: 5, top: 5, right: 5),
+                  child: DropdownButtonFormField(
+                    decoration: const InputDecoration(
+                      border: OutlineInputBorder(),
+                      contentPadding: EdgeInsets.only(left: 5, right: 2),
+                    ),
+                    value: day,
+                    items: List.generate(
+                      // getRamadanNumber(),
+                      30,
+                      (index) {
+                        return DropdownMenuItem(
+                          value: index + 1,
+                          child: Text('Ramadan ${index + 1}'),
+                        );
                       },
                     ),
+                    onChanged: (value) {
+                      day = value ?? 1;
+                      load(day);
+                    },
                   ),
                 ),
+              ),
             ],
           ),
           body: TabBarView(

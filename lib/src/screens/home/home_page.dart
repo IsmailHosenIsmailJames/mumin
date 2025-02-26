@@ -17,6 +17,7 @@ import 'package:mumin/src/apis/apis.dart';
 import 'package:mumin/src/core/background/background_setup.dart';
 import 'package:mumin/src/core/location/location_service.dart';
 import 'package:mumin/src/core/notifications/requiest_permission.dart';
+import 'package:mumin/src/screens/auth/controller/auth_controller.dart';
 import 'package:mumin/src/screens/daily_plan/daily_ramadan_plan.dart';
 import 'package:mumin/src/screens/daily_plan/get_ramadan_number.dart';
 import 'package:mumin/src/screens/home/controller/model/user_calander_day_model.dart';
@@ -82,6 +83,7 @@ class _HomePageState extends State<HomePage> {
   ];
 
   AppThemeController appThemeController = Get.find();
+  AuthController authController = Get.put(AuthController());
   UserLocationController userLocationController =
       Get.put(UserLocationController());
 
@@ -124,7 +126,14 @@ class _HomePageState extends State<HomePage> {
   }
 
   callApiAnalytics() async {
-    post(Uri.parse('$baseApi/api/activity?phone=01741095333'), headers: {});
+    log('$baseApi/api/activity?phone=${authController.user.value?.mobileNumber}',
+        name: 'API hit');
+    try {
+      get(Uri.parse(
+          '$baseApi/api/activity?phone=${authController.user.value?.mobileNumber}'));
+    } catch (e) {
+      log(e.toString());
+    }
   }
 
   Future<void> showDailyPlanDialog() async {
@@ -225,6 +234,119 @@ class _HomePageState extends State<HomePage> {
       log(e.toString());
     }
     setState(() {});
+  }
+
+  Widget? getCountDown(TimeOfDay? iftar, TimeOfDay? sehri) {
+    if (iftar == null || sehri == null) {
+      return null;
+    } else {
+      TimeOfDay now = TimeOfDay.now();
+      int nowMinute = (now.hour * 60) + now.minute;
+      int iftarMinute = (iftar.hour * 60) + iftar.minute;
+      int sehriMinute = (sehri.hour * 60) + sehri.minute;
+      if (nowMinute <= sehriMinute || nowMinute > iftarMinute) {
+        // sehri
+        log('Sheri');
+        int nowSec = (nowMinute * 60) + DateTime.now().second;
+
+        int sehriTotalMinutes = sehriMinute;
+        if (nowMinute > iftarMinute) {
+          sehriTotalMinutes = sehriMinute + (24 * 60);
+        }
+
+        int secLeft = (sehriTotalMinutes * 60) - nowSec;
+
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              'Sehri',
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                color: Color.fromARGB(255, 0, 255, 8),
+              ),
+            ),
+            const Text(
+              'Time left:',
+              style: TextStyle(color: Colors.white),
+            ),
+            StreamBuilder(
+              stream: Stream<int>.periodic(
+                const Duration(seconds: 1),
+                (computationCount) {
+                  return secLeft - computationCount;
+                },
+              ),
+              builder: (context, snapshot) {
+                int data = snapshot.data ?? 0;
+                if (data < 0) {
+                  data = 0; // Prevent negative values
+                }
+                return Text(
+                  formatSeconds(data),
+                  style: const TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white),
+                );
+              },
+            ),
+          ],
+        );
+      } else {
+        // iftar
+        log('iftar');
+        int nowSec = (nowMinute * 60) + DateTime.now().second;
+        int secLeft = (iftarMinute * 60) - nowSec;
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              'Iftar',
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                color: Color.fromARGB(255, 0, 255, 8),
+              ),
+            ),
+            const Text('Time left:', style: TextStyle(color: Colors.white)),
+            StreamBuilder(
+              stream: Stream<int>.periodic(
+                const Duration(seconds: 1),
+                (computationCount) {
+                  return secLeft - computationCount;
+                },
+              ),
+              builder: (context, snapshot) {
+                int data = snapshot.data ?? 0;
+                return Text(
+                  formatSeconds(data),
+                  style: const TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                );
+              },
+            ),
+          ],
+        );
+      }
+    }
+  }
+
+  String formatSeconds(int totalSeconds) {
+    int hours = totalSeconds ~/ 3600;
+    int remainingSecondsAfterHours = totalSeconds % 3600;
+    int minutes = remainingSecondsAfterHours ~/ 60;
+    int seconds = remainingSecondsAfterHours % 60;
+
+    String formattedTime =
+        "${hours.toString().padLeft(2, '0')}:${minutes.toString().padLeft(2, '0')}:${seconds.toString().padLeft(2, '0')}";
+    return formattedTime;
   }
 
   @override
@@ -431,9 +553,9 @@ class _HomePageState extends State<HomePage> {
                 ),
                 const Spacer(),
                 SizedBox(
-                  width: 80,
-                  height: 80,
-                  child: Image.asset('assets/images/mosque.png'),
+                  width: 100,
+                  child: getCountDown(ramadanTodayTimeController.ifter.value,
+                      ramadanTodayTimeController.sehri.value),
                 ),
               ],
             ),
