@@ -21,14 +21,14 @@ class RegistrationScreenState extends State<RegistrationScreen> {
   Future<void> _register() async {
     if (_formKey.currentState!.validate()) {
       final res = await authController.registration(
-          _name.text.trim(), _mobile.text.trim(), _pin.text.trim());
+          context, _name.text.trim(), _mobile.text.trim(), _pin.text.trim());
       if (res) {
         Get.offNamed('/home');
       } else {
         toastification.show(
           context: context,
           title: const Text('Unable to register'),
-          type: ToastificationType.success,
+          type: ToastificationType.error,
           autoCloseDuration: const Duration(seconds: 3),
         );
       }

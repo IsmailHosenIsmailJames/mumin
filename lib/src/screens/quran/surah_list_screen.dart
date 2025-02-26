@@ -4,7 +4,6 @@ import 'dart:developer' as dev;
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
-import 'package:get/utils.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:just_audio_background/just_audio_background.dart';
 import 'package:mumin/src/core/audio/manage_audio.dart';
@@ -231,7 +230,7 @@ class _SurahListScreenState extends State<SurahListScreen> {
                                         audioController.audioPlayer
                                             .setAudioSource(
                                           AudioSource.file(
-                                            '${current.path}',
+                                            current.path,
                                             tag: MediaItem(
                                               id: index.toString(),
                                               title:
@@ -275,7 +274,7 @@ class _SurahListScreenState extends State<SurahListScreen> {
                                         showDialog(
                                           context: context,
                                           builder: (context) => AlertDialog(
-                                            title: Text(
+                                            title: const Text(
                                               'Are you sure you want to delete this record?',
                                             ),
                                             actions: [

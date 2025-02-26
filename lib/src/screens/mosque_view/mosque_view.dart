@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:toastification/toastification.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class AppColors {
@@ -9,7 +10,7 @@ class AppColors {
 class MosqueScreen extends StatefulWidget {
   final Function()? navigation;
 
-  const MosqueScreen({Key? key, this.navigation}) : super(key: key);
+  const MosqueScreen({super.key, this.navigation});
 
   @override
   MosqueScreenState createState() => MosqueScreenState();
@@ -77,9 +78,11 @@ class MosqueScreenState extends State<MosqueScreen> {
         _isLoading = false;
       });
     } catch (e) {
-      print('Error getting location: $e');
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Error getting location: ${e.toString()}')),
+      toastification.show(
+        context: context,
+        title: Text('Error getting location: ${e.toString()}'),
+        autoCloseDuration: const Duration(seconds: 3),
+        type: ToastificationType.error,
       );
       setState(() {
         _isLoading = false;
@@ -97,21 +100,19 @@ class MosqueScreenState extends State<MosqueScreen> {
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
       ),
-      body:
-          _isLoading
-              ? const Center(child: CircularProgressIndicator())
-              : (locationUri != null)
+      body: _isLoading
+          ? const Center(child: CircularProgressIndicator())
+          : (locationUri != null)
               ? WebViewWidget(
-                controller:
-                    WebViewController()
-                      ..setJavaScriptMode(JavaScriptMode.unrestricted)
-                      ..loadRequest(Uri.parse(locationUri!)),
-              )
+                  controller: WebViewController()
+                    ..setJavaScriptMode(JavaScriptMode.unrestricted)
+                    ..loadRequest(Uri.parse(locationUri!)),
+                )
               : const Center(
-                child: Text(
-                  'Failed to get location. Please check permissions and location services.',
+                  child: Text(
+                    'Failed to get location. Please check permissions and location services.',
+                  ),
                 ),
-              ),
     );
   }
 }

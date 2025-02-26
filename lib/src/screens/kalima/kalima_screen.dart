@@ -4,7 +4,7 @@ import 'package:mumin/src/theme/colors.dart';
 class KalimaScreen extends StatelessWidget {
   final Function()? navigation;
 
-  const KalimaScreen({Key? key, this.navigation}) : super(key: key);
+  const KalimaScreen({super.key, this.navigation});
 
   @override
   Widget build(BuildContext context) {

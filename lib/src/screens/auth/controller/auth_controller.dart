@@ -1,11 +1,13 @@
 import 'dart:convert';
 import 'dart:developer';
 
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:http/http.dart';
 import 'package:mumin/src/apis/apis.dart';
 import 'package:mumin/src/screens/auth/controller/user_model.dart';
+import 'package:toastification/toastification.dart';
 
 class AuthController extends GetxController {
   Rx<UserModel?> user = Rx<UserModel?>(null);
@@ -46,6 +48,7 @@ class AuthController extends GetxController {
   }
 
   Future<bool> registration(
+    BuildContext context,
     String fullName,
     String phone,
     String pinNumber,
@@ -65,9 +68,20 @@ class AuthController extends GetxController {
       headers: {'Content-Type': 'application/json'},
     );
     log(response.body);
+    log(response.statusCode.toString());
     if (response.statusCode == 200) {
-      log('Response : ${response.statusCode}');
-      return await login(phone);
+      if (jsonDecode(response.body)['success'] == true) {
+        log('Response : ${response.statusCode}');
+        return await login(phone);
+      } else {
+        toastification.show(
+          context: context,
+          title: Text(jsonDecode(response.body)['message'] ?? ''),
+          type: ToastificationType.error,
+          autoCloseDuration: const Duration(seconds: 4),
+        );
+        return false;
+      }
     } else {
       return false;
     }

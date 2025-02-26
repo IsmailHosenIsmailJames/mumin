@@ -28,7 +28,7 @@ class _HadithPageState extends State<HadithPage> {
 
   getHadithData() async {
     try {
-      final response = await get(Uri.parse('${baseApi}/api/v1/hadith_list'));
+      final response = await get(Uri.parse('$baseApi/api/v1/hadith_list'));
       if (response.statusCode == 200) {
         setState(() {
           hadithList = List<Map>.from(jsonDecode(response.body)['result']);

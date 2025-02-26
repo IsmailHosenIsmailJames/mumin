@@ -132,7 +132,7 @@ class _SurahViewState extends State<SurahView> {
                 Scrollbar(
                   controller: scrollController,
                   interactive: true,
-                  radius: Radius.circular(10),
+                  radius: const Radius.circular(10),
                   thickness: 7,
                   child: ListView.builder(
                     controller: scrollController,

@@ -10,8 +10,10 @@ import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
+import 'package:http/http.dart';
 import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
 import 'package:intl/intl.dart';
+import 'package:mumin/src/apis/apis.dart';
 import 'package:mumin/src/core/background/background_setup.dart';
 import 'package:mumin/src/core/location/location_service.dart';
 import 'package:mumin/src/core/notifications/requiest_permission.dart';
@@ -98,6 +100,7 @@ class _HomePageState extends State<HomePage> {
     await inAppUpdateAndroid(context);
     await getUserLocation();
     await requestPermissionsAwesomeNotifications();
+
     FlutterForegroundTask.addTaskDataCallback(onReceiveTaskData);
 
     WidgetsBinding.instance.addPostFrameCallback((_) async {
@@ -117,6 +120,11 @@ class _HomePageState extends State<HomePage> {
             true);
       }
     });
+    callApiAnalytics();
+  }
+
+  callApiAnalytics() async {
+    post(Uri.parse('$baseApi/api/activity?phone=01741095333'), headers: {});
   }
 
   Future<void> showDailyPlanDialog() async {
@@ -168,9 +176,9 @@ class _HomePageState extends State<HomePage> {
       int ramadanDay = getRamadanNumber();
       RamadanDayModel todaysTime = ramadanDaysList[ramadanDay - 1];
       ramadanTodayTimeController.sehri.value = TimeOfDay.fromDateTime(
-          DateFormat("h:mm a").parse(todaysTime.seharEnd));
+          DateFormat('h:mm a').parse(todaysTime.seharEnd));
       ramadanTodayTimeController.ifter.value =
-          TimeOfDay.fromDateTime(DateFormat("h:mm a").parse(todaysTime.ifter));
+          TimeOfDay.fromDateTime(DateFormat('h:mm a').parse(todaysTime.ifter));
       log(todaysTime.toJson());
       userLocationCalender.userLocationCalender.value = ramadanDaysList;
     }
