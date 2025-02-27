@@ -24,6 +24,7 @@ import 'package:mumin/src/screens/home/controller/model/user_calander_day_model.
 import 'package:mumin/src/screens/home/controller/model/user_location_data.dart';
 import 'package:mumin/src/screens/home/controller/user_location.dart';
 import 'package:mumin/src/screens/home/controller/user_location_calender.dart';
+import 'package:mumin/src/screens/home/count_down.dart';
 import 'package:mumin/src/screens/quran/surah_list_screen.dart';
 import 'package:mumin/src/screens/ramadan_calender/model/controller.dart';
 import 'package:mumin/src/theme/colors.dart';
@@ -123,6 +124,7 @@ class _HomePageState extends State<HomePage> {
       }
     });
     callApiAnalytics();
+    setState(() {});
   }
 
   callApiAnalytics() async {
@@ -182,7 +184,9 @@ class _HomePageState extends State<HomePage> {
           }
         }
       }
-      int ramadanDay = getRamadanNumber();
+      int ramadanDay = getRamadanNumber(
+          ramadanTodayTimeController.ifter.value ??
+              const TimeOfDay(hour: 18, minute: 30));
       RamadanDayModel todaysTime = ramadanDaysList[ramadanDay - 1];
       ramadanTodayTimeController.sehri.value = TimeOfDay.fromDateTime(
           DateFormat('h:mm a').parse(todaysTime.seharEnd));
@@ -234,108 +238,6 @@ class _HomePageState extends State<HomePage> {
       log(e.toString());
     }
     setState(() {});
-  }
-
-  Widget? getCountDown(TimeOfDay? iftar, TimeOfDay? sehri) {
-    if (iftar == null || sehri == null) {
-      return null;
-    } else {
-      TimeOfDay now = TimeOfDay.now();
-      int nowMinute = (now.hour * 60) + now.minute;
-      int iftarMinute = (iftar.hour * 60) + iftar.minute;
-      int sehriMinute = (sehri.hour * 60) + sehri.minute;
-      if (nowMinute <= sehriMinute || nowMinute > iftarMinute) {
-        // sehri
-        log('Sheri');
-        int nowSec = (nowMinute * 60) + DateTime.now().second;
-
-        int sehriTotalMinutes = sehriMinute;
-        if (nowMinute > iftarMinute) {
-          sehriTotalMinutes = sehriMinute + (24 * 60);
-        }
-
-        int secLeft = (sehriTotalMinutes * 60) - nowSec;
-
-        return Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text(
-              'Sehri',
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-                color: Color.fromARGB(255, 0, 255, 8),
-              ),
-            ),
-            const Text(
-              'Time left:',
-              style: TextStyle(color: Colors.white),
-            ),
-            StreamBuilder(
-              stream: Stream<int>.periodic(
-                const Duration(seconds: 1),
-                (computationCount) {
-                  return secLeft - computationCount;
-                },
-              ),
-              builder: (context, snapshot) {
-                int data = snapshot.data ?? 0;
-                if (data < 0) {
-                  data = 0; // Prevent negative values
-                }
-                return Text(
-                  formatSeconds(data),
-                  style: const TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white),
-                );
-              },
-            ),
-          ],
-        );
-      } else {
-        // iftar
-        log('iftar');
-        int nowSec = (nowMinute * 60) + DateTime.now().second;
-        int secLeft = (iftarMinute * 60) - nowSec;
-        return Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text(
-              'Iftar',
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-                color: Color.fromARGB(255, 0, 255, 8),
-              ),
-            ),
-            const Text('Time left:', style: TextStyle(color: Colors.white)),
-            StreamBuilder(
-              stream: Stream<int>.periodic(
-                const Duration(seconds: 1),
-                (computationCount) {
-                  return secLeft - computationCount;
-                },
-              ),
-              builder: (context, snapshot) {
-                int data = snapshot.data ?? 0;
-                return Text(
-                  formatSeconds(data),
-                  style: const TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
-                );
-              },
-            ),
-          ],
-        );
-      }
-    }
   }
 
   String formatSeconds(int totalSeconds) {
@@ -482,15 +384,18 @@ class _HomePageState extends State<HomePage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Ramadan - ${getRamadanNumber()}',
+                      'Ramadan - ${getRamadanNumber(ramadanTodayTimeController.ifter.value ?? const TimeOfDay(hour: 18, minute: 30))}',
                       style: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     Text(
-                      DateFormat.yMMMMEEEEd().format(
-                          getDateByRamadanNumber(getRamadanNumber() - 1)),
+                      DateFormat.yMMMMEEEEd().format(getDateByRamadanNumber(
+                          getRamadanNumber(
+                                  ramadanTodayTimeController.ifter.value ??
+                                      const TimeOfDay(hour: 18, minute: 30)) -
+                              1)),
                       style: const TextStyle(color: Colors.white),
                     ),
                     const Gap(10),
@@ -554,8 +459,9 @@ class _HomePageState extends State<HomePage> {
                 const Spacer(),
                 SizedBox(
                   width: 100,
-                  child: getCountDown(ramadanTodayTimeController.ifter.value,
-                      ramadanTodayTimeController.sehri.value),
+                  child: Obx(() => RamadanCountdown(
+                      iftarTime: ramadanTodayTimeController.ifter.value,
+                      sehriTime: ramadanTodayTimeController.sehri.value)),
                 ),
               ],
             ),
@@ -699,7 +605,9 @@ class _HomePageState extends State<HomePage> {
     bool result = await InternetConnection().hasInternetAccess;
     if (result) {
       if (isPopUp) Navigator.pop(context);
-      Get.to(() => DailyRamadanPlan(day: getRamadanNumber()));
+      Get.to(() => DailyRamadanPlan(
+          day: getRamadanNumber(ramadanTodayTimeController.ifter.value ??
+              const TimeOfDay(hour: 18, minute: 30))));
     } else {
       showDialog(
         context: context,

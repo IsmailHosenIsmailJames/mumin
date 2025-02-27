@@ -7,6 +7,7 @@ import 'package:mumin/src/screens/quran/resources/chapters.dart';
 import 'package:mumin/src/screens/quran/resources/model/quran_surah_info_model.dart';
 import 'package:mumin/src/screens/quran/resources/surah_meaning.dart';
 import 'package:mumin/src/screens/quran/surah_view/surah_view.dart';
+import 'package:mumin/src/screens/ramadan_calender/model/controller.dart';
 import 'package:mumin/src/theme/shapes.dart';
 
 class DailyRamadanPlan extends StatefulWidget {
@@ -18,6 +19,7 @@ class DailyRamadanPlan extends StatefulWidget {
 }
 
 class _DailyRamadanPlanState extends State<DailyRamadanPlan> {
+  RamadanTodayTimeController ramadanTodayTimeController = Get.find();
   late int day = widget.day;
   @override
   void initState() {
@@ -62,40 +64,46 @@ class _DailyRamadanPlanState extends State<DailyRamadanPlan> {
       child: SafeArea(
         child: Scaffold(
           appBar: AppBar(
-            title: Text('Ramadan Day - ${widget.day}'),
+            titleSpacing: 5,
+            title: Text(
+              'Ramadan Day - ${widget.day}',
+              style: const TextStyle(fontSize: 16),
+            ),
             bottom: TabBar(
               tabs: myTabs,
             ),
             actions: [
-              // if (getRamadanNumber() > 1)
-
-              SizedBox(
-                width: 140,
-                child: Padding(
-                  padding: const EdgeInsets.only(bottom: 5, top: 5, right: 5),
-                  child: DropdownButtonFormField(
-                    decoration: const InputDecoration(
-                      border: OutlineInputBorder(),
-                      contentPadding: EdgeInsets.only(left: 5, right: 2),
-                    ),
-                    value: day,
-                    items: List.generate(
-                      // getRamadanNumber(),
-                      30,
-                      (index) {
-                        return DropdownMenuItem(
-                          value: index + 1,
-                          child: Text('Ramadan ${index + 1}'),
-                        );
+              if (getRamadanNumber(ramadanTodayTimeController.ifter.value ??
+                      const TimeOfDay(hour: 18, minute: 30)) >
+                  1)
+                SizedBox(
+                  width: 90,
+                  child: Padding(
+                    padding: const EdgeInsets.only(bottom: 5, top: 5, right: 5),
+                    child: DropdownButtonFormField(
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
+                        contentPadding: EdgeInsets.only(left: 5, right: 2),
+                      ),
+                      value: day,
+                      items: List.generate(
+                        getRamadanNumber(
+                            ramadanTodayTimeController.ifter.value ??
+                                const TimeOfDay(hour: 18, minute: 30)),
+                        (index) {
+                          return DropdownMenuItem(
+                            value: index + 1,
+                            child: Text('Day ${index + 1}'),
+                          );
+                        },
+                      ),
+                      onChanged: (value) {
+                        day = value ?? 1;
+                        load(day);
                       },
                     ),
-                    onChanged: (value) {
-                      day = value ?? 1;
-                      load(day);
-                    },
                   ),
                 ),
-              ),
             ],
           ),
           body: TabBarView(

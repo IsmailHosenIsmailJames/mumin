@@ -43,14 +43,14 @@ class _RamadanCalenderPageState extends State<RamadanCalenderPage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      '  Ramadan - ${getRamadanNumber()}',
+                      '  Ramadan - ${getRamadanNumber(ramadanTodayTimeController.ifter.value ?? const TimeOfDay(hour: 18, minute: 30))}',
                       style: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     Text(
-                      '   ${DateFormat.yMMMMEEEEd().format(getDateByRamadanNumber(getRamadanNumber() - 1))}',
+                      '   ${DateFormat.yMMMMEEEEd().format(getDateByRamadanNumber(getRamadanNumber(ramadanTodayTimeController.ifter.value ?? const TimeOfDay(hour: 18, minute: 30)) - 1))}',
                       style: const TextStyle(color: Colors.white),
                     ),
                     Container(
