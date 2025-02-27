@@ -47,7 +47,7 @@ class NotificationService {
         NotificationActionButton(key: 'OPEN_APP', label: 'Open App')
       ],
       schedule: NotificationAndroidCrontab.daily(
-        referenceDateTime: DateTime.now().copyWith(hour: 12, minute: 35),
+        referenceDateTime: DateTime.now().copyWith(hour: 18, minute: 40),
         allowWhileIdle: true,
       ),
     );

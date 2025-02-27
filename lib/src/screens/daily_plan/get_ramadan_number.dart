@@ -3,7 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 
 int getRamadanNumber(TimeOfDay iftarTime) {
-  DateTime ramadanStart = DateTime(2025, 3, 1);
+  DateTime ramadanStart = DateTime(2025, 3, 2);
   DateTime now = DateTime.now();
 
   DateTime todayIftar =
