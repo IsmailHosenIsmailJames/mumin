@@ -1,118 +1,63 @@
 import 'package:flutter/material.dart';
-import 'package:geolocator/geolocator.dart';
-import 'package:toastification/toastification.dart';
+import 'package:get/get.dart';
+import 'package:mumin/src/screens/home/controller/user_location.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-class AppColors {
-  static const Color bgColor = Color(0xFF007BFF);
-}
-
 class MosqueScreen extends StatefulWidget {
-  final Function()? navigation;
-
-  const MosqueScreen({super.key, this.navigation});
+  const MosqueScreen({
+    super.key,
+  });
 
   @override
   MosqueScreenState createState() => MosqueScreenState();
 }
 
 class MosqueScreenState extends State<MosqueScreen> {
-  String? locationUri;
-  bool _isLoading = true;
+  late String locationUri =
+      'https://www.google.com/maps/search/mosque/@${userLocationController.locationData.value?.latitude},${userLocationController.locationData.value?.longitude},15z';
 
   @override
   void initState() {
     super.initState();
-    _determinePosition();
   }
 
-  Future<void> _determinePosition() async {
-    bool serviceEnabled;
-    LocationPermission permission;
+  final UserLocationController userLocationController = Get.find();
 
-    serviceEnabled = await Geolocator.isLocationServiceEnabled();
-    if (!serviceEnabled) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Location services are disabled.')),
-      );
-      setState(() {
-        _isLoading = false;
-      });
-      return;
-    }
+  Future<void> launchIntentUrl(String url) async {
+    Uri intentUri = Uri.parse(url);
+    String? embeddedUrlString = intentUri.queryParameters['link'];
 
-    permission = await Geolocator.checkPermission();
-    if (permission == LocationPermission.denied) {
-      permission = await Geolocator.requestPermission();
-      if (permission == LocationPermission.denied) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Location permissions are denied')),
-        );
-        setState(() {
-          _isLoading = false;
-        });
-        return;
-      }
-    }
-
-    if (permission == LocationPermission.deniedForever) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text(
-            'Location permissions are permanently denied, we cannot request permissions.',
-          ),
-        ),
-      );
-      setState(() {
-        _isLoading = false;
-      });
-      return;
-    }
-
-    try {
-      Position position = await Geolocator.getCurrentPosition();
-
-      setState(() {
-        locationUri =
-            'https://www.google.com/maps/search/mosque/@${position.latitude},${position.longitude},15z';
-        _isLoading = false;
-      });
-    } catch (e) {
-      toastification.show(
-        context: context,
-        title: Text('Error getting location: ${e.toString()}'),
-        autoCloseDuration: const Duration(seconds: 3),
-        type: ToastificationType.error,
-      );
-      setState(() {
-        _isLoading = false;
-      });
-    }
+    if (embeddedUrlString != null) {
+      String decodedEmbeddedUrl = Uri.decodeFull(embeddedUrlString);
+      Uri embeddedUri = Uri.parse(decodedEmbeddedUrl);
+      launchUrl(embeddedUri, mode: LaunchMode.externalApplication);
+    } else {}
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        title: const Text(
-          'Mosque',
-          style: TextStyle(fontWeight: FontWeight.bold),
+        appBar: AppBar(
+          elevation: 0,
+          title: const Text(
+            'Mosque',
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
         ),
-      ),
-      body: _isLoading
-          ? const Center(child: CircularProgressIndicator())
-          : (locationUri != null)
-              ? WebViewWidget(
-                  controller: WebViewController()
-                    ..setJavaScriptMode(JavaScriptMode.unrestricted)
-                    ..loadRequest(Uri.parse(locationUri!)),
-                )
-              : const Center(
-                  child: Text(
-                    'Failed to get location. Please check permissions and location services.',
-                  ),
-                ),
-    );
+        body: WebViewWidget(
+          controller: WebViewController()
+            ..setJavaScriptMode(JavaScriptMode.unrestricted)
+            ..loadRequest(Uri.parse(locationUri))
+            ..setJavaScriptMode(JavaScriptMode.unrestricted)
+            ..setNavigationDelegate(NavigationDelegate(
+                onNavigationRequest: (NavigationRequest request) async {
+              if (request.url.startsWith('intent://')) {
+                launchIntentUrl(request.url);
+                return NavigationDecision.prevent;
+              }
+              return NavigationDecision.navigate;
+            })),
+        ));
   }
 }
