@@ -4,18 +4,16 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:flutter_foreground_task/flutter_foreground_task.dart';
 import 'package:gap/gap.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 import 'package:http/http.dart';
-import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
 import 'package:intl/intl.dart';
 import 'package:mumin/src/apis/apis.dart';
-import 'package:mumin/src/core/background/background_setup.dart';
 import 'package:mumin/src/core/location/location_service.dart';
+import 'package:mumin/src/core/notifications/notification_service.dart';
 import 'package:mumin/src/core/notifications/requiest_permission.dart';
 import 'package:mumin/src/screens/auth/controller/auth_controller.dart';
 import 'package:mumin/src/screens/daily_plan/daily_ramadan_plan.dart';
@@ -100,29 +98,33 @@ class _HomePageState extends State<HomePage> {
   bool isLocationDeclined = false;
 
   Future<void> startupCalls() async {
-    await inAppUpdateAndroid(context);
     await getUserLocation();
+    await inAppUpdateAndroid(context);
+
+    if (await requestPermissionsAwesomeNotifications()) {
+      await NotificationService.initializeNotifications();
+      await NotificationService.scheduleDailyRamadanNotification();
+    }
     await requestPermissionsAwesomeNotifications();
-
-    FlutterForegroundTask.addTaskDataCallback(onReceiveTaskData);
-
+    setState(() {});
     WidgetsBinding.instance.addPostFrameCallback((_) async {
-      // Request permissions and initialize the service.
-      await requestPermissions().then((value) {
-        initService().then((value) {
-          startService();
-        });
-      });
       if (userBox.get(
-              'daily_plan_popup${DateFormat('yyyy-MM-dd').format(DateTime.now())}',
+              'daily_plan_popup_${getRamadanNumber(
+                ramadanTodayTimeController.ifter.value ??
+                    const TimeOfDay(hour: 18, minute: 30),
+              )}',
               defaultValue: null) ==
           null) {
         await showDailyPlanDialog();
         userBox.put(
-            'daily_plan_popup${DateFormat('yyyy-MM-dd').format(DateTime.now())}',
+            'daily_plan_popup_${getRamadanNumber(
+              ramadanTodayTimeController.ifter.value ??
+                  const TimeOfDay(hour: 18, minute: 30),
+            )}',
             true);
       }
     });
+
     callApiAnalytics();
     setState(() {});
   }
@@ -388,6 +390,7 @@ class _HomePageState extends State<HomePage> {
                       style: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
+                        color: Colors.white,
                       ),
                     ),
                     Text(
@@ -602,37 +605,9 @@ class _HomePageState extends State<HomePage> {
 
   Future<void> routeTo30DayPlan(BuildContext context,
       {bool isPopUp = false}) async {
-    bool result = await InternetConnection().hasInternetAccess;
-    if (result) {
-      if (isPopUp) Navigator.pop(context);
-      Get.to(() => DailyRamadanPlan(
-          day: getRamadanNumber(ramadanTodayTimeController.ifter.value ??
-              const TimeOfDay(hour: 18, minute: 30))));
-    } else {
-      showDialog(
-        context: context,
-        builder: (context) {
-          return AlertDialog(
-            insetPadding: const EdgeInsets.all(10),
-            title: const Text(
-              'No internet connection!',
-              style: TextStyle(
-                color: Colors.red,
-              ),
-            ),
-            content: const Text(
-                'To access 30 days Ramadan Plan, you will require internet connection.'),
-            actions: [
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                child: const Text('Ok'),
-              ),
-            ],
-          );
-        },
-      );
-    }
+    if (isPopUp) Navigator.pop(context);
+    Get.to(() => DailyRamadanPlan(
+        day: getRamadanNumber(ramadanTodayTimeController.ifter.value ??
+            const TimeOfDay(hour: 18, minute: 30))));
   }
 }
