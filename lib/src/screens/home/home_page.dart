@@ -133,8 +133,10 @@ class _HomePageState extends State<HomePage> {
     log('$baseApi/api/activity?phone=${authController.user.value?.mobileNumber}',
         name: 'API hit');
     try {
-      get(Uri.parse(
+      final res = await get(Uri.parse(
           '$baseApi/api/activity?phone=${authController.user.value?.mobileNumber}'));
+      log(res.statusCode.toString(), name: 'statusCode');
+      log(res.body, name: 'body');
     } catch (e) {
       log(e.toString());
     }
