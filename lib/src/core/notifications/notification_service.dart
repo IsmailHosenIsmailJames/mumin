@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
@@ -37,7 +35,7 @@ class NotificationService {
   static Future<void> scheduleDailyRamadanNotification() async {
     await AwesomeNotifications().createNotification(
       content: NotificationContent(
-        id: Random().nextInt(100),
+        id: 1,
         channelKey: 'ramadan_notifications',
         title: 'Today\'s Ramadan Plans are ready!',
         body: 'Open app to see today\'s Ramadan plan...',
@@ -47,7 +45,7 @@ class NotificationService {
         NotificationActionButton(key: 'OPEN_APP', label: 'Open App')
       ],
       schedule: NotificationAndroidCrontab.daily(
-        referenceDateTime: DateTime.now().copyWith(hour: 18, minute: 40),
+        referenceDateTime: DateTime.now().copyWith(hour: 21, minute: 50),
         allowWhileIdle: true,
       ),
     );

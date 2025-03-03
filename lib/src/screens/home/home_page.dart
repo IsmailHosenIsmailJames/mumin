@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:developer';
 
+import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -12,6 +13,7 @@ import 'package:hive/hive.dart';
 import 'package:http/http.dart';
 import 'package:intl/intl.dart';
 import 'package:mumin/src/apis/apis.dart';
+import 'package:mumin/src/core/algorithm/get_most_close_key.dart';
 import 'package:mumin/src/core/location/location_service.dart';
 import 'package:mumin/src/core/notifications/notification_service.dart';
 import 'package:mumin/src/core/notifications/requiest_permission.dart';
@@ -103,6 +105,12 @@ class _HomePageState extends State<HomePage> {
 
     if (await requestPermissionsAwesomeNotifications()) {
       await NotificationService.initializeNotifications();
+      if (Hive.box('user_db').get('close_notification', defaultValue: null) ==
+          null) {
+        await AwesomeNotifications().cancelAll();
+        await Hive.box('user_db').put('close_notification', true);
+        log('AwesomeNotifications().cancelAll()');
+      }
       await NotificationService.scheduleDailyRamadanNotification();
     }
     await requestPermissionsAwesomeNotifications();
@@ -179,8 +187,21 @@ class _HomePageState extends State<HomePage> {
       String district =
           userLocationData.district.split(' ').first.toLowerCase();
       List<RamadanDayModel> ramadanDaysList = [];
+      bool found = false;
       for (String key in ramadanCalendar.keys) {
         if (key.toString().toLowerCase() == district) {
+          found = true;
+          List temList = ramadanCalendar[key] as List;
+          for (int i = 0; i < (temList).length; i++) {
+            ramadanDaysList.add(
+                RamadanDayModel.fromMap(Map<String, dynamic>.from(temList[i])));
+          }
+        }
+      }
+      if (!found) {
+        String? key = FuzzyMatcher.findClosestKey(
+            Map<String, dynamic>.from(ramadanCalendar), district);
+        if (key != null) {
           List temList = ramadanCalendar[key] as List;
           for (int i = 0; i < (temList).length; i++) {
             ramadanDaysList.add(
