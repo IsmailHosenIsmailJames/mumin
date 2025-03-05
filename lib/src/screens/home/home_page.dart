@@ -14,6 +14,7 @@ import 'package:http/http.dart';
 import 'package:intl/intl.dart';
 import 'package:mumin/src/apis/apis.dart';
 import 'package:mumin/src/core/algorithm/get_most_close_key.dart';
+import 'package:mumin/src/core/algorithm/safe_substring.dart';
 import 'package:mumin/src/core/location/location_service.dart';
 import 'package:mumin/src/core/notifications/notification_service.dart';
 import 'package:mumin/src/core/notifications/requiest_permission.dart';
@@ -184,9 +185,16 @@ class _HomePageState extends State<HomePage> {
         .loadString('assets/calender_data/ramadan_calendar2025.json');
     Map ramadanCalendar = jsonDecode(json);
     if (userLocationData != null) {
-      String district =
-          userLocationData.district.split(' ').first.toLowerCase();
+      List<String> data = userLocationData.district.split(' ');
+      data.removeLast();
+      String district = data.first;
+      if (data.length > 1) {
+        district = '${data.first.toLowerCase()} ${data.last.toLowerCase()}';
+      }
+
+      district = district.replaceAll(' ', '');
       List<RamadanDayModel> ramadanDaysList = [];
+      log(district);
       bool found = false;
       for (String key in ramadanCalendar.keys) {
         if (key.toString().toLowerCase() == district) {
@@ -380,9 +388,11 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                 ),
                                 Text(
-                                  '${userLocationController.locationData.value!.division}, Bangladesh',
+                                  safeSubString(
+                                      '${userLocationController.locationData.value!.division}, Bangladesh',
+                                      25),
                                   style: TextStyle(
-                                    fontSize: 16,
+                                    fontSize: 15,
                                     color: MyAppColors.secondaryColor,
                                   ),
                                 ),
@@ -497,7 +507,7 @@ class _HomePageState extends State<HomePage> {
             () => Container(
               height: 70,
               decoration: BoxDecoration(
-                color: appThemeController.isDark.value
+                color: isDark(appThemeController.themeModeName.value)
                     ? MyAppColors.backgroundDarkColor.withValues(alpha: 0.5)
                     : MyAppColors.backgroundLightColor,
                 borderRadius: MyAppShapes.borderRadius,
@@ -585,12 +595,12 @@ class _HomePageState extends State<HomePage> {
                       width: 95,
                       padding: const EdgeInsets.all(5),
                       decoration: BoxDecoration(
-                        color: appThemeController.isDark.value
+                        color: isDark(appThemeController.themeModeName.value)
                             ? MyAppColors.backgroundDarkColor
                             : MyAppColors.backgroundLightColor,
                         borderRadius: MyAppShapes.borderRadius,
                         boxShadow: [
-                          appThemeController.isDark.value
+                          isDark(appThemeController.themeModeName.value)
                               ? MyAppShadows.commonShadowDark
                               : MyAppShadows.commonShadowLight,
                         ],
@@ -624,6 +634,16 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
     );
+  }
+
+  bool isDark(String mood) {
+    if (mood == 'dark') {
+      return true;
+    } else if (mood == 'light') {
+      return false;
+    } else {
+      return MediaQuery.of(context).platformBrightness == Brightness.dark;
+    }
   }
 
   Future<void> routeTo30DayPlan(BuildContext context,
