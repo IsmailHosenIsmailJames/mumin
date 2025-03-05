@@ -16,6 +16,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:record/record.dart';
 import 'package:path/path.dart' as path;
 import 'package:toastification/toastification.dart';
+import 'package:wakelock_plus/wakelock_plus.dart';
 
 class SurahView extends StatefulWidget {
   final bool? practiceMode;
@@ -59,6 +60,7 @@ class _SurahViewState extends State<SurahView> {
         recordingState = state;
       });
     });
+    WakelockPlus.enable();
   }
 
   void getAllAyahsMap(int stat, int end) async {
@@ -114,6 +116,12 @@ class _SurahViewState extends State<SurahView> {
         }
       }
     });
+  }
+
+  @override
+  void dispose() {
+    WakelockPlus.disable();
+    super.dispose();
   }
 
   final record = AudioRecorder();

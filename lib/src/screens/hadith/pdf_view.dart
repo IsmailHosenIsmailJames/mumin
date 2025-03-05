@@ -7,6 +7,7 @@ import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 import 'package:dio/dio.dart';
+import 'package:wakelock_plus/wakelock_plus.dart';
 
 class HadithPdfView extends StatefulWidget {
   final String url;
@@ -20,6 +21,7 @@ class HadithPdfView extends StatefulWidget {
 class _HadithPdfViewState extends State<HadithPdfView> {
   @override
   void initState() {
+    WakelockPlus.enable();
     download();
     super.initState();
   }
@@ -68,6 +70,12 @@ class _HadithPdfViewState extends State<HadithPdfView> {
     setState(() {
       isDownloading = false;
     });
+  }
+
+  @override
+  void dispose() {
+    WakelockPlus.disable();
+    super.dispose();
   }
 
   @override

@@ -23,6 +23,7 @@ class _HadithPageState extends State<HadithPage> {
   @override
   void initState() {
     getHadithData();
+
     super.initState();
   }
 
