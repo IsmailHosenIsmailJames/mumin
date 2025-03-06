@@ -101,8 +101,8 @@ class _HomePageState extends State<HomePage> {
   bool isLocationDeclined = false;
 
   Future<void> startupCalls() async {
+    inAppUpdateAndroid(context);
     await getUserLocation();
-    await inAppUpdateAndroid(context);
 
     if (await requestPermissionsAwesomeNotifications()) {
       await NotificationService.initializeNotifications();
@@ -220,13 +220,21 @@ class _HomePageState extends State<HomePage> {
       int ramadanDay = getRamadanNumber(
           ramadanTodayTimeController.ifter.value ??
               const TimeOfDay(hour: 18, minute: 30));
-      RamadanDayModel todaysTime = ramadanDaysList[ramadanDay - 1];
-      ramadanTodayTimeController.sehri.value = TimeOfDay.fromDateTime(
-          DateFormat('h:mm a').parse(todaysTime.seharEnd));
-      ramadanTodayTimeController.ifter.value =
-          TimeOfDay.fromDateTime(DateFormat('h:mm a').parse(todaysTime.ifter));
-      log(todaysTime.toJson());
+      RamadanDayModel? todaysTime;
+      try {
+        todaysTime = ramadanDaysList[ramadanDay - 1];
+      } catch (e) {
+        log(e.toString());
+      }
+      if (todaysTime != null) {
+        ramadanTodayTimeController.sehri.value = TimeOfDay.fromDateTime(
+            DateFormat('h:mm a').parse(todaysTime.seharEnd));
+        ramadanTodayTimeController.ifter.value = TimeOfDay.fromDateTime(
+            DateFormat('h:mm a').parse(todaysTime.ifter));
+        log(todaysTime.toJson());
+      }
       userLocationCalender.userLocationCalender.value = ramadanDaysList;
+      setState(() {});
     }
   }
 
