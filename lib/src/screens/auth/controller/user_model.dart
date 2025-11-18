@@ -6,8 +6,8 @@ class UserModel {
   final String mobileNumber;
   final String pinNumber;
   final dynamic status;
-  final String createdAt;
-  final dynamic updatedAt;
+  final String? createdAt;
+  final String? updatedAt;
 
   UserModel({
     required this.id,
@@ -15,8 +15,8 @@ class UserModel {
     required this.mobileNumber,
     required this.pinNumber,
     required this.status,
-    required this.createdAt,
-    required this.updatedAt,
+    this.createdAt,
+    this.updatedAt,
   });
 
   UserModel copyWith({
@@ -26,7 +26,7 @@ class UserModel {
     String? pinNumber,
     dynamic status,
     String? createdAt,
-    dynamic updatedAt,
+    String? updatedAt,
   }) =>
       UserModel(
         id: id ?? this.id,

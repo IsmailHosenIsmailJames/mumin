@@ -1,0 +1,28 @@
+Mumin - Your Comprehensive Islamic Companion
+
+Mumin is your all-in-one Islamic mobile app, designed to assist you in your daily religious practices and spiritual journey. Whether it's keeping up with daily prayers or observing the holy month of Ramadan, Mumin is your perfect companion.
+
+Key Features:
+
+Ramadan Central:
+- Ramadan Calendar: Get precise Sehri and Iftar times based on your location.
+- Countdown Timer: Stay on track with a prominent countdown to the next Iftar.
+- Daily Ramadan Plan: Access curated daily content, including Duas, Quranic verses, and Hadith, to enrich your Ramadan experience.
+
+Prayer Essentials:
+- Accurate Prayer Times: Calculates prayer times (Fajr, Dhuhr, Asr, Maghrib, Isha) based on your location.
+- Qibla Compass: An easy-to-use compass to find the direction of the Kaaba for your prayers.
+- Mosque Finder: Locate nearby mosques with the integrated map feature.
+
+Quran and Hadith:
+- The Holy Quran: A complete digital Quran with Surah lists, Arabic text, transliteration, and translations in both Bengali and English.
+- Audio and Recording: Listen to audio recitations and record your own practice sessions.
+- Hadith: A collection of Hadith for your daily reading and reflection.
+
+Other Islamic Tools:
+- Kalima: Read and learn the six Kalimas.
+- Digital Tasbeeh: A convenient counter for your Dhikr.
+- Zakat Calculator: A simple tool to help you calculate your Zakat.
+- Hajj Guide: Information and guidance for the Hajj pilgrimage.
+
+Mumin is designed with a user-friendly interface and a focus on providing accurate, reliable information to help you in your daily life as a Muslim. Download Mumin to enhance your spiritual practice.

@@ -1,12 +1,12 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:mumin/src/screens/auth/controller/auth_controller.dart';
 import 'package:mumin/src/theme/colors.dart';
 import 'package:mumin/src/theme/shapes.dart';
-import 'package:toastification/toastification.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -102,42 +102,17 @@ class LoginScreenState extends State<LoginScreen> {
                             ),
                             onPressed: () async {
                               if (mobile.isEmpty) {
-                                showDialog(
-                                  context: context,
-                                  builder: (BuildContext context) {
-                                    return AlertDialog(
-                                      title: const Text('Validation'),
-                                      content: const Text(
-                                        'Please enter your mobile number',
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                          color: Colors.black,
-                                        ),
-                                      ),
-                                      actions: [
-                                        TextButton(
-                                          child: const Text('OK'),
-                                          onPressed: () {
-                                            Navigator.of(context).pop();
-                                          },
-                                        ),
-                                      ],
-                                    );
-                                  },
-                                );
+                                Fluttertoast.showToast(
+                                    msg: 'Please enter phone number');
                               } else {
                                 final bool isSuccessful =
                                     await authController.login(mobile);
                                 if (isSuccessful) {
                                   Get.offNamed('/home');
                                 } else {
-                                  toastification.show(
-                                    context: context,
-                                    title: const Text('Unable to login'),
-                                    type: ToastificationType.error,
-                                    autoCloseDuration:
-                                        const Duration(seconds: 3),
-                                  );
+                                  Fluttertoast.showToast(
+                                      msg: 'Unable to login',
+                                      textColor: Colors.red);
                                 }
                               }
                             },

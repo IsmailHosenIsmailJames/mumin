@@ -35,8 +35,6 @@ import 'package:mumin/src/theme/theme_controller.dart';
 import 'package:mumin/src/theme/theme_icon_button.dart';
 import 'package:toastification/toastification.dart';
 
-import '../../core/in_app_update/in_app_android_update/in_app_update_android.dart';
-
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -101,7 +99,6 @@ class _HomePageState extends State<HomePage> {
   bool isLocationDeclined = false;
 
   Future<void> startupCalls() async {
-    inAppUpdateAndroid(context);
     await getUserLocation();
 
     if (await requestPermissionsAwesomeNotifications()) {
