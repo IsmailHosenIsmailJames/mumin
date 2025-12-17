@@ -157,6 +157,6 @@ SPEC CHECKSUMS:
   wakelock_plus: e29112ab3ef0b318e58cfa5c32326458be66b556
   webview_flutter_wkwebview: 8ebf4fded22593026f7dbff1fbff31ea98573c8d
 
-PODFILE CHECKSUM: 0c0335b49f1c50ddd1dfa0e540bc27bc54252dcb
+PODFILE CHECKSUM: ac3d2b2fc65a8fa81a992fac94831c05cdb9c835
 
 COCOAPODS: 1.16.2
