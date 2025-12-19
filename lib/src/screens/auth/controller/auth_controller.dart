@@ -21,41 +21,44 @@ class AuthController extends GetxController {
     super.onInit();
   }
 
-  Future<bool> login(String phone) async {
-    if (!phone.startsWith('+88') || !phone.startsWith('88')) {
-      phone = '88${phone.replaceAll('+', '')}';
-    }
-    // final response = await post(
-    //   Uri.parse(baseApi + loginApi),
-    //   body: jsonEncode({
-    //     'mobile_number': phone,
-    //   }),
-    //   headers: {'Content-Type': 'application/json'},
-    // );
-    // if (response.statusCode == 200) {
-    //   log(response.body);
-    //   if (jsonDecode(response.body)['success'] == true) {
-    //     user.value = UserModel.fromMap(
-    //         Map<String, dynamic>.from(jsonDecode(response.body)['result']));
-    //     await Hive.box('user_db').put('user_data', user.value?.toJson());
-    //     return true;
-    //   } else {
-    //     log('something went wrong');
-    //     return false;
-    //   }
+  Future<bool> login({required String phone, bool isGuest = false}) async {
+    if (isGuest) {
+      final user = UserModel(
+        id: 999,
+        fullName: 'FullName',
+        mobileNumber: '8801741095333',
+        pinNumber: '9999',
+        status: 'active',
+      );
+      await Hive.box('user_db').put('user_data', user.toJson());
+      return true;
+    } else {
+      if (!phone.startsWith('+88') || !phone.startsWith('88')) {
+        phone = '88${phone.replaceAll('+', '')}';
+      }
 
-    // else {
-    // return false;
-    // }
-    final user = UserModel(
-      id: 999,
-      fullName: 'FullName',
-      mobileNumber: '8801741095333',
-      pinNumber: '9999',
-      status: 'active',
-    );
-    await Hive.box('user_db').put('user_data', user.toJson());
-    return true;
+      final response = await post(
+        Uri.parse(baseApi + loginApi),
+        body: jsonEncode({
+          'mobile_number': phone,
+        }),
+        headers: {'Content-Type': 'application/json'},
+      );
+      if (response.statusCode == 200) {
+        log(response.body);
+        if (jsonDecode(response.body)['success'] == true) {
+          user.value = UserModel.fromMap(
+              Map<String, dynamic>.from(jsonDecode(response.body)['result']));
+          await Hive.box('user_db').put('user_data', user.value?.toJson());
+          return true;
+        } else {
+          log('something went wrong');
+          return false;
+        }
+      } else {
+        return false;
+      }
+    }
   }
 
   Future<bool> registration(
@@ -83,7 +86,7 @@ class AuthController extends GetxController {
     if (response.statusCode == 200) {
       if (jsonDecode(response.body)['success'] == true) {
         log('Response : ${response.statusCode}');
-        return await login(phone);
+        return await login(phone: phone);
       } else {
         toastification.show(
           context: context,

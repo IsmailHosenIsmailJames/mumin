@@ -105,8 +105,8 @@ class LoginScreenState extends State<LoginScreen> {
                                 Fluttertoast.showToast(
                                     msg: 'Please enter phone number');
                               } else {
-                                final bool isSuccessful =
-                                    await authController.login(mobile);
+                                final bool isSuccessful = await authController
+                                    .login(phone: mobile, isGuest: false);
                                 if (isSuccessful) {
                                   Get.offNamed('/home');
                                 } else {
@@ -123,6 +123,40 @@ class LoginScreenState extends State<LoginScreen> {
                               ).textTheme.titleMedium?.copyWith(
                                     fontWeight: FontWeight.w500,
                                     color: Colors.white,
+                                  ),
+                            ),
+                          ),
+                          const Gap(15),
+                          OutlinedButton.icon(
+                            style: ElevatedButton.styleFrom(
+                              elevation: 0,
+                              padding: const EdgeInsets.symmetric(vertical: 15),
+                              foregroundColor: MyAppColors.primaryColor,
+                              minimumSize: const Size(double.infinity, 0),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: MyAppShapes.borderRadius,
+                              ),
+                            ),
+                            onPressed: () async {
+                              final bool isSuccessful = await authController
+                                  .login(phone: 'Guest User', isGuest: true);
+                              if (isSuccessful) {
+                                Get.offNamed('/home');
+                              } else {
+                                Fluttertoast.showToast(
+                                    msg: 'Unable to login',
+                                    textColor: Colors.red);
+                              }
+                            },
+                            iconAlignment: IconAlignment.end,
+                            icon: const Icon(Icons.arrow_forward),
+                            label: Text(
+                              'Continue as Guest',
+                              style: Theme.of(
+                                context,
+                              ).textTheme.titleMedium?.copyWith(
+                                    fontWeight: FontWeight.bold,
+                                    color: MyAppColors.primaryColor,
                                   ),
                             ),
                           ),
