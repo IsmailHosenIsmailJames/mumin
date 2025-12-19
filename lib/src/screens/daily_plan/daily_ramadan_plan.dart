@@ -152,6 +152,9 @@ class _DailyRamadanPlanState extends State<DailyRamadanPlan> {
                 itemCount: quran.length,
                 itemBuilder: (context, index) {
                   int surahNumber = int.parse(quran[index]['surahNumber']!);
+                  if (surahNumber > allChaptersInfo.length) {
+                    return const SizedBox();
+                  }
                   final chapterModel = QuranSurahInfoModel.fromMap(
                     allChaptersInfo[surahNumber - 1],
                   );
