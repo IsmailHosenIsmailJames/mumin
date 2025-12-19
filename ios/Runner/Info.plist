@@ -51,6 +51,8 @@
 	<string>This app needs access to location when open to show prayer times.</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>This app needs access to location when in the background to show prayer times.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>This app needs access to your location to provide accurate prayer times based on your current location.</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>This app needs access to the microphone to record audio of Recitation.</string>
 	<key>UIBackgroundModes</key>
@@ -66,5 +68,15 @@
 		<string>tel</string>
 		<string>mailto</string>
 	</array>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This app needs access to your photo library to share images and save content.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>This app needs permission to save images to your photo library.</string>
+	<key>UIFileSharingEnabled</key>
+	<true/>
+	<key>LSSupportsOpeningDocumentsInPlace</key>
+	<true/>
+	<key>NSCalendarsUsageDescription</key>
+	<string>This app needs calendar access to help you track prayer times and Islamic events.</string>
 </dict>
 </plist>

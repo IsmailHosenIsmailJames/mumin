@@ -1,5 +1,6 @@
 import Flutter
 import UIKit
+import awesome_notifications
 
 @main
 @objc class AppDelegate: FlutterAppDelegate {
@@ -8,6 +9,14 @@ import UIKit
     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
   ) -> Bool {
     GeneratedPluginRegistrant.register(with: self)
+    
+    // Initialize Awesome Notifications
+    SwiftAwesomeNotificationsPlugin.setPluginRegistrantCallback { registry in
+      SwiftAwesomeNotificationsPlugin.register(
+        with: registry.registrar(forPlugin: "io.flutter.plugins.awesomenotifications.AwesomeNotificationsPlugin")!
+      )
+    }
+    
     return super.application(application, didFinishLaunchingWithOptions: launchOptions)
   }
 }
