@@ -9,6 +9,7 @@ import "package:get/get.dart";
 import "package:mumin/src/core/audio/manage_audio.dart";
 import "package:mumin/src/screens/quran/resources/chapters_ayah_count.dart";
 import "package:mumin/src/screens/quran/resources/model/quran_surah_info_model.dart";
+import "package:mumin/src/screens/settings/controller/settings_controller.dart";
 import "package:mumin/src/theme/colors.dart";
 import "package:mumin/src/theme/shapes.dart";
 import "package:path/path.dart";
@@ -46,6 +47,7 @@ class _SurahViewState extends State<SurahView> {
   List<Map<String, String>> ayahsWithMeaning = [];
   List<GlobalKey> scrollKeys = [];
   ManageAudioController audioController = Get.find();
+  final SettingsController settingsController = Get.put(SettingsController());
   @override
   void initState() {
     int startAyahIndex = 0;
@@ -236,8 +238,9 @@ class _SurahViewState extends State<SurahView> {
                                     alignment: Alignment.topRight,
                                     child: Text(
                                       ayahsWithMeaning[index]["quran"]!,
-                                      style: const TextStyle(
-                                        fontSize: 20,
+                                      style: TextStyle(
+                                        fontSize: settingsController
+                                            .arabicFontSize.value,
                                         fontFamily: "IndopakNastaleeq",
                                       ),
                                       textDirection: TextDirection.rtl,
@@ -246,13 +249,17 @@ class _SurahViewState extends State<SurahView> {
                                   const Divider(),
                                   Text(
                                     ayahsWithMeaning[index]["bn"]!,
-                                    style: const TextStyle(fontSize: 16),
+                                    style: TextStyle(
+                                        fontSize: settingsController
+                                            .translationFontSize.value),
                                     textAlign: TextAlign.start,
                                   ),
                                   const Divider(),
                                   Text(
                                     ayahsWithMeaning[index]["en"]!,
-                                    style: const TextStyle(fontSize: 16),
+                                    style: TextStyle(
+                                        fontSize: settingsController
+                                            .englishFontSize.value),
                                     textAlign: TextAlign.start,
                                   ),
                                 ],

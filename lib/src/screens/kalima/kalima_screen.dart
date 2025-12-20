@@ -1,4 +1,6 @@
 import "package:flutter/material.dart";
+import "package:get/get.dart";
+import "package:mumin/src/screens/settings/controller/settings_controller.dart";
 
 class KalimaScreen extends StatelessWidget {
   final Function()? navigation;
@@ -65,6 +67,7 @@ class KalimaScreen extends StatelessWidget {
     String banglaTranslation,
     String englishTranslation,
   ) {
+    SettingsController settingsController = Get.put(SettingsController());
     return Card(
       elevation: 3,
       margin: const EdgeInsets.all(10),
@@ -74,35 +77,41 @@ class KalimaScreen extends StatelessWidget {
       ),
       child: Padding(
         padding: const EdgeInsets.all(10),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Text(title, style: const TextStyle(fontSize: 17)),
-            const SizedBox(height: 10),
-            Text(
-              arabicText,
-              style: const TextStyle(
-                fontSize: 20,
-                fontFamily: "IndopakNastaleeq",
-              ),
-            ),
-            const Divider(),
-            Text(
-              transliteration,
-              style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w400),
-            ),
-            const Divider(),
-            Text(
-              banglaTranslation,
-              style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w400),
-            ),
-            const Divider(),
-            Text(
-              englishTranslation,
-              style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w400),
-            ),
-          ],
-        ),
+        child: Obx(() => Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Text(title, style: const TextStyle(fontSize: 17)),
+                const SizedBox(height: 10),
+                Text(
+                  arabicText,
+                  style: TextStyle(
+                    fontSize: settingsController.arabicFontSize.value,
+                    fontFamily: "IndopakNastaleeq",
+                  ),
+                ),
+                const Divider(),
+                Text(
+                  transliteration,
+                  style: TextStyle(
+                      fontSize: settingsController.translationFontSize.value,
+                      fontWeight: FontWeight.w400),
+                ),
+                const Divider(),
+                Text(
+                  banglaTranslation,
+                  style: TextStyle(
+                      fontSize: settingsController.translationFontSize.value,
+                      fontWeight: FontWeight.w400),
+                ),
+                const Divider(),
+                Text(
+                  englishTranslation,
+                  style: TextStyle(
+                      fontSize: settingsController.englishFontSize.value,
+                      fontWeight: FontWeight.w400),
+                ),
+              ],
+            )),
       ),
     );
   }

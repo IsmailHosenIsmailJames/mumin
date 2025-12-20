@@ -8,6 +8,7 @@ import "package:mumin/src/screens/quran/resources/chapters.dart";
 import "package:mumin/src/screens/quran/resources/model/quran_surah_info_model.dart";
 import "package:mumin/src/screens/quran/resources/surah_meaning.dart";
 import "package:mumin/src/screens/ramadan_calender/model/controller.dart";
+import "package:mumin/src/screens/settings/controller/settings_controller.dart";
 import "package:mumin/src/theme/shapes.dart";
 
 class DailyRamadanPlan extends StatefulWidget {
@@ -19,6 +20,7 @@ class DailyRamadanPlan extends StatefulWidget {
 }
 
 class _DailyRamadanPlanState extends State<DailyRamadanPlan> {
+  final SettingsController settingsController = Get.put(SettingsController());
   RamadanTodayTimeController ramadanTodayTimeController = Get.find();
   late int day = widget.day;
   @override
@@ -112,39 +114,43 @@ class _DailyRamadanPlanState extends State<DailyRamadanPlan> {
                 padding: const EdgeInsets.all(10),
                 itemCount: dua.length,
                 itemBuilder: (context, index) {
-                  return Container(
-                    padding: const EdgeInsets.all(5),
-                    margin: const EdgeInsets.only(top: 10),
-                    decoration: BoxDecoration(
-                      color: Colors.grey.withValues(
-                        alpha: 0.2,
+                  return Obx(() {
+                    return Container(
+                      padding: const EdgeInsets.all(5),
+                      margin: const EdgeInsets.only(top: 10),
+                      decoration: BoxDecoration(
+                        color: Colors.grey.withValues(
+                          alpha: 0.2,
+                        ),
+                        borderRadius: BorderRadius.circular(7),
                       ),
-                      borderRadius: BorderRadius.circular(7),
-                    ),
-                    child: Column(
-                      children: [
-                        Align(
-                          alignment: Alignment.topRight,
-                          child: Text(
-                            dua[index]["arabic"]!,
-                            textDirection: TextDirection.rtl,
-                            textAlign: TextAlign.right,
-                            style: const TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
+                      child: Column(
+                        children: [
+                          Align(
+                            alignment: Alignment.topRight,
+                            child: Text(
+                              dua[index]["arabic"]!,
+                              textDirection: TextDirection.rtl,
+                              textAlign: TextAlign.right,
+                              style: TextStyle(
+                                fontSize:
+                                    settingsController.arabicFontSize.value,
+                                fontFamily: "IndopakNastaleeq",
+                              ),
                             ),
                           ),
-                        ),
-                        const Divider(),
-                        Text(
-                          dua[index]["translation"]!,
-                          style: const TextStyle(
-                            fontSize: 16,
-                          ),
-                        )
-                      ],
-                    ),
-                  );
+                          const Divider(),
+                          Text(
+                            dua[index]["translation"]!,
+                            style: TextStyle(
+                              fontSize:
+                                  settingsController.translationFontSize.value,
+                            ),
+                          )
+                        ],
+                      ),
+                    );
+                  });
                 },
               ),
               ListView.builder(
