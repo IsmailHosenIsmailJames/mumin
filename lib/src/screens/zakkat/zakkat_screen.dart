@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
 import "package:flutter/services.dart";
+import "package:font_awesome_flutter/font_awesome_flutter.dart";
 import "package:mumin/src/theme/colors.dart";
 
 class ZakatScreen extends StatefulWidget {
@@ -130,7 +131,7 @@ class ZakatScreenState extends State<ZakatScreen> {
               padding: const EdgeInsets.all(16.0),
               child: Column(
                 children: [
-                  _buildSummaryCard(context, isEligible),
+                  _buildSummaryCard(context, isEligible, isDark),
                   const SizedBox(height: 24),
                   _buildNisabSettings(context, isDark),
                   const SizedBox(height: 24),
@@ -157,7 +158,7 @@ class ZakatScreenState extends State<ZakatScreen> {
                   _buildInputSection(
                     context: context,
                     title: "Liabilities (Debts, Bills)",
-                    icon: Icons.money_off_outlined,
+                    icon: FontAwesomeIcons.bangladeshiTakaSign,
                     color: Colors.red.shade700,
                     isDark: isDark,
                     children: [
@@ -180,33 +181,26 @@ class ZakatScreenState extends State<ZakatScreen> {
   }
 
   Widget _buildSliverAppBar(BuildContext context) {
-    return SliverAppBar(
+    return const SliverAppBar(
       expandedHeight: 0,
       floating: true,
       pinned: true,
-      backgroundColor: MyAppColors.primaryColor,
-      title: const Text(
+      title: Text(
         "Zakat Calculator",
-        style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
       ),
       centerTitle: true,
-      iconTheme: const IconThemeData(color: Colors.white),
       elevation: 0,
     );
   }
 
-  Widget _buildSummaryCard(BuildContext context, bool isEligible) {
+  Widget _buildSummaryCard(BuildContext context, bool isEligible, bool isDark) {
     return Container(
       decoration: BoxDecoration(
-        color: MyAppColors.primaryColor,
+        color: MyAppColors.primaryColor.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(20),
-        boxShadow: [
-          BoxShadow(
-            color: MyAppColors.primaryColor.withValues(alpha: 0.3),
-            blurRadius: 15,
-            offset: const Offset(0, 8),
-          ),
-        ],
+        border: Border.all(
+          color: MyAppColors.primaryColor.withValues(alpha: 0.2),
+        ),
       ),
       child: Padding(
         padding: const EdgeInsets.all(24.0),
@@ -221,7 +215,9 @@ class ZakatScreenState extends State<ZakatScreen> {
                     Text(
                       "Net Assets",
                       style: TextStyle(
-                        color: Colors.white.withValues(alpha: 0.8),
+                        color: isDark
+                            ? Colors.white.withValues(alpha: 0.8)
+                            : Colors.black.withValues(alpha: 0.8),
                         fontSize: 14,
                         fontWeight: FontWeight.w500,
                       ),
@@ -229,8 +225,8 @@ class ZakatScreenState extends State<ZakatScreen> {
                     const SizedBox(height: 4),
                     Text(
                       "${_netAssets.toStringAsFixed(2)} BDT",
-                      style: const TextStyle(
-                        color: Colors.white,
+                      style: TextStyle(
+                        color: isDark ? Colors.white : Colors.black,
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
                       ),
@@ -242,25 +238,31 @@ class ZakatScreenState extends State<ZakatScreen> {
                       const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                   decoration: BoxDecoration(
                     color: isEligible
-                        ? Colors.white.withValues(alpha: 0.2)
-                        : Colors.red.withValues(alpha: 0.2),
+                        ? isDark
+                            ? Colors.white.withValues(alpha: 0.2)
+                            : Colors.red.withValues(alpha: 0.2)
+                        : isDark
+                            ? Colors.white.withValues(alpha: 0.2)
+                            : Colors.red.withValues(alpha: 0.2),
                     borderRadius: BorderRadius.circular(20),
                     border: Border.all(
-                      color: Colors.white.withValues(alpha: 0.3),
+                      color: isDark
+                          ? Colors.white.withValues(alpha: 0.3)
+                          : Colors.black.withValues(alpha: 0.3),
                     ),
                   ),
                   child: Row(
                     children: [
                       Icon(
                         isEligible ? Icons.check_circle : Icons.info_outline,
-                        color: Colors.white,
+                        color: isDark ? Colors.white : Colors.black,
                         size: 16,
                       ),
                       const SizedBox(width: 6),
                       Text(
                         isEligible ? "Eligible" : "Not Eligible",
-                        style: const TextStyle(
-                          color: Colors.white,
+                        style: TextStyle(
+                          color: isDark ? Colors.white : Colors.black,
                           fontWeight: FontWeight.bold,
                           fontSize: 12,
                         ),
@@ -280,14 +282,18 @@ class ZakatScreenState extends State<ZakatScreen> {
                       Text(
                         "Total Assets",
                         style: TextStyle(
-                          color: Colors.white.withValues(alpha: 0.6),
+                          color: isDark
+                              ? Colors.white.withValues(alpha: 0.6)
+                              : Colors.black.withValues(alpha: 0.6),
                           fontSize: 12,
                         ),
                       ),
                       Text(
                         "${_totalAssets.toStringAsFixed(0)} BDT",
                         style: TextStyle(
-                          color: Colors.white.withValues(alpha: 0.9),
+                          color: isDark
+                              ? Colors.white.withValues(alpha: 0.9)
+                              : Colors.black.withValues(alpha: 0.9),
                           fontWeight: FontWeight.w600,
                         ),
                       ),
@@ -301,14 +307,18 @@ class ZakatScreenState extends State<ZakatScreen> {
                       Text(
                         "Total Liabilities",
                         style: TextStyle(
-                          color: Colors.white.withValues(alpha: 0.6),
+                          color: isDark
+                              ? Colors.white.withValues(alpha: 0.6)
+                              : Colors.black.withValues(alpha: 0.6),
                           fontSize: 12,
                         ),
                       ),
                       Text(
                         "${_totalLiabilities.toStringAsFixed(0)} BDT",
                         style: TextStyle(
-                          color: Colors.white.withValues(alpha: 0.9),
+                          color: isDark
+                              ? Colors.white.withValues(alpha: 0.9)
+                              : Colors.black.withValues(alpha: 0.9),
                           fontWeight: FontWeight.w600,
                         ),
                       ),
@@ -321,10 +331,10 @@ class ZakatScreenState extends State<ZakatScreen> {
               padding: EdgeInsets.symmetric(vertical: 20),
               child: Divider(color: Colors.white24, height: 1),
             ),
-            const Text(
+            Text(
               "Total Zakat Payable",
               style: TextStyle(
-                color: Colors.white,
+                color: isDark ? Colors.white : Colors.black,
                 fontSize: 14,
                 fontWeight: FontWeight.w600,
                 letterSpacing: 0.5,
@@ -333,8 +343,8 @@ class ZakatScreenState extends State<ZakatScreen> {
             const SizedBox(height: 8),
             Text(
               "${_zakatPayable.toStringAsFixed(2)} BDT",
-              style: const TextStyle(
-                color: Colors.white,
+              style: TextStyle(
+                color: isDark ? Colors.white : Colors.black,
                 fontSize: 36,
                 fontWeight: FontWeight.w800,
                 height: 1.0,
@@ -500,7 +510,7 @@ class ZakatScreenState extends State<ZakatScreen> {
           labelStyle: TextStyle(
               color: isDark ? Colors.white70 : Colors.grey.shade600,
               fontSize: 14),
-          prefixIcon: Icon(Icons.attach_money,
+          prefixIcon: Icon(FontAwesomeIcons.bangladeshiTakaSign,
               size: 18, color: isDark ? Colors.white54 : Colors.grey.shade400),
           filled: true,
           fillColor: isDark ? Colors.grey[800] : Colors.grey.shade50,
