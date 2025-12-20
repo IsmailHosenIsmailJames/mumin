@@ -18,6 +18,7 @@ import "package:mumin/src/screens/qibla_direction/qibla_compass_screen.dart";
 import "package:mumin/src/screens/quran/surah_list_screen.dart";
 import "package:mumin/src/screens/quran/surah_view/surah_view.dart";
 import "package:mumin/src/screens/ramadan_calender/ramadan_calender_page.dart";
+import "package:mumin/src/screens/settings/quran_settings_screen.dart";
 import "package:mumin/src/screens/tasbeeh/tasbeeh_screen.dart";
 import "package:mumin/src/screens/zakkat/zakkat_screen.dart";
 
@@ -131,6 +132,10 @@ class AppRouter {
               title: extra["title"],
             );
           },
+        ),
+        GoRoute(
+          path: "/settings",
+          builder: (context, state) => const QuranSettingsScreen(),
         ),
       ],
       redirect: (context, state) {

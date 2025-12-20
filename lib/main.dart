@@ -28,8 +28,7 @@ void main() async {
   // Initialize Controllers
   Get.put(AuthController());
   Get.put(ManageAudioController());
-  final AppThemeController appThemeController = Get.put(AppThemeController());
-  appThemeController.initTheme();
+  Get.put(AppThemeController());
 
   runApp(const MyApp());
 }
@@ -50,46 +49,55 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      debugShowCheckedModeBanner: false,
-      title: "Mumin",
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: MyAppColors.primaryColor,
-          brightness: Brightness.light,
-        ),
-        elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
-            shape: RoundedRectangleBorder(
-              borderRadius: MyAppShapes.borderRadius,
+    return GetX<AppThemeController>(builder: (controller) {
+      ThemeMode themeMode = ThemeMode.system;
+      if (controller.themeModeName.value == "light") {
+        themeMode = ThemeMode.light;
+      } else if (controller.themeModeName.value == "dark") {
+        themeMode = ThemeMode.dark;
+      }
+      return MaterialApp.router(
+        debugShowCheckedModeBanner: false,
+        title: "Mumin",
+        themeMode: themeMode,
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(
+            seedColor: MyAppColors.primaryColor,
+            brightness: Brightness.light,
+          ),
+          elevatedButtonTheme: ElevatedButtonThemeData(
+            style: ElevatedButton.styleFrom(
+              shape: RoundedRectangleBorder(
+                borderRadius: MyAppShapes.borderRadius,
+              ),
+              backgroundColor: MyAppColors.primaryColor,
+              foregroundColor: Colors.white,
             ),
-            backgroundColor: MyAppColors.primaryColor,
-            foregroundColor: Colors.white,
+          ),
+          textButtonTheme: TextButtonThemeData(
+            style: TextButton.styleFrom(foregroundColor: Colors.black),
           ),
         ),
-        textButtonTheme: TextButtonThemeData(
-          style: TextButton.styleFrom(foregroundColor: Colors.black),
-        ),
-      ),
-      darkTheme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: MyAppColors.primaryColor,
-          brightness: Brightness.dark,
-        ),
-        textButtonTheme: TextButtonThemeData(
-          style: TextButton.styleFrom(foregroundColor: Colors.white),
-        ),
-        elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
-            shape: RoundedRectangleBorder(
-              borderRadius: MyAppShapes.borderRadius,
+        darkTheme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(
+            seedColor: MyAppColors.primaryColor,
+            brightness: Brightness.dark,
+          ),
+          textButtonTheme: TextButtonThemeData(
+            style: TextButton.styleFrom(foregroundColor: Colors.white),
+          ),
+          elevatedButtonTheme: ElevatedButtonThemeData(
+            style: ElevatedButton.styleFrom(
+              shape: RoundedRectangleBorder(
+                borderRadius: MyAppShapes.borderRadius,
+              ),
+              backgroundColor: MyAppColors.primaryColor,
+              foregroundColor: Colors.white,
             ),
-            backgroundColor: MyAppColors.primaryColor,
-            foregroundColor: Colors.white,
           ),
         ),
-      ),
-      routerConfig: AppRouter.router,
-    );
+        routerConfig: AppRouter.router,
+      );
+    });
   }
 }

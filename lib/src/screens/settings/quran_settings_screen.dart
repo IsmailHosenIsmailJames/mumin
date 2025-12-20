@@ -50,7 +50,7 @@ class _QuranSettingsScreenState extends State<QuranSettingsScreen> {
               ),
               const SizedBox(height: 20),
               const Text(
-                "Translation Font Size",
+                "Bangla Translation Font Size",
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
               ),
               Slider(
@@ -67,7 +67,7 @@ class _QuranSettingsScreenState extends State<QuranSettingsScreen> {
                     border: Border.all(color: Colors.grey.shade300),
                     borderRadius: BorderRadius.circular(8)),
                 child: Text(
-                  "In the name of Allah, the Most Gracious, the Most Merciful.",
+                  "পরম করুণাময়, পরম দয়ালু আল্লাহর নামে (শুরু করছি)",
                   style: TextStyle(
                     fontSize: settingsController.translationFontSize.value,
                   ),
@@ -76,7 +76,7 @@ class _QuranSettingsScreenState extends State<QuranSettingsScreen> {
               ),
               const SizedBox(height: 20),
               const Text(
-                "English/Bangla Font Size",
+                "English Translation Font Size",
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
               ),
               Slider(
@@ -93,7 +93,7 @@ class _QuranSettingsScreenState extends State<QuranSettingsScreen> {
                     border: Border.all(color: Colors.grey.shade300),
                     borderRadius: BorderRadius.circular(8)),
                 child: Text(
-                  "Sample Text for other contents.",
+                  "In the name of Allah, the Most Gracious, the Most Merciful.",
                   style: TextStyle(
                     fontSize: settingsController.englishFontSize.value,
                   ),

@@ -1,4 +1,3 @@
-import "package:flutter/material.dart";
 import "package:get/get.dart";
 import "package:hive_flutter/hive_flutter.dart";
 
@@ -27,18 +26,18 @@ class AppThemeController extends GetxController {
     if (userTheme != null) {
       if (userTheme == "light") {
         isDark.value = false;
-        Get.changeThemeMode(ThemeMode.light);
+// Get.changeThemeMode(ThemeMode.light);
         themeModeName.value = "light";
         await themePrefer.put("theme_preference", themeModeName.value);
       } else if (userTheme == "dark") {
         isDark.value = true;
 
-        Get.changeThemeMode(ThemeMode.dark);
+        // Get.changeThemeMode(ThemeMode.dark);
         themeModeName.value = "dark";
         await themePrefer.put("theme_preference", themeModeName.value);
       } else if (userTheme == "system") {
         themeModeName.value = "system";
-        Get.changeThemeMode(ThemeMode.system);
+        // Get.changeThemeMode(ThemeMode.system);
       }
     } else {
       await themePrefer.put("theme_preference", "system");
@@ -52,18 +51,18 @@ class AppThemeController extends GetxController {
     if (themeToChange == "light") {
       isDark.value = false;
 
-      Get.changeThemeMode(ThemeMode.light);
+      // Get.changeThemeMode(ThemeMode.light);
       themeModeName.value = "light";
       await themePrefer.put("theme_preference", themeModeName.value);
     } else if (themeToChange == "dark") {
       isDark.value = true;
 
       themeModeName.value = "dark";
-      Get.changeThemeMode(ThemeMode.dark);
+      // Get.changeThemeMode(ThemeMode.dark);
       await themePrefer.put("theme_preference", "dark");
     } else if (themeToChange == "system") {
       themeModeName.value = "system";
-      Get.changeThemeMode(ThemeMode.system);
+      // Get.changeThemeMode(ThemeMode.system);
       await themePrefer.put("theme_preference", "system");
     }
   }

@@ -6,6 +6,7 @@ import "package:flutter/material.dart";
 import "package:flutter/services.dart";
 import "package:gap/gap.dart";
 import "package:get/get.dart";
+import "package:go_router/go_router.dart";
 import "package:mumin/src/core/audio/manage_audio.dart";
 import "package:mumin/src/screens/quran/resources/chapters_ayah_count.dart";
 import "package:mumin/src/screens/quran/resources/model/quran_surah_info_model.dart";
@@ -134,7 +135,16 @@ class _SurahViewState extends State<SurahView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(widget.surahName)),
+      appBar: AppBar(
+        title: Text(widget.surahName),
+        actions: [
+          IconButton(
+              onPressed: () {
+                context.push("/settings");
+              },
+              icon: const Icon(Icons.settings))
+        ],
+      ),
       body: ayahsWithMeaning.isEmpty
           ? const Center(child: CircularProgressIndicator())
           : Stack(

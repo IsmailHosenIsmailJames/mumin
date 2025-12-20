@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
 import "package:get/get.dart";
+import "package:go_router/go_router.dart";
 import "package:mumin/src/screens/settings/controller/settings_controller.dart";
 
 class KalimaScreen extends StatelessWidget {
@@ -15,6 +16,13 @@ class KalimaScreen extends StatelessWidget {
           "Kalima",
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
+        actions: [
+          IconButton(
+              onPressed: () {
+                context.push("/settings");
+              },
+              icon: const Icon(Icons.settings))
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(
