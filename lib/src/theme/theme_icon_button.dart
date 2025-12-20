@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import "package:flutter/material.dart";
+import "package:get/get.dart";
 
-import 'theme_controller.dart';
+import "theme_controller.dart";
 
 Widget themeIconButton = GetX<AppThemeController>(
   builder:
@@ -10,20 +10,20 @@ Widget themeIconButton = GetX<AppThemeController>(
           backgroundColor: Colors.grey.withValues(alpha: 0.1),
         ),
         color: Colors.green.shade600,
-        tooltip: 'Change Theme',
+        tooltip: "Change Theme",
         onPressed: () {
-          if (controller.themeModeName.value == 'dark') {
-            controller.setTheme('light');
-          } else if (controller.themeModeName.value == 'light') {
-            controller.setTheme('system');
+          if (controller.themeModeName.value == "dark") {
+            controller.setTheme("light");
+          } else if (controller.themeModeName.value == "light") {
+            controller.setTheme("system");
           } else {
-            controller.setTheme('dark');
+            controller.setTheme("dark");
           }
         },
         icon:
-            controller.themeModeName.value == 'dark'
+            controller.themeModeName.value == "dark"
                 ? const Icon(Icons.dark_mode)
-                : controller.themeModeName.value == 'light'
+                : controller.themeModeName.value == "light"
                 ? const Icon(Icons.light_mode)
                 : const Icon(Icons.brightness_4),
       ),

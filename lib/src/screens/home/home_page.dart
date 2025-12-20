@@ -1,39 +1,38 @@
-import 'dart:convert';
-import 'dart:developer';
+import "dart:convert";
+import "dart:developer";
 
-import 'package:awesome_notifications/awesome_notifications.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-import 'package:gap/gap.dart';
-import 'package:geocoding/geocoding.dart';
-import 'package:geolocator/geolocator.dart';
-import 'package:get/get.dart';
-import 'package:hive/hive.dart';
-import 'package:http/http.dart';
-import 'package:intl/intl.dart';
-import 'package:mumin/src/apis/apis.dart';
-import 'package:mumin/src/core/algorithm/get_most_close_key.dart';
-import 'package:mumin/src/core/algorithm/safe_substring.dart';
-import 'package:mumin/src/core/location/location_service.dart';
-import 'package:mumin/src/core/notifications/notification_service.dart';
-import 'package:mumin/src/core/notifications/requiest_permission.dart';
-import 'package:mumin/src/screens/auth/controller/auth_controller.dart';
-import 'package:mumin/src/screens/daily_plan/daily_ramadan_plan.dart';
-import 'package:mumin/src/screens/daily_plan/get_ramadan_number.dart';
-import 'package:mumin/src/screens/home/controller/model/user_calander_day_model.dart';
-import 'package:mumin/src/screens/home/controller/model/user_location_data.dart';
-import 'package:mumin/src/screens/home/controller/user_location.dart';
-import 'package:mumin/src/screens/home/controller/user_location_calender.dart';
-import 'package:mumin/src/screens/home/count_down.dart';
-import 'package:mumin/src/screens/quran/surah_list_screen.dart';
-import 'package:mumin/src/screens/ramadan_calender/model/controller.dart';
-import 'package:mumin/src/theme/colors.dart';
-import 'package:mumin/src/theme/shadows.dart';
-import 'package:mumin/src/theme/shapes.dart';
-import 'package:mumin/src/theme/theme_controller.dart';
-import 'package:mumin/src/theme/theme_icon_button.dart';
-import 'package:toastification/toastification.dart';
+import "package:awesome_notifications/awesome_notifications.dart";
+import "package:flutter/material.dart";
+import "package:flutter/services.dart";
+import "package:flutter_animate/flutter_animate.dart";
+import "package:gap/gap.dart";
+import "package:geocoding/geocoding.dart";
+import "package:geolocator/geolocator.dart";
+import "package:go_router/go_router.dart";
+import "package:get/get.dart";
+import "package:hive/hive.dart";
+import "package:http/http.dart";
+import "package:intl/intl.dart";
+import "package:mumin/src/apis/apis.dart";
+import "package:mumin/src/core/algorithm/get_most_close_key.dart";
+import "package:mumin/src/core/algorithm/safe_substring.dart";
+import "package:mumin/src/core/location/location_service.dart";
+import "package:mumin/src/core/notifications/notification_service.dart";
+import "package:mumin/src/core/notifications/requiest_permission.dart";
+import "package:mumin/src/screens/auth/controller/auth_controller.dart";
+import "package:mumin/src/screens/daily_plan/get_ramadan_number.dart";
+import "package:mumin/src/screens/home/controller/model/user_calander_day_model.dart";
+import "package:mumin/src/screens/home/controller/model/user_location_data.dart";
+import "package:mumin/src/screens/home/controller/user_location.dart";
+import "package:mumin/src/screens/home/controller/user_location_calender.dart";
+import "package:mumin/src/screens/home/count_down.dart";
+import "package:mumin/src/screens/ramadan_calender/model/controller.dart";
+import "package:mumin/src/theme/colors.dart";
+import "package:mumin/src/theme/shadows.dart";
+import "package:mumin/src/theme/shapes.dart";
+import "package:mumin/src/theme/theme_controller.dart";
+import "package:mumin/src/theme/theme_icon_button.dart";
+import "package:toastification/toastification.dart";
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -44,42 +43,42 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   List<Map<String, String>> cards = [
-    {'img': 'assets/images/kalima.png', 'name': 'Kalima', 'route': '/kalima'},
-    {'img': 'assets/images/quran.png', 'name': 'Quran', 'route': '/quran'},
-    {'img': 'assets/images/hadith.png', 'name': 'Hadith', 'route': '/hadith'},
+    {"img": "assets/images/kalima.png", "name": "Kalima", "route": "/kalima"},
+    {"img": "assets/images/quran.png", "name": "Quran", "route": "/quran"},
+    {"img": "assets/images/hadith.png", "name": "Hadith", "route": "/hadith"},
     {
-      'img': 'assets/images/read_and_practice.png',
-      'name': 'Read & Practice',
-      'route': '/read_practice',
+      "img": "assets/images/read_and_practice.png",
+      "name": "Read & Practice",
+      "route": "/read_practice",
     },
     {
-      'img': 'assets/images/ramadan.png',
-      'name': 'Ramadan Calender',
-      'route': '/ramadan_calender',
+      "img": "assets/images/ramadan.png",
+      "name": "Ramadan Calender",
+      "route": "/ramadan_calender",
     },
     {
-      'img': 'assets/images/prayer_time.png',
-      'name': 'Prayer Time',
-      'route': '/prayer_time',
+      "img": "assets/images/prayer_time.png",
+      "name": "Prayer Time",
+      "route": "/prayer_time",
     },
-    {'img': 'assets/images/mosque2.png', 'name': 'Mosque', 'route': '/mosque'},
+    {"img": "assets/images/mosque2.png", "name": "Mosque", "route": "/mosque"},
     {
-      'img': 'assets/images/direction.png',
-      'name': 'Qibla Direction',
-      'route': '/qibla_direction',
-    },
-    {
-      'img': 'assets/images/tasbeeh.png',
-      'name': 'Tasbeeh',
-      'route': '/tasbeeh',
+      "img": "assets/images/direction.png",
+      "name": "Qibla Direction",
+      "route": "/qibla_direction",
     },
     {
-      'img': 'assets/images/zakat.png',
-      'name': 'Zakat Calculator',
-      'route': '/zakat_screen',
+      "img": "assets/images/tasbeeh.png",
+      "name": "Tasbeeh",
+      "route": "/tasbeeh",
     },
-    {'img': 'assets/images/qaba.png', 'name': 'Hajj', 'route': '/hajj'},
-    {'img': 'assets/images/about.png', 'name': 'About', 'route': '/about'},
+    {
+      "img": "assets/images/zakat.png",
+      "name": "Zakat Calculator",
+      "route": "/zakat_screen",
+    },
+    {"img": "assets/images/qaba.png", "name": "Hajj", "route": "/hajj"},
+    {"img": "assets/images/about.png", "name": "About", "route": "/about"},
   ];
 
   AppThemeController appThemeController = Get.find();
@@ -89,7 +88,7 @@ class _HomePageState extends State<HomePage> {
 
   UserLocationCalender userLocationCalender = Get.put(UserLocationCalender());
 
-  final userBox = Hive.box('user_db');
+  final userBox = Hive.box("user_db");
   @override
   void initState() {
     startupCalls();
@@ -103,11 +102,11 @@ class _HomePageState extends State<HomePage> {
 
     if (await requestPermissionsAwesomeNotifications()) {
       await NotificationService.initializeNotifications();
-      if (Hive.box('user_db').get('close_notification', defaultValue: null) ==
+      if (Hive.box("user_db").get("close_notification", defaultValue: null) ==
           null) {
         await AwesomeNotifications().cancelAll();
-        await Hive.box('user_db').put('close_notification', true);
-        log('AwesomeNotifications().cancelAll()');
+        await Hive.box("user_db").put("close_notification", true);
+        log("AwesomeNotifications().cancelAll()");
       }
       await NotificationService.scheduleDailyRamadanNotification();
     }
@@ -115,18 +114,18 @@ class _HomePageState extends State<HomePage> {
     setState(() {});
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       if (userBox.get(
-              'daily_plan_popup_${getRamadanNumber(
+              "daily_plan_popup_${getRamadanNumber(
                 ramadanTodayTimeController.ifter.value ??
                     const TimeOfDay(hour: 18, minute: 30),
-              )}',
+              )}",
               defaultValue: null) ==
           null) {
         await showDailyPlanDialog();
         userBox.put(
-            'daily_plan_popup_${getRamadanNumber(
+            "daily_plan_popup_${getRamadanNumber(
               ramadanTodayTimeController.ifter.value ??
                   const TimeOfDay(hour: 18, minute: 30),
-            )}',
+            )}",
             true);
       }
     });
@@ -135,14 +134,14 @@ class _HomePageState extends State<HomePage> {
     setState(() {});
   }
 
-  callApiAnalytics() async {
-    log('$baseApi/api/activity?phone=${authController.user.value?.mobileNumber}',
-        name: 'API hit');
+  Future<void> callApiAnalytics() async {
+    log("$baseApi/api/activity?phone=${authController.user.value?.mobileNumber}",
+        name: "API hit");
     try {
       final res = await get(Uri.parse(
-          '$baseApi/api/activity?phone=${authController.user.value?.mobileNumber}'));
-      log(res.statusCode.toString(), name: 'statusCode');
-      log(res.body, name: 'body');
+          "$baseApi/api/activity?phone=${authController.user.value?.mobileNumber}"));
+      log(res.statusCode.toString(), name: "statusCode");
+      log(res.body, name: "body");
     } catch (e) {
       log(e.toString());
     }
@@ -153,20 +152,20 @@ class _HomePageState extends State<HomePage> {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: const Text('Your daily Ramadan plans are ready!'),
+          title: const Text("Your daily Ramadan plans are ready!"),
           actions: [
             TextButton.icon(
               onPressed: () {
-                Navigator.pop(context);
+                context.pop();
               },
               icon: const Icon(Icons.close),
-              label: const Text('Close'),
+              label: const Text("Close"),
             ),
             ElevatedButton.icon(
               onPressed: () {
                 routeTo30DayPlan(context, isPopUp: true);
               },
-              label: const Text('See Plans'),
+              label: const Text("See Plans"),
             )
           ],
         );
@@ -179,17 +178,17 @@ class _HomePageState extends State<HomePage> {
 
   Future<void> loadCalender(UserLocationData? userLocationData) async {
     String json = await rootBundle
-        .loadString('assets/calender_data/ramadan_calendar2025.json');
+        .loadString("assets/calender_data/ramadan_calendar2025.json");
     Map ramadanCalendar = jsonDecode(json);
     if (userLocationData != null) {
-      List<String> data = userLocationData.district.split(' ');
+      List<String> data = userLocationData.district.split(" ");
       data.removeLast();
       String district = data.first;
       if (data.length > 1) {
-        district = '${data.first.toLowerCase()} ${data.last.toLowerCase()}';
+        district = "${data.first.toLowerCase()} ${data.last.toLowerCase()}";
       }
 
-      district = district.replaceAll(' ', '');
+      district = district.replaceAll(" ", "");
       List<RamadanDayModel> ramadanDaysList = [];
       log(district);
       bool found = false;
@@ -225,9 +224,9 @@ class _HomePageState extends State<HomePage> {
       }
       if (todaysTime != null) {
         ramadanTodayTimeController.sehri.value = TimeOfDay.fromDateTime(
-            DateFormat('h:mm a').parse(todaysTime.seharEnd));
+            DateFormat("h:mm a").parse(todaysTime.seharEnd));
         ramadanTodayTimeController.ifter.value = TimeOfDay.fromDateTime(
-            DateFormat('h:mm a').parse(todaysTime.ifter));
+            DateFormat("h:mm a").parse(todaysTime.ifter));
         log(todaysTime.toJson());
       }
       userLocationCalender.userLocationCalender.value = ramadanDaysList;
@@ -254,8 +253,8 @@ class _HomePageState extends State<HomePage> {
         UserLocationData userLocationData = UserLocationData(
             latitude: location.latitude,
             longitude: location.longitude,
-            division: 'division',
-            district: 'district');
+            division: "division",
+            district: "district");
         for (Placemark placemark in placemarks) {
           if (placemark.administrativeArea != null) {
             userLocationData.division = placemark.administrativeArea!;
@@ -264,13 +263,13 @@ class _HomePageState extends State<HomePage> {
             userLocationData.district = placemark.subAdministrativeArea!;
           }
         }
-        await Hive.box('user_db')
-            .put('user_location', userLocationData.toJson());
+        await Hive.box("user_db")
+            .put("user_location", userLocationData.toJson());
         userLocationController.locationData.value = userLocationData;
         await loadCalender(userLocationController.locationData.value);
         setState(() {});
       } else {
-        log('Location is null');
+        log("Location is null");
       }
     } catch (e) {
       log(e.toString());
@@ -316,7 +315,7 @@ class _HomePageState extends State<HomePage> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             const Text(
-                              'Location permission denied!',
+                              "Location permission denied!",
                               style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
@@ -324,7 +323,7 @@ class _HomePageState extends State<HomePage> {
                               ),
                             ),
                             Text(
-                              'Please give app location permission\nSo that you can enjoy more features.',
+                              "Please give app location permission\nSo that you can enjoy more features.",
                               style: TextStyle(
                                 fontSize: 12,
                                 color: MyAppColors.secondaryColor,
@@ -394,7 +393,7 @@ class _HomePageState extends State<HomePage> {
                                 ),
                                 Text(
                                   safeSubString(
-                                      '${userLocationController.locationData.value!.division}, Bangladesh',
+                                      "${userLocationController.locationData.value!.division}, Bangladesh",
                                       25),
                                   style: TextStyle(
                                     fontSize: 15,
@@ -424,7 +423,7 @@ class _HomePageState extends State<HomePage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Ramadan - ${getRamadanNumber(ramadanTodayTimeController.ifter.value ?? const TimeOfDay(hour: 18, minute: 30))}',
+                      "Ramadan - ${getRamadanNumber(ramadanTodayTimeController.ifter.value ?? const TimeOfDay(hour: 18, minute: 30))}",
                       style: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
@@ -450,7 +449,7 @@ class _HomePageState extends State<HomePage> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               const Text(
-                                'Sehri',
+                                "Sehri",
                                 style: TextStyle(
                                   fontSize: 16,
                                   fontWeight: FontWeight.bold,
@@ -460,7 +459,7 @@ class _HomePageState extends State<HomePage> {
                               Text(
                                 ramadanTodayTimeController.sehri.value
                                         ?.format(context) ??
-                                    '',
+                                    "",
                                 style: TextStyle(
                                   fontSize: 16,
                                   color: MyAppColors.primaryColor,
@@ -474,7 +473,7 @@ class _HomePageState extends State<HomePage> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               const Text(
-                                'Iftar',
+                                "Iftar",
                                 style: TextStyle(
                                   fontSize: 16,
                                   fontWeight: FontWeight.bold,
@@ -484,7 +483,7 @@ class _HomePageState extends State<HomePage> {
                               Text(
                                 ramadanTodayTimeController.ifter.value
                                         ?.format(context) ??
-                                    '',
+                                    "",
                                 style: TextStyle(
                                   fontSize: 16,
                                   color: MyAppColors.primaryColor,
@@ -517,7 +516,7 @@ class _HomePageState extends State<HomePage> {
                     : MyAppColors.backgroundLightColor,
                 borderRadius: MyAppShapes.borderRadius,
               ),
-              child: Image.asset('assets/images/banner.gif'),
+              child: Image.asset("assets/images/banner.gif"),
             ),
           ),
           GestureDetector(
@@ -536,7 +535,7 @@ class _HomePageState extends State<HomePage> {
                   Icon(Icons.calendar_month),
                   Gap(10),
                   Text(
-                    'Ramadan Plan',
+                    "Ramadan Plan",
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
@@ -562,25 +561,22 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   onPressed: () {
-                    if (cards[index]['route'] == '/read_practice') {
-                      Get.to(
-                        () => const SurahListScreen(practiceMode: true),
-                        routeName: '/read_practice',
-                      );
+                    if (cards[index]["route"] == "/read_practice") {
+                      context.push("/read_practice");
                       return;
                     }
 
-                    if (cards[index]['route'] == '/qibla_direction' ||
-                        cards[index]['route'] == '/prayer_time' ||
-                        cards[index]['route'] == '/mosque' ||
-                        cards[index]['route'] == '/ramadan_calender') {
+                    if (cards[index]["route"] == "/qibla_direction" ||
+                        cards[index]["route"] == "/prayer_time" ||
+                        cards[index]["route"] == "/mosque" ||
+                        cards[index]["route"] == "/ramadan_calender") {
                       if (userLocationController.locationData.value == null) {
                         toastification.show(
                           context: context,
                           title: Text(
                             isLocationDeclined
-                                ? 'Location permission denied!'
-                                : 'Location Data is loading...',
+                                ? "Location permission denied!"
+                                : "Location Data is loading...",
                           ),
                           type: isLocationDeclined
                               ? ToastificationType.error
@@ -588,11 +584,11 @@ class _HomePageState extends State<HomePage> {
                           autoCloseDuration: const Duration(seconds: 4),
                         );
                       } else {
-                        Get.toNamed(cards[index]['route']!);
+                        context.push(cards[index]["route"]!);
                       }
                       return;
                     }
-                    Get.toNamed(cards[index]['route']!);
+                    context.push(cards[index]["route"]!);
                   },
                   child: Obx(
                     () => Container(
@@ -618,13 +614,13 @@ class _HomePageState extends State<HomePage> {
                             height: 45,
                             width: 45,
                             child: Image.asset(
-                              cards[index]['img']!,
+                              cards[index]["img"]!,
                               fit: BoxFit.fill,
                             ),
                           ),
                           const Gap(5),
                           Text(
-                            cards[index]['name']!,
+                            cards[index]["name"]!,
                             textAlign: TextAlign.center,
                           ),
                         ],
@@ -642,9 +638,9 @@ class _HomePageState extends State<HomePage> {
   }
 
   bool isDark(String mood) {
-    if (mood == 'dark') {
+    if (mood == "dark") {
       return true;
-    } else if (mood == 'light') {
+    } else if (mood == "light") {
       return false;
     } else {
       return MediaQuery.of(context).platformBrightness == Brightness.dark;
@@ -653,9 +649,13 @@ class _HomePageState extends State<HomePage> {
 
   Future<void> routeTo30DayPlan(BuildContext context,
       {bool isPopUp = false}) async {
-    if (isPopUp) Navigator.pop(context);
-    Get.to(() => DailyRamadanPlan(
-        day: getRamadanNumber(ramadanTodayTimeController.ifter.value ??
-            const TimeOfDay(hour: 18, minute: 30))));
+    if (isPopUp) context.pop();
+    context.push(
+      "/daily_ramadan_plan",
+      extra: {
+        "day": getRamadanNumber(ramadanTodayTimeController.ifter.value ??
+            const TimeOfDay(hour: 18, minute: 30))
+      },
+    );
   }
 }

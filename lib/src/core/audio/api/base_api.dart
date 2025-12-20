@@ -1,1 +1,1 @@
-String audioBase = 'https://verses.quran.foundation/AbdulBaset/Murattal/mp3';
+String audioBase = "https://verses.quran.foundation/AbdulBaset/Murattal/mp3";

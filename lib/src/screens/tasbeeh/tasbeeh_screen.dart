@@ -1,8 +1,8 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
-import 'package:mumin/src/theme/colors.dart';
-import 'package:mumin/src/theme/shapes.dart';
+import "package:flutter/cupertino.dart";
+import "package:flutter/material.dart";
+import "package:gap/gap.dart";
+import "package:mumin/src/theme/colors.dart";
+import "package:mumin/src/theme/shapes.dart";
 
 class TasbeehScreen extends StatefulWidget {
   const TasbeehScreen({super.key});
@@ -22,7 +22,7 @@ class TasbeehScreenState extends State<TasbeehScreen> {
       appBar: AppBar(
         elevation: 0,
         title: const Text(
-          'Tasbeeh',
+          "Tasbeeh",
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
       ),
@@ -31,7 +31,7 @@ class TasbeehScreenState extends State<TasbeehScreen> {
           // Calligraphy Section
           Center(
             child: Image.asset(
-              'assets/images/calliography.png',
+              "assets/images/calliography.png",
               fit: BoxFit.contain,
             ),
           ),
@@ -47,21 +47,21 @@ class TasbeehScreenState extends State<TasbeehScreen> {
               },
               children: [
                 Text(
-                  'SubahanAllah',
+                  "SubahanAllah",
                   style: Theme.of(
                     context,
                   ).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w500),
                   textAlign: TextAlign.center,
                 ),
                 Text(
-                  'Allahu Akbar',
+                  "Allahu Akbar",
                   style: Theme.of(
                     context,
                   ).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w500),
                   textAlign: TextAlign.center,
                 ),
                 Text(
-                  'Alhamdulillah',
+                  "Alhamdulillah",
                   style: Theme.of(
                     context,
                   ).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w500),
@@ -118,7 +118,7 @@ class TasbeehScreenState extends State<TasbeehScreen> {
             child: Stack(
               children: [
                 Image.asset(
-                  'assets/images/calculator_bg.png',
+                  "assets/images/calculator_bg.png",
                   fit: BoxFit.contain,
                   height: double.infinity,
                   width: double.infinity,
@@ -133,11 +133,11 @@ class TasbeehScreenState extends State<TasbeehScreen> {
                               ?.copyWith(fontWeight: FontWeight.w600),
                           children: <TextSpan>[
                             TextSpan(
-                              text: '$tasbeehCount',
+                              text: "$tasbeehCount",
                               style: const TextStyle(color: Colors.white),
                             ),
                             const TextSpan(
-                              text: '/99',
+                              text: "/99",
                               style: TextStyle(color: Colors.white),
                             ),
                           ],
@@ -214,7 +214,7 @@ class TasbeehScreenState extends State<TasbeehScreen> {
           Align(
             alignment: Alignment.bottomCenter,
             child: Image.asset(
-              'assets/images/tasbeeh_icon.png',
+              "assets/images/tasbeeh_icon.png",
               fit: BoxFit.contain,
               width: MediaQuery.of(context).size.width * 0.9,
             ),

@@ -1,6 +1,6 @@
-import 'package:awesome_notifications/awesome_notifications.dart';
-import 'package:flutter/material.dart';
-import 'dart:async';
+import "package:awesome_notifications/awesome_notifications.dart";
+import "package:flutter/material.dart";
+import "dart:async";
 
 class NotificationService {
   static Future<void> initializeNotifications() async {
@@ -8,10 +8,10 @@ class NotificationService {
       null,
       [
         NotificationChannel(
-          channelGroupKey: 'ramadan_notifications_group',
-          channelKey: 'ramadan_notifications',
-          channelName: 'Ramadan Notifications',
-          channelDescription: 'Notifications for Ramadan daily reminders',
+          channelGroupKey: "ramadan_notifications_group",
+          channelKey: "ramadan_notifications",
+          channelName: "Ramadan Notifications",
+          channelDescription: "Notifications for Ramadan daily reminders",
           defaultColor: Colors.teal,
           ledColor: Colors.white,
           importance: NotificationImportance.High,
@@ -19,8 +19,8 @@ class NotificationService {
       ],
       channelGroups: [
         NotificationChannelGroup(
-            channelGroupKey: 'ramadan_notifications_group',
-            channelGroupName: 'Ramadan Notifications')
+            channelGroupKey: "ramadan_notifications_group",
+            channelGroupName: "Ramadan Notifications")
       ],
       debug: true,
     );
@@ -36,13 +36,13 @@ class NotificationService {
     await AwesomeNotifications().createNotification(
       content: NotificationContent(
         id: 1,
-        channelKey: 'ramadan_notifications',
-        title: 'Today\'s Ramadan Plans are ready!',
-        body: 'Open app to see today\'s Ramadan plan...',
+        channelKey: "ramadan_notifications",
+        title: "Today's Ramadan Plans are ready!",
+        body: "Open app to see today's Ramadan plan...",
         notificationLayout: NotificationLayout.Default,
       ),
       actionButtons: [
-        NotificationActionButton(key: 'OPEN_APP', label: 'Open App')
+        NotificationActionButton(key: "OPEN_APP", label: "Open App")
       ],
       schedule: NotificationCalendar(
         hour: 18,

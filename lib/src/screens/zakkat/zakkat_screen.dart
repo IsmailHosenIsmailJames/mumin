@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:mumin/src/theme/colors.dart'; // Make sure this import is correct
-import 'package:toastification/toastification.dart';
+import "package:flutter/material.dart";
+import "package:flutter/services.dart";
+import "package:mumin/src/theme/colors.dart"; // Make sure this import is correct
+import "package:toastification/toastification.dart";
 
 class ZakatScreen extends StatefulWidget {
   const ZakatScreen({super.key});
@@ -49,7 +49,7 @@ class ZakatScreenState extends State<ZakatScreen> {
       appBar: AppBar(
         elevation: 0, // Consistent with the modern, flat design
         title: const Text(
-          'Zakat Calculator',
+          "Zakat Calculator",
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
         backgroundColor: MyAppColors
@@ -73,7 +73,7 @@ class ZakatScreenState extends State<ZakatScreen> {
                 child: Column(
                   children: [
                     Text(
-                      'Nisab Value',
+                      "Nisab Value",
                       style: Theme.of(context).textTheme.titleLarge!.copyWith(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
@@ -81,7 +81,7 @@ class ZakatScreenState extends State<ZakatScreen> {
                     ),
                     const SizedBox(height: 8),
                     Text(
-                      '${nisab.toStringAsFixed(2)} BDT', // Use toStringAsFixed for currency
+                      "${nisab.toStringAsFixed(2)} BDT", // Use toStringAsFixed for currency
                       style: Theme.of(context).textTheme.titleMedium!.copyWith(
                             color: Colors.white70,
                           ),
@@ -105,30 +105,30 @@ class ZakatScreenState extends State<ZakatScreen> {
                 padding: const EdgeInsets.all(16.0),
                 child: Column(
                   children: [
-                    _buildSection(context, 'Assets', [
-                      _buildTextField(context, 'Value Of Gold', _goldController,
+                    _buildSection(context, "Assets", [
+                      _buildTextField(context, "Value Of Gold", _goldController,
                           TextInputType.number),
-                      _buildTextField(context, 'Value Of Silver',
+                      _buildTextField(context, "Value Of Silver",
                           _silverController, TextInputType.number),
-                      _buildTextField(context, 'Cash (Hand & Bank)',
+                      _buildTextField(context, "Cash (Hand & Bank)",
                           _cashController, TextInputType.number),
-                      _buildTextField(context, 'Hajj Deposit',
+                      _buildTextField(context, "Hajj Deposit",
                           _depositHajjController, TextInputType.number),
-                      _buildTextField(context, 'Loans Given Out',
+                      _buildTextField(context, "Loans Given Out",
                           _loanController, TextInputType.number),
                       _buildTextField(
                           context,
-                          'Business Investments, Shares, etc.',
+                          "Business Investments, Shares, etc.",
                           _savBusipenController,
                           TextInputType.number),
                     ]),
                     const SizedBox(height: 24), // Increased spacing
-                    _buildSection(context, 'Liabilities', [
-                      _buildTextField(context, 'Borrowed Money/Credit',
+                    _buildSection(context, "Liabilities", [
+                      _buildTextField(context, "Borrowed Money/Credit",
                           _creditController, TextInputType.number),
-                      _buildTextField(context, 'Wages Due', _wagesDueController,
+                      _buildTextField(context, "Wages Due", _wagesDueController,
                           TextInputType.number),
-                      _buildTextField(context, 'Taxes/Bills Due',
+                      _buildTextField(context, "Taxes/Bills Due",
                           _taxDueController, TextInputType.number),
                     ]),
                     const SizedBox(height: 24), // Increased spacing
@@ -146,7 +146,7 @@ class ZakatScreenState extends State<ZakatScreen> {
                       ),
                       onPressed: () => _calculateZakat(context),
                       child: Text(
-                        'Calculate Zakat',
+                        "Calculate Zakat",
                         style: Theme.of(context).textTheme.titleLarge?.copyWith(
                             color: Colors.white, fontWeight: FontWeight.bold),
                       ),
@@ -178,7 +178,7 @@ class ZakatScreenState extends State<ZakatScreen> {
                 child: Column(
                   children: [
                     Text(
-                      'Payable Zakat',
+                      "Payable Zakat",
                       style: Theme.of(context).textTheme.titleLarge!.copyWith(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
@@ -186,7 +186,7 @@ class ZakatScreenState extends State<ZakatScreen> {
                     ),
                     const SizedBox(height: 8),
                     Text(
-                      '${payable.toStringAsFixed(2)} BDT',
+                      "${payable.toStringAsFixed(2)} BDT",
                       style: Theme.of(context).textTheme.titleMedium!.copyWith(
                             color: Colors.white70,
                           ),
@@ -232,7 +232,7 @@ class ZakatScreenState extends State<ZakatScreen> {
         keyboardType: keyboardType,
         inputFormatters: [
           FilteringTextInputFormatter.allow(
-              RegExp(r'^\d+\.?\d{0,2}')), // Allows up to 2 decimal places
+              RegExp(r"^\d+\.?\d{0,2}")), // Allows up to 2 decimal places
         ],
         decoration: InputDecoration(
           labelText: label,
@@ -257,7 +257,7 @@ class ZakatScreenState extends State<ZakatScreen> {
   void _calculateZakat(BuildContext context) {
     // Helper function to parse text to double, handling null/empty cases
     double parseDouble(String? value) {
-      return double.tryParse(value ?? '') ?? 0.0;
+      return double.tryParse(value ?? "") ?? 0.0;
     }
 
     // Input validation using the controllers
@@ -266,7 +266,7 @@ class ZakatScreenState extends State<ZakatScreen> {
         _cashController.text.isEmpty) {
       toastification.show(
         context: context,
-        title: const Text('Please fill in all required fields.'),
+        title: const Text("Please fill in all required fields."),
         type: ToastificationType.error,
         autoCloseDuration: const Duration(seconds: 3),
       );
@@ -299,7 +299,7 @@ class ZakatScreenState extends State<ZakatScreen> {
       // More specific error handling, though the tryParse should handle most cases
       toastification.show(
         context: context,
-        title: Text('Error during calculation: $e'),
+        title: Text("Error during calculation: $e"),
         type: ToastificationType.error,
         autoCloseDuration: const Duration(seconds: 5),
       );

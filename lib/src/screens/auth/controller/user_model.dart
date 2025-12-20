@@ -1,4 +1,4 @@
-import 'dart:convert';
+import "dart:convert";
 
 class UserModel {
   final int id;
@@ -43,22 +43,22 @@ class UserModel {
   String toJson() => json.encode(toMap());
 
   factory UserModel.fromMap(Map<String, dynamic> json) => UserModel(
-        id: json['id'],
-        fullName: json['full_name'],
-        mobileNumber: json['mobile_number'],
-        pinNumber: json['pin_number'],
-        status: json['status'],
-        createdAt: json['created_at'],
-        updatedAt: json['updated_at'],
+        id: json["id"],
+        fullName: json["full_name"],
+        mobileNumber: json["mobile_number"],
+        pinNumber: json["pin_number"],
+        status: json["status"],
+        createdAt: json["created_at"],
+        updatedAt: json["updated_at"],
       );
 
   Map<String, dynamic> toMap() => {
-        'id': id,
-        'full_name': fullName,
-        'mobile_number': mobileNumber,
-        'pin_number': pinNumber,
-        'status': status,
-        'created_at': createdAt,
-        'updated_at': updatedAt,
+        "id": id,
+        "full_name": fullName,
+        "mobile_number": mobileNumber,
+        "pin_number": pinNumber,
+        "status": status,
+        "created_at": createdAt,
+        "updated_at": updatedAt,
       };
 }

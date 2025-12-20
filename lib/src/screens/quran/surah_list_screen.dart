@@ -1,21 +1,21 @@
-import 'dart:io';
-import 'dart:developer' as dev;
+import "dart:io";
+import "dart:developer" as dev;
 
-import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
-import 'package:get/get.dart';
-import 'package:just_audio/just_audio.dart';
-import 'package:just_audio_background/just_audio_background.dart';
-import 'package:mumin/src/core/audio/manage_audio.dart';
-import 'package:mumin/src/screens/quran/resources/chapters.dart';
-import 'package:mumin/src/screens/quran/resources/model/quran_surah_info_model.dart';
-import 'package:mumin/src/screens/quran/resources/surah_meaning.dart';
-import 'package:mumin/src/screens/quran/surah_view/surah_view.dart';
-import 'package:mumin/src/theme/colors.dart';
-import 'package:mumin/src/theme/shapes.dart';
-import 'package:path/path.dart';
-import 'package:path_provider/path_provider.dart';
-import 'package:share_plus/share_plus.dart';
+import "package:flutter/material.dart";
+import "package:gap/gap.dart";
+import "package:get/get.dart";
+import "package:go_router/go_router.dart";
+import "package:just_audio/just_audio.dart";
+import "package:just_audio_background/just_audio_background.dart";
+import "package:mumin/src/core/audio/manage_audio.dart";
+import "package:mumin/src/screens/quran/resources/chapters.dart";
+import "package:mumin/src/screens/quran/resources/model/quran_surah_info_model.dart";
+import "package:mumin/src/screens/quran/resources/surah_meaning.dart";
+import "package:mumin/src/theme/colors.dart";
+import "package:mumin/src/theme/shapes.dart";
+import "package:path/path.dart";
+import "package:path_provider/path_provider.dart";
+import "package:share_plus/share_plus.dart";
 
 class SurahListScreen extends StatefulWidget {
   final bool? practiceMode;
@@ -33,7 +33,7 @@ class _SurahListScreenState extends State<SurahListScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Holy Quran')),
+      appBar: AppBar(title: const Text("Holy Quran")),
       body: Column(
         children: [
           if (widget.practiceMode == true)
@@ -56,7 +56,7 @@ class _SurahListScreenState extends State<SurahListScreen> {
                           selectedTab = 0;
                         });
                       },
-                      child: const Text('Practice'),
+                      child: const Text("Practice"),
                     ),
                   ),
                   const Gap(10),
@@ -75,7 +75,7 @@ class _SurahListScreenState extends State<SurahListScreen> {
                           selectedTab = 1;
                         });
                       },
-                      child: const Text('Records'),
+                      child: const Text("Records"),
                     ),
                   ),
                 ],
@@ -106,14 +106,17 @@ class _SurahListScreenState extends State<SurahListScreen> {
                                       allChaptersInfo[i])
                                   .versesCount;
                             }
-                            Get.to(
-                              () => SurahView(
-                                surahIndex: chapterModel.id - 1,
-                                surahName: chapterModel.nameSimple,
-                                quranInfoModel: chapterModel,
-                                practiceMode: widget.practiceMode,
-                                startAt: statAt,
-                              ),
+                            context.push(
+                              "/surah_view",
+                              extra: {
+                                "surahIndex": chapterModel.id - 1,
+                                "surahName": chapterModel.nameSimple,
+                                "quranInfoModel": chapterModel,
+                                "practiceMode": widget.practiceMode,
+                                "startAt": statAt,
+                                "start": null,
+                                "end": null,
+                              },
                             );
                           },
                           child: Container(
@@ -154,10 +157,10 @@ class _SurahListScreenState extends State<SurahListScreen> {
                                       "surah${chapterModel.id.toString().padLeft(3, '0')}",
                                       style: const TextStyle(
                                         fontSize: 18,
-                                        fontFamily: 'surah-name-v1',
+                                        fontFamily: "surah-name-v1",
                                       ),
                                     ),
-                                    Text('${chapterModel.versesCount} Ayahs'),
+                                    Text("${chapterModel.versesCount} Ayahs"),
                                   ],
                                 ),
                               ],
@@ -176,15 +179,15 @@ class _SurahListScreenState extends State<SurahListScreen> {
                         );
                       }
                       if (snapshot.data == null) {
-                        return const Center(child: Text('No Record Found'));
+                        return const Center(child: Text("No Record Found"));
                       }
                       if (snapshot.hasError) {
                         return const Center(
-                          child: Text('Something went wrong'),
+                          child: Text("Something went wrong"),
                         );
                       }
                       if (snapshot.data!.isEmpty) {
-                        return const Center(child: Text('No Record Found'));
+                        return const Center(child: Text("No Record Found"));
                       }
                       dev.log(snapshot.data!.length.toString());
                       return ListView.builder(
@@ -201,7 +204,7 @@ class _SurahListScreenState extends State<SurahListScreen> {
                               child: Row(
                                 children: [
                                   Text(
-                                    current.path.split('/').last,
+                                    current.path.split("/").last,
                                     style: const TextStyle(fontSize: 12),
                                   ),
                                   const Gap(20),
@@ -234,7 +237,7 @@ class _SurahListScreenState extends State<SurahListScreen> {
                                             tag: MediaItem(
                                               id: index.toString(),
                                               title:
-                                                  current.path.split('/').last,
+                                                  current.path.split("/").last,
                                             ),
                                           ),
                                         );
@@ -275,11 +278,11 @@ class _SurahListScreenState extends State<SurahListScreen> {
                                           context: context,
                                           builder: (context) => AlertDialog(
                                             title: const Text(
-                                              'Are you sure you want to delete this record?',
+                                              "Are you sure you want to delete this record?",
                                             ),
                                             actions: [
                                               TextButton(
-                                                child: const Text('No'),
+                                                child: const Text("No"),
                                                 onPressed: () {
                                                   Navigator.of(
                                                     context,
@@ -287,7 +290,7 @@ class _SurahListScreenState extends State<SurahListScreen> {
                                                 },
                                               ),
                                               TextButton(
-                                                child: const Text('Yes'),
+                                                child: const Text("Yes"),
                                                 onPressed: () async {
                                                   await File(
                                                     current.path,
@@ -323,7 +326,7 @@ class _SurahListScreenState extends State<SurahListScreen> {
 
   Future<List<FileSystemEntity>> getAudioList() async {
     final directory = Directory(
-      join((await getApplicationDocumentsDirectory()).path, 'records'),
+      join((await getApplicationDocumentsDirectory()).path, "records"),
     );
 
     return directory.listSync();

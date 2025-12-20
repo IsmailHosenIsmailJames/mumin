@@ -1,12 +1,12 @@
-import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
-import 'package:get/get.dart';
-import 'package:intl/intl.dart';
-import 'package:mumin/src/screens/daily_plan/get_ramadan_number.dart';
-import 'package:mumin/src/screens/home/controller/model/user_calander_day_model.dart';
-import 'package:mumin/src/screens/home/controller/user_location_calender.dart';
-import 'package:mumin/src/screens/ramadan_calender/model/controller.dart';
-import 'package:mumin/src/theme/shapes.dart';
+import "package:flutter/material.dart";
+import "package:gap/gap.dart";
+import "package:get/get.dart";
+import "package:intl/intl.dart";
+import "package:mumin/src/screens/daily_plan/get_ramadan_number.dart";
+import "package:mumin/src/screens/home/controller/model/user_calander_day_model.dart";
+import "package:mumin/src/screens/home/controller/user_location_calender.dart";
+import "package:mumin/src/screens/ramadan_calender/model/controller.dart";
+import "package:mumin/src/theme/shapes.dart";
 
 class RamadanCalenderPage extends StatefulWidget {
   const RamadanCalenderPage({super.key});
@@ -23,7 +23,7 @@ class _RamadanCalenderPageState extends State<RamadanCalenderPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Ramadan Calender'),
+        title: const Text("Ramadan Calender"),
       ),
       body: Column(
         children: [
@@ -34,7 +34,7 @@ class _RamadanCalenderPageState extends State<RamadanCalenderPage> {
                 child: SizedBox(
                   width: 100,
                   height: 100,
-                  child: Image.asset('assets/images/ramadan2.png'),
+                  child: Image.asset("assets/images/ramadan2.png"),
                 ),
               ),
               Expanded(
@@ -43,14 +43,14 @@ class _RamadanCalenderPageState extends State<RamadanCalenderPage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      '  Ramadan - ${getRamadanNumber(ramadanTodayTimeController.ifter.value ?? const TimeOfDay(hour: 18, minute: 30))}',
+                      "  Ramadan - ${getRamadanNumber(ramadanTodayTimeController.ifter.value ?? const TimeOfDay(hour: 18, minute: 30))}",
                       style: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     Text(
-                      '   ${DateFormat.yMMMMEEEEd().format(getDateByRamadanNumber(getRamadanNumber(ramadanTodayTimeController.ifter.value ?? const TimeOfDay(hour: 18, minute: 30)) - 1))}',
+                      "   ${DateFormat.yMMMMEEEEd().format(getDateByRamadanNumber(getRamadanNumber(ramadanTodayTimeController.ifter.value ?? const TimeOfDay(hour: 18, minute: 30)) - 1))}",
                       style: const TextStyle(color: Colors.white),
                     ),
                     Container(
@@ -68,7 +68,7 @@ class _RamadanCalenderPageState extends State<RamadanCalenderPage> {
                         children: [
                           const Gap(5),
                           const Text(
-                            'Sehri',
+                            "Sehri",
                             style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
@@ -77,7 +77,7 @@ class _RamadanCalenderPageState extends State<RamadanCalenderPage> {
                           const Gap(20),
                           Text(ramadanTodayTimeController.sehri.value
                                   ?.format(context) ??
-                              '')
+                              "")
                         ],
                       ),
                     ),
@@ -96,7 +96,7 @@ class _RamadanCalenderPageState extends State<RamadanCalenderPage> {
                         children: [
                           const Gap(5),
                           const Text(
-                            'Ifter',
+                            "Ifter",
                             style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
@@ -105,7 +105,7 @@ class _RamadanCalenderPageState extends State<RamadanCalenderPage> {
                           const Gap(25),
                           Text(ramadanTodayTimeController.ifter.value
                                   ?.format(context) ??
-                              '')
+                              "")
                         ],
                       ),
                     ),
@@ -121,10 +121,10 @@ class _RamadanCalenderPageState extends State<RamadanCalenderPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  SizedBox(width: 30, child: Text('SL')),
-                  SizedBox(width: 80, child: Text('Date')),
-                  SizedBox(width: 80, child: Text('Sehri(end)')),
-                  SizedBox(width: 80, child: Text('iftar'))
+                  SizedBox(width: 30, child: Text("SL")),
+                  SizedBox(width: 80, child: Text("Date")),
+                  SizedBox(width: 80, child: Text("Sehri(end)")),
+                  SizedBox(width: 80, child: Text("iftar"))
                 ]),
           ),
           Expanded(
@@ -186,7 +186,7 @@ class _RamadanCalenderPageState extends State<RamadanCalenderPage> {
   }
 
   TimeOfDay parseTimeString(String timeString) {
-    DateFormat format = DateFormat('h:mm a'); // Define the format
+    DateFormat format = DateFormat("h:mm a"); // Define the format
     DateTime dateTime =
         format.parse(timeString); // Parse the string into DateTime
 

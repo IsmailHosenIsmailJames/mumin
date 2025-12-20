@@ -1,14 +1,14 @@
-import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
-import 'package:get/get.dart';
-import 'package:mumin/src/screens/daily_plan/data/day_30_data.dart';
-import 'package:mumin/src/screens/daily_plan/get_ramadan_number.dart';
-import 'package:mumin/src/screens/quran/resources/chapters.dart';
-import 'package:mumin/src/screens/quran/resources/model/quran_surah_info_model.dart';
-import 'package:mumin/src/screens/quran/resources/surah_meaning.dart';
-import 'package:mumin/src/screens/quran/surah_view/surah_view.dart';
-import 'package:mumin/src/screens/ramadan_calender/model/controller.dart';
-import 'package:mumin/src/theme/shapes.dart';
+import "package:flutter/material.dart";
+import "package:gap/gap.dart";
+import "package:get/get.dart";
+import "package:go_router/go_router.dart";
+import "package:mumin/src/screens/daily_plan/data/day_30_data.dart";
+import "package:mumin/src/screens/daily_plan/get_ramadan_number.dart";
+import "package:mumin/src/screens/quran/resources/chapters.dart";
+import "package:mumin/src/screens/quran/resources/model/quran_surah_info_model.dart";
+import "package:mumin/src/screens/quran/resources/surah_meaning.dart";
+import "package:mumin/src/screens/ramadan_calender/model/controller.dart";
+import "package:mumin/src/theme/shapes.dart";
 
 class DailyRamadanPlan extends StatefulWidget {
   final int day;
@@ -30,22 +30,22 @@ class _DailyRamadanPlanState extends State<DailyRamadanPlan> {
   List<Map<String, String?>> dua = [];
   List<Map<String, String?>> hadith = [];
   List<Map<String, String?>> quran = [];
-  load(int day) {
+  void load(int day) {
     dua = [];
     hadith = [];
     quran = [];
 
-    quran = all30DayData[day]!['quran']!;
-    dua = all30DayData[day]!['dua']!;
-    hadith = all30DayData[day]!['hadith']!;
-    int firstSurahNumber = int.parse(quran.first['surahNumber']!);
-    int lastSurahNumber = int.parse(quran.last['surahNumber']!);
+    quran = all30DayData[day]!["quran"]!;
+    dua = all30DayData[day]!["dua"]!;
+    hadith = all30DayData[day]!["hadith"]!;
+    int firstSurahNumber = int.parse(quran.first["surahNumber"]!);
+    int lastSurahNumber = int.parse(quran.last["surahNumber"]!);
     for (int i = firstSurahNumber + 1; i < lastSurahNumber - 1; i++) {
       quran.add(
         {
-          'surahNumber': '$i',
-          'start': '1',
-          'end': null,
+          "surahNumber": "$i",
+          "start": "1",
+          "end": null,
         },
       );
     }
@@ -55,9 +55,9 @@ class _DailyRamadanPlanState extends State<DailyRamadanPlan> {
   @override
   Widget build(BuildContext context) {
     final List<Tab> myTabs = <Tab>[
-      const Tab(text: 'Dua'),
-      const Tab(text: 'Quran'),
-      const Tab(text: 'Hadith'),
+      const Tab(text: "Dua"),
+      const Tab(text: "Quran"),
+      const Tab(text: "Hadith"),
     ];
     return DefaultTabController(
       length: 3,
@@ -66,7 +66,7 @@ class _DailyRamadanPlanState extends State<DailyRamadanPlan> {
           appBar: AppBar(
             titleSpacing: 5,
             title: Text(
-              'Ramadan Day - ${widget.day}',
+              "Ramadan Day - ${widget.day}",
               style: const TextStyle(fontSize: 16),
             ),
             bottom: TabBar(
@@ -85,7 +85,7 @@ class _DailyRamadanPlanState extends State<DailyRamadanPlan> {
                         border: OutlineInputBorder(),
                         contentPadding: EdgeInsets.only(left: 5, right: 2),
                       ),
-                      value: day,
+                      initialValue: day,
                       items: List.generate(
                         getRamadanNumber(
                             ramadanTodayTimeController.ifter.value ??
@@ -93,7 +93,7 @@ class _DailyRamadanPlanState extends State<DailyRamadanPlan> {
                         (index) {
                           return DropdownMenuItem(
                             value: index + 1,
-                            child: Text('Day ${index + 1}'),
+                            child: Text("Day ${index + 1}"),
                           );
                         },
                       ),
@@ -126,7 +126,7 @@ class _DailyRamadanPlanState extends State<DailyRamadanPlan> {
                         Align(
                           alignment: Alignment.topRight,
                           child: Text(
-                            dua[index]['arabic']!,
+                            dua[index]["arabic"]!,
                             textDirection: TextDirection.rtl,
                             textAlign: TextAlign.right,
                             style: const TextStyle(
@@ -137,7 +137,7 @@ class _DailyRamadanPlanState extends State<DailyRamadanPlan> {
                         ),
                         const Divider(),
                         Text(
-                          dua[index]['translation']!,
+                          dua[index]["translation"]!,
                           style: const TextStyle(
                             fontSize: 16,
                           ),
@@ -151,17 +151,17 @@ class _DailyRamadanPlanState extends State<DailyRamadanPlan> {
                 padding: const EdgeInsets.all(10),
                 itemCount: quran.length,
                 itemBuilder: (context, index) {
-                  int surahNumber = int.parse(quran[index]['surahNumber']!);
+                  int surahNumber = int.parse(quran[index]["surahNumber"]!);
                   if (surahNumber > allChaptersInfo.length) {
                     return const SizedBox();
                   }
                   final chapterModel = QuranSurahInfoModel.fromMap(
                     allChaptersInfo[surahNumber - 1],
                   );
-                  int start = int.parse(quran[index]['start']!);
-                  int? end = quran[index]['end'] == null
+                  int start = int.parse(quran[index]["start"]!);
+                  int? end = quran[index]["end"] == null
                       ? null
-                      : int.parse(quran[index]['end']!);
+                      : int.parse(quran[index]["end"]!);
                   return Padding(
                     padding: const EdgeInsets.all(5.0),
                     child: TextButton(
@@ -179,15 +179,16 @@ class _DailyRamadanPlanState extends State<DailyRamadanPlan> {
                                   .versesCount;
                         }
 
-                        Get.to(
-                          () => SurahView(
-                            surahIndex: chapterModel.id - 1,
-                            surahName: chapterModel.nameSimple,
-                            quranInfoModel: chapterModel,
-                            start: start,
-                            end: end,
-                            startAt: startAt,
-                          ),
+                        context.push(
+                          "/surah_view",
+                          extra: {
+                            "surahIndex": chapterModel.id - 1,
+                            "surahName": chapterModel.nameSimple,
+                            "quranInfoModel": chapterModel,
+                            "start": start,
+                            "end": end,
+                            "startAt": startAt,
+                          },
                         );
                       },
                       child: Container(
@@ -210,7 +211,7 @@ class _DailyRamadanPlanState extends State<DailyRamadanPlan> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  '${chapterModel.nameSimple} ($start - ${end ?? chapterModel.versesCount})',
+                                  "${chapterModel.nameSimple} ($start - ${end ?? chapterModel.versesCount})",
                                   style: const TextStyle(
                                     fontSize: 16,
                                     fontWeight: FontWeight.bold,
@@ -231,7 +232,7 @@ class _DailyRamadanPlanState extends State<DailyRamadanPlan> {
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
-                                Text('${chapterModel.versesCount} Ayahs'),
+                                Text("${chapterModel.versesCount} Ayahs"),
                               ],
                             ),
                           ],
@@ -259,7 +260,7 @@ class _DailyRamadanPlanState extends State<DailyRamadanPlan> {
                         Align(
                           alignment: Alignment.topRight,
                           child: Text(
-                            hadith[index]['translation']!,
+                            hadith[index]["translation"]!,
                             style: const TextStyle(
                               fontSize: 16,
                             ),

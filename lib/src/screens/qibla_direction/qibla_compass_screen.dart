@@ -1,17 +1,17 @@
-import 'dart:async';
-import 'dart:developer' as dev;
+import "dart:async";
+import "dart:developer" as dev;
 
-import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_compass/flutter_compass.dart';
-import 'package:get/get.dart';
-import 'package:mumin/src/screens/home/controller/user_location.dart';
-import 'package:mumin/src/screens/qibla_direction/controller/compass_value_controller.dart';
-import 'package:mumin/src/theme/theme_controller.dart';
-import 'package:vector_math/vector_math.dart' show radians;
+import "package:flutter/foundation.dart";
+import "package:flutter/material.dart";
+import "package:flutter_compass/flutter_compass.dart";
+import "package:get/get.dart";
+import "package:mumin/src/screens/home/controller/user_location.dart";
+import "package:mumin/src/screens/qibla_direction/controller/compass_value_controller.dart";
+import "package:mumin/src/theme/theme_controller.dart";
+import "package:vector_math/vector_math.dart" show radians;
 
-import '../../core/compass/compass_service.dart';
-import 'features/calculate_qibla_direction.dart';
+import "../../core/compass/compass_service.dart";
+import "features/calculate_qibla_direction.dart";
 
 class QiblaCompassScreen extends StatefulWidget {
   const QiblaCompassScreen({super.key});
@@ -59,10 +59,10 @@ class _QiblaCompassScreenState extends State<QiblaCompassScreen> {
       },
       onError: (error) {
         if (kDebugMode) {
-          print('Compass error: $error');
+          print("Compass error: $error");
         }
         errorMessage =
-            'Compass sensor error: $error. Please ensure your device has a compass sensor.';
+            "Compass sensor error: $error. Please ensure your device has a compass sensor.";
         rotationController.compassRotation.value = null;
       },
     );
@@ -79,10 +79,10 @@ class _QiblaCompassScreenState extends State<QiblaCompassScreen> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    dev.log(rotationController.qbaRotation.value?.toString() ?? 'Not Found');
+    dev.log(rotationController.qbaRotation.value?.toString() ?? "Not Found");
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Qibla Compass')),
+      appBar: AppBar(title: const Text("Qibla Compass")),
       body: Center(
         child: errorMessage != null
             ? Padding(
@@ -105,7 +105,7 @@ class _QiblaCompassScreenState extends State<QiblaCompassScreen> {
                           child: SizedBox(
                             width: size.width * 0.7,
                             height: size.width * 0.7,
-                            child: Image.asset('assets/images/compass.png'),
+                            child: Image.asset("assets/images/compass.png"),
                           ),
                         ),
                         Obx(
@@ -121,7 +121,7 @@ class _QiblaCompassScreenState extends State<QiblaCompassScreen> {
                                 height: size.width * 0.55,
                                 width: size.width * 0.55,
                                 child: Image.asset(
-                                  'assets/images/compass_needle.png',
+                                  "assets/images/compass_needle.png",
                                 ),
                               ),
                             ),
@@ -136,7 +136,7 @@ class _QiblaCompassScreenState extends State<QiblaCompassScreen> {
                             child: SizedBox(
                               height: 50,
                               width: 50,
-                              child: Image.asset('assets/images/qaba.png'),
+                              child: Image.asset("assets/images/qaba.png"),
                             ),
                           ),
                         ),

@@ -1,13 +1,13 @@
-import 'dart:developer';
-import 'dart:io';
+import "dart:developer";
+import "dart:io";
 
-import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
-import 'package:path/path.dart';
-import 'package:path_provider/path_provider.dart';
-import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
-import 'package:dio/dio.dart';
-import 'package:wakelock_plus/wakelock_plus.dart';
+import "package:flutter/material.dart";
+import "package:gap/gap.dart";
+import "package:path/path.dart";
+import "package:path_provider/path_provider.dart";
+import "package:syncfusion_flutter_pdfviewer/pdfviewer.dart";
+import "package:dio/dio.dart";
+import "package:wakelock_plus/wakelock_plus.dart";
 
 class HadithPdfView extends StatefulWidget {
   final String url;
@@ -31,21 +31,21 @@ class _HadithPdfViewState extends State<HadithPdfView> {
 
   double downloadProgress = 0;
 
-  download() async {
+  Future<void> download() async {
     String url = widget.url;
-    String fileName = url.split('/').last;
+    String fileName = url.split("/").last;
     final cachgeDir = await getApplicationCacheDirectory();
     String actualPath = join(cachgeDir.path, fileName);
     if (await File(actualPath).exists()) {
-      log(' Exits');
+      log(" Exits");
       setState(() {
         pdfPath = actualPath;
         isDownloading = false;
       });
     } else {
-      log('dont Exits');
+      log("dont Exits");
       try {
-        String temPath = join(cachgeDir.path, 'tem_$fileName');
+        String temPath = join(cachgeDir.path, "tem_$fileName");
         if (await Directory(temPath).exists()) {
           await Directory(temPath).delete();
         }
@@ -95,14 +95,14 @@ class _HadithPdfViewState extends State<HadithPdfView> {
                 ),
                 const Gap(10),
                 Text(
-                    'Progress: ${(downloadProgress * 100).toStringAsFixed(2)}%'),
-                const Text('Please wait. Downloading...')
+                    "Progress: ${(downloadProgress * 100).toStringAsFixed(2)}%"),
+                const Text("Please wait. Downloading...")
               ],
             ))
           : pdfPath == null
               ? const Center(
                   child: Text(
-                      'Something went worng. Check your internet connection'))
+                      "Something went worng. Check your internet connection"))
               : SfPdfViewer.file(File(pdfPath!)),
     );
   }

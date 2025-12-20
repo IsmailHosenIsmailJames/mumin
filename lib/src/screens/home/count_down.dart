@@ -1,7 +1,7 @@
-import 'dart:async';
-import 'package:flutter/material.dart';
+import "dart:async";
+import "package:flutter/material.dart";
 
-import 'package:mumin/src/theme/colors.dart';
+import "package:mumin/src/theme/colors.dart";
 
 class RamadanCountdown extends StatefulWidget {
   final TimeOfDay? iftarTime;
@@ -16,7 +16,7 @@ class RamadanCountdown extends StatefulWidget {
 class _RamadanCountdownState extends State<RamadanCountdown> {
   Timer? _timer;
   Duration _timeLeft = Duration.zero;
-  String _countdownType = '';
+  String _countdownType = "";
 
   @override
   void initState() {
@@ -44,7 +44,7 @@ class _RamadanCountdownState extends State<RamadanCountdown> {
   void _startTimer() {
     if (widget.iftarTime == null || widget.sehriTime == null) {
       setState(() {
-        _countdownType = '';
+        _countdownType = "";
       });
       return;
     }
@@ -70,10 +70,10 @@ class _RamadanCountdownState extends State<RamadanCountdown> {
     }
 
     if (diffSehri < diffIftar) {
-      _countdownType = 'Sehri';
+      _countdownType = "Sehri";
       _timeLeft = diffSehri;
     } else {
-      _countdownType = 'Iftar';
+      _countdownType = "Iftar";
       _timeLeft = diffIftar;
     }
     if (_timeLeft.isNegative) {}
@@ -98,11 +98,11 @@ class _RamadanCountdownState extends State<RamadanCountdown> {
   }
 
   String _formatDuration(Duration duration) {
-    String twoDigits(int n) => n.toString().padLeft(2, '0');
+    String twoDigits(int n) => n.toString().padLeft(2, "0");
     final hours = twoDigits(duration.inHours);
     final minutes = twoDigits(duration.inMinutes.remainder(60));
     final seconds = twoDigits(duration.inSeconds.remainder(60));
-    return '$hours:$minutes:$seconds';
+    return "$hours:$minutes:$seconds";
   }
 
   @override
@@ -133,7 +133,7 @@ class _RamadanCountdownState extends State<RamadanCountdown> {
           ),
         ),
         const Text(
-          'Time left:',
+          "Time left:",
           style: TextStyle(color: Colors.white),
         ),
         Text(

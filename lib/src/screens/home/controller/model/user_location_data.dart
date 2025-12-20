@@ -1,4 +1,4 @@
-import 'dart:convert';
+import "dart:convert";
 
 class UserLocationData {
   double latitude;
@@ -33,16 +33,16 @@ class UserLocationData {
 
   factory UserLocationData.fromMap(Map<String, dynamic> json) =>
       UserLocationData(
-        latitude: json['latitude'],
-        longitude: json['longitude'],
-        division: json['division'],
-        district: json['district'],
+        latitude: json["latitude"],
+        longitude: json["longitude"],
+        division: json["division"],
+        district: json["district"],
       );
 
   Map<String, dynamic> toMap() => {
-        'latitude': latitude,
-        'longitude': longitude,
-        'division': division,
-        'district': district,
+        "latitude": latitude,
+        "longitude": longitude,
+        "division": division,
+        "district": district,
       };
 }

@@ -1,4 +1,4 @@
-import 'dart:math';
+import "dart:math";
 
 class FuzzyMatcher {
   /// Calculates the Levenshtein distance between two strings.

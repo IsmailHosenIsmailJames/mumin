@@ -1,4 +1,4 @@
-import 'dart:convert';
+import "dart:convert";
 
 class QuranSurahInfoModel {
   final int id;
@@ -48,24 +48,24 @@ class QuranSurahInfoModel {
 
   factory QuranSurahInfoModel.fromMap(Map<String, dynamic> json) =>
       QuranSurahInfoModel(
-        id: json['id'],
-        revelationPlace: json['revelation_place'],
-        revelationOrder: json['revelation_order'],
-        bismillahPre: json['bismillah_pre'],
-        nameSimple: json['name_simple'],
-        nameArabic: json['name_arabic'],
-        versesCount: json['verses_count'],
-        pages: List<int>.from(json['pages'].map((x) => x)),
+        id: json["id"],
+        revelationPlace: json["revelation_place"],
+        revelationOrder: json["revelation_order"],
+        bismillahPre: json["bismillah_pre"],
+        nameSimple: json["name_simple"],
+        nameArabic: json["name_arabic"],
+        versesCount: json["verses_count"],
+        pages: List<int>.from(json["pages"].map((x) => x)),
       );
 
   Map<String, dynamic> toMap() => {
-    'id': id,
-    'revelation_place': revelationPlace,
-    'revelation_order': revelationOrder,
-    'bismillah_pre': bismillahPre,
-    'name_simple': nameSimple,
-    'name_arabic': nameArabic,
-    'verses_count': versesCount,
-    'pages': List<dynamic>.from(pages.map((x) => x)),
+    "id": id,
+    "revelation_place": revelationPlace,
+    "revelation_order": revelationOrder,
+    "bismillah_pre": bismillahPre,
+    "name_simple": nameSimple,
+    "name_arabic": nameArabic,
+    "verses_count": versesCount,
+    "pages": List<dynamic>.from(pages.map((x) => x)),
   };
 }

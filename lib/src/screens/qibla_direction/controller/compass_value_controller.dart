@@ -1,4 +1,4 @@
-import 'package:get/get.dart';
+import "package:get/get.dart";
 
 class CompassValueController extends GetxController {
   Rx<double?> compassRotation = Rx<double?>(null);

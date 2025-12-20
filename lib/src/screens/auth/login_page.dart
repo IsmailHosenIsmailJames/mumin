@@ -1,12 +1,13 @@
-import 'dart:ui';
+import "dart:ui";
 
-import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
-import 'package:gap/gap.dart';
-import 'package:get/get.dart';
-import 'package:mumin/src/screens/auth/controller/auth_controller.dart';
-import 'package:mumin/src/theme/colors.dart';
-import 'package:mumin/src/theme/shapes.dart';
+import "package:flutter/material.dart";
+import "package:fluttertoast/fluttertoast.dart";
+import "package:gap/gap.dart";
+import "package:get/get.dart";
+import "package:go_router/go_router.dart";
+import "package:mumin/src/screens/auth/controller/auth_controller.dart";
+import "package:mumin/src/theme/colors.dart";
+import "package:mumin/src/theme/shapes.dart";
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -16,8 +17,8 @@ class LoginScreen extends StatefulWidget {
 }
 
 class LoginScreenState extends State<LoginScreen> {
-  String mobile = '';
-  String code = '';
+  String mobile = "";
+  String code = "";
 
   AuthController authController = Get.put(AuthController());
 
@@ -27,7 +28,7 @@ class LoginScreenState extends State<LoginScreen> {
       body: Stack(
         children: [
           Image.asset(
-            'assets/images/Splash.png',
+            "assets/images/Splash.png",
             fit: BoxFit.cover,
             width: double.infinity,
             height: double.infinity,
@@ -50,13 +51,13 @@ class LoginScreenState extends State<LoginScreen> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Image.asset(
-                            'assets/images/mumin_logo.png',
+                            "assets/images/mumin_logo.png",
                             width: MediaQuery.of(context).size.width * 0.5,
                             fit: BoxFit.contain,
                           ),
                           const Gap(10),
                           const Text(
-                            'Just enter your phone number to log in your account',
+                            "Just enter your phone number to log in your account",
                             style: TextStyle(fontSize: 16, color: Colors.black),
                             textAlign: TextAlign.center,
                           ),
@@ -65,7 +66,7 @@ class LoginScreenState extends State<LoginScreen> {
                             keyboardType: TextInputType.phone,
                             style: const TextStyle(color: Colors.black),
                             decoration: InputDecoration(
-                              labelText: 'Phone Number',
+                              labelText: "Phone Number",
                               labelStyle: const TextStyle(
                                 fontSize: 16,
                                 color: Colors.black,
@@ -103,21 +104,21 @@ class LoginScreenState extends State<LoginScreen> {
                             onPressed: () async {
                               if (mobile.isEmpty) {
                                 Fluttertoast.showToast(
-                                    msg: 'Please enter phone number');
+                                    msg: "Please enter phone number");
                               } else {
                                 final bool isSuccessful = await authController
                                     .login(phone: mobile, isGuest: false);
                                 if (isSuccessful) {
-                                  Get.offNamed('/home');
+                                  context.go("/home");
                                 } else {
                                   Fluttertoast.showToast(
-                                      msg: 'Unable to login',
+                                      msg: "Unable to login",
                                       textColor: Colors.red);
                                 }
                               }
                             },
                             child: Text(
-                              'Login',
+                              "Login",
                               style: Theme.of(
                                 context,
                               ).textTheme.titleMedium?.copyWith(
@@ -139,19 +140,19 @@ class LoginScreenState extends State<LoginScreen> {
                             ),
                             onPressed: () async {
                               final bool isSuccessful = await authController
-                                  .login(phone: 'Guest User', isGuest: true);
+                                  .login(phone: "Guest User", isGuest: true);
                               if (isSuccessful) {
-                                Get.offNamed('/home');
+                                context.go("/home");
                               } else {
                                 Fluttertoast.showToast(
-                                    msg: 'Unable to login',
+                                    msg: "Unable to login",
                                     textColor: Colors.red);
                               }
                             },
                             iconAlignment: IconAlignment.end,
                             icon: const Icon(Icons.arrow_forward),
                             label: Text(
-                              'Continue as Guest',
+                              "Continue as Guest",
                               style: Theme.of(
                                 context,
                               ).textTheme.titleMedium?.copyWith(
@@ -168,10 +169,10 @@ class LoginScreenState extends State<LoginScreen> {
                           ),
                           TextButton(
                             onPressed: () {
-                              Get.offNamed('/registration');
+                              context.go("/registration");
                             },
                             child: Text(
-                              'Register Now',
+                              "Register Now",
                               style: TextStyle(
                                 fontSize: 16,
                                 color: MyAppColors.primaryColor,

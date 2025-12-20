@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:mumin/src/screens/prayer_time/model/prayer_time_model.dart';
+import "package:flutter/material.dart";
+import "package:mumin/src/screens/prayer_time/model/prayer_time_model.dart";
 
 class PrayerTimeCalculator {
   // Encapsulate in a class for better organization
@@ -7,19 +7,19 @@ class PrayerTimeCalculator {
   List<SinglePrayerTime> getAllPrayerTime(PrayerTimeModel prayerTimeModel) {
     List<SinglePrayerTime> listOfSinglePrayerTime = [
       SinglePrayerTime(
-          name: 'Fajr',
+          name: "Fajr",
           timeOfDay: getTimeOfDayFormTimeString(prayerTimeModel.fajr)),
       SinglePrayerTime(
-          name: 'Dhuhr',
+          name: "Dhuhr",
           timeOfDay: getTimeOfDayFormTimeString(prayerTimeModel.dhuhr)),
       SinglePrayerTime(
-          name: 'Asr',
+          name: "Asr",
           timeOfDay: getTimeOfDayFormTimeString(prayerTimeModel.asr)),
       SinglePrayerTime(
-          name: 'Maghrib',
+          name: "Maghrib",
           timeOfDay: getTimeOfDayFormTimeString(prayerTimeModel.maghrib)),
       SinglePrayerTime(
-          name: 'Isha',
+          name: "Isha",
           timeOfDay: getTimeOfDayFormTimeString(prayerTimeModel.isha)),
     ];
     return listOfSinglePrayerTime;
@@ -51,13 +51,13 @@ class PrayerTimeCalculator {
   }
 
   TimeOfDay getTimeOfDayFormTimeString(String timeString) {
-    List<String> parts = timeString.split(' ');
-    int hour = int.parse(parts[0].split(':')[0]);
-    int min = int.parse(parts[0].split(':')[1]);
-    if (timeString.toLowerCase().endsWith('pm') && hour != 12) {
+    List<String> parts = timeString.split(" ");
+    int hour = int.parse(parts[0].split(":")[0]);
+    int min = int.parse(parts[0].split(":")[1]);
+    if (timeString.toLowerCase().endsWith("pm") && hour != 12) {
       // Convert to lowercase for robustness
       hour = hour + 12;
-    } else if (timeString.toLowerCase().endsWith('am') && hour == 12) {
+    } else if (timeString.toLowerCase().endsWith("am") && hour == 12) {
       hour = 0;
     }
     return TimeOfDay(hour: hour, minute: min);

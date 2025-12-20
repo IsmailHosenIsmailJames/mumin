@@ -1,6 +1,6 @@
-import 'dart:convert';
+import "dart:convert";
 
-import 'package:flutter/material.dart';
+import "package:flutter/material.dart";
 
 class PrayerTimeModel {
   final String dateFor;
@@ -46,23 +46,23 @@ class PrayerTimeModel {
   String toJson() => json.encode(toMap());
 
   factory PrayerTimeModel.fromMap(Map<String, dynamic> json) => PrayerTimeModel(
-        dateFor: json['date_for'],
-        fajr: json['fajr'],
-        shurooq: json['shurooq'],
-        dhuhr: json['dhuhr'],
-        asr: json['asr'],
-        maghrib: json['maghrib'],
-        isha: json['isha'],
+        dateFor: json["date_for"],
+        fajr: json["fajr"],
+        shurooq: json["shurooq"],
+        dhuhr: json["dhuhr"],
+        asr: json["asr"],
+        maghrib: json["maghrib"],
+        isha: json["isha"],
       );
 
   Map<String, dynamic> toMap() => {
-        'date_for': dateFor,
-        'fajr': fajr,
-        'shurooq': shurooq,
-        'dhuhr': dhuhr,
-        'asr': asr,
-        'maghrib': maghrib,
-        'isha': isha,
+        "date_for": dateFor,
+        "fajr": fajr,
+        "shurooq": shurooq,
+        "dhuhr": dhuhr,
+        "asr": asr,
+        "maghrib": maghrib,
+        "isha": isha,
       };
 }
 

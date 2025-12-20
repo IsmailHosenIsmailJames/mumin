@@ -1,10 +1,10 @@
-import 'package:get/get.dart';
-import 'package:just_audio/just_audio.dart';
-import 'package:just_audio_background/just_audio_background.dart'
+import "package:get/get.dart";
+import "package:just_audio/just_audio.dart";
+import "package:just_audio_background/just_audio_background.dart"
     show MediaItem;
-import 'package:mumin/src/core/audio/api/base_api.dart';
+import "package:mumin/src/core/audio/api/base_api.dart";
 
-import '../../screens/quran/resources/chapters_ayah_count.dart';
+import "../../screens/quran/resources/chapters_ayah_count.dart";
 
 class ManageAudioController extends GetxController {
   RxBool isPlaying = false.obs;
@@ -13,7 +13,7 @@ class ManageAudioController extends GetxController {
   AudioPlayer audioPlayer = AudioPlayer();
   RxBool isStreamRegistered = false.obs;
 
-  startListening() {
+  void startListening() {
     isStreamRegistered.value = true;
     audioPlayer.playerStateStream.listen((event) {
       isPlaying.value = event.playing;
@@ -47,8 +47,8 @@ class ManageAudioController extends GetxController {
           Uri.parse(makeAudioUrl(audioBase, id)),
           tag: MediaItem(
             id: id,
-            album: 'Abdul Baset',
-            title: '$surahName ($id)',
+            album: "Abdul Baset",
+            title: "$surahName ($id)",
           ),
         ),
       );
@@ -62,7 +62,7 @@ class ManageAudioController extends GetxController {
   }
 
   String makeAudioUrl(String link, String surahID) {
-    return '$link/$surahID.mp3';
+    return "$link/$surahID.mp3";
   }
 
   static String surahIDFromNumber({required int surahNumber, int? ayahNumber}) {

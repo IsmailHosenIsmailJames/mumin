@@ -1,14 +1,13 @@
-import 'dart:convert';
-import 'dart:developer';
+import "dart:convert";
+import "dart:developer";
 
-import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
-import 'package:get/get.dart';
-import 'package:hive_flutter/adapters.dart';
-import 'package:http/http.dart';
-import 'package:mumin/src/apis/apis.dart';
-import 'package:mumin/src/screens/hadith/parts_view.dart';
-import 'package:mumin/src/theme/shapes.dart';
+import "package:flutter/material.dart";
+import "package:gap/gap.dart";
+import "package:go_router/go_router.dart";
+import "package:hive_flutter/adapters.dart";
+import "package:http/http.dart";
+import "package:mumin/src/apis/apis.dart";
+import "package:mumin/src/theme/shapes.dart";
 
 class HadithPage extends StatefulWidget {
   const HadithPage({super.key});
@@ -19,7 +18,7 @@ class HadithPage extends StatefulWidget {
 
 class _HadithPageState extends State<HadithPage> {
   List<Map> hadithList = List<Map<dynamic, dynamic>>.from(
-      Hive.box('user_db').get('hadithList', defaultValue: []));
+      Hive.box("user_db").get("hadithList", defaultValue: []));
   @override
   void initState() {
     getHadithData();
@@ -27,14 +26,14 @@ class _HadithPageState extends State<HadithPage> {
     super.initState();
   }
 
-  getHadithData() async {
+  Future<void> getHadithData() async {
     try {
-      final response = await get(Uri.parse('$baseApi/api/v1/hadith_list'));
+      final response = await get(Uri.parse("$baseApi/api/v1/hadith_list"));
       if (response.statusCode == 200) {
         setState(() {
-          hadithList = List<Map>.from(jsonDecode(response.body)['result']);
+          hadithList = List<Map>.from(jsonDecode(response.body)["result"]);
         });
-        Hive.box('user_db').put('hadithList', hadithList);
+        Hive.box("user_db").put("hadithList", hadithList);
       }
     } catch (e) {
       log(e.toString());
@@ -45,7 +44,7 @@ class _HadithPageState extends State<HadithPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Hadith'),
+        title: const Text("Hadith"),
       ),
       body: hadithList.isEmpty
           ? const Center(child: CircularProgressIndicator())
@@ -65,10 +64,12 @@ class _HadithPageState extends State<HadithPage> {
                       ),
                     ),
                     onPressed: () {
-                      Get.to(
-                        () => PartsView(
-                            id: hadithList[index]['id'],
-                            hadithName: hadithList[index]['name']),
+                      context.push(
+                        "/hadith_parts",
+                        extra: {
+                          "id": hadithList[index]["id"],
+                          "hadithName": hadithList[index]["name"],
+                        },
                       );
                     },
                     child: Padding(
@@ -78,10 +79,10 @@ class _HadithPageState extends State<HadithPage> {
                           SizedBox(
                               height: 50,
                               width: 50,
-                              child: Image.asset('assets/images/hadith.png')),
+                              child: Image.asset("assets/images/hadith.png")),
                           const Gap(10),
                           Text(
-                            hadithList[index]['name'],
+                            hadithList[index]["name"],
                             style: const TextStyle(fontSize: 18),
                           ),
                         ],

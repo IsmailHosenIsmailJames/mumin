@@ -1,6 +1,6 @@
-import 'dart:convert';
+import "dart:convert";
 
-import 'package:intl/intl.dart';
+import "package:intl/intl.dart";
 
 class RamadanDayModel {
   final DateTime date;
@@ -31,15 +31,15 @@ class RamadanDayModel {
   String toJson() => json.encode(toMap());
 
   factory RamadanDayModel.fromMap(Map<String, dynamic> json) => RamadanDayModel(
-        date: DateFormat('yyyy/MM/dd').parse(json['date']),
-        seharEnd: json['sehar_end'],
-        ifter: json['ifter'],
+        date: DateFormat("yyyy/MM/dd").parse(json["date"]),
+        seharEnd: json["sehar_end"],
+        ifter: json["ifter"],
       );
 
   Map<String, dynamic> toMap() => {
-        'date':
+        "date":
             "${date.year.toString().padLeft(4, '0')}-${date.month.toString().padLeft(2, '0')}-${date.day.toString().padLeft(2, '0')}",
-        'sehar_end': seharEnd,
-        'ifter': ifter,
+        "sehar_end": seharEnd,
+        "ifter": ifter,
       };
 }

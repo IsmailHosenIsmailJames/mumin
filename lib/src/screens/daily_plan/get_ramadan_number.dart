@@ -1,6 +1,6 @@
-import 'dart:developer';
+import "dart:developer";
 
-import 'package:flutter/material.dart';
+import "package:flutter/material.dart";
 
 int getRamadanNumber(TimeOfDay iftarTime) {
   DateTime ramadanStart = DateTime(2025, 3, 2);
@@ -25,7 +25,7 @@ int getRamadanNumber(TimeOfDay iftarTime) {
   } else if (ramadanDay > 30) {
     ramadanDay = 29;
   }
-  log(ramadanDay.toString(), name: 'Day');
+  log(ramadanDay.toString(), name: "Day");
   return ramadanDay + 1;
 }
 

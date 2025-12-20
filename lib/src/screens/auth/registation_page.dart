@@ -1,9 +1,10 @@
-import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
-import 'package:get/get.dart';
-import 'package:mumin/src/screens/auth/controller/auth_controller.dart';
+import "package:flutter/material.dart";
+import "package:gap/gap.dart";
+import "package:get/get.dart";
+import "package:go_router/go_router.dart";
+import "package:mumin/src/screens/auth/controller/auth_controller.dart";
 
-import 'package:toastification/toastification.dart';
+import "package:toastification/toastification.dart";
 
 class RegistrationScreen extends StatefulWidget {
   const RegistrationScreen({super.key});
@@ -23,11 +24,11 @@ class RegistrationScreenState extends State<RegistrationScreen> {
       final res = await authController.registration(
           context, _name.text.trim(), _mobile.text.trim(), _pin.text.trim());
       if (res) {
-        Get.offNamed('/home');
+        context.go("/home");
       } else {
         toastification.show(
           context: context,
-          title: const Text('Unable to register'),
+          title: const Text("Unable to register"),
           type: ToastificationType.error,
           autoCloseDuration: const Duration(seconds: 3),
         );
@@ -52,38 +53,38 @@ class RegistrationScreenState extends State<RegistrationScreen> {
                 child: SizedBox(
                   height: 150,
                   width: 150,
-                  child: Image.asset('assets/images/mumin_logo.png'),
+                  child: Image.asset("assets/images/mumin_logo.png"),
                 ),
               ),
-              const Center(child: Text('Sign up for new users')),
+              const Center(child: Text("Sign up for new users")),
               const Gap(15),
               TextFormField(
                 decoration: const InputDecoration(
-                  labelText: 'Full Name',
-                  hintText: 'Enter your name',
+                  labelText: "Full Name",
+                  hintText: "Enter your name",
                 ),
                 validator: (value) =>
-                    value!.isEmpty ? 'Please enter your name' : null,
+                    value!.isEmpty ? "Please enter your name" : null,
                 controller: _name,
               ),
               TextFormField(
                 decoration: const InputDecoration(
-                  labelText: 'Mobile Number',
-                  hintText: 'Enter your mobile number',
+                  labelText: "Mobile Number",
+                  hintText: "Enter your mobile number",
                 ),
                 keyboardType: TextInputType.phone,
                 validator: (value) =>
-                    value!.isEmpty ? 'Please enter your mobile' : null,
+                    value!.isEmpty ? "Please enter your mobile" : null,
                 controller: _mobile,
               ),
               TextFormField(
                 decoration: const InputDecoration(
-                  labelText: 'Territory Code',
-                  hintText: 'Enter your code',
+                  labelText: "Territory Code",
+                  hintText: "Enter your code",
                 ),
                 keyboardType: TextInputType.number,
                 validator: (value) =>
-                    value!.isEmpty ? 'Please enter your code' : null,
+                    value!.isEmpty ? "Please enter your code" : null,
                 controller: _pin,
               ),
               const SizedBox(height: 20),
@@ -92,16 +93,16 @@ class RegistrationScreenState extends State<RegistrationScreen> {
                 height: 45,
                 child: ElevatedButton(
                   onPressed: _register,
-                  child: const Text('Sign Up'),
+                  child: const Text("Sign Up"),
                 ),
               ),
               const Gap(15),
               Center(
                 child: TextButton(
                   onPressed: () {
-                    Get.offNamed('/login');
+                    context.go("/login");
                   },
-                  child: const Text('Already Registered? Login'),
+                  child: const Text("Already Registered? Login"),
                 ),
               ),
             ],

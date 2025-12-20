@@ -1,4 +1,4 @@
-import 'package:awesome_notifications/awesome_notifications.dart';
+import "package:awesome_notifications/awesome_notifications.dart";
 
 Future<bool> requestPermissionsAwesomeNotifications() async {
   bool isAllowed = await AwesomeNotifications().isNotificationAllowed();

@@ -1,22 +1,22 @@
-import 'dart:convert';
-import 'dart:developer';
-import 'dart:io';
+import "dart:convert";
+import "dart:developer";
+import "dart:io";
 
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:gap/gap.dart';
-import 'package:get/get.dart';
-import 'package:mumin/src/core/audio/manage_audio.dart';
-import 'package:mumin/src/screens/quran/resources/chapters_ayah_count.dart';
-import 'package:mumin/src/screens/quran/resources/model/quran_surah_info_model.dart';
-import 'package:mumin/src/theme/colors.dart';
-import 'package:mumin/src/theme/shapes.dart';
-import 'package:path/path.dart';
-import 'package:path_provider/path_provider.dart';
-import 'package:record/record.dart';
-import 'package:path/path.dart' as path;
-import 'package:toastification/toastification.dart';
-import 'package:wakelock_plus/wakelock_plus.dart';
+import "package:flutter/material.dart";
+import "package:flutter/services.dart";
+import "package:gap/gap.dart";
+import "package:get/get.dart";
+import "package:mumin/src/core/audio/manage_audio.dart";
+import "package:mumin/src/screens/quran/resources/chapters_ayah_count.dart";
+import "package:mumin/src/screens/quran/resources/model/quran_surah_info_model.dart";
+import "package:mumin/src/theme/colors.dart";
+import "package:mumin/src/theme/shapes.dart";
+import "package:path/path.dart";
+import "package:path_provider/path_provider.dart";
+import "package:record/record.dart";
+import "package:path/path.dart" as path;
+import "package:toastification/toastification.dart";
+import "package:wakelock_plus/wakelock_plus.dart";
 
 class SurahView extends StatefulWidget {
   final bool? practiceMode;
@@ -65,15 +65,15 @@ class _SurahViewState extends State<SurahView> {
 
   void getAllAyahsMap(int stat, int end) async {
     final String jsonBengali = await rootBundle.loadString(
-      'assets/quran/bengali.json',
+      "assets/quran/bengali.json",
     );
     final List<String> mapBengali = List<String>.from(jsonDecode(jsonBengali));
     final String jsonEnglish = await rootBundle.loadString(
-      'assets/quran/english.json',
+      "assets/quran/english.json",
     );
     final List<String> mapEnglish = List<String>.from(jsonDecode(jsonEnglish));
     final String jsonindopak = await rootBundle.loadString(
-      'assets/quran/indopak.json',
+      "assets/quran/indopak.json",
     );
     final List<String> mapIndopak = List<String>.from(jsonDecode(jsonindopak));
 
@@ -91,16 +91,16 @@ class _SurahViewState extends State<SurahView> {
       log(i.toString());
       scrollKeys.add(GlobalKey());
       ayahsWithMeaning.add({
-        'quran': mapIndopak.elementAt(i),
-        'bn': mapBengali.elementAt(i),
-        'en': mapEnglish.elementAt(i),
+        "quran": mapIndopak.elementAt(i),
+        "bn": mapBengali.elementAt(i),
+        "en": mapEnglish.elementAt(i),
       });
     }
 
     setState(() {});
   }
 
-  startListingForScroll() {
+  void startListingForScroll() {
     audioController.audioPlayer.currentIndexStream.listen((event) async {
       if (event != null &&
           ayahCount[widget.surahIndex] > event &&
@@ -212,7 +212,7 @@ class _SurahViewState extends State<SurahView> {
                                   Row(
                                     children: [
                                       Text(
-                                        'Ayah: ${(widget.start ?? 1) + index}',
+                                        "Ayah: ${(widget.start ?? 1) + index}",
                                         style: const TextStyle(
                                           fontWeight: FontWeight.bold,
                                         ),
@@ -235,7 +235,7 @@ class _SurahViewState extends State<SurahView> {
                                   Align(
                                     alignment: Alignment.topRight,
                                     child: Text(
-                                      ayahsWithMeaning[index]['quran']!,
+                                      ayahsWithMeaning[index]["quran"]!,
                                       style: TextStyle(
                                         fontSize: 20,
                                         fontFamily: "IndopakNastaleeq",
@@ -247,13 +247,13 @@ class _SurahViewState extends State<SurahView> {
                                   ),
                                   const Divider(),
                                   Text(
-                                    ayahsWithMeaning[index]['bn']!,
+                                    ayahsWithMeaning[index]["bn"]!,
                                     style: const TextStyle(fontSize: 16),
                                     textAlign: TextAlign.start,
                                   ),
                                   const Divider(),
                                   Text(
-                                    ayahsWithMeaning[index]['en']!,
+                                    ayahsWithMeaning[index]["en"]!,
                                     style: const TextStyle(fontSize: 16),
                                     textAlign: TextAlign.start,
                                   ),
@@ -284,7 +284,7 @@ class _SurahViewState extends State<SurahView> {
                             final Directory appDocumentsDir = Directory(
                               join(
                                 (await getApplicationDocumentsDirectory()).path,
-                                'records',
+                                "records",
                               ),
                             );
 
@@ -323,7 +323,7 @@ class _SurahViewState extends State<SurahView> {
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Image.asset(
-                                      'assets/images/recording.gif',
+                                      "assets/images/recording.gif",
                                     ),
                                     const Gap(10),
                                     IconButton(
@@ -347,7 +347,7 @@ class _SurahViewState extends State<SurahView> {
                                           isRecording = false;
                                         });
                                       },
-                                      child: const Text('Cancel'),
+                                      child: const Text("Cancel"),
                                     ),
                                     const Gap(10),
                                     TextButton(
@@ -356,7 +356,7 @@ class _SurahViewState extends State<SurahView> {
 
                                         toastification.show(
                                           context: context,
-                                          title: Text('Saved to $dir'),
+                                          title: Text("Saved to $dir"),
                                           autoCloseDuration: const Duration(
                                             seconds: 3,
                                           ),
@@ -368,7 +368,7 @@ class _SurahViewState extends State<SurahView> {
                                           isRecording = false;
                                         });
                                       },
-                                      child: const Text('Save'),
+                                      child: const Text("Save"),
                                     ),
                                   ],
                                 ),
@@ -393,7 +393,7 @@ class _SurahViewState extends State<SurahView> {
                                         size: 40,
                                         color: MyAppColors.backgroundLightColor,
                                       ),
-                                      const Text('Record your recitation'),
+                                      const Text("Record your recitation"),
                                     ],
                                   ),
                                 ),

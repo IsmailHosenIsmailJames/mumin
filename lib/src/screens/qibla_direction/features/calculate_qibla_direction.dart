@@ -1,5 +1,5 @@
-import 'dart:math' as math;
-import 'package:vector_math/vector_math_64.dart' show radians;
+import "dart:math" as math;
+import "package:vector_math/vector_math_64.dart" show radians;
 
 class QiblaCalculator {
   static const double kaabaLatitude = 21.4225; // Kaaba latitude in degrees
