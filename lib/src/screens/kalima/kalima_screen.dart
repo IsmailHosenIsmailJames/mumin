@@ -1,5 +1,4 @@
 import "package:flutter/material.dart";
-import "package:mumin/src/theme/colors.dart";
 
 class KalimaScreen extends StatelessWidget {
   final Function()? navigation;
@@ -82,11 +81,9 @@ class KalimaScreen extends StatelessWidget {
             const SizedBox(height: 10),
             Text(
               arabicText,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 20,
                 fontFamily: "IndopakNastaleeq",
-                fontWeight: FontWeight.w600,
-                color: MyAppColors.primaryColor,
               ),
             ),
             const Divider(),

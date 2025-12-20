@@ -236,11 +236,9 @@ class _SurahViewState extends State<SurahView> {
                                     alignment: Alignment.topRight,
                                     child: Text(
                                       ayahsWithMeaning[index]["quran"]!,
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                         fontSize: 20,
                                         fontFamily: "IndopakNastaleeq",
-                                        fontWeight: FontWeight.bold,
-                                        color: MyAppColors.primaryColor,
                                       ),
                                       textDirection: TextDirection.rtl,
                                     ),

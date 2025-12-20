@@ -65,6 +65,27 @@ flutter:
     - assets/images/
     - assets/quran/
     - assets/calender_data/
+  fonts:
+    - family: QPC_Hafs
+      fonts:
+        - asset: assets/fonts/Quran/QPC Hafs font.ttf
+
+    - family: AlQuranNeov5x1
+      fonts:
+        - asset: assets/fonts/Quran/AlQuranNeov5x1.ttf
+
+    - family: IndopakNastaleeq
+      fonts:
+        - asset: assets/fonts/Quran/IndopakNastaleeq_font.ttf
+    - family: surah-name-v1
+      fonts:
+        - asset: assets/fonts/Quran/surah-name-v1.ttf
+
+    - family: KFGQPC-Uthmanic-HAFS-Regular
+      fonts:
+        - asset: assets/fonts/Quran/KFGQPC Uthmanic Script HAFS Regular.otf
+
+
 
 
 flutter_native_splash:
@@ -88,24 +109,3 @@ icons_launcher:
       enable: true
     ios:
       enable: true
-
-  fonts:
-    - family: QPC_Hafs
-      fonts:
-        - asset: assets/fonts/Quran/QPC Hafs font.ttf
-
-    - family: AlQuranNeov5x1
-      fonts:
-        - asset: assets/fonts/Quran/AlQuranNeov5x1.ttf
-
-    - family: IndopakNastaleeq
-      fonts:
-        - asset: assets/fonts/Quran/IndopakNastaleeq_font.ttf
-    - family: surah-name-v1
-      fonts:
-        - asset: assets/fonts/Quran/surah-name-v1.ttf
-
-    - family: KFGQPC-Uthmanic-HAFS-Regular
-      fonts:
-        - asset: assets/fonts/Quran/KFGQPC Uthmanic Script HAFS Regular.otf
-
