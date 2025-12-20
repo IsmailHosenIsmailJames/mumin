@@ -151,10 +151,10 @@ class _SurahListScreenState extends State<SurahListScreen> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Text(
-                                      chapterModel.nameArabic,
+                                      "surah${chapterModel.id.toString().padLeft(3, '0')}",
                                       style: const TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.bold,
+                                        fontSize: 18,
+                                        fontFamily: 'surah-name-v1',
                                       ),
                                     ),
                                     Text('${chapterModel.versesCount} Ayahs'),

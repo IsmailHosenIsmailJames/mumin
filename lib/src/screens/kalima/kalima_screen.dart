@@ -84,6 +84,7 @@ class KalimaScreen extends StatelessWidget {
               arabicText,
               style: TextStyle(
                 fontSize: 20,
+                fontFamily: "IndopakNastaleeq",
                 fontWeight: FontWeight.w600,
                 color: MyAppColors.primaryColor,
               ),

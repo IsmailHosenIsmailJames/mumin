@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:just_audio_background/just_audio_background.dart';
 import 'package:mumin/src/core/audio/manage_audio.dart';
@@ -67,7 +66,6 @@ class MyApp extends StatelessWidget {
         textButtonTheme: TextButtonThemeData(
           style: TextButton.styleFrom(foregroundColor: Colors.black),
         ),
-        textTheme: GoogleFonts.notoSansTextTheme(),
       ),
       darkTheme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
@@ -85,11 +83,6 @@ class MyApp extends StatelessWidget {
             backgroundColor: MyAppColors.primaryColor,
             foregroundColor: Colors.white,
           ),
-        ),
-        textTheme: GoogleFonts.notoSansTextTheme().apply(
-          bodyColor: Colors.white,
-          displayColor: Colors.white,
-          decorationColor: Colors.white,
         ),
       ),
       getPages: [

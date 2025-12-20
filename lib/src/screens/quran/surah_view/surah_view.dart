@@ -238,6 +238,7 @@ class _SurahViewState extends State<SurahView> {
                                       ayahsWithMeaning[index]['quran']!,
                                       style: TextStyle(
                                         fontSize: 20,
+                                        fontFamily: "IndopakNastaleeq",
                                         fontWeight: FontWeight.bold,
                                         color: MyAppColors.primaryColor,
                                       ),
