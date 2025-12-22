@@ -91,7 +91,6 @@ class _SurahViewState extends State<SurahView> {
           continue;
         }
       }
-      log(i.toString());
       scrollKeys.add(GlobalKey());
       ayahsWithMeaning.add({
         "quran": mapIndopak.elementAt(i),
@@ -247,11 +246,12 @@ class _SurahViewState extends State<SurahView> {
                                   Align(
                                     alignment: Alignment.topRight,
                                     child: Text(
-                                      ayahsWithMeaning[index]["quran"]!,
+                                      ayahsWithMeaning[index]["quran"] ?? "",
                                       style: TextStyle(
                                         fontSize: settingsController
                                             .arabicFontSize.value,
                                         fontFamily: "IndopakNastaleeq",
+                                        letterSpacing: 0,
                                       ),
                                       textDirection: TextDirection.rtl,
                                     ),

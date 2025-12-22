@@ -190,7 +190,7 @@ class _DailyRamadanPlanState extends State<DailyRamadanPlan> {
                           extra: {
                             "surahIndex": chapterModel.id - 1,
                             "surahName": chapterModel.nameSimple,
-                            "quranInfoModel": chapterModel,
+                            "quranInfoModel": chapterModel.toMap(),
                             "start": start,
                             "end": end,
                             "startAt": startAt,

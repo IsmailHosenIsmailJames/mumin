@@ -112,7 +112,7 @@ class _SurahListScreenState extends State<SurahListScreen> {
                               extra: {
                                 "surahIndex": chapterModel.id - 1,
                                 "surahName": chapterModel.nameSimple,
-                                "quranInfoModel": chapterModel,
+                                "quranInfoModel": chapterModel.toMap(),
                                 "practiceMode": widget.practiceMode,
                                 "startAt": statAt,
                                 "start": null,

@@ -15,6 +15,7 @@ import "package:mumin/src/screens/kalima/kalima_screen.dart";
 import "package:mumin/src/screens/mosque_view/mosque_view.dart";
 import "package:mumin/src/screens/prayer_time/prayer_time.dart";
 import "package:mumin/src/screens/qibla_direction/qibla_compass_screen.dart";
+import "package:mumin/src/screens/quran/resources/model/quran_surah_info_model.dart";
 import "package:mumin/src/screens/quran/surah_list_screen.dart";
 import "package:mumin/src/screens/quran/surah_view/surah_view.dart";
 import "package:mumin/src/screens/ramadan_calender/ramadan_calender_page.dart";
@@ -98,7 +99,8 @@ class AppRouter {
             return SurahView(
               surahIndex: extra["surahIndex"],
               surahName: extra["surahName"],
-              quranInfoModel: extra["quranInfoModel"],
+              quranInfoModel:
+                  QuranSurahInfoModel.fromMap(extra["quranInfoModel"]),
               practiceMode: extra["practiceMode"],
               startAt: extra["startAt"],
               start: extra["start"],

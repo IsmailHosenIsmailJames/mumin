@@ -44,6 +44,7 @@ class _QuranSettingsScreenState extends State<QuranSettingsScreen> {
                   style: TextStyle(
                     fontSize: settingsController.arabicFontSize.value,
                     fontFamily: "IndopakNastaleeq",
+                    letterSpacing: 0,
                   ),
                   textAlign: TextAlign.center,
                 ),

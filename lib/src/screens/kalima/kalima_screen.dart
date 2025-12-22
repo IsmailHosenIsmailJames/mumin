@@ -95,7 +95,9 @@ class KalimaScreen extends StatelessWidget {
                   style: TextStyle(
                     fontSize: settingsController.arabicFontSize.value,
                     fontFamily: "IndopakNastaleeq",
+                    letterSpacing: 0,
                   ),
+                  textAlign: TextAlign.end,
                 ),
                 const Divider(),
                 Text(

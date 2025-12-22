@@ -1,0 +1,39 @@
+{
+    "title": "",
+    "query": "dhaka",
+    "for": "daily",
+    "method": 3,
+    "prayer_method_name": "University Of Islamic Sciences, Karachi (Hanafi)",
+    "daylight": "0",
+    "timezone": "6",
+    "map_image": "https:\/\/maps.google.com\/maps\/api\/staticmap?center=23.709921,90.407143&sensor=false&zoom=13&size=300x300",
+    "sealevel": "4",
+    "today_weather": {
+        "pressure": 1015,
+        "temperature": "16"
+    },
+    "link": "http:\/\/muslimsalat.com\/dhaka",
+    "qibla_direction": "277.64",
+    "latitude": "23.709921",
+    "longitude": "90.407143",
+    "address": "",
+    "city": "Dhaka",
+    "state": "Dhaka Division",
+    "postal_code": "",
+    "country": "Bangladesh",
+    "country_code": "BD",
+    "items": [
+        {
+            "date_for": "2025-12-22",
+            "fajr": "5:16 am",
+            "shurooq": "6:32 am",
+            "dhuhr": "11:56 am",
+            "asr": "3:41 pm",
+            "maghrib": "5:21 pm",
+            "isha": "6:37 pm"
+        }
+    ],
+    "status_valid": 1,
+    "status_code": 1,
+    "status_description": "Success."
+}
