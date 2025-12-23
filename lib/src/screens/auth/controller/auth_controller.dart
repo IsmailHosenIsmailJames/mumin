@@ -34,14 +34,15 @@ class AuthController extends GetxController {
       await Hive.box("user_db").put("is_guest", true);
       return true;
     } else {
-      if (!phone.startsWith("+88") || !phone.startsWith("88")) {
-        phone = '88${phone.replaceAll('+', '')}';
+      String formattedPhone = phone.replaceAll('+', '');
+      if (!formattedPhone.startsWith('88')) {
+        formattedPhone = '88$formattedPhone';
       }
 
       final response = await post(
         Uri.parse(baseApi + loginApi),
         body: jsonEncode({
-          "mobile_number": phone,
+          "mobile_number": formattedPhone,
         }),
         headers: {"Content-Type": "application/json"},
       );
@@ -73,27 +74,35 @@ class AuthController extends GetxController {
     String phone,
     String pinNumber,
   ) async {
+    String formattedPhone = phone.replaceAll('+', '');
+    if (!formattedPhone.startsWith('88')) {
+      formattedPhone = '88$formattedPhone';
+    }
+
     log(jsonEncode({
       "full_name": fullName,
-      "mobile_number": phone,
+      "mobile_number": formattedPhone,
       "pin_number": pinNumber,
     }));
+
     final response = await post(
       Uri.parse(baseApi + registrationApi),
       body: jsonEncode({
         "full_name": fullName,
-        "mobile_number": phone,
+        "mobile_number": formattedPhone,
         "pin_number": pinNumber,
       }),
       headers: {"Content-Type": "application/json"},
     );
+
     log(response.body);
     log(response.statusCode.toString());
+
     if (response.statusCode == 200) {
       final dynamic decodedResponse = jsonDecode(response.body);
       if (decodedResponse["success"] == true) {
-        log("Response : ${response.statusCode}");
-        return await login(phone: phone);
+        log("Registration success, logging in...");
+        return await login(phone: formattedPhone);
       } else {
         Fluttertoast.showToast(
           msg: decodedResponse["message"] ?? "Registration failed",
