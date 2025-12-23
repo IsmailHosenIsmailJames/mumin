@@ -79,6 +79,11 @@ class _HomePageState extends State<HomePage> {
     },
     {"img": "assets/images/qaba.png", "name": "Hajj", "route": "/hajj"},
     {"img": "assets/images/about.png", "name": "About", "route": "/about"},
+    {
+      "img": "assets/images/settings-svgrepo-com.png",
+      "name": "Settings",
+      "route": "/settings"
+    },
   ];
 
   AppThemeController appThemeController = Get.find();
@@ -631,6 +636,7 @@ class _HomePageState extends State<HomePage> {
               );
             }),
           ),
+          const Gap(10),
           const Gap(50),
         ],
       ),
