@@ -98,7 +98,7 @@ class AuthController extends GetxController {
     log(response.body);
     log(response.statusCode.toString());
 
-    if (response.statusCode == 200) {
+    if (response.statusCode == 200 || response.statusCode == 201) {
       final dynamic decodedResponse = jsonDecode(response.body);
       if (decodedResponse["success"] == true) {
         log("Registration success, logging in...");
