@@ -1,12 +1,12 @@
 import "dart:convert";
 
 import "package:fluentui_system_icons/fluentui_system_icons.dart";
-import "package:flutter/cupertino.dart";
 import "package:flutter/material.dart";
 import "package:fluttertoast/fluttertoast.dart";
 import "package:gap/gap.dart";
 import "package:get/get.dart";
 import "package:go_router/go_router.dart";
+import "package:hive/hive.dart";
 import "package:http/http.dart";
 import "package:mumin/src/apis/apis.dart";
 import "package:mumin/src/screens/auth/controller/auth_controller.dart";
@@ -21,7 +21,7 @@ class QuranSettingsScreen extends StatefulWidget {
 
 class _QuranSettingsScreenState extends State<QuranSettingsScreen> {
   final SettingsController settingsController = Get.put(SettingsController());
-
+  bool isGuest = Hive.box("user_db").get("is_guest") ?? false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -112,60 +112,63 @@ class _QuranSettingsScreenState extends State<QuranSettingsScreen> {
               ),
             ),
             const Gap(24),
-            Container(
-              decoration: BoxDecoration(
-                color: Colors.red.withValues(alpha: 0.2),
-                borderRadius: BorderRadius.circular(8),
-              ),
-              child: ListTile(
-                onTap: () {
-                  showDialog(
-                    context: context,
-                    builder: (context) {
-                      return AlertDialog(
-                        title: const Text("Are you sure?"),
-                        content: const Text(
-                            "This action will delete all the data associated with your account. Are you sure you want to proceed?"),
-                        actions: [
-                          TextButton(
-                              onPressed: () => Navigator.pop(context),
-                              child: const Text("Cancel")),
-                          TextButton(
-                              style: TextButton.styleFrom(
-                                foregroundColor: Colors.red,
-                              ),
-                              onPressed: () async {
-                                AuthController authController =
-                                    Get.put(AuthController());
-
-                                final response = await post(
-                                  Uri.parse(baseApi + deleteAccount),
-                                  body: jsonEncode({
-                                    "mobile_number":
-                                        authController.user.value?.mobileNumber,
-                                  }),
-                                  headers: {"Content-Type": "application/json"},
-                                );
-                                if (response.statusCode == 200) {
-                                  context.go("/login");
-                                  authController.user.value = null;
-                                  Fluttertoast.showToast(
-                                      msg: "Account Deleted Successfully");
-                                }
-                              },
-                              child: const Text("Delete")),
-                        ],
-                      );
-                    },
-                  );
-                },
-                leading: const Icon(
-                  FluentIcons.delete_24_filled,
-                  color: Colors.red,
+            if (!isGuest)
+              Container(
+                decoration: BoxDecoration(
+                  color: Colors.red.withValues(alpha: 0.2),
+                  borderRadius: BorderRadius.circular(8),
                 ),
-                title: const Text("Delete Account & Logout"),
-              ),
-            )
+                child: ListTile(
+                  onTap: () {
+                    showDialog(
+                      context: context,
+                      builder: (context) {
+                        return AlertDialog(
+                          title: const Text("Are you sure?"),
+                          content: const Text(
+                              "This action will delete all the data associated with your account. Are you sure you want to proceed?"),
+                          actions: [
+                            TextButton(
+                                onPressed: () => Navigator.pop(context),
+                                child: const Text("Cancel")),
+                            TextButton(
+                                style: TextButton.styleFrom(
+                                  foregroundColor: Colors.red,
+                                ),
+                                onPressed: () async {
+                                  AuthController authController =
+                                      Get.put(AuthController());
+
+                                  final response = await post(
+                                    Uri.parse(baseApi + deleteAccount),
+                                    body: jsonEncode({
+                                      "mobile_number": authController
+                                          .user.value?.mobileNumber,
+                                    }),
+                                    headers: {
+                                      "Content-Type": "application/json"
+                                    },
+                                  );
+                                  if (response.statusCode == 200) {
+                                    context.go("/login");
+                                    authController.user.value = null;
+                                    Fluttertoast.showToast(
+                                        msg: "Account Deleted Successfully");
+                                  }
+                                },
+                                child: const Text("Delete")),
+                          ],
+                        );
+                      },
+                    );
+                  },
+                  leading: const Icon(
+                    FluentIcons.delete_24_filled,
+                    color: Colors.red,
+                  ),
+                  title: const Text("Delete Account & Logout"),
+                ),
+              )
           ],
         ),
       ),

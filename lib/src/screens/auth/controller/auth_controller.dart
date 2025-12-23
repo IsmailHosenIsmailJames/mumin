@@ -26,11 +26,12 @@ class AuthController extends GetxController {
       final user = UserModel(
         id: 999,
         fullName: "FullName",
-        mobileNumber: "8801741095333",
-        pinNumber: "9999",
+        mobileNumber: "88017xxxxxxxx",
+        pinNumber: "xxxxx",
         status: "active",
       );
       await Hive.box("user_db").put("user_data", user.toJson());
+      await Hive.box("user_db").put("is_guest", true);
       return true;
     } else {
       if (!phone.startsWith("+88") || !phone.startsWith("88")) {
