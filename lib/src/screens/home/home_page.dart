@@ -105,17 +105,34 @@ class _HomePageState extends State<HomePage> {
   Future<void> startupCalls() async {
     await getUserLocation();
 
-    if (await requestPermissionsAwesomeNotifications()) {
-      await NotificationService.initializeNotifications();
-      if (Hive.box("user_db").get("close_notification", defaultValue: null) ==
-          null) {
-        await AwesomeNotifications().cancelAll();
-        await Hive.box("user_db").put("close_notification", true);
-        log("AwesomeNotifications().cancelAll()");
+    bool isNotificationAllowed =
+        await AwesomeNotifications().isNotificationAllowed();
+    if (!isNotificationAllowed) {
+      bool userAgreed = await _showPermissionRationale(
+        icon: Icons.notifications_active_outlined,
+        title: "Stay Notified!",
+        description:
+            "Enable notifications to receive daily Ramadan reminders, prayer times, and important updates directly on your device.",
+        color: MyAppColors.primaryColor,
+      );
+
+      if (userAgreed) {
+        if (await requestPermissionsAwesomeNotifications()) {
+          await NotificationService.initializeNotifications();
+          if (Hive.box("user_db")
+                  .get("close_notification", defaultValue: null) ==
+              null) {
+            await AwesomeNotifications().cancelAll();
+            await Hive.box("user_db").put("close_notification", true);
+            log("AwesomeNotifications().cancelAll()");
+          }
+          await NotificationService.scheduleDailyRamadanNotification();
+        }
       }
+    } else {
+      await NotificationService.initializeNotifications();
       await NotificationService.scheduleDailyRamadanNotification();
     }
-    await requestPermissionsAwesomeNotifications();
     setState(() {});
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       if (userBox.get(
@@ -244,7 +261,23 @@ class _HomePageState extends State<HomePage> {
     await loadCalender(userLocationController.locationData.value);
     try {
       LocationPermission locationPermission =
-          await LocationService().requestAndGetLocationPermission();
+          await Geolocator.checkPermission();
+
+      if (locationPermission == LocationPermission.denied) {
+        bool userAgreed = await _showPermissionRationale(
+          icon: Icons.location_on_outlined,
+          title: "Enable Location",
+          description:
+              "We need your location to provide accurate prayer times, Qibla direction, and nearby mosques based on your current city.",
+          color: Colors.redAccent,
+        );
+
+        if (userAgreed) {
+          locationPermission =
+              await LocationService().requestAndGetLocationPermission();
+        }
+      }
+
       if (locationPermission == LocationPermission.deniedForever ||
           locationPermission == LocationPermission.denied) {
         setState(() {
@@ -651,6 +684,101 @@ class _HomePageState extends State<HomePage> {
     } else {
       return MediaQuery.of(context).platformBrightness == Brightness.dark;
     }
+  }
+
+  Future<bool> _showPermissionRationale({
+    required IconData icon,
+    required String title,
+    required String description,
+    required Color color,
+  }) async {
+    bool? result = await showModalBottomSheet<bool>(
+      context: context,
+      backgroundColor: Colors.transparent,
+      isScrollControlled: true,
+      builder: (context) => Container(
+        decoration: BoxDecoration(
+          color: isDark(appThemeController.themeModeName.value)
+              ? MyAppColors.backgroundDarkColor
+              : MyAppColors.backgroundLightColor,
+          borderRadius: const BorderRadius.vertical(top: Radius.circular(25)),
+        ),
+        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Container(
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: color.withValues(alpha: 0.1),
+                shape: BoxShape.circle,
+              ),
+              child: Icon(icon, size: 48, color: color),
+            ).animate().scale(duration: 400.ms, curve: Curves.easeOutBack),
+            const Gap(24),
+            Text(
+              title,
+              style: const TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            const Gap(12),
+            Text(
+              description,
+              style: TextStyle(
+                fontSize: 16,
+                color: MyAppColors.secondaryColor,
+                height: 1.5,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            const Gap(32),
+            Row(
+              children: [
+                Expanded(
+                  child: TextButton(
+                    onPressed: () => Navigator.pop(context, false),
+                    style: TextButton.styleFrom(
+                      padding: const EdgeInsets.all(16),
+                    ),
+                    child: Text(
+                      "Not Now",
+                      style: TextStyle(color: MyAppColors.secondaryColor),
+                    ),
+                  ),
+                ),
+                const Gap(16),
+                Expanded(
+                  child: ElevatedButton(
+                    onPressed: () => Navigator.pop(context, true),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: color,
+                      foregroundColor: Colors.white,
+                      padding: const EdgeInsets.all(16),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      elevation: 0,
+                    ),
+                    child: const Text(
+                      "Allow",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            const Gap(16),
+          ],
+        ),
+      ),
+    );
+    return result ?? false;
   }
 
   Future<void> routeTo30DayPlan(BuildContext context,
