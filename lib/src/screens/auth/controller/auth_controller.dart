@@ -1,13 +1,13 @@
 import "dart:convert";
 import "dart:developer";
 
-import "package:flutter/widgets.dart";
+import "package:flutter/material.dart";
+import "package:fluttertoast/fluttertoast.dart";
 import "package:get/get.dart";
 import "package:hive_flutter/adapters.dart";
 import "package:http/http.dart";
 import "package:mumin/src/apis/apis.dart";
 import "package:mumin/src/screens/auth/controller/user_model.dart";
-import "package:toastification/toastification.dart";
 
 class AuthController extends GetxController {
   Rx<UserModel?> user = Rx<UserModel?>(null);
@@ -46,13 +46,18 @@ class AuthController extends GetxController {
       );
       if (response.statusCode == 200) {
         log(response.body);
-        if (jsonDecode(response.body)["success"] == true) {
+        final dynamic decodedResponse = jsonDecode(response.body);
+        if (decodedResponse["success"] == true) {
           user.value = UserModel.fromMap(
-              Map<String, dynamic>.from(jsonDecode(response.body)["result"]));
+              Map<String, dynamic>.from(decodedResponse["result"]));
           await Hive.box("user_db").put("user_data", user.value?.toJson());
           return true;
         } else {
-          log("something went wrong");
+          log("something went wrong: ${decodedResponse["message"]}");
+          Fluttertoast.showToast(
+            msg: decodedResponse["message"] ?? "Something went wrong",
+            textColor: Colors.red,
+          );
           return false;
         }
       } else {
@@ -84,15 +89,14 @@ class AuthController extends GetxController {
     log(response.body);
     log(response.statusCode.toString());
     if (response.statusCode == 200) {
-      if (jsonDecode(response.body)["success"] == true) {
+      final dynamic decodedResponse = jsonDecode(response.body);
+      if (decodedResponse["success"] == true) {
         log("Response : ${response.statusCode}");
         return await login(phone: phone);
       } else {
-        toastification.show(
-          context: context,
-          title: Text(jsonDecode(response.body)["message"] ?? ""),
-          type: ToastificationType.error,
-          autoCloseDuration: const Duration(seconds: 4),
+        Fluttertoast.showToast(
+          msg: decodedResponse["message"] ?? "Registration failed",
+          textColor: Colors.red,
         );
         return false;
       }

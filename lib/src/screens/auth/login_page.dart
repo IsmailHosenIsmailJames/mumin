@@ -110,10 +110,6 @@ class LoginScreenState extends State<LoginScreen> {
                                     .login(phone: mobile, isGuest: false);
                                 if (isSuccessful) {
                                   context.go("/home");
-                                } else {
-                                  Fluttertoast.showToast(
-                                      msg: "Unable to login",
-                                      textColor: Colors.red);
                                 }
                               }
                             },
@@ -143,10 +139,6 @@ class LoginScreenState extends State<LoginScreen> {
                                   .login(phone: "Guest User", isGuest: true);
                               if (isSuccessful) {
                                 context.go("/home");
-                              } else {
-                                Fluttertoast.showToast(
-                                    msg: "Unable to login",
-                                    textColor: Colors.red);
                               }
                             },
                             iconAlignment: IconAlignment.end,

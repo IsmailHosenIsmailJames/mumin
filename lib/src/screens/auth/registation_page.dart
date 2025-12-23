@@ -4,8 +4,6 @@ import "package:get/get.dart";
 import "package:go_router/go_router.dart";
 import "package:mumin/src/screens/auth/controller/auth_controller.dart";
 
-import "package:toastification/toastification.dart";
-
 class RegistrationScreen extends StatefulWidget {
   const RegistrationScreen({super.key});
 
@@ -25,13 +23,6 @@ class RegistrationScreenState extends State<RegistrationScreen> {
           context, _name.text.trim(), _mobile.text.trim(), _pin.text.trim());
       if (res) {
         context.go("/home");
-      } else {
-        toastification.show(
-          context: context,
-          title: const Text("Unable to register"),
-          type: ToastificationType.error,
-          autoCloseDuration: const Duration(seconds: 3),
-        );
       }
     }
   }
