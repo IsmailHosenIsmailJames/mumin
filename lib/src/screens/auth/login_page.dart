@@ -335,9 +335,7 @@ class LoginScreenState extends State<LoginScreen> {
     return InkWell(
       onTap: () async {
         final Uri uri = Uri.parse(url);
-        if (await canLaunchUrl(uri)) {
-          await launchUrl(uri, mode: LaunchMode.externalApplication);
-        }
+        await launchUrl(uri, mode: LaunchMode.externalApplication);
       },
       child: Text(
         label,
