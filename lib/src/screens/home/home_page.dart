@@ -10,6 +10,7 @@ import "package:geocoding/geocoding.dart";
 import "package:geolocator/geolocator.dart";
 import "package:go_router/go_router.dart";
 import "package:get/get.dart";
+import "package:hijri/hijri_calendar.dart";
 import "package:hive/hive.dart";
 import "package:http/http.dart";
 import "package:intl/intl.dart";
@@ -390,61 +391,88 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                   )
-                : userLocationController.locationData.value == null
-                    ? Container(
-                        decoration: BoxDecoration(
-                          color: Colors.grey.withValues(alpha: 0.2),
+                : SizedBox(
+                    height: 80,
+                    child: Row(
+                      children: [
+                        const SizedBox(
+                          width: 50,
+                          height: 50,
+                          child: Icon(
+                            Icons.location_pin,
+                            color: Colors.red,
+                            size: 30,
+                          ),
                         ),
-                        height: 80,
-                        width: double.infinity,
-                      )
-                        .animate(onPlay: (controller) => controller.repeat())
-                        .shimmer(
-                          duration: 1200.ms,
-                          color: const Color(0xFF80DDFF),
-                        )
-                    : SizedBox(
-                        height: 80,
-                        child: Row(
-                          children: [
-                            const SizedBox(
-                              width: 50,
-                              height: 50,
-                              child: Icon(
-                                Icons.location_pin,
-                                color: Colors.red,
-                                size: 30,
-                              ),
-                            ),
-                            const Gap(10),
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  userLocationController
-                                      .locationData.value!.district,
-                                  style: const TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                                Text(
-                                  safeSubString(
-                                      "${userLocationController.locationData.value!.division}, Bangladesh",
-                                      25),
-                                  style: TextStyle(
-                                    fontSize: 15,
-                                    color: MyAppColors.secondaryColor,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            const Spacer(),
-                            themeIconButton,
-                          ],
+                        const Gap(10),
+                        Expanded(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              userLocationController
+                                          .locationData.value?.district ==
+                                      null
+                                  ? Container(
+                                      decoration: BoxDecoration(
+                                        color:
+                                            Colors.grey.withValues(alpha: 0.2),
+                                        borderRadius: MyAppShapes.borderRadius,
+                                      ),
+                                      height: 25,
+                                    )
+                                      .animate(
+                                          onPlay: (controller) =>
+                                              controller.repeat())
+                                      .shimmer(
+                                        duration: 1200.ms,
+                                        color: const Color(0xFF80DDFF),
+                                      )
+                                  : Text(
+                                      userLocationController
+                                              .locationData.value?.district ??
+                                          "",
+                                      style: const TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                              const Gap(4),
+                              userLocationController
+                                          .locationData.value?.division ==
+                                      null
+                                  ? Container(
+                                      decoration: BoxDecoration(
+                                        color:
+                                            Colors.grey.withValues(alpha: 0.2),
+                                        borderRadius: MyAppShapes.borderRadius,
+                                      ),
+                                      height: 25,
+                                    )
+                                      .animate(
+                                          onPlay: (controller) =>
+                                              controller.repeat())
+                                      .shimmer(
+                                        duration: 1200.ms,
+                                        color: const Color(0xFF80DDFF),
+                                      )
+                                  : Text(
+                                      safeSubString(
+                                          "${userLocationController.locationData.value?.division ?? ""}, Bangladesh",
+                                          25),
+                                      style: TextStyle(
+                                        fontSize: 15,
+                                        color: MyAppColors.secondaryColor,
+                                      ),
+                                    ),
+                            ],
+                          ),
                         ),
-                      ),
+                        const Gap(8),
+                        themeIconButton,
+                      ],
+                    ),
+                  ),
           ),
           const Gap(10),
           Container(
@@ -461,7 +489,7 @@ class _HomePageState extends State<HomePage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Ramadan - ${getRamadanNumber(ramadanTodayTimeController.ifter.value ?? const TimeOfDay(hour: 18, minute: 30))}",
+                      HijriCalendar.now().toFormat("dd MMMM yyyy"),
                       style: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
@@ -494,15 +522,32 @@ class _HomePageState extends State<HomePage> {
                                   color: Colors.white,
                                 ),
                               ),
-                              Text(
-                                ramadanTodayTimeController.sehri.value
-                                        ?.format(context) ??
-                                    "",
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  color: MyAppColors.primaryColor,
-                                ),
-                              ),
+                              ramadanTodayTimeController.sehri.value == null
+                                  ? Container(
+                                      decoration: BoxDecoration(
+                                        color:
+                                            Colors.grey.withValues(alpha: 0.2),
+                                        borderRadius: MyAppShapes.borderRadius,
+                                      ),
+                                      height: 20,
+                                      width: 50,
+                                    )
+                                      .animate(
+                                          onPlay: (controller) =>
+                                              controller.repeat())
+                                      .shimmer(
+                                        duration: 1200.ms,
+                                        color: const Color(0xFF80DDFF),
+                                      )
+                                  : Text(
+                                      ramadanTodayTimeController.sehri.value
+                                              ?.format(context) ??
+                                          "",
+                                      style: TextStyle(
+                                        fontSize: 16,
+                                        color: MyAppColors.primaryColor,
+                                      ),
+                                    ),
                             ],
                           ),
                           const Gap(25),
@@ -518,15 +563,32 @@ class _HomePageState extends State<HomePage> {
                                   color: Colors.white,
                                 ),
                               ),
-                              Text(
-                                ramadanTodayTimeController.ifter.value
-                                        ?.format(context) ??
-                                    "",
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  color: MyAppColors.primaryColor,
-                                ),
-                              ),
+                              ramadanTodayTimeController.ifter.value == null
+                                  ? Container(
+                                      decoration: BoxDecoration(
+                                        color:
+                                            Colors.grey.withValues(alpha: 0.2),
+                                        borderRadius: MyAppShapes.borderRadius,
+                                      ),
+                                      height: 20,
+                                      width: 50,
+                                    )
+                                      .animate(
+                                          onPlay: (controller) =>
+                                              controller.repeat())
+                                      .shimmer(
+                                        duration: 1200.ms,
+                                        color: const Color(0xFF80DDFF),
+                                      )
+                                  : Text(
+                                      ramadanTodayTimeController.ifter.value
+                                              ?.format(context) ??
+                                          "",
+                                      style: TextStyle(
+                                        fontSize: 16,
+                                        color: MyAppColors.primaryColor,
+                                      ),
+                                    ),
                             ],
                           ),
                         ],
@@ -585,84 +647,87 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
-          Wrap(
-            alignment: WrapAlignment.center,
-            runAlignment: WrapAlignment.spaceBetween,
+          GridView(
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 3,
+              crossAxisSpacing: 16,
+              mainAxisSpacing: 16,
+            ),
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            padding: const EdgeInsets.all(10),
             children: List.generate(cards.length, (index) {
-              return Padding(
-                padding: const EdgeInsets.all(7.0),
-                child: TextButton(
-                  style: TextButton.styleFrom(
-                    padding: EdgeInsets.zero,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: MyAppShapes.borderRadius,
-                    ),
-                  ),
-                  onPressed: () {
-                    if (cards[index]["route"] == "/read_practice") {
-                      context.push("/read_practice");
-                      return;
-                    }
+              return InkWell(
+                borderRadius: MyAppShapes.borderRadius,
+                onTap: () {
+                  if (cards[index]["route"] == "/read_practice") {
+                    context.push("/read_practice");
+                    return;
+                  }
 
-                    if (cards[index]["route"] == "/qibla_direction" ||
-                        cards[index]["route"] == "/prayer_time" ||
-                        cards[index]["route"] == "/mosque" ||
-                        cards[index]["route"] == "/ramadan_calender") {
-                      if (userLocationController.locationData.value == null) {
-                        toastification.show(
-                          context: context,
-                          title: Text(
-                            isLocationDeclined
-                                ? "Location permission denied!"
-                                : "Location Data is loading...",
-                          ),
-                          type: isLocationDeclined
-                              ? ToastificationType.error
-                              : null,
-                          autoCloseDuration: const Duration(seconds: 4),
-                        );
-                      } else {
-                        context.push(cards[index]["route"]!);
-                      }
-                      return;
+                  if (cards[index]["route"] == "/qibla_direction" ||
+                      cards[index]["route"] == "/prayer_time" ||
+                      cards[index]["route"] == "/mosque" ||
+                      cards[index]["route"] == "/ramadan_calender") {
+                    if (userLocationController.locationData.value == null) {
+                      toastification.show(
+                        context: context,
+                        title: Text(
+                          isLocationDeclined
+                              ? "Location permission denied!"
+                              : "Location Data is loading...",
+                        ),
+                        type: isLocationDeclined
+                            ? ToastificationType.error
+                            : null,
+                        autoCloseDuration: const Duration(seconds: 4),
+                      );
+                    } else {
+                      context.push(cards[index]["route"]!);
                     }
-                    context.push(cards[index]["route"]!);
-                  },
-                  child: Obx(
-                    () => Container(
-                      height: 105,
-                      width: 95,
-                      padding: const EdgeInsets.all(5),
-                      decoration: BoxDecoration(
-                        color: isDark(appThemeController.themeModeName.value)
-                            ? MyAppColors.backgroundDarkColor
-                            : MyAppColors.backgroundLightColor,
-                        borderRadius: MyAppShapes.borderRadius,
-                        boxShadow: [
-                          isDark(appThemeController.themeModeName.value)
-                              ? MyAppShadows.commonShadowDark
-                              : MyAppShadows.commonShadowLight,
-                        ],
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          SizedBox(
-                            height: 45,
-                            width: 45,
-                            child: Image.asset(
-                              cards[index]["img"]!,
-                              fit: BoxFit.fill,
-                            ),
+                    return;
+                  }
+                  context.push(cards[index]["route"]!);
+                },
+                child: Obx(
+                  () => Container(
+                    height: 105,
+                    width: 95,
+                    padding: const EdgeInsets.all(5),
+                    decoration: BoxDecoration(
+                      color: isDark(appThemeController.themeModeName.value)
+                          ? MyAppColors.backgroundDarkColor
+                          : MyAppColors.backgroundLightColor,
+                      borderRadius: MyAppShapes.borderRadius,
+                      boxShadow: [
+                        isDark(appThemeController.themeModeName.value)
+                            ? MyAppShadows.commonShadowDark
+                            : MyAppShadows.commonShadowLight,
+                      ],
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          height: 45,
+                          width: 45,
+                          child: Image.asset(
+                            cards[index]["img"]!,
+                            fit: BoxFit.fill,
+                            color: cards[index]["name"] == "Settings"
+                                ? isDark(appThemeController.themeModeName.value)
+                                    ? Colors.grey.shade400
+                                    : Colors.grey.shade700
+                                : null,
                           ),
-                          const Gap(5),
-                          Text(
-                            cards[index]["name"]!,
-                            textAlign: TextAlign.center,
-                          ),
-                        ],
-                      ),
+                        ),
+                        const Gap(5),
+                        Text(
+                          cards[index]["name"]!,
+                          textAlign: TextAlign.center,
+                        ),
+                      ],
                     ),
                   ),
                 ),

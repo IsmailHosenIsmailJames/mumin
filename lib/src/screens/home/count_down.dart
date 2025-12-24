@@ -1,5 +1,6 @@
 import "dart:async";
 import "package:flutter/material.dart";
+import "package:flutter_animate/flutter_animate.dart";
 
 import "package:mumin/src/theme/colors.dart";
 
@@ -110,14 +111,15 @@ class _RamadanCountdownState extends State<RamadanCountdown> {
     if (_countdownType.isEmpty) {
       return Container(
         decoration: BoxDecoration(
-          color: Colors.grey.withAlpha(50),
+          color: Colors.grey.withValues(alpha: 0.2),
+          borderRadius: BorderRadius.circular(10),
         ),
         height: 100,
         width: 100,
-        child: const Center(
-          child: CircularProgressIndicator(),
-        ),
-      );
+      ).animate(onPlay: (controller) => controller.repeat()).shimmer(
+            duration: 1200.ms,
+            color: const Color(0xFF80DDFF),
+          );
     }
 
     return Column(
