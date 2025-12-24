@@ -647,15 +647,16 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
+          const Gap(10),
           GridView(
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 3,
-              crossAxisSpacing: 16,
-              mainAxisSpacing: 16,
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
             ),
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
-            padding: const EdgeInsets.all(10),
+            padding: EdgeInsets.zero,
             children: List.generate(cards.length, (index) {
               return InkWell(
                 borderRadius: MyAppShapes.borderRadius,
