@@ -13,10 +13,12 @@ import "package:mumin/src/screens/quran/resources/model/quran_surah_info_model.d
 import "package:mumin/src/screens/settings/controller/settings_controller.dart";
 import "package:mumin/src/theme/colors.dart";
 import "package:mumin/src/theme/shapes.dart";
-import "package:path/path.dart";
+import "package:path/path.dart" as p;
 import "package:path_provider/path_provider.dart";
 import "package:record/record.dart";
-import "package:path/path.dart" as path;
+// removed redundant path import
+import "package:awesome_notifications/awesome_notifications.dart";
+import "package:mumin/src/screens/quran/surah_view/widgets/notification_permission_dialog.dart";
 import "package:toastification/toastification.dart";
 import "package:wakelock_plus/wakelock_plus.dart";
 
@@ -120,6 +122,22 @@ class _SurahViewState extends State<SurahView> {
     });
   }
 
+  Future<void> _checkNotificationPermission() async {
+    bool isAllowed = await AwesomeNotifications().isNotificationAllowed();
+    if (!isAllowed) {
+      if (mounted) {
+        bool? request = await showDialog<bool>(
+          context: this.context,
+          builder: (context) => const NotificationPermissionDialog(),
+        );
+
+        if (request == true) {
+          await AwesomeNotifications().requestPermissionToSendNotifications();
+        }
+      }
+    }
+  }
+
   @override
   void dispose() {
     WakelockPlus.disable();
@@ -179,6 +197,7 @@ class _SurahViewState extends State<SurahView> {
                               ),
                             ),
                             onPressed: () async {
+                              await _checkNotificationPermission();
                               if (widget.surahIndex ==
                                   audioController.surahNumber.value) {
                                 if (index !=
@@ -203,6 +222,8 @@ class _SurahViewState extends State<SurahView> {
                                 );
                                 startListingForScroll();
                               }
+
+                              // TODO: Show dialog for Notification permission where I will ask for notification permission.
                             },
                             child: Container(
                               padding: const EdgeInsets.all(7),
@@ -297,7 +318,7 @@ class _SurahViewState extends State<SurahView> {
                           } else {
                             // Get the app documents directory
                             final Directory appDocumentsDir = Directory(
-                              join(
+                              p.join(
                                 (await getApplicationDocumentsDirectory()).path,
                                 "records",
                               ),
@@ -312,7 +333,7 @@ class _SurahViewState extends State<SurahView> {
                               // Start recording to file
                               await record.start(
                                 const RecordConfig(encoder: AudioEncoder.wav),
-                                path: path.join(
+                                path: p.join(
                                   appDocumentsDir.path,
                                   '${widget.surahName}-${DateTime.now().toIso8601String().split('.')[0]}.wav',
                                 ),

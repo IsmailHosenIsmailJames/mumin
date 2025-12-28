@@ -9,7 +9,8 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.VIBRATE"/>
     
-    <application 
+    <application
+        android:usesCleartextTraffic="true"
         android:label="Mumin"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">

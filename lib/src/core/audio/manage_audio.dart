@@ -53,8 +53,8 @@ class ManageAudioController extends GetxController {
         ),
       );
     }
-    await audioPlayer.setAudioSource(
-      ConcatenatingAudioSource(children: audioSources),
+    await audioPlayer.setAudioSources(
+      audioSources,
       initialIndex: ayahIndex,
       initialPosition: Duration.zero,
     );
