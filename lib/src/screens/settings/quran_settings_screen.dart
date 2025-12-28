@@ -6,7 +6,7 @@ import "package:fluttertoast/fluttertoast.dart";
 import "package:gap/gap.dart";
 import "package:get/get.dart";
 import "package:go_router/go_router.dart";
-import "package:hive/hive.dart";
+import "package:hive_ce/hive.dart";
 import "package:http/http.dart";
 import "package:mumin/src/apis/apis.dart";
 import "package:mumin/src/screens/auth/controller/auth_controller.dart";

@@ -3,7 +3,7 @@ import "dart:developer";
 
 import "package:flutter/material.dart";
 import "package:gap/gap.dart";
-import "package:hive/hive.dart";
+import "package:hive_ce/hive.dart";
 import "package:http/http.dart";
 import "package:go_router/go_router.dart";
 import "package:mumin/src/apis/apis.dart";

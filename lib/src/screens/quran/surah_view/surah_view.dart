@@ -231,11 +231,11 @@ class _SurahViewState extends State<SurahView> {
                                 borderRadius: MyAppShapes.borderRadius,
                                 color: Colors.grey.withValues(alpha: 0.1),
                                 border: Border.all(
-                                  color: isPlayingCurrent
-                                      ? MyAppColors.primaryColor
-                                      : Colors.grey.withValues(alpha: 0.5),
-                                  width: isPlayingCurrent ? 2.0 : 1,
-                                ),
+                                    color: isPlayingCurrent
+                                        ? MyAppColors.primaryColor
+                                        : Colors.grey.withValues(alpha: 0.5),
+                                    width: isPlayingCurrent ? 2.0 : 1,
+                                    strokeAlign: BorderSide.strokeAlignOutside),
                               ),
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,

@@ -1,7 +1,7 @@
 import "package:flutter/material.dart";
 import "package:flutter_native_splash/flutter_native_splash.dart";
 import "package:get/get.dart";
-import "package:hive_flutter/hive_flutter.dart";
+import "package:hive_ce_flutter/hive_flutter.dart";
 import "package:just_audio_background/just_audio_background.dart";
 import "package:mumin/src/core/audio/manage_audio.dart";
 import "package:mumin/src/screens/auth/controller/auth_controller.dart";

@@ -1,5 +1,5 @@
 import "package:get/get.dart";
-import "package:hive_flutter/hive_flutter.dart";
+import "package:hive_ce/hive.dart";
 import "package:mumin/src/screens/home/controller/model/user_location_data.dart";
 
 class UserLocationController extends GetxController {

@@ -1,5 +1,5 @@
 import "package:get/get.dart";
-import "package:hive_flutter/hive_flutter.dart";
+import "package:hive_ce/hive.dart";
 
 bool isLoggedIn = false;
 String quranScriptType = "uthmani_tajweed";

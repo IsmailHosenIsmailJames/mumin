@@ -4,7 +4,7 @@ import "dart:developer";
 import "package:flutter/material.dart";
 import "package:gap/gap.dart";
 import "package:get/get.dart";
-import "package:hive/hive.dart";
+import "package:hive_ce/hive.dart";
 import "package:http/http.dart";
 import "package:intl/intl.dart";
 import "package:mumin/src/screens/home/controller/user_location.dart";

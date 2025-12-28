@@ -4,7 +4,7 @@ import "dart:developer";
 import "package:flutter/material.dart";
 import "package:gap/gap.dart";
 import "package:go_router/go_router.dart";
-import "package:hive_flutter/adapters.dart";
+import "package:hive_ce/hive.dart";
 import "package:http/http.dart";
 import "package:mumin/src/apis/apis.dart";
 import "package:mumin/src/theme/shapes.dart";

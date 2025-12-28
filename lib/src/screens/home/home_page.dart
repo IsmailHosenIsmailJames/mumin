@@ -11,7 +11,7 @@ import "package:geolocator/geolocator.dart";
 import "package:go_router/go_router.dart";
 import "package:get/get.dart";
 import "package:hijri/hijri_calendar.dart";
-import "package:hive/hive.dart";
+import "package:hive_ce/hive.dart";
 import "package:http/http.dart";
 import "package:intl/intl.dart";
 import "package:mumin/src/apis/apis.dart";
