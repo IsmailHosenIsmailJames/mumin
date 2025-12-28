@@ -128,7 +128,7 @@ class _DailyRamadanPlanState extends State<DailyRamadanPlan> {
                         children: [
                           Align(
                             alignment: Alignment.topRight,
-                            child: Text(
+                            child: SelectableText(
                               dua[index]["arabic"]!,
                               textDirection: TextDirection.rtl,
                               textAlign: TextAlign.right,
@@ -140,7 +140,7 @@ class _DailyRamadanPlanState extends State<DailyRamadanPlan> {
                             ),
                           ),
                           const Divider(),
-                          Text(
+                          SelectableText(
                             dua[index]["translation"]!,
                             style: TextStyle(
                               fontSize:
@@ -265,7 +265,7 @@ class _DailyRamadanPlanState extends State<DailyRamadanPlan> {
                       children: [
                         Align(
                           alignment: Alignment.topRight,
-                          child: Text(
+                          child: SelectableText(
                             hadith[index]["translation"]!,
                             style: const TextStyle(
                               fontSize: 16,

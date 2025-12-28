@@ -90,7 +90,7 @@ class KalimaScreen extends StatelessWidget {
               children: [
                 Text(title, style: const TextStyle(fontSize: 17)),
                 const SizedBox(height: 10),
-                Text(
+                SelectableText(
                   arabicText,
                   style: TextStyle(
                     fontSize: settingsController.arabicFontSize.value,
@@ -100,21 +100,21 @@ class KalimaScreen extends StatelessWidget {
                   textAlign: TextAlign.end,
                 ),
                 const Divider(),
-                Text(
+                SelectableText(
                   transliteration,
                   style: TextStyle(
                       fontSize: settingsController.translationFontSize.value,
                       fontWeight: FontWeight.w400),
                 ),
                 const Divider(),
-                Text(
+                SelectableText(
                   banglaTranslation,
                   style: TextStyle(
                       fontSize: settingsController.translationFontSize.value,
                       fontWeight: FontWeight.w400),
                 ),
                 const Divider(),
-                Text(
+                SelectableText(
                   englishTranslation,
                   style: TextStyle(
                       fontSize: settingsController.englishFontSize.value,

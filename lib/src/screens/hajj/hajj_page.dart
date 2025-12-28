@@ -16,7 +16,7 @@ class _HajjPageState extends State<HajjPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
+        title: const SelectableText(
           "Hajj",
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
@@ -40,7 +40,6 @@ class _HajjPageState extends State<HajjPage> {
                     padding: const EdgeInsets.all(8.0),
                     child: ClipRRect(
                       borderRadius: MyAppShapes.borderRadius,
-
                       child: Image.asset(
                         "assets/images/hajj.jpg",
                         width: double.infinity,
@@ -77,10 +76,9 @@ class _HajjPageState extends State<HajjPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  width:
-                      pageNumber == 0
-                          ? MediaQuery.of(context).size.width * 0.7
-                          : 30,
+                  width: pageNumber == 0
+                      ? MediaQuery.of(context).size.width * 0.7
+                      : 30,
                   height: 5,
                   decoration: BoxDecoration(
                     color: MyAppColors.primaryColor,
@@ -89,10 +87,9 @@ class _HajjPageState extends State<HajjPage> {
                 ),
                 const SizedBox(width: 5),
                 Container(
-                  width:
-                      pageNumber == 1
-                          ? MediaQuery.of(context).size.width * 0.7
-                          : 30,
+                  width: pageNumber == 1
+                      ? MediaQuery.of(context).size.width * 0.7
+                      : 30,
                   height: 5,
                   decoration: BoxDecoration(
                     color: MyAppColors.primaryColor,
@@ -101,10 +98,9 @@ class _HajjPageState extends State<HajjPage> {
                 ),
                 const SizedBox(width: 5),
                 Container(
-                  width:
-                      pageNumber == 2
-                          ? MediaQuery.of(context).size.width * 0.7
-                          : 30,
+                  width: pageNumber == 2
+                      ? MediaQuery.of(context).size.width * 0.7
+                      : 30,
                   height: 5,
                   decoration: BoxDecoration(
                     color: MyAppColors.primaryColor,
@@ -114,111 +110,107 @@ class _HajjPageState extends State<HajjPage> {
               ],
             ),
             const SizedBox(height: 10),
-            const Text(
+            const SelectableText(
               "Hajj Is The Fourth Pillar Of Islam",
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
             ),
-
             const SizedBox(height: 15),
-            const Text(
+            const SelectableText(
               "Hajj Is More Than 1,500 Years Old",
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
             ),
             const SizedBox(height: 5),
-            const Text(
+            const SelectableText(
               "The origins of Hajj actually date much further back than the time of the Prophet Muhammad (peace and blessings be upon him). The rituals of Hajj in fact go back to 2000 BCE!",
               style: TextStyle(fontSize: 15),
             ),
             const SizedBox(height: 5),
-            const Text(
+            const SelectableText(
               "If we think of the rites involved in Hajj: running between Safa and Marwa to replicate Hajar’s (the wife of Ibrahim AS) journey in search of water, then it’s actually a lot older…",
               style: TextStyle(fontSize: 15),
             ),
             const SizedBox(height: 5),
-            const Text(
+            const SelectableText(
               "The Kaaba itself also dates back much earlier than 631CE. The Prophet Ibrahim (AS) built a monument on the site of the Kaaba and worshippers from a variety of faiths used to come and visit the site. Mount Arafah was where Ibrahim (AS) prepared to sacrifice his son.",
               style: TextStyle(fontSize: 15),
             ),
             const SizedBox(height: 5),
-            const Text(
+            const SelectableText(
               "In 632CE, Prophet Muhammad (peace and blessings be upon him) then led the first official Hajj, when he led a group of worshippers to the Kaaba in 632CE and destroyed the idols inside the Kaaba, restoring it to its original purpose in the name of Allah (SWT).",
               style: TextStyle(fontSize: 15),
             ),
             const SizedBox(height: 5),
-            const Text(
+            const SelectableText(
               "Prophet Muhammad (peace and blessings be upon him) and the first Muslims retraced Hajar’s journey between the hills of Safa and Marwa. They replicated the stoning of Iblis (Satan), as Prophet Ibrahim (AS) did when Iblis tried to tempt him to defy Allah (SWT) in three separate locations on the journey. Ibrahim (AS) continued in his obedience to Allah (SWT). Mount Arafah was also the location of the Prophet Muhammad’s (peace and blessings be upon) last sermon.",
               style: TextStyle(fontSize: 15),
             ),
             const SizedBox(height: 5),
-            const Text(
+            const SelectableText(
               "During his life, Prophet Muhammad (peace and blessings be upon him) only performed Hajj once. Since then, the tradition has been continued by Muslims from across the world for over a millennia of years. Subhan’Allah – such history!",
               style: TextStyle(fontSize: 15),
             ),
-
             const SizedBox(height: 15),
-            const Text(
+            const SelectableText(
               "Hajj Is Always On The 8th – 13th Dhul Hijjah",
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
             ),
             const SizedBox(height: 5),
-            const Text(
+            const SelectableText(
               "Hajj takes place during the month of Dhul Hijjah – which translates to ‘the month of the pilgrimage’.",
               style: TextStyle(fontSize: 15),
             ),
             const SizedBox(height: 5),
-            const Text(
+            const SelectableText(
               "In line with the Islamic calendar, Hajj takes places during the same period of the lunar calendar each year. The dates therefore appear to shift forward approximately 11-12 days in the Gregorian calendar each year.",
               style: TextStyle(fontSize: 15),
             ),
             const SizedBox(height: 5),
-            const Text(
+            const SelectableText(
               "This year, Dhul Hijjah will run from 7th July to 11th/12th July 2022.",
               style: TextStyle(fontSize: 15),
             ),
             const SizedBox(height: 5),
-            const Text(
+            const SelectableText(
               "Dhul Hijjah is a very important month. Not only is it the last month in the Islamic year, but during this period, Muslims make Hajj, offer Qurbani to those in need and celebrate Eid al-Adha before the new year begins.",
               style: TextStyle(fontSize: 15),
             ),
             const SizedBox(height: 5),
-            const Text(
+            const SelectableText(
               "The sacred Day of ‘Arafah takes place on 9th Dhul Hijjah, and offers Muslims around the world who are not on Hajj the chance to earn immense reward, by fasting and making sincere du’a. Fasting on the Day of Arafah can expiate your sins of two years!",
               style: TextStyle(fontSize: 15),
             ),
-
             const SizedBox(height: 15),
-            const Text(
+            const SelectableText(
               "Over 2.5 Million Muslims A Year Go On Hajj",
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
             ),
             const SizedBox(height: 5),
-            const Text(
+            const SelectableText(
               "We all know how popular Hajj is, but how many people go each year?",
               style: TextStyle(fontSize: 15),
             ),
             const SizedBox(height: 5),
-            const Text(
+            const SelectableText(
               "In line with the Islamic calendar, Hajj takes places during the same period of the lunar calendar each year. The dates therefore appear to shift forward approximately 11-12 days in the Gregorian calendar each year.",
               style: TextStyle(fontSize: 15),
             ),
             const SizedBox(height: 5),
-            const Text(
+            const SelectableText(
               "Well, according to the Saudi government figures for 2019, a staggering 2.5 million undertook Hajj! Subhan’Allah…",
               style: TextStyle(fontSize: 15),
             ),
             const SizedBox(height: 5),
-            const Text(
+            const SelectableText(
               "With around three times as many international pilgrims (1.9 million), compared to Saudi-residents (Saudi and non-Saudi) (634K), you may be intrigued to find out that the highest single nationality of non-Saudi pilgrims was in fact Egyptian!",
               style: TextStyle(fontSize: 15),
             ),
             const SizedBox(height: 5),
-            const Text(
+            const SelectableText(
               "Alhamdulillah, pilgrims come from all over the world with most non-Saudi pilgrims travelling from Asian (non-Arab) countries (59%). However, with a whopping 35,355 pilgrims in 2019, the biggest group of non-Saudi nationals is Egyptians, with almost 36% of non-Saudi pilgrims from Egypt.",
               style: TextStyle(fontSize: 15),
             ),
-
             const SizedBox(height: 15),
-            Text(
+            SelectableText(
               "7 Steps of Hajj – Complete Hajj Guide For Pilgrims",
               style: TextStyle(
                 fontSize: 25,
@@ -267,7 +259,7 @@ class _HajjPageState extends State<HajjPage> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
+        SelectableText(
           title,
           style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
         ),
@@ -275,7 +267,8 @@ class _HajjPageState extends State<HajjPage> {
         ...descriptions.map(
           (description) => Padding(
             padding: const EdgeInsets.only(bottom: 5),
-            child: Text(description, style: const TextStyle(fontSize: 15)),
+            child: SelectableText(description,
+                style: const TextStyle(fontSize: 15)),
           ),
         ),
       ],

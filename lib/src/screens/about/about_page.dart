@@ -32,10 +32,9 @@ class AboutScreen extends StatelessWidget {
                     fit: BoxFit.contain,
                   ),
                   const SizedBox(height: 5),
-                  Text(
+                  const Text(
                     "Radiant Pharmaceuticals Limited",
                     style: TextStyle(
-                      color: MyAppColors.backgroundLightColor,
                       fontSize: 18,
                       fontWeight: FontWeight.w700,
                     ),
@@ -71,7 +70,7 @@ class AboutScreen extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(5),
               decoration: BoxDecoration(
-                color: MyAppColors.primaryColor,
+                color: MyAppColors.primaryColor.withValues(alpha: 0.2),
                 borderRadius: MyAppShapes.borderRadius,
               ),
               child: const Column(
@@ -99,7 +98,7 @@ class AboutScreen extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(5),
               decoration: BoxDecoration(
-                color: MyAppColors.primaryColor,
+                color: MyAppColors.primaryColor.withValues(alpha: 0.2),
                 borderRadius: MyAppShapes.borderRadius,
               ),
               width: double.infinity,

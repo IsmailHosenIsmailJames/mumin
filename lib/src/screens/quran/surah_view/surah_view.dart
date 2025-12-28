@@ -266,7 +266,7 @@ class _SurahViewState extends State<SurahView> {
                                   const Gap(5),
                                   Align(
                                     alignment: Alignment.topRight,
-                                    child: Text(
+                                    child: SelectableText(
                                       ayahsWithMeaning[index]["quran"] ?? "",
                                       style: TextStyle(
                                         fontSize: settingsController
@@ -278,7 +278,7 @@ class _SurahViewState extends State<SurahView> {
                                     ),
                                   ),
                                   const Divider(),
-                                  Text(
+                                  SelectableText(
                                     ayahsWithMeaning[index]["bn"]!,
                                     style: TextStyle(
                                         fontSize: settingsController
@@ -286,7 +286,7 @@ class _SurahViewState extends State<SurahView> {
                                     textAlign: TextAlign.start,
                                   ),
                                   const Divider(),
-                                  Text(
+                                  SelectableText(
                                     ayahsWithMeaning[index]["en"]!,
                                     style: TextStyle(
                                         fontSize: settingsController
