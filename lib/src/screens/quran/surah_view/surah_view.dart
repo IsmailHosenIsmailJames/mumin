@@ -186,116 +186,114 @@ class _SurahViewState extends State<SurahView> {
                                 audioController.surahNumber.value) &&
                             (index == audioController.indexOfAyah.value);
 
-                        return Padding(
-                          padding: const EdgeInsets.all(5.0),
-                          child: TextButton(
-                            key: scrollKeys[index],
-                            style: TextButton.styleFrom(
-                              padding: EdgeInsets.zero,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: MyAppShapes.borderRadius,
-                              ),
-                            ),
-                            onPressed: () async {
-                              await _checkNotificationPermission();
-                              if (widget.surahIndex ==
-                                  audioController.surahNumber.value) {
-                                if (index !=
-                                    audioController.indexOfAyah.value) {
-                                  audioController.audioPlayer.seek(
-                                    const Duration(seconds: 0),
-                                    index: index,
-                                  );
-                                  audioController.audioPlayer.play();
-                                } else {
-                                  if (audioController.isPlaying.value) {
-                                    audioController.audioPlayer.pause();
-                                  } else {
-                                    audioController.audioPlayer.play();
-                                  }
-                                }
-                              } else {
-                                audioController.playSurahAsPlaylist(
-                                  widget.quranInfoModel.nameSimple,
-                                  widget.surahIndex,
-                                  index,
-                                );
-                                startListingForScroll();
-                              }
-
-                              // TODO: Show dialog for Notification permission where I will ask for notification permission.
-                            },
-                            child: Container(
-                              padding: const EdgeInsets.all(7),
-                              decoration: BoxDecoration(
-                                borderRadius: MyAppShapes.borderRadius,
-                                color: Colors.grey.withValues(alpha: 0.1),
-                                border: Border.all(
-                                    color: isPlayingCurrent
-                                        ? MyAppColors.primaryColor
-                                        : Colors.grey.withValues(alpha: 0.5),
-                                    width: isPlayingCurrent ? 2.0 : 1,
-                                    strokeAlign: BorderSide.strokeAlignOutside),
-                              ),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.start,
+                        return Container(
+                          padding: const EdgeInsets.only(
+                              left: 8, right: 8, bottom: 8),
+                          margin: const EdgeInsets.only(bottom: 10),
+                          decoration: BoxDecoration(
+                            borderRadius: MyAppShapes.borderRadius,
+                            color: Colors.grey.withValues(alpha: 0.1),
+                            border: Border.all(
+                                color: isPlayingCurrent
+                                    ? MyAppColors.primaryColor
+                                    : Colors.grey.withValues(alpha: 0.5),
+                                width: isPlayingCurrent ? 2.0 : 1,
+                                strokeAlign: BorderSide.strokeAlignOutside),
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
                                 children: [
-                                  Row(
-                                    children: [
-                                      Text(
-                                        "Ayah: ${(widget.start ?? 1) + index}",
-                                        style: const TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                        ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Text(
+                                      "Ayah: ${(widget.start ?? 1) + index}",
+                                      style: const TextStyle(
+                                        fontWeight: FontWeight.bold,
                                       ),
-                                      const Spacer(),
-                                      Icon(
-                                        (audioController.isPlaying.value &&
-                                                audioController
-                                                        .surahNumber.value ==
-                                                    widget.surahIndex &&
-                                                audioController
-                                                        .indexOfAyah.value ==
-                                                    index)
-                                            ? Icons.pause_rounded
-                                            : Icons.play_arrow_rounded,
-                                      ),
-                                    ],
-                                  ),
-                                  const Gap(5),
-                                  Align(
-                                    alignment: Alignment.topRight,
-                                    child: SelectableText(
-                                      ayahsWithMeaning[index]["quran"] ?? "",
-                                      style: TextStyle(
-                                        fontSize: settingsController
-                                            .arabicFontSize.value,
-                                        fontFamily: "IndopakNastaleeq",
-                                        letterSpacing: 0,
-                                      ),
-                                      textDirection: TextDirection.rtl,
                                     ),
                                   ),
-                                  const Divider(),
-                                  SelectableText(
-                                    ayahsWithMeaning[index]["bn"]!,
-                                    style: TextStyle(
-                                        fontSize: settingsController
-                                            .translationFontSize.value),
-                                    textAlign: TextAlign.start,
-                                  ),
-                                  const Divider(),
-                                  SelectableText(
-                                    ayahsWithMeaning[index]["en"]!,
-                                    style: TextStyle(
-                                        fontSize: settingsController
-                                            .englishFontSize.value),
-                                    textAlign: TextAlign.start,
+                                  const Spacer(),
+                                  IconButton(
+                                    padding: EdgeInsets.zero,
+                                    style: IconButton.styleFrom(
+                                      padding: EdgeInsets.zero,
+                                      backgroundColor:
+                                          Colors.orange.withValues(alpha: 0.1),
+                                    ),
+                                    onPressed: () {
+                                      _checkNotificationPermission();
+                                      if (widget.surahIndex ==
+                                          audioController.surahNumber.value) {
+                                        if (index !=
+                                            audioController.indexOfAyah.value) {
+                                          audioController.audioPlayer.seek(
+                                            const Duration(seconds: 0),
+                                            index: index,
+                                          );
+                                          audioController.audioPlayer.play();
+                                        } else {
+                                          if (audioController.isPlaying.value) {
+                                            audioController.audioPlayer.pause();
+                                          } else {
+                                            audioController.audioPlayer.play();
+                                          }
+                                        }
+                                      } else {
+                                        audioController.playSurahAsPlaylist(
+                                          widget.quranInfoModel.nameSimple,
+                                          widget.surahIndex,
+                                          index,
+                                        );
+                                        startListingForScroll();
+                                      }
+                                    },
+                                    icon: Icon(
+                                      (audioController.isPlaying.value &&
+                                              audioController
+                                                      .surahNumber.value ==
+                                                  widget.surahIndex &&
+                                              audioController
+                                                      .indexOfAyah.value ==
+                                                  index)
+                                          ? Icons.pause_rounded
+                                          : Icons.play_arrow_rounded,
+                                    ),
                                   ),
                                 ],
                               ),
-                            ),
+                              Align(
+                                alignment: Alignment.topRight,
+                                child: SelectableText(
+                                  ayahsWithMeaning[index]["quran"] ?? "",
+                                  style: TextStyle(
+                                    fontSize:
+                                        settingsController.arabicFontSize.value,
+                                    fontFamily: "IndopakNastaleeq",
+                                    letterSpacing: 0,
+                                  ),
+                                  textDirection: TextDirection.rtl,
+                                ),
+                              ),
+                              const Divider(),
+                              SelectableText(
+                                ayahsWithMeaning[index]["bn"]!,
+                                style: TextStyle(
+                                    fontSize: settingsController
+                                        .translationFontSize.value),
+                                textAlign: TextAlign.start,
+                              ),
+                              const Divider(),
+                              SelectableText(
+                                ayahsWithMeaning[index]["en"]!,
+                                style: TextStyle(
+                                    fontSize: settingsController
+                                        .englishFontSize.value),
+                                textAlign: TextAlign.start,
+                              ),
+                            ],
                           ),
                         );
                       });

@@ -34,17 +34,19 @@ class ManageAudioController extends GetxController {
       startListening();
     }
     surahNumber.value = surahIndex;
+
     await audioPlayer.stop();
     List<LockCachingAudioSource> audioSources = [];
-    int ayahNumber = ayahCount[surahIndex + 1];
+    int ayahNumber = ayahCount[surahIndex];
     for (var i = 0; i < ayahNumber; i++) {
       String id = surahIDFromNumber(
         surahNumber: surahIndex + 1,
         ayahNumber: i + 1,
       );
+      String audioURL = makeAudioUrl(audioBase, id);
       audioSources.add(
         LockCachingAudioSource(
-          Uri.parse(makeAudioUrl(audioBase, id)),
+          Uri.parse(audioURL),
           tag: MediaItem(
             id: id,
             album: "Abdul Baset",
