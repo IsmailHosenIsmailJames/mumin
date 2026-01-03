@@ -32,7 +32,7 @@ class _PrayerTimeState extends State<PrayerTime> {
 
   Future<void> getPrayerTimeData() async {
     String url =
-        'https://muslimsalat.com/${userLocationController.locationData.value!.division.split(' ').first.toLowerCase()}/${DateFormat('yyyy-MM-dd').format(DateTime.now())}.json';
+        'https://muslimsalat.com/${userLocationController.locationData.value!.placemark?.subAdministrativeArea?.split(' ').first.toLowerCase()}/${DateFormat('yyyy-MM-dd').format(DateTime.now())}.json';
     log(url);
     if (Hive.box("user_db").containsKey(url)) {
       prayerTimeModel = PrayerTimeModel.fromJson(Hive.box("user_db").get(url));

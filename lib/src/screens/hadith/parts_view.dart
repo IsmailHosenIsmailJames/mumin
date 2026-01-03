@@ -61,12 +61,12 @@ class _PartsViewState extends State<PartsView> {
                 ),
               ),
               onPressed: () {
-                log('$baseApi/hadiths/${hadithParts[index]['file'].toString().split('/').last}');
+                log('$baseApi/hadiths/${hadithParts[index]['file'].toAddressString().split('/').last}');
                 context.push(
                   "/hadith_pdf",
                   extra: {
                     "url":
-                        '$baseApi/hadiths/${hadithParts[index]['file'].toString().split('/').last}',
+                        '$baseApi/hadiths/${hadithParts[index]['file'].toAddressString().split('/').last}',
                     "title": hadithParts[index]["name"],
                   },
                 );

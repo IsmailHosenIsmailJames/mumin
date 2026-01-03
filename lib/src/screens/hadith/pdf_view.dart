@@ -143,10 +143,10 @@ class _HadithPdfViewState extends State<HadithPdfView> {
                         });
                       },
                       onError: (error) {
-                        log(error.toString());
+                        log(error.toAddressString());
                       },
                       onPageError: (page, error) {
-                        log('$page: ${error.toString()}');
+                        log('$page: ${error.toAddressString()}');
                       },
                       onViewCreated: (PDFViewController pdfViewController) {
                         _controller.complete(pdfViewController);

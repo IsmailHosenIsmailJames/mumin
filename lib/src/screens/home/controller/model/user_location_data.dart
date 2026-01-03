@@ -1,29 +1,27 @@
 import "dart:convert";
 
+import "package:mumin/src/core/utils/one_placemart_from_multi.dart";
+
 class UserLocationData {
   double latitude;
   double longitude;
-  String division;
-  String district;
+  AppPlacemark? placemark;
 
   UserLocationData({
     required this.latitude,
     required this.longitude,
-    required this.division,
-    required this.district,
+    this.placemark,
   });
 
   UserLocationData copyWith({
     double? latitude,
     double? longitude,
-    String? division,
-    String? district,
+    AppPlacemark? placemark,
   }) =>
       UserLocationData(
         latitude: latitude ?? this.latitude,
         longitude: longitude ?? this.longitude,
-        division: division ?? this.division,
-        district: district ?? this.district,
+        placemark: placemark ?? this.placemark,
       );
 
   factory UserLocationData.fromJson(String str) =>
@@ -35,14 +33,14 @@ class UserLocationData {
       UserLocationData(
         latitude: json["latitude"],
         longitude: json["longitude"],
-        division: json["division"],
-        district: json["district"],
+        placemark: json["placemark"] != null
+            ? AppPlacemark.fromJson(json["placemark"])
+            : null,
       );
 
   Map<String, dynamic> toMap() => {
         "latitude": latitude,
         "longitude": longitude,
-        "division": division,
-        "district": district,
+        "placemark": placemark?.toJson(),
       };
 }

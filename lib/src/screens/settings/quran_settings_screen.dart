@@ -9,6 +9,7 @@ import "package:go_router/go_router.dart";
 import "package:hive_ce/hive.dart";
 import "package:http/http.dart";
 import "package:mumin/src/apis/apis.dart";
+import "package:mumin/src/core/utils/one_placemart_from_multi.dart";
 import "package:mumin/src/screens/auth/controller/auth_controller.dart";
 import "dart:developer";
 import "package:geocoding/geocoding.dart";
@@ -150,20 +151,10 @@ class _QuranSettingsScreenState extends State<QuranSettingsScreen> {
                         UserLocationData userLocationData = UserLocationData(
                             latitude: location.latitude,
                             longitude: location.longitude,
-                            division: "division",
-                            district: "district");
-                        for (Placemark placemark in placemarks) {
-                          if (placemark.administrativeArea != null) {
-                            userLocationData.division =
-                                placemark.administrativeArea!;
-                          }
-                          if (placemark.subAdministrativeArea != null) {
-                            userLocationData.district =
-                                placemark.subAdministrativeArea!;
-                          }
-                        }
-                        await Hive.box("user_db")
-                            .put("user_location", userLocationData.toJson());
+                            placemark: onePlacemarkFromMulti(placemarks));
+
+                        await Hive.box("user_db").put(
+                            "user_location_info", userLocationData.toJson());
                         userLocationController.locationData.value =
                             userLocationData;
                         Fluttertoast.showToast(
@@ -265,28 +256,52 @@ class _QuranSettingsScreenState extends State<QuranSettingsScreen> {
         Map<String, dynamic> data = jsonDecode(result);
         LatLon latLon = LatLon.fromMap(data);
         UserLocationData userLocationData = UserLocationData(
-            latitude: latLon.latitude,
-            longitude: latLon.longitude,
-            division: "Unknown",
-            district: data["city"] ?? "Unknown");
+          latitude: latLon.latitude,
+          longitude: latLon.longitude,
+        );
 
         try {
           List<Placemark> placemarks =
               await placemarkFromCoordinates(latLon.latitude, latLon.longitude);
-          for (Placemark placemark in placemarks) {
-            if (placemark.administrativeArea != null) {
-              userLocationData.division = placemark.administrativeArea!;
-            }
-            if (placemark.subAdministrativeArea != null) {
-              userLocationData.district = placemark.subAdministrativeArea!;
-            }
-          }
+          userLocationData.placemark = onePlacemarkFromMulti(placemarks);
         } catch (e) {
           log("Geocoding failed: $e");
         }
 
         await Hive.box("user_db")
-            .put("user_location", userLocationData.toJson());
+            .put("user_location_info", userLocationData.toJson());
+        userLocationController.locationData.value = userLocationData;
+        Fluttertoast.showToast(msg: "Location Updated Successfully");
+      } catch (e) {
+        log("Geocoding failed: $e");
+        Fluttertoast.showToast(msg: "Location Update Failed");
+      }
+    } else {
+      log("Manual location selection failed: $result");
+    }
+  }
+
+  Future<void> handleManualLocationResult(
+      dynamic result, UserLocationController userLocationController) async {
+    if (result is String) {
+      try {
+        Map<String, dynamic> data = jsonDecode(result);
+        LatLon latLon = LatLon.fromMap(data);
+        UserLocationData userLocationData = UserLocationData(
+          latitude: latLon.latitude,
+          longitude: latLon.longitude,
+        );
+
+        try {
+          List<Placemark> placemarks =
+              await placemarkFromCoordinates(latLon.latitude, latLon.longitude);
+          userLocationData.placemark = onePlacemarkFromMulti(placemarks);
+        } catch (e) {
+          log("Geocoding failed: $e");
+        }
+
+        await Hive.box("user_db")
+            .put("user_location_info", userLocationData.toJson());
         userLocationController.locationData.value = userLocationData;
         Fluttertoast.showToast(msg: "Location Updated Successfully");
       } catch (e) {

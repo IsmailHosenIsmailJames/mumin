@@ -8,7 +8,7 @@ class UserLocationController extends GetxController {
   @override
   void onInit() {
     final userLocation =
-        Hive.box("user_db").get("user_location", defaultValue: null);
+        Hive.box("user_db").get("user_location_info", defaultValue: null);
     if (userLocation != null) {
       locationData.value = UserLocationData.fromJson(userLocation);
     }

@@ -16,11 +16,11 @@ import "package:http/http.dart";
 import "package:intl/intl.dart";
 import "package:mumin/src/apis/apis.dart";
 import "package:mumin/src/core/algorithm/get_most_close_key.dart";
-import "package:mumin/src/core/algorithm/safe_substring.dart";
 import "package:mumin/src/core/location/location_service.dart";
 import "package:mumin/src/core/notifications/notification_service.dart";
 import "package:mumin/src/core/notifications/requiest_permission.dart";
 import "package:mumin/src/core/utils/lat_lon.dart";
+import "package:mumin/src/core/utils/one_placemart_from_multi.dart";
 import "package:mumin/src/screens/auth/controller/auth_controller.dart";
 import "package:mumin/src/screens/daily_plan/get_ramadan_number.dart";
 import "package:mumin/src/screens/home/controller/model/user_calander_day_model.dart";
@@ -208,16 +208,12 @@ class _HomePageState extends State<HomePage> {
         .loadString("assets/calender_data/ramadan_calendar2025.json");
     Map ramadanCalendar = jsonDecode(json);
     if (userLocationData != null) {
-      List<String> data = userLocationData.district.split(" ");
-      data.removeLast();
-      if (data.isEmpty) {
-        data.add("Dhaka");
-      }
-      String district = data.first;
-      if (data.length > 1) {
-        district = "${data.first.toLowerCase()} ${data.last.toLowerCase()}";
-      }
-
+      log(userLocationData.placemark?.subAdministrativeArea ??
+          userLocationData.placemark?.administrativeArea ??
+          "Empty");
+      String district = userLocationData.placemark?.subAdministrativeArea ??
+          userLocationData.placemark?.administrativeArea ??
+          "Dhaka";
       district = district.replaceAll(" ", "");
       List<RamadanDayModel> ramadanDaysList = [];
       log(district);
@@ -301,18 +297,10 @@ class _HomePageState extends State<HomePage> {
         List<Placemark> placemarks = await placemarkFromCoordinates(
             location.latitude, location.longitude);
         UserLocationData userLocationData = UserLocationData(
-            latitude: location.latitude,
-            longitude: location.longitude,
-            division: "division",
-            district: "district");
-        for (Placemark placemark in placemarks) {
-          if (placemark.administrativeArea != null) {
-            userLocationData.division = placemark.administrativeArea!;
-          }
-          if (placemark.subAdministrativeArea != null) {
-            userLocationData.district = placemark.subAdministrativeArea!;
-          }
-        }
+          latitude: location.latitude,
+          longitude: location.longitude,
+        );
+        userLocationData.placemark = onePlacemarkFromMulti(placemarks);
         await Hive.box("user_db")
             .put("user_location", userLocationData.toJson());
         userLocationController.locationData.value = userLocationData;
@@ -403,38 +391,23 @@ class _HomePageState extends State<HomePage> {
                                         LatLon latLon = LatLon.fromMap(data);
                                         UserLocationData userLocationData =
                                             UserLocationData(
-                                                latitude: latLon.latitude,
-                                                longitude: latLon.longitude,
-                                                division: "Unknown",
-                                                district: data["city"] ??
-                                                    "Unknown"); // Use selected city
+                                          latitude: latLon.latitude,
+                                          longitude: latLon.longitude,
+                                        );
 
                                         try {
                                           List<Placemark> placemarks =
                                               await placemarkFromCoordinates(
                                                   latLon.latitude,
                                                   latLon.longitude);
-                                          for (Placemark placemark
-                                              in placemarks) {
-                                            if (placemark.administrativeArea !=
-                                                null) {
-                                              userLocationData.division =
-                                                  placemark.administrativeArea!;
-                                            }
-                                            if (placemark
-                                                    .subAdministrativeArea !=
-                                                null) {
-                                              userLocationData.district =
-                                                  placemark
-                                                      .subAdministrativeArea!;
-                                            }
-                                          }
+                                          userLocationData.placemark =
+                                              onePlacemarkFromMulti(placemarks);
                                         } catch (e) {
                                           log("Geocoding failed: $e");
                                         }
 
                                         await Hive.box("user_db").put(
-                                            "user_location",
+                                            "user_location_info",
                                             userLocationData.toJson());
                                         userLocationController.locationData
                                             .value = userLocationData;
@@ -493,7 +466,7 @@ class _HomePageState extends State<HomePage> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               if (userLocationController
-                                      .locationData.value?.district ==
+                                      .locationData.value?.placemark ==
                                   null)
                                 Container(
                                   decoration: BoxDecoration(
@@ -510,45 +483,20 @@ class _HomePageState extends State<HomePage> {
                                       color: const Color(0xFF80DDFF),
                                     ),
                               if (userLocationController
-                                      .locationData.value?.district !=
+                                      .locationData.value?.placemark !=
+                                  null)
+                                const Text("Location"),
+                              if (userLocationController
+                                      .locationData.value?.placemark !=
                                   null)
                                 Text(
                                   userLocationController
-                                          .locationData.value?.district ??
+                                          .locationData.value?.placemark
+                                          ?.toAddressString() ??
                                       "",
                                   style: const TextStyle(
-                                    fontSize: 16,
+                                    fontSize: 14,
                                     fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              const Gap(4),
-                              if (userLocationController
-                                      .locationData.value?.division ==
-                                  null)
-                                Container(
-                                  decoration: BoxDecoration(
-                                    color: Colors.grey.withValues(alpha: 0.2),
-                                    borderRadius: MyAppShapes.borderRadius,
-                                  ),
-                                  height: 25,
-                                )
-                                    .animate(
-                                        onPlay: (controller) =>
-                                            controller.repeat())
-                                    .shimmer(
-                                      duration: 1200.ms,
-                                      color: const Color(0xFF80DDFF),
-                                    ),
-                              if (userLocationController
-                                      .locationData.value?.division !=
-                                  null)
-                                Text(
-                                  safeSubString(
-                                      "${userLocationController.locationData.value?.division ?? ""}, Bangladesh",
-                                      25),
-                                  style: TextStyle(
-                                    fontSize: 15,
-                                    color: MyAppColors.secondaryColor,
                                   ),
                                 ),
                             ],
