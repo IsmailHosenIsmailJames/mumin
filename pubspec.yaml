@@ -53,6 +53,8 @@ dependencies:
   hijri: ^3.0.0
   flutter_pdfview: ^1.4.3
   shimmer: ^3.0.0
+  flutter_bloc: ^9.1.1
+  archive: ^4.0.7
 
 dev_dependencies:
   flutter_test:

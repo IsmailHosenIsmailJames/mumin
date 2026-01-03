@@ -10,6 +10,13 @@ import "package:hive_ce/hive.dart";
 import "package:http/http.dart";
 import "package:mumin/src/apis/apis.dart";
 import "package:mumin/src/screens/auth/controller/auth_controller.dart";
+import "dart:developer";
+import "package:geocoding/geocoding.dart";
+import "package:geolocator/geolocator.dart";
+import "package:mumin/src/core/location/location_service.dart";
+import "package:mumin/src/core/utils/lat_lon.dart";
+import "package:mumin/src/screens/home/controller/model/user_location_data.dart";
+import "package:mumin/src/screens/home/controller/user_location.dart";
 import "package:mumin/src/screens/settings/controller/settings_controller.dart";
 
 class QuranSettingsScreen extends StatefulWidget {
@@ -111,6 +118,82 @@ class _QuranSettingsScreenState extends State<QuranSettingsScreen> {
                 textAlign: TextAlign.center,
               ),
             ),
+            const Gap(12),
+            Container(
+              decoration: BoxDecoration(
+                color: Colors.grey.withValues(alpha: 0.1),
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: ListTile(
+                onTap: () async {
+                  try {
+                    UserLocationController userLocationController =
+                        Get.put(UserLocationController());
+                    LocationPermission locationPermission =
+                        await Geolocator.checkPermission();
+
+                    if (locationPermission == LocationPermission.denied ||
+                        locationPermission ==
+                            LocationPermission.deniedForever) {
+                      locationPermission = await LocationService()
+                          .requestAndGetLocationPermission();
+                    }
+
+                    if (locationPermission == LocationPermission.whileInUse ||
+                        locationPermission == LocationPermission.always) {
+                      Position? location =
+                          await LocationService().getCurrentLocation();
+                      if (location != null) {
+                        List<Placemark> placemarks =
+                            await placemarkFromCoordinates(
+                                location.latitude, location.longitude);
+                        UserLocationData userLocationData = UserLocationData(
+                            latitude: location.latitude,
+                            longitude: location.longitude,
+                            division: "division",
+                            district: "district");
+                        for (Placemark placemark in placemarks) {
+                          if (placemark.administrativeArea != null) {
+                            userLocationData.division =
+                                placemark.administrativeArea!;
+                          }
+                          if (placemark.subAdministrativeArea != null) {
+                            userLocationData.district =
+                                placemark.subAdministrativeArea!;
+                          }
+                        }
+                        await Hive.box("user_db")
+                            .put("user_location", userLocationData.toJson());
+                        userLocationController.locationData.value =
+                            userLocationData;
+                        Fluttertoast.showToast(
+                            msg: "Location Updated Successfully");
+                      } else {
+                        // Fallback to manual
+                        if (context.mounted) {
+                          final result =
+                              await context.push("/manual_location_selection");
+                          _handleManualLocationResult(
+                              result, userLocationController);
+                        }
+                      }
+                    } else {
+                      // Fallback to manual
+                      if (context.mounted) {
+                        final result =
+                            await context.push("/manual_location_selection");
+                        _handleManualLocationResult(
+                            result, userLocationController);
+                      }
+                    }
+                  } catch (e) {
+                    log(e.toString());
+                  }
+                },
+                leading: const Icon(FluentIcons.location_24_regular),
+                title: const Text("Update User Location"),
+              ),
+            ),
             const Gap(24),
             if (!isGuest)
               Container(
@@ -173,5 +256,42 @@ class _QuranSettingsScreenState extends State<QuranSettingsScreen> {
         ),
       ),
     );
+  }
+
+  Future<void> _handleManualLocationResult(
+      dynamic result, UserLocationController userLocationController) async {
+    if (result is String) {
+      try {
+        Map<String, dynamic> data = jsonDecode(result);
+        LatLon latLon = LatLon.fromMap(data);
+        UserLocationData userLocationData = UserLocationData(
+            latitude: latLon.latitude,
+            longitude: latLon.longitude,
+            division: "Unknown",
+            district: data["city"] ?? "Unknown");
+
+        try {
+          List<Placemark> placemarks =
+              await placemarkFromCoordinates(latLon.latitude, latLon.longitude);
+          for (Placemark placemark in placemarks) {
+            if (placemark.administrativeArea != null) {
+              userLocationData.division = placemark.administrativeArea!;
+            }
+            if (placemark.subAdministrativeArea != null) {
+              userLocationData.district = placemark.subAdministrativeArea!;
+            }
+          }
+        } catch (e) {
+          log("Geocoding failed: $e");
+        }
+
+        await Hive.box("user_db")
+            .put("user_location", userLocationData.toJson());
+        userLocationController.locationData.value = userLocationData;
+        Fluttertoast.showToast(msg: "Location Updated Successfully");
+      } catch (e) {
+        log("Manual location selection failed: $e");
+      }
+    }
   }
 }

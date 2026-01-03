@@ -4,6 +4,7 @@ import "package:mumin/src/screens/home/controller/model/user_location_data.dart"
 
 class UserLocationController extends GetxController {
   Rx<UserLocationData?> locationData = Rx<UserLocationData?>(null);
+  RxBool dontShowAgain = RxBool(false);
   @override
   void onInit() {
     final userLocation =

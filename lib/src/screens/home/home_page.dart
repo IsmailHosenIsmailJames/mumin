@@ -20,6 +20,7 @@ import "package:mumin/src/core/algorithm/safe_substring.dart";
 import "package:mumin/src/core/location/location_service.dart";
 import "package:mumin/src/core/notifications/notification_service.dart";
 import "package:mumin/src/core/notifications/requiest_permission.dart";
+import "package:mumin/src/core/utils/lat_lon.dart";
 import "package:mumin/src/screens/auth/controller/auth_controller.dart";
 import "package:mumin/src/screens/daily_plan/get_ramadan_number.dart";
 import "package:mumin/src/screens/home/controller/model/user_calander_day_model.dart";
@@ -106,9 +107,12 @@ class _HomePageState extends State<HomePage> {
   Future<void> startupCalls() async {
     await getUserLocation();
 
+    bool dontShowAgain =
+        Hive.box("user_db").get("dont_show_again", defaultValue: false);
+
     bool isNotificationAllowed =
         await AwesomeNotifications().isNotificationAllowed();
-    if (!isNotificationAllowed) {
+    if (!isNotificationAllowed && !dontShowAgain) {
       bool userAgreed = await _showPermissionRationale(
         icon: Icons.notifications_active_outlined,
         title: "Stay Notified!",
@@ -130,7 +134,7 @@ class _HomePageState extends State<HomePage> {
           await NotificationService.scheduleDailyRamadanNotification();
         }
       }
-    } else {
+    } else if (!dontShowAgain) {
       await NotificationService.initializeNotifications();
       await NotificationService.scheduleDailyRamadanNotification();
     }
@@ -206,6 +210,9 @@ class _HomePageState extends State<HomePage> {
     if (userLocationData != null) {
       List<String> data = userLocationData.district.split(" ");
       data.removeLast();
+      if (data.isEmpty) {
+        data.add("Dhaka");
+      }
       String district = data.first;
       if (data.length > 1) {
         district = "${data.first.toLowerCase()} ${data.last.toLowerCase()}";
@@ -264,7 +271,10 @@ class _HomePageState extends State<HomePage> {
       LocationPermission locationPermission =
           await Geolocator.checkPermission();
 
-      if (locationPermission == LocationPermission.denied) {
+      bool dontShowAgain = Hive.box("user_db")
+          .get("dont_show_location_permission", defaultValue: false);
+
+      if (locationPermission == LocationPermission.denied && !dontShowAgain) {
         bool userAgreed = await _showPermissionRationale(
           icon: Icons.location_on_outlined,
           title: "Enable Location",
@@ -284,6 +294,7 @@ class _HomePageState extends State<HomePage> {
         setState(() {
           isLocationDeclined = true;
         });
+        return;
       }
       Position? location = await LocationService().getCurrentLocation();
       if (location != null) {
@@ -334,22 +345,22 @@ class _HomePageState extends State<HomePage> {
         padding: const EdgeInsets.all(10.0),
         children: [
           SafeArea(
-            child: isLocationDeclined
-                ? SizedBox(
-                    height: 80,
-                    child: Row(
-                      children: [
-                        const SizedBox(
-                          width: 50,
-                          height: 50,
-                          child: Icon(
-                            Icons.location_pin,
-                            color: Colors.red,
-                            size: 30,
-                          ),
+            child: isLocationDeclined &&
+                    userLocationController.locationData.value == null
+                ? Row(
+                    children: [
+                      const SizedBox(
+                        width: 50,
+                        height: 50,
+                        child: Icon(
+                          Icons.location_pin,
+                          color: Colors.red,
+                          size: 30,
                         ),
-                        const Gap(10),
-                        Column(
+                      ),
+                      const Gap(10),
+                      Expanded(
+                        child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -362,34 +373,105 @@ class _HomePageState extends State<HomePage> {
                               ),
                             ),
                             Text(
-                              "Please give app location permission\nSo that you can enjoy more features.",
+                              "Please give app location permission or choose city manually, So that you can enjoy more features.",
                               style: TextStyle(
                                 fontSize: 12,
                                 color: MyAppColors.secondaryColor,
                               ),
                             ),
+                            const Gap(5),
+                            SizedBox(
+                              height: 30,
+                              width: 200,
+                              child: OutlinedButton(
+                                  style: OutlinedButton.styleFrom(
+                                      foregroundColor:
+                                          MyAppColors.secondaryColor,
+                                      shape: const RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.all(
+                                          Radius.circular(5),
+                                        ),
+                                      ),
+                                      padding: EdgeInsets.zero),
+                                  onPressed: () async {
+                                    final result = await context
+                                        .push("/manual_location_selection");
+                                    if (result is String) {
+                                      try {
+                                        Map<String, dynamic> data =
+                                            jsonDecode(result);
+                                        LatLon latLon = LatLon.fromMap(data);
+                                        UserLocationData userLocationData =
+                                            UserLocationData(
+                                                latitude: latLon.latitude,
+                                                longitude: latLon.longitude,
+                                                division: "Unknown",
+                                                district: data["city"] ??
+                                                    "Unknown"); // Use selected city
+
+                                        try {
+                                          List<Placemark> placemarks =
+                                              await placemarkFromCoordinates(
+                                                  latLon.latitude,
+                                                  latLon.longitude);
+                                          for (Placemark placemark
+                                              in placemarks) {
+                                            if (placemark.administrativeArea !=
+                                                null) {
+                                              userLocationData.division =
+                                                  placemark.administrativeArea!;
+                                            }
+                                            if (placemark
+                                                    .subAdministrativeArea !=
+                                                null) {
+                                              userLocationData.district =
+                                                  placemark
+                                                      .subAdministrativeArea!;
+                                            }
+                                          }
+                                        } catch (e) {
+                                          log("Geocoding failed: $e");
+                                        }
+
+                                        await Hive.box("user_db").put(
+                                            "user_location",
+                                            userLocationData.toJson());
+                                        userLocationController.locationData
+                                            .value = userLocationData;
+                                        await loadCalender(
+                                            userLocationController
+                                                .locationData.value);
+                                        setState(() {
+                                          isLocationDeclined = false;
+                                        });
+                                      } catch (e) {
+                                        log("Manual location selection failed: $e");
+                                      }
+                                    }
+                                  },
+                                  child: const Text("Choose City Manually")),
+                            ),
                           ],
                         ),
-                        const Spacer(),
-                        IconButton(
-                          onPressed: () async {
-                            LocationPermission locationPermission =
-                                await LocationService()
-                                    .requestAndGetLocationPermission();
-                            if (locationPermission ==
-                                    LocationPermission.denied ||
-                                locationPermission ==
-                                    LocationPermission.deniedForever) {
-                              Geolocator.openAppSettings();
-                            }
-                          },
-                          icon: const Icon(
-                            Icons.settings,
-                            color: Colors.green,
-                          ),
-                        )
-                      ],
-                    ),
+                      ),
+                      const Gap(10),
+                      IconButton(
+                        onPressed: () async {
+                          LocationPermission locationPermission =
+                              await LocationService()
+                                  .requestAndGetLocationPermission();
+                          if (locationPermission == LocationPermission.denied ||
+                              locationPermission ==
+                                  LocationPermission.deniedForever) {
+                            Geolocator.openAppSettings();
+                          }
+                        },
+                        icon: const Icon(
+                          Icons.settings,
+                          color: Colors.green,
+                        ),
+                      )
+                    ],
                   )
                 : SizedBox(
                     height: 80,
@@ -410,61 +492,65 @@ class _HomePageState extends State<HomePage> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              userLocationController
-                                          .locationData.value?.district ==
-                                      null
-                                  ? Container(
-                                      decoration: BoxDecoration(
-                                        color:
-                                            Colors.grey.withValues(alpha: 0.2),
-                                        borderRadius: MyAppShapes.borderRadius,
-                                      ),
-                                      height: 25,
-                                    )
-                                      .animate(
-                                          onPlay: (controller) =>
-                                              controller.repeat())
-                                      .shimmer(
-                                        duration: 1200.ms,
-                                        color: const Color(0xFF80DDFF),
-                                      )
-                                  : Text(
-                                      userLocationController
-                                              .locationData.value?.district ??
-                                          "",
-                                      style: const TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.bold,
-                                      ),
+                              if (userLocationController
+                                      .locationData.value?.district ==
+                                  null)
+                                Container(
+                                  decoration: BoxDecoration(
+                                    color: Colors.grey.withValues(alpha: 0.2),
+                                    borderRadius: MyAppShapes.borderRadius,
+                                  ),
+                                  height: 25,
+                                )
+                                    .animate(
+                                        onPlay: (controller) =>
+                                            controller.repeat())
+                                    .shimmer(
+                                      duration: 1200.ms,
+                                      color: const Color(0xFF80DDFF),
                                     ),
+                              if (userLocationController
+                                      .locationData.value?.district !=
+                                  null)
+                                Text(
+                                  userLocationController
+                                          .locationData.value?.district ??
+                                      "",
+                                  style: const TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
                               const Gap(4),
-                              userLocationController
-                                          .locationData.value?.division ==
-                                      null
-                                  ? Container(
-                                      decoration: BoxDecoration(
-                                        color:
-                                            Colors.grey.withValues(alpha: 0.2),
-                                        borderRadius: MyAppShapes.borderRadius,
-                                      ),
-                                      height: 25,
-                                    )
-                                      .animate(
-                                          onPlay: (controller) =>
-                                              controller.repeat())
-                                      .shimmer(
-                                        duration: 1200.ms,
-                                        color: const Color(0xFF80DDFF),
-                                      )
-                                  : Text(
-                                      safeSubString(
-                                          "${userLocationController.locationData.value?.division ?? ""}, Bangladesh",
-                                          25),
-                                      style: TextStyle(
-                                        fontSize: 15,
-                                        color: MyAppColors.secondaryColor,
-                                      ),
+                              if (userLocationController
+                                      .locationData.value?.division ==
+                                  null)
+                                Container(
+                                  decoration: BoxDecoration(
+                                    color: Colors.grey.withValues(alpha: 0.2),
+                                    borderRadius: MyAppShapes.borderRadius,
+                                  ),
+                                  height: 25,
+                                )
+                                    .animate(
+                                        onPlay: (controller) =>
+                                            controller.repeat())
+                                    .shimmer(
+                                      duration: 1200.ms,
+                                      color: const Color(0xFF80DDFF),
                                     ),
+                              if (userLocationController
+                                      .locationData.value?.division !=
+                                  null)
+                                Text(
+                                  safeSubString(
+                                      "${userLocationController.locationData.value?.division ?? ""}, Bangladesh",
+                                      25),
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                    color: MyAppColors.secondaryColor,
+                                  ),
+                                ),
                             ],
                           ),
                         ),
@@ -800,14 +886,29 @@ class _HomePageState extends State<HomePage> {
               ),
               textAlign: TextAlign.center,
             ),
-            const Gap(32),
+            const Gap(16),
+            GetX<UserLocationController>(
+              builder: (controller) => CheckboxListTile(
+                value: controller.dontShowAgain.value,
+                title: const Text("Don't show again"),
+                controlAffinity: ListTileControlAffinity.leading,
+                onChanged: (value) {
+                  controller.dontShowAgain.value = value!;
+                  Hive.box("user_db").put("dont_show_again", value);
+                },
+              ),
+            ),
+            const Gap(16),
             Row(
               children: [
                 Expanded(
-                  child: TextButton(
+                  child: OutlinedButton(
                     onPressed: () => Navigator.pop(context, false),
-                    style: TextButton.styleFrom(
+                    style: OutlinedButton.styleFrom(
                       padding: const EdgeInsets.all(16),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
                     ),
                     child: Text(
                       "Not Now",

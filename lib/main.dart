@@ -1,10 +1,12 @@
 import "package:flutter/material.dart";
+import "package:flutter_bloc/flutter_bloc.dart";
 import "package:flutter_native_splash/flutter_native_splash.dart";
 import "package:get/get.dart";
 import "package:hive_ce_flutter/hive_flutter.dart";
 import "package:just_audio_background/just_audio_background.dart";
 import "package:mumin/src/core/audio/manage_audio.dart";
 import "package:mumin/src/screens/auth/controller/auth_controller.dart";
+import "package:mumin/src/screens/manual_selection/cubit/manual_location_selection_cubit.dart";
 import "package:mumin/src/theme/colors.dart";
 import "package:mumin/src/theme/shapes.dart";
 import "package:mumin/src/theme/theme_controller.dart";
@@ -56,47 +58,54 @@ class _MyAppState extends State<MyApp> {
       } else if (controller.themeModeName.value == "dark") {
         themeMode = ThemeMode.dark;
       }
-      return MaterialApp.router(
-        debugShowCheckedModeBanner: false,
-        title: "Mumin",
-        themeMode: themeMode,
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(
-            seedColor: MyAppColors.primaryColor,
-            brightness: Brightness.light,
-          ),
-          elevatedButtonTheme: ElevatedButtonThemeData(
-            style: ElevatedButton.styleFrom(
-              shape: RoundedRectangleBorder(
-                borderRadius: MyAppShapes.borderRadius,
+      return MultiBlocProvider(
+        providers: [
+          BlocProvider(
+            create: (context) => ManualLocationSelectionCubit(),
+          )
+        ],
+        child: MaterialApp.router(
+          debugShowCheckedModeBanner: false,
+          title: "Mumin",
+          themeMode: themeMode,
+          theme: ThemeData(
+            colorScheme: ColorScheme.fromSeed(
+              seedColor: MyAppColors.primaryColor,
+              brightness: Brightness.light,
+            ),
+            elevatedButtonTheme: ElevatedButtonThemeData(
+              style: ElevatedButton.styleFrom(
+                shape: RoundedRectangleBorder(
+                  borderRadius: MyAppShapes.borderRadius,
+                ),
+                backgroundColor: MyAppColors.primaryColor,
+                foregroundColor: Colors.white,
               ),
-              backgroundColor: MyAppColors.primaryColor,
-              foregroundColor: Colors.white,
+            ),
+            textButtonTheme: TextButtonThemeData(
+              style: TextButton.styleFrom(foregroundColor: Colors.black),
             ),
           ),
-          textButtonTheme: TextButtonThemeData(
-            style: TextButton.styleFrom(foregroundColor: Colors.black),
-          ),
-        ),
-        darkTheme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(
-            seedColor: MyAppColors.primaryColor,
-            brightness: Brightness.dark,
-          ),
-          textButtonTheme: TextButtonThemeData(
-            style: TextButton.styleFrom(foregroundColor: Colors.white),
-          ),
-          elevatedButtonTheme: ElevatedButtonThemeData(
-            style: ElevatedButton.styleFrom(
-              shape: RoundedRectangleBorder(
-                borderRadius: MyAppShapes.borderRadius,
+          darkTheme: ThemeData(
+            colorScheme: ColorScheme.fromSeed(
+              seedColor: MyAppColors.primaryColor,
+              brightness: Brightness.dark,
+            ),
+            textButtonTheme: TextButtonThemeData(
+              style: TextButton.styleFrom(foregroundColor: Colors.white),
+            ),
+            elevatedButtonTheme: ElevatedButtonThemeData(
+              style: ElevatedButton.styleFrom(
+                shape: RoundedRectangleBorder(
+                  borderRadius: MyAppShapes.borderRadius,
+                ),
+                backgroundColor: MyAppColors.primaryColor,
+                foregroundColor: Colors.white,
               ),
-              backgroundColor: MyAppColors.primaryColor,
-              foregroundColor: Colors.white,
             ),
           ),
+          routerConfig: AppRouter.router,
         ),
-        routerConfig: AppRouter.router,
       );
     });
   }
