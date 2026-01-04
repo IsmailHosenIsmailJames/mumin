@@ -186,6 +186,24 @@ class _QuranSettingsScreenState extends State<QuranSettingsScreen> {
               ),
             ),
             const Gap(16),
+            if (isGuest)
+              // login
+              Container(
+                decoration: BoxDecoration(
+                  color: Colors.green.withValues(alpha: 0.2),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: ListTile(
+                  onTap: () async {
+                    await Hive.box("user_db").delete("user_data");
+                    await Hive.box("user_db").delete("is_guest");
+                    context.go("/login");
+                  },
+                  leading: const Icon(Icons.login),
+                  title: const Text("Login"),
+                ),
+              ),
+            if (isGuest) const Gap(16),
             if (!isGuest)
               // logout
               Container(
