@@ -748,34 +748,35 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
-          GestureDetector(
-            onTap: () async {
-              await routeTo30DayPlan(context);
-            },
-            child: Container(
-              padding: const EdgeInsets.all(15),
-              margin: const EdgeInsets.only(top: 10, bottom: 10),
-              decoration: BoxDecoration(
-                color: Colors.grey.withValues(alpha: 0.2),
-                borderRadius: MyAppShapes.borderRadius,
-              ),
-              child: const Row(
-                children: [
-                  Icon(Icons.calendar_month),
-                  Gap(10),
-                  Text(
-                    "Ramadan Plan",
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
+          if (HijriCalendar.now().hMonth == 9)
+            GestureDetector(
+              onTap: () async {
+                await routeTo30DayPlan(context);
+              },
+              child: Container(
+                padding: const EdgeInsets.all(15),
+                margin: const EdgeInsets.only(top: 10, bottom: 10),
+                decoration: BoxDecoration(
+                  color: Colors.grey.withValues(alpha: 0.2),
+                  borderRadius: MyAppShapes.borderRadius,
+                ),
+                child: const Row(
+                  children: [
+                    Icon(Icons.calendar_month),
+                    Gap(10),
+                    Text(
+                      "Ramadan Plan",
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  ),
-                  Spacer(),
-                  Icon(Icons.arrow_forward)
-                ],
+                    Spacer(),
+                    Icon(Icons.arrow_forward)
+                  ],
+                ),
               ),
             ),
-          ),
           const Gap(10),
           GridView(
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
