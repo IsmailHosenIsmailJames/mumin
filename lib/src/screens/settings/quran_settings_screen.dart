@@ -185,7 +185,45 @@ class _QuranSettingsScreenState extends State<QuranSettingsScreen> {
                 title: const Text("Update User Location"),
               ),
             ),
-            const Gap(24),
+            const Gap(16),
+            if (!isGuest)
+              // logout
+              Container(
+                decoration: BoxDecoration(
+                  color: Colors.red.withValues(alpha: 0.2),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: ListTile(
+                  onTap: () {
+                    showDialog(
+                      context: context,
+                      builder: (context) {
+                        return AlertDialog(
+                          title: const Text("Are you sure?"),
+                          content: const Text(
+                              "Are you sure you want to logout? This will clear all your data and you will be redirected to the login screen."),
+                          actions: [
+                            TextButton(
+                              onPressed: () => context.pop(),
+                              child: const Text("Cancel"),
+                            ),
+                            TextButton(
+                              onPressed: () {
+                                Get.find<AuthController>().logout(context);
+                                context.pop();
+                              },
+                              child: const Text("Logout"),
+                            ),
+                          ],
+                        );
+                      },
+                    );
+                  },
+                  leading: const Icon(FluentIcons.sign_out_24_regular),
+                  title: const Text("Logout"),
+                ),
+              ),
+            const Gap(16),
             if (!isGuest)
               Container(
                 decoration: BoxDecoration(

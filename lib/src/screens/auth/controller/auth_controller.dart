@@ -4,6 +4,7 @@ import "dart:developer";
 import "package:flutter/material.dart";
 import "package:fluttertoast/fluttertoast.dart";
 import "package:get/get.dart";
+import "package:go_router/go_router.dart";
 import "package:hive_ce/hive.dart";
 import "package:http/http.dart";
 import "package:mumin/src/apis/apis.dart";
@@ -113,5 +114,11 @@ class AuthController extends GetxController {
     } else {
       return false;
     }
+  }
+
+  Future<void> logout(BuildContext context) async {
+    await Hive.box("user_db").clear();
+    user.value = null;
+    context.go("/login");
   }
 }

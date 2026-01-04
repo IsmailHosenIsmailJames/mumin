@@ -80,12 +80,12 @@ class _HomePageState extends State<HomePage> {
       "route": "/zakat_screen",
     },
     {"img": "assets/images/qaba.png", "name": "Hajj", "route": "/hajj"},
-    {"img": "assets/images/about.png", "name": "About", "route": "/about"},
     {
-      "img": "assets/images/settings-svgrepo-com.png",
+      "img": "assets/icons/settings.png",
       "name": "Settings",
       "route": "/settings"
     },
+    {"img": "assets/images/about.png", "name": "About", "route": "/about"},
   ];
 
   AppThemeController appThemeController = Get.find();
@@ -209,15 +209,11 @@ class _HomePageState extends State<HomePage> {
         .loadString("assets/calender_data/ramadan_calendar2025.json");
     Map ramadanCalendar = jsonDecode(json);
     if (userLocationData != null) {
-      log(userLocationData.placemark?.subAdministrativeArea ??
-          userLocationData.placemark?.administrativeArea ??
-          "Empty");
       String district = userLocationData.placemark?.subAdministrativeArea ??
           userLocationData.placemark?.administrativeArea ??
           "Dhaka";
-      district = district.replaceAll(" ", "");
+      district = district.split(" ").first;
       List<RamadanDayModel> ramadanDaysList = [];
-      log(district);
       bool found = false;
       for (String key in ramadanCalendar.keys) {
         if (key.toString().toLowerCase() == district) {
@@ -495,7 +491,7 @@ class _HomePageState extends State<HomePage> {
                                           ?.toAddressString() ??
                                       "",
                                   style: const TextStyle(
-                                    fontSize: 14,
+                                    fontSize: 12,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
