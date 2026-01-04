@@ -76,5 +76,10 @@
 	<true/>
 	<key>NSCalendarsUsageDescription</key>
 	<string>This app needs calendar access to help you track prayer times and Islamic events.</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>
