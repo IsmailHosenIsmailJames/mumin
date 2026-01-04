@@ -1,4 +1,5 @@
 import "dart:convert";
+import "dart:developer";
 
 import "package:flutter/material.dart";
 import "package:flutter_bloc/flutter_bloc.dart";
@@ -37,6 +38,7 @@ class _AddressSelectionState extends State<AddressSelection> {
       );
 
       if (response.statusCode == 200) {
+        log("Location data downloaded successfully");
         Map locationResources = jsonDecode(decodeBZip2String(response.body));
         context.read<ManualLocationSelectionCubit>().changeData(
               locationData: locationResources,

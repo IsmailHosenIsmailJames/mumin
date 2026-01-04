@@ -1,3 +1,5 @@
+import "dart:io";
+
 import "package:geocoding/geocoding.dart";
 
 AppPlacemark onePlacemarkFromMulti(List<Placemark> placemarks) {
@@ -57,6 +59,37 @@ AppPlacemark onePlacemarkFromMulti(List<Placemark> placemarks) {
         placemark.street?.isNotEmpty == true) {
       placemarkToReturn.street = placemark.street;
     }
+  }
+  if (placemarkToReturn.administrativeArea?.isEmpty == true) {
+    placemarkToReturn.administrativeArea = null;
+  }
+  if (placemarkToReturn.country?.isEmpty == true) {
+    placemarkToReturn.country = null;
+  }
+  if (placemarkToReturn.isoCountryCode?.isEmpty == true) {
+    placemarkToReturn.isoCountryCode = null;
+  }
+  if (placemarkToReturn.locality?.isEmpty == true) {
+    placemarkToReturn.locality = null;
+  }
+  if (placemarkToReturn.name?.isEmpty == true) placemarkToReturn.name = null;
+  if (placemarkToReturn.postalCode?.isEmpty == true) {
+    placemarkToReturn.postalCode = null;
+  }
+  if (placemarkToReturn.subAdministrativeArea?.isEmpty == true) {
+    placemarkToReturn.subAdministrativeArea = null;
+  }
+  if (placemarkToReturn.subLocality?.isEmpty == true) {
+    placemarkToReturn.subLocality = null;
+  }
+  if (placemarkToReturn.thoroughfare?.isEmpty == true) {
+    placemarkToReturn.thoroughfare = null;
+  }
+  if (placemarkToReturn.subThoroughfare?.isEmpty == true) {
+    placemarkToReturn.subThoroughfare = null;
+  }
+  if (placemarkToReturn.street?.isEmpty == true) {
+    placemarkToReturn.street = null;
   }
   return placemarkToReturn;
 }
@@ -131,25 +164,33 @@ class AppPlacemark {
     );
   }
 
-  String toAddressString() {
+  String toAddressString({bool fullAddress = false}) {
     String stringFrom = "";
-    if (name != null && name!.isNotEmpty) stringFrom += "$name, ";
+    if (name != null && name!.isNotEmpty && Platform.isIOS) {
+      stringFrom += "$name, ";
+    }
     if (subThoroughfare != null &&
         subThoroughfare!.isNotEmpty &&
-        !stringFrom.contains(subThoroughfare!)) {
+        !stringFrom.contains(subThoroughfare!) &&
+        fullAddress) {
       stringFrom += "$subThoroughfare, ";
     }
     if (thoroughfare != null &&
         thoroughfare!.isNotEmpty &&
-        !stringFrom.contains(thoroughfare!)) {
+        !stringFrom.contains(thoroughfare!) &&
+        fullAddress) {
       stringFrom += "$thoroughfare, ";
     }
-    if (street != null && street!.isNotEmpty && !stringFrom.contains(street!)) {
+    if (street != null &&
+        street!.isNotEmpty &&
+        !stringFrom.contains(street!) &&
+        fullAddress) {
       stringFrom += "$street, ";
     }
     if (subLocality != null &&
         subLocality!.isNotEmpty &&
-        !stringFrom.contains(subLocality!)) {
+        !stringFrom.contains(subLocality!) &&
+        fullAddress) {
       stringFrom += "$subLocality, ";
     }
     if (locality != null &&
@@ -169,7 +210,8 @@ class AppPlacemark {
     }
     if (postalCode != null &&
         postalCode!.isNotEmpty &&
-        !stringFrom.contains(postalCode!)) {
+        !stringFrom.contains(postalCode!) &&
+        fullAddress) {
       stringFrom += "$postalCode, ";
     }
     if (country != null &&

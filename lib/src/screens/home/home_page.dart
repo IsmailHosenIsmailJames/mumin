@@ -1,5 +1,6 @@
 import "dart:convert";
 import "dart:developer";
+import "dart:io";
 
 import "package:adhan_dart/adhan_dart.dart";
 import "package:awesome_notifications/awesome_notifications.dart";
@@ -210,16 +211,27 @@ class _HomePageState extends State<HomePage> {
   Future<void> loadCalender(
     UserLocationData userLocationData,
   ) async {
+    log(jsonEncode(userLocationData.placemark?.toJson() ?? {}),
+        name: "placemark");
     if (userLocationController.locationData.value?.placemark?.isoCountryCode ==
-            "BD" &&
-        HijriCalendar.now().hMonth == 9) {
+            "BD"
+        // && HijriCalendar.now().hMonth == 9
+        ) {
       String json = await rootBundle
           .loadString("assets/calender_data/ramadan_calendar2025.json");
       Map ramadanCalendar = jsonDecode(json);
       String district = userLocationData.placemark?.subAdministrativeArea ??
           userLocationData.placemark?.administrativeArea ??
           "Dhaka";
+      if (Platform.isIOS) {
+        district = userLocationData.placemark?.name ??
+            userLocationData.placemark?.subAdministrativeArea ??
+            userLocationData.placemark?.administrativeArea ??
+            "Dhaka";
+      }
       district = district.split(" ").first;
+
+      log(district, name: "district");
       List<RamadanDayModel> ramadanDaysList = [];
       bool found = false;
       for (String key in ramadanCalendar.keys) {
