@@ -109,6 +109,7 @@ class _HomePageState extends State<HomePage> {
 
     bool dontShowAgain =
         Hive.box("user_db").get("dont_show_again", defaultValue: false);
+    log("dontShowAgain: $dontShowAgain");
 
     bool isNotificationAllowed =
         await AwesomeNotifications().isNotificationAllowed();
@@ -267,9 +268,8 @@ class _HomePageState extends State<HomePage> {
       LocationPermission locationPermission =
           await Geolocator.checkPermission();
 
-      bool dontShowAgain = Hive.box("user_db")
-          .get("dont_show_location_permission", defaultValue: false);
-
+      bool dontShowAgain =
+          Hive.box("user_db").get("dont_show_again", defaultValue: false);
       if (locationPermission == LocationPermission.denied && !dontShowAgain) {
         bool userAgreed = await _showPermissionRationale(
           icon: Icons.location_on_outlined,
