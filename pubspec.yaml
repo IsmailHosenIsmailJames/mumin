@@ -55,6 +55,9 @@ dependencies:
   shimmer: ^3.0.0
   flutter_bloc: ^9.1.1
   archive: ^4.0.7
+  adhan_dart:
+    git:
+      url: https://github.com/IsmailHosenIsmailJames/adhan_dart.git
 
 dev_dependencies:
   flutter_test:

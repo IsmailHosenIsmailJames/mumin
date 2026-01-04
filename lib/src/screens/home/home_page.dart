@@ -1,6 +1,7 @@
 import "dart:convert";
 import "dart:developer";
 
+import "package:adhan_dart/adhan_dart.dart";
 import "package:awesome_notifications/awesome_notifications.dart";
 import "package:flutter/material.dart";
 import "package:flutter/services.dart";
@@ -176,39 +177,45 @@ class _HomePageState extends State<HomePage> {
   }
 
   Future<void> showDailyPlanDialog() async {
-    await showDialog(
-      context: context,
-      builder: (context) {
-        return AlertDialog(
-          title: const Text("Your daily Ramadan plans are ready!"),
-          actions: [
-            TextButton.icon(
-              onPressed: () {
-                context.pop();
-              },
-              icon: const Icon(Icons.close),
-              label: const Text("Close"),
-            ),
-            ElevatedButton.icon(
-              onPressed: () {
-                routeTo30DayPlan(context, isPopUp: true);
-              },
-              label: const Text("See Plans"),
-            )
-          ],
-        );
-      },
-    );
+    if (HijriCalendar.now().hMonth == 9) {
+      await showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: const Text("Your daily Ramadan plans are ready!"),
+            actions: [
+              TextButton.icon(
+                onPressed: () {
+                  context.pop();
+                },
+                icon: const Icon(Icons.close),
+                label: const Text("Close"),
+              ),
+              ElevatedButton.icon(
+                onPressed: () {
+                  routeTo30DayPlan(context, isPopUp: true);
+                },
+                label: const Text("See Plans"),
+              )
+            ],
+          );
+        },
+      );
+    }
   }
 
   final RamadanTodayTimeController ramadanTodayTimeController =
       Get.put(RamadanTodayTimeController());
 
-  Future<void> loadCalender(UserLocationData? userLocationData) async {
-    String json = await rootBundle
-        .loadString("assets/calender_data/ramadan_calendar2025.json");
-    Map ramadanCalendar = jsonDecode(json);
-    if (userLocationData != null) {
+  Future<void> loadCalender(
+    UserLocationData userLocationData,
+  ) async {
+    if (userLocationController.locationData.value?.placemark?.isoCountryCode ==
+            "BD" &&
+        HijriCalendar.now().hMonth == 9) {
+      String json = await rootBundle
+          .loadString("assets/calender_data/ramadan_calendar2025.json");
+      Map ramadanCalendar = jsonDecode(json);
       String district = userLocationData.placemark?.subAdministrativeArea ??
           userLocationData.placemark?.administrativeArea ??
           "Dhaka";
@@ -234,6 +241,12 @@ class _HomePageState extends State<HomePage> {
             ramadanDaysList.add(
                 RamadanDayModel.fromMap(Map<String, dynamic>.from(temList[i])));
           }
+        } else {
+          calculateWithLibrary(
+            userLocationData.latitude,
+            userLocationData.longitude,
+          );
+          return;
         }
       }
       int ramadanDay = getRamadanNumber(
@@ -253,13 +266,73 @@ class _HomePageState extends State<HomePage> {
         log(todaysTime.toJson());
       }
       userLocationCalender.userLocationCalender.value = ramadanDaysList;
-      setState(() {});
+    } else {
+      // calculate with library
+      calculateWithLibrary(
+        userLocationData.latitude,
+        userLocationData.longitude,
+      );
     }
+    setState(() {});
+  }
+
+  void calculateWithLibrary(double latitude, double longitude) {
+    PrayerTimes prayerTimes = PrayerTimes(
+      coordinates: Coordinates(latitude, longitude),
+      calculationParameters: CalculationMethodParameters.muslimWorldLeague(),
+      date: DateTime.now(),
+    );
+    ramadanTodayTimeController.sehri.value = TimeOfDay.fromDateTime(
+        prayerTimes.fajr.toLocal().subtract(const Duration(minutes: 1)));
+    ramadanTodayTimeController.ifter.value =
+        TimeOfDay.fromDateTime(prayerTimes.maghrib.toLocal());
+
+    List<RamadanDayModel> ramadanCalendar = [];
+    DateTime ramadanStart = DateTime.now();
+
+    HijriCalendar hijriCalendar = HijriCalendar.now();
+    for (int i = 0; i <= 365; i++) {
+      if (hijriCalendar.hMonth == 9) {
+        break;
+      }
+      ramadanStart = ramadanStart.add(const Duration(days: 1));
+      hijriCalendar = HijriCalendar.fromDate(ramadanStart);
+    }
+
+    for (int i = 1; i <= 30; i++) {
+      prayerTimes = PrayerTimes(
+        coordinates: Coordinates(latitude, longitude),
+        calculationParameters: CalculationMethodParameters.muslimWorldLeague(),
+        date: ramadanStart,
+      );
+      ramadanCalendar.add(RamadanDayModel(
+          date: ramadanStart,
+          seharEnd: TimeOfDay.fromDateTime(prayerTimes.fajr
+                  .toLocal()
+                  .subtract(const Duration(minutes: 1)))
+              .format(context),
+          ifter: TimeOfDay.fromDateTime(prayerTimes.maghrib.toLocal())
+              .format(context)));
+      ramadanStart = ramadanStart.add(const Duration(days: 1));
+      if (HijriCalendar.fromDate(ramadanStart).hMonth == 10) {
+        break;
+      }
+    }
+
+    userLocationCalender.userLocationCalender.value = ramadanCalendar;
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      setState(() {});
+    });
   }
 
   Future<void> getUserLocation() async {
     // load Ramadan calender
-    await loadCalender(userLocationController.locationData.value);
+    if (userLocationController.locationData.value != null) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        loadCalender(userLocationController.locationData.value!);
+      });
+    }
     try {
       LocationPermission locationPermission =
           await Geolocator.checkPermission();
@@ -300,7 +373,9 @@ class _HomePageState extends State<HomePage> {
         await Hive.box("user_db")
             .put("user_location", userLocationData.toJson());
         userLocationController.locationData.value = userLocationData;
-        await loadCalender(userLocationController.locationData.value);
+        if (userLocationController.locationData.value != null) {
+          await loadCalender(userLocationController.locationData.value!);
+        }
         setState(() {});
       } else {
         log("Location is null");
@@ -407,9 +482,13 @@ class _HomePageState extends State<HomePage> {
                                             userLocationData.toJson());
                                         userLocationController.locationData
                                             .value = userLocationData;
-                                        await loadCalender(
-                                            userLocationController
-                                                .locationData.value);
+                                        if (userLocationController
+                                                .locationData.value !=
+                                            null) {
+                                          await loadCalender(
+                                              userLocationController
+                                                  .locationData.value!);
+                                        }
                                         setState(() {
                                           isLocationDeclined = false;
                                         });
@@ -469,7 +548,7 @@ class _HomePageState extends State<HomePage> {
                                     color: Colors.grey.withValues(alpha: 0.2),
                                     borderRadius: MyAppShapes.borderRadius,
                                   ),
-                                  height: 25,
+                                  height: 40,
                                 )
                                     .animate(
                                         onPlay: (controller) =>
@@ -638,15 +717,23 @@ class _HomePageState extends State<HomePage> {
           ),
           const Gap(10),
           Obx(
-            () => Container(
-              height: 70,
-              decoration: BoxDecoration(
-                color: isDark(appThemeController.themeModeName.value)
-                    ? MyAppColors.backgroundDarkColor.withValues(alpha: 0.5)
-                    : MyAppColors.backgroundLightColor,
-                borderRadius: MyAppShapes.borderRadius,
+            () => GestureDetector(
+              onTap: () {
+                calculateWithLibrary(
+                  userLocationController.locationData.value!.latitude,
+                  userLocationController.locationData.value!.longitude,
+                );
+              },
+              child: Container(
+                height: 70,
+                decoration: BoxDecoration(
+                  color: isDark(appThemeController.themeModeName.value)
+                      ? MyAppColors.backgroundDarkColor.withValues(alpha: 0.5)
+                      : MyAppColors.backgroundLightColor,
+                  borderRadius: MyAppShapes.borderRadius,
+                ),
+                child: Image.asset("assets/images/banner.gif"),
               ),
-              child: Image.asset("assets/images/banner.gif"),
             ),
           ),
           GestureDetector(

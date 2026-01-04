@@ -1,8 +1,8 @@
 import "package:flutter/material.dart";
 import "package:gap/gap.dart";
 import "package:get/get.dart";
+import "package:hijri/hijri_calendar.dart";
 import "package:intl/intl.dart";
-import "package:mumin/src/screens/daily_plan/get_ramadan_number.dart";
 import "package:mumin/src/screens/home/controller/model/user_calander_day_model.dart";
 import "package:mumin/src/screens/home/controller/user_location_calender.dart";
 import "package:mumin/src/screens/ramadan_calender/model/controller.dart";
@@ -42,16 +42,18 @@ class _RamadanCalenderPageState extends State<RamadanCalenderPage> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    const Text("Today's info", style: TextStyle(fontSize: 12)),
                     Text(
-                      "  Ramadan - ${getRamadanNumber(ramadanTodayTimeController.ifter.value ?? const TimeOfDay(hour: 18, minute: 30))}",
+                      DateFormat.yMMMEd().format(DateTime.now()),
+                    ),
+                    Text(
+                      HijriCalendar.fromDate(DateTime.now())
+                          .toFormat("dd MMMM yyyy")
+                          .toString(),
                       style: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
                       ),
-                    ),
-                    Text(
-                      "   ${DateFormat.yMMMMEEEEd().format(getDateByRamadanNumber(getRamadanNumber(ramadanTodayTimeController.ifter.value ?? const TimeOfDay(hour: 18, minute: 30)) - 1))}",
-                      style: const TextStyle(color: Colors.white),
                     ),
                     Container(
                       decoration: BoxDecoration(
