@@ -214,9 +214,8 @@ class _HomePageState extends State<HomePage> {
     log(jsonEncode(userLocationData.placemark?.toJson() ?? {}),
         name: "placemark");
     if (userLocationController.locationData.value?.placemark?.isoCountryCode ==
-            "BD"
-        // && HijriCalendar.now().hMonth == 9
-        ) {
+            "BD" &&
+        HijriCalendar.now().hMonth == 9) {
       String json = await rootBundle
           .loadString("assets/calender_data/ramadan_calendar2025.json");
       Map ramadanCalendar = jsonDecode(json);
