@@ -1,4 +1,4 @@
-import 'package:get/get.dart';
+import "package:get/get.dart";
 
 class SettingsController extends GetxController {
   RxDouble arabicFontSize = 28.0.obs;

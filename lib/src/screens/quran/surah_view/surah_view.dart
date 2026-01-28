@@ -127,7 +127,7 @@ class _SurahViewState extends State<SurahView> {
     if (!isAllowed) {
       if (mounted) {
         bool? request = await showDialog<bool>(
-          context: this.context,
+          context: context,
           builder: (context) => const NotificationPermissionDialog(),
         );
 

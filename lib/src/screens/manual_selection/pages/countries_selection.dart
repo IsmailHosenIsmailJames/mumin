@@ -31,9 +31,9 @@ class _CountriesSelectionState extends State<CountriesSelection> {
                   icon: const Icon(Icons.arrow_back),
                 ),
                 const Gap(15),
-                Text(
+                const Text(
                   "Select your city",
-                  style: const TextStyle(fontSize: 20),
+                  style: TextStyle(fontSize: 20),
                 ),
               ],
             ),
@@ -60,7 +60,7 @@ class _CountriesSelectionState extends State<CountriesSelection> {
                 ManualLocationSelectionState>(
               builder: (context, state) {
                 if (state.locationData == null) {
-                  return Text("Something went wrong");
+                  return const Text("Something went wrong");
                 }
                 List listOfCountry = state.locationData!.keys.toList();
                 return ListView.builder(

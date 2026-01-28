@@ -35,9 +35,9 @@ class AuthController extends GetxController {
       await Hive.box("user_db").put("is_guest", true);
       return true;
     } else {
-      String formattedPhone = phone.replaceAll('+', '');
-      if (!formattedPhone.startsWith('88')) {
-        formattedPhone = '88$formattedPhone';
+      String formattedPhone = phone.replaceAll("+", "");
+      if (!formattedPhone.startsWith("88")) {
+        formattedPhone = "88$formattedPhone";
       }
 
       final response = await post(
@@ -75,9 +75,9 @@ class AuthController extends GetxController {
     String phone,
     String pinNumber,
   ) async {
-    String formattedPhone = phone.replaceAll('+', '');
-    if (!formattedPhone.startsWith('88')) {
-      formattedPhone = '88$formattedPhone';
+    String formattedPhone = phone.replaceAll("+", "");
+    if (!formattedPhone.startsWith("88")) {
+      formattedPhone = "88$formattedPhone";
     }
 
     log(jsonEncode({

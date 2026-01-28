@@ -136,9 +136,9 @@ class _HadithPdfViewState extends State<HadithPdfView> {
                       autoSpacing: false,
                       pageFling: true,
                       backgroundColor: Colors.grey[200],
-                      onRender: (_pages) {
+                      onRender: (pages) {
                         setState(() {
-                          pages = _pages;
+                          pages = pages;
                           isReady = true;
                         });
                       },
@@ -146,7 +146,7 @@ class _HadithPdfViewState extends State<HadithPdfView> {
                         log(error.toAddressString());
                       },
                       onPageError: (page, error) {
-                        log('$page: ${error.toAddressString()}');
+                        log("$page: ${error.toAddressString()}");
                       },
                       onViewCreated: (PDFViewController pdfViewController) {
                         _controller.complete(pdfViewController);

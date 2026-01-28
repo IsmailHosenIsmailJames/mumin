@@ -245,7 +245,7 @@ class _TasbeehScreenState extends State<TasbeehScreen>
                               if (_target != 0)
                                 Text(
                                   "/ $_target",
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     fontSize: 24,
                                     color: Colors.grey,
                                     fontWeight: FontWeight.w500,
