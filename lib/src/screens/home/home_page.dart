@@ -216,8 +216,9 @@ class _HomePageState extends State<HomePage> {
     if (userLocationController.locationData.value?.placemark?.isoCountryCode ==
             "BD" &&
         HijriCalendar.now().hMonth == 9) {
+      log("condition true", name: "DEBUG");
       String json = await rootBundle
-          .loadString("assets/calender_data/ramadan_calendar2025.json");
+          .loadString("assets/calender_data/ramadan_calendar_2026.json");
       Map ramadanCalendar = jsonDecode(json);
       String district = userLocationData.placemark?.subAdministrativeArea ??
           userLocationData.placemark?.administrativeArea ??
@@ -230,19 +231,26 @@ class _HomePageState extends State<HomePage> {
       }
       district = district.split(" ").first;
 
-      log(district, name: "district");
+      log("District : $district", name: "DEBUG");
       List<RamadanDayModel> ramadanDaysList = [];
       bool found = false;
       for (String key in ramadanCalendar.keys) {
-        if (key.toString().toLowerCase() == district) {
+        if (key.toString().toLowerCase() == district.toLowerCase()) {
           found = true;
+          log("Is Found : $found", name: "DEBUG");
           List temList = ramadanCalendar[key] as List;
           for (int i = 0; i < (temList).length; i++) {
-            ramadanDaysList.add(
-                RamadanDayModel.fromMap(Map<String, dynamic>.from(temList[i])));
+            try {
+              ramadanDaysList.add(RamadanDayModel.fromMap(
+                  Map<String, dynamic>.from(temList[i])));
+            } on Exception catch (e) {
+              log(jsonEncode(temList[i]), name: "DEBUG");
+              log(e.toString(), name: "DEBUG");
+            }
           }
         }
       }
+      log("Is Found : $found", name: "DEBUG");
       if (!found) {
         String? key = FuzzyMatcher.findClosestKey(
             Map<String, dynamic>.from(ramadanCalendar), district);
@@ -285,6 +293,14 @@ class _HomePageState extends State<HomePage> {
       );
     }
     setState(() {});
+  }
+
+  PrayerTimes getPrayerTimes(double latitude, double longitude) {
+    return PrayerTimes(
+      coordinates: Coordinates(latitude, longitude),
+      calculationParameters: CalculationMethodParameters.muslimWorldLeague(),
+      date: DateTime.now(),
+    );
   }
 
   void calculateWithLibrary(double latitude, double longitude) {
@@ -609,7 +625,12 @@ class _HomePageState extends State<HomePage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      HijriCalendar.now().toFormat("dd MMMM yyyy"),
+                      (userLocationController.locationData.value?.placemark
+                                      ?.isoCountryCode ==
+                                  "BD" &&
+                              HijriCalendar.now().hMonth == 9)
+                          ? "${getRamadanNumber(ramadanTodayTimeController.ifter.value ?? const TimeOfDay(hour: 18, minute: 30))} Day of Ramadan"
+                          : HijriCalendar.now().toFormat("dd MMMM yyyy"),
                       style: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
@@ -660,9 +681,29 @@ class _HomePageState extends State<HomePage> {
                                         color: const Color(0xFF80DDFF),
                                       )
                                   : Text(
-                                      ramadanTodayTimeController.sehri.value
-                                              ?.format(context) ??
-                                          "",
+                                      (userLocationController
+                                                      .locationData
+                                                      .value
+                                                      ?.placemark
+                                                      ?.isoCountryCode ==
+                                                  "BD" &&
+                                              HijriCalendar.now().hMonth == 9)
+                                          ? ramadanTodayTimeController
+                                                  .sehri.value
+                                                  ?.format(context) ??
+                                              ""
+                                          : TimeOfDay.fromDateTime(
+                                                  getPrayerTimes(
+                                              userLocationController
+                                                  .locationData.value!.latitude,
+                                              userLocationController
+                                                  .locationData
+                                                  .value!
+                                                  .longitude,
+                                            ).fajr.toLocal().subtract(
+                                                      const Duration(
+                                                          minutes: 1)))
+                                              .format(context),
                                       style: TextStyle(
                                         fontSize: 16,
                                         color: MyAppColors.primaryColor,
@@ -701,9 +742,27 @@ class _HomePageState extends State<HomePage> {
                                         color: const Color(0xFF80DDFF),
                                       )
                                   : Text(
-                                      ramadanTodayTimeController.ifter.value
-                                              ?.format(context) ??
-                                          "",
+                                      (userLocationController
+                                                      .locationData
+                                                      .value
+                                                      ?.placemark
+                                                      ?.isoCountryCode ==
+                                                  "BD" &&
+                                              HijriCalendar.now().hMonth == 9)
+                                          ? ramadanTodayTimeController
+                                                  .ifter.value
+                                                  ?.format(context) ??
+                                              ""
+                                          : TimeOfDay.fromDateTime(
+                                                  getPrayerTimes(
+                                              userLocationController
+                                                  .locationData.value!.latitude,
+                                              userLocationController
+                                                  .locationData
+                                                  .value!
+                                                  .longitude,
+                                            ).maghrib.toLocal())
+                                              .format(context),
                                       style: TextStyle(
                                         fontSize: 16,
                                         color: MyAppColors.primaryColor,

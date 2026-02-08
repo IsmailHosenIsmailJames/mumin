@@ -31,7 +31,7 @@ class RamadanDayModel {
   String toJson() => json.encode(toMap());
 
   factory RamadanDayModel.fromMap(Map<String, dynamic> json) => RamadanDayModel(
-        date: DateFormat("yyyy/MM/dd").parse(json["date"]),
+        date: DateFormat("dd-MM-yyyy").parse(json["date"]),
         seharEnd: json["sehar_end"],
         ifter: json["ifter"],
       );
@@ -43,3 +43,5 @@ class RamadanDayModel {
         "ifter": ifter,
       };
 }
+
+// {"date":"16-03-26","sehar_end":"4:51 AM","ifter":"6:11 PM"}
