@@ -25,6 +25,6 @@ for row in rows:
 
 print('Districts are : ', len(dicts.keys()))
 
-with open('ramadan_calendar2025.json', 'w') as f:
+with open('ramadan_calendar_2026.json', 'w') as f:
     json.dump(dicts, f, indent= 1)
 

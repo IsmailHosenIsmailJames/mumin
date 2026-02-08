@@ -1,0 +1,9730 @@
+{
+ "Dhaka": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:12 AM",
+   "ifter": "5:58 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:11 AM",
+   "ifter": "5:58 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:11 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:50 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:49 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:48 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:47 AM",
+   "ifter": "6:11 PM"
+  }
+ ],
+ "Narayanganj": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:11 AM",
+   "ifter": "5:56 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "5:57 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "5:57 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "5:58 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "5:58 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:50 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:49 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:48 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:47 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:46 AM",
+   "ifter": "6:10 PM"
+  }
+ ],
+ "Gazipur": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:11 AM",
+   "ifter": "5:57 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:11 AM",
+   "ifter": "5:58 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "5:58 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:50 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:49 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:48 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:47 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:46 AM",
+   "ifter": "6:11 PM"
+  }
+ ],
+ "Gopalganj": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:13 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:13 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:12 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:11 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:11 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:50 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:49 AM",
+   "ifter": "6:13 PM"
+  }
+ ],
+ "Tangail": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:13 AM",
+   "ifter": "5:58 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:12 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:12 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:11 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:50 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:49 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:48 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:47 AM",
+   "ifter": "6:12 PM"
+  }
+ ],
+ "Narsingdi": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "5:55 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "5:56 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "5:57 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "5:57 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "5:58 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "5:58 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:50 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:49 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:48 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:47 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:46 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:45 AM",
+   "ifter": "6:09 PM"
+  }
+ ],
+ "Faridpur": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:13 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:12 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:12 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:11 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:50 AM",
+   "ifter": "6:13 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:49 AM",
+   "ifter": "6:13 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:48 AM",
+   "ifter": "6:13 PM"
+  }
+ ],
+ "Madaripur": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:12 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:12 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:11 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:50 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:49 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:48 AM",
+   "ifter": "6:12 PM"
+  }
+ ],
+ "Manikganj": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:13 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:12 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:12 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:11 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:50 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:49 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:48 AM",
+   "ifter": "6:13 PM"
+  }
+ ],
+ "Munshiganj": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:11 AM",
+   "ifter": "5:57 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "5:58 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "5:58 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:50 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:49 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:48 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:47 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:46 AM",
+   "ifter": "6:11 PM"
+  }
+ ],
+ "Rajbari": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:15 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:14 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:13 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:13 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:12 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:11 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "6:13 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "6:13 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:50 AM",
+   "ifter": "6:14 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:49 AM",
+   "ifter": "6:14 PM"
+  }
+ ],
+ "Kishoreganj": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "5:55 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "5:55 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "5:56 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "5:57 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "5:57 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "5:58 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "5:58 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "4:50 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:49 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:48 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:47 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:46 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:45 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:44 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:43 AM",
+   "ifter": "6:09 PM"
+  }
+ ],
+ "Shariatpur": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:11 AM",
+   "ifter": "5:57 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:11 AM",
+   "ifter": "5:58 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "5:58 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:50 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:49 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:48 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:47 AM",
+   "ifter": "6:10 PM"
+  }
+ ],
+ "Sylhet": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "5:50 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "5:51 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "5:52 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "5:52 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "5:53 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "5:53 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "5:54 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "5:54 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "5:55 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "5:55 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "5:56 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "5:56 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "5:57 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "5:57 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "5:58 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "5:58 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "4:50 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "4:49 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "4:48 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "4:47 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "4:46 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "4:45 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:44 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:43 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:42 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:41 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:40 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:39 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:38 AM",
+   "ifter": "6:05 PM"
+  }
+ ],
+ "Moulvibazar": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "5:51 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "5:51 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "5:52 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "5:53 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "5:53 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "5:54 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "5:54 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "5:55 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "5:55 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "5:56 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "5:56 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "5:57 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "5:57 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "5:58 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "5:58 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "4:50 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "4:49 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "4:48 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "4:47 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "4:46 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:45 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:44 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:43 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:42 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:41 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:40 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:39 AM",
+   "ifter": "6:05 PM"
+  }
+ ],
+ "Habiganj": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "5:53 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "5:53 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "5:54 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "5:54 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "5:55 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "5:56 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "5:56 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "5:57 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "5:57 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "5:58 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "5:58 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "4:50 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "4:49 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:48 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:47 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:46 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:45 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:44 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:43 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:41 AM",
+   "ifter": "6:07 PM"
+  }
+ ],
+ "Sunamganj": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "5:53 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "5:54 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "5:54 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "5:55 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "5:55 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "5:56 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "5:56 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "5:57 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "5:57 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "5:58 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "4:50 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "4:49 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "4:48 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:47 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:46 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:45 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:44 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:43 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:42 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:41 AM",
+   "ifter": "6:08 PM"
+  }
+ ],
+ "Sirajganj": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:15 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:14 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:13 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:13 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:12 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:11 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:11 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "6:13 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "6:13 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "6:13 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:50 AM",
+   "ifter": "6:14 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:49 AM",
+   "ifter": "6:14 PM"
+  }
+ ],
+ "Rajshahi": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:18 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:18 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:17 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:16 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:16 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:15 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:14 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:13 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "5:12 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "5:12 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "5:11 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "6:13 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "6:13 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "6:14 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:14 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "6:15 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "6:15 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "6:16 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:16 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:16 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:17 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:17 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "6:18 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "6:18 PM"
+  }
+ ],
+ "Bogura": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:15 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:15 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:14 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:13 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:12 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:12 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:11 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:13 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:13 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "6:14 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "6:14 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "6:15 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:50 AM",
+   "ifter": "6:15 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:49 AM",
+   "ifter": "6:15 PM"
+  }
+ ],
+ "Pabna": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:15 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:14 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:14 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:13 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:12 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:12 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:11 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "6:13 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:13 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:14 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "6:14 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "6:14 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "6:15 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:50 AM",
+   "ifter": "6:15 PM"
+  }
+ ],
+ "Natore": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:17 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:16 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:16 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:15 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:14 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:13 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:13 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:12 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "5:11 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:13 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:13 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "6:14 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:14 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:15 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "6:15 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "6:16 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "6:16 PM"
+  }
+ ],
+ "Naogaon": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:18 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:17 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:16 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:16 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:15 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:14 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:13 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:13 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "5:12 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "5:11 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "6:13 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:13 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "6:14 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "6:14 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "6:15 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:15 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:16 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "6:16 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:16 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:17 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "6:17 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "6:18 PM"
+  }
+ ],
+ "Joypurhat": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:17 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:17 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:16 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:15 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:14 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:14 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:13 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:12 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "5:11 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:13 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "6:13 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:14 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:14 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "6:15 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "6:15 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "6:16 PM"
+  }
+ ],
+ "Chapainawabganj": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:20 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:20 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:19 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:18 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:17 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:17 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:16 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:15 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "5:14 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "5:13 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "5:13 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "5:12 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "5:11 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "6:13 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "6:13 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "6:14 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "6:14 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "6:15 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "6:15 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:16 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "6:16 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "6:17 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "6:17 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:18 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:18 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "6:18 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:19 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:19 PM"
+  }
+ ],
+ "Lalmonirhat": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:16 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:16 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:15 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:14 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:13 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:13 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:12 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:11 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "6:13 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:13 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "6:14 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "6:14 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "6:15 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:50 AM",
+   "ifter": "6:15 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:49 AM",
+   "ifter": "6:16 PM"
+  }
+ ],
+ "Rangpur": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:17 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:16 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:15 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:14 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:14 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:13 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:12 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:11 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "6:13 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:13 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:14 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "6:14 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "6:15 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:50 AM",
+   "ifter": "6:15 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:49 AM",
+   "ifter": "6:16 PM"
+  }
+ ],
+ "Panchagarh": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:20 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:19 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:18 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:17 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:17 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:16 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:15 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:14 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "5:13 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "5:12 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "5:11 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "5:11 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "6:13 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "6:13 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:14 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "6:14 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "6:15 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:15 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:16 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "6:16 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:17 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:17 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "6:18 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "6:18 PM"
+  }
+ ],
+ "Nilphamari": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:18 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:17 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:17 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:16 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:15 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:14 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:13 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:12 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "5:12 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "5:11 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "6:13 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:13 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:14 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "6:14 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:14 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:15 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "6:15 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "6:16 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "6:16 PM"
+  }
+ ],
+ "Dinajpur": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:17 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:17 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:16 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:15 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:14 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:14 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:13 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:12 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "5:11 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "6:13 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "6:13 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "6:14 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:14 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:15 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "6:15 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:16 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:16 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "6:17 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "6:17 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "6:18 PM"
+  }
+ ],
+ "Thakurgaon": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:20 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:20 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:19 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:18 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:17 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:16 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:16 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:15 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "5:14 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "5:13 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "5:12 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "5:11 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "6:13 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "6:13 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "6:14 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "6:14 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:15 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "6:15 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "6:16 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "6:16 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:17 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:17 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "6:18 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:18 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:19 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "6:19 PM"
+  }
+ ],
+ "Gaibandha": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:16 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:15 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:14 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:13 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:13 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:12 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:11 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "6:13 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "6:13 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "6:14 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:50 AM",
+   "ifter": "6:14 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:49 AM",
+   "ifter": "6:15 PM"
+  }
+ ],
+ "Kurigram": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:15 AM",
+   "ifter": "5:58 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:15 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:14 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:13 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:12 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:11 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:11 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:50 AM",
+   "ifter": "6:13 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:49 AM",
+   "ifter": "6:13 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:48 AM",
+   "ifter": "6:14 PM"
+  }
+ ],
+ "Sherpur": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:13 AM",
+   "ifter": "5:57 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:13 AM",
+   "ifter": "5:58 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:12 AM",
+   "ifter": "5:58 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:11 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:50 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:49 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:48 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:47 AM",
+   "ifter": "6:12 PM"
+  }
+ ],
+ "Mymensingh": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:11 AM",
+   "ifter": "5:57 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "5:57 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "5:58 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "5:58 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:50 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:49 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:48 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:47 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:46 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:45 AM",
+   "ifter": "6:11 PM"
+  }
+ ],
+ "Netrokona": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "5:55 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "5:55 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "5:56 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "5:57 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "5:57 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "5:58 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "5:58 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "4:50 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:49 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:48 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:47 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:46 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:45 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:44 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:43 AM",
+   "ifter": "6:09 PM"
+  }
+ ],
+ "Jamalpur": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:14 AM",
+   "ifter": "5:58 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:13 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:12 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:11 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:11 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:50 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:49 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:48 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:47 AM",
+   "ifter": "6:13 PM"
+  }
+ ],
+ "Bhola": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "5:57 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "5:58 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "5:58 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:50 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:49 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:48 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:47 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:46 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:45 AM",
+   "ifter": "6:09 PM"
+  }
+ ],
+ "Barishal": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:11 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:50 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:49 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:48 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:47 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:46 AM",
+   "ifter": "6:11 PM"
+  }
+ ],
+ "Barguna": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:12 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:11 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:11 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:50 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:49 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:48 AM",
+   "ifter": "6:12 PM"
+  }
+ ],
+ "Pirojpur": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:13 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:12 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:12 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:11 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:50 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:50 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:49 AM",
+   "ifter": "6:12 PM"
+  }
+ ],
+ "Patuakhali": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:11 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:50 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:49 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:48 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:47 AM",
+   "ifter": "6:11 PM"
+  }
+ ],
+ "Jhalokati": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:12 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:11 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:11 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:50 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:49 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:48 AM",
+   "ifter": "6:11 PM"
+  }
+ ],
+ "Lakshmipur": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "5:56 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "5:56 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "5:57 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "5:58 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "5:58 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:50 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:49 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:48 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:47 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:46 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:45 AM",
+   "ifter": "6:09 PM"
+  }
+ ],
+ "Rangamati": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "5:51 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "5:52 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "5:52 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "5:53 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "5:53 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "5:54 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "5:54 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "5:55 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "5:55 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "5:56 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "5:56 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "5:56 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "5:57 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "5:57 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "5:58 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "5:58 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "4:50 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "4:49 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "4:49 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "4:48 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "4:47 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "4:46 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:45 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:44 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:43 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:42 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:41 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:40 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:39 AM",
+   "ifter": "6:04 PM"
+  }
+ ],
+ "Brahmanbaria": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "5:55 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "5:56 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "5:56 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "5:57 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "5:57 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "5:58 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "5:58 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "4:50 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:49 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:48 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:47 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:46 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:45 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:44 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:43 AM",
+   "ifter": "6:08 PM"
+  }
+ ],
+ "Bandarban": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "5:51 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "5:52 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "5:52 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "5:53 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "5:53 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "5:54 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "5:54 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "5:55 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "5:55 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "5:55 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "5:56 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "5:56 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "5:57 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "5:57 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "5:58 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "5:58 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "5:58 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "4:50 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "4:49 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "4:48 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "4:48 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "4:47 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "4:46 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:45 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:44 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:43 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:42 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:41 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:40 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:39 AM",
+   "ifter": "6:03 PM"
+  }
+ ],
+ "Feni": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "5:54 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "5:54 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "5:55 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "5:55 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "5:56 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "5:56 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "5:57 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "5:57 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "5:58 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "5:58 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "4:50 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:49 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:48 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:47 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:46 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:45 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:44 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:43 AM",
+   "ifter": "6:06 PM"
+  }
+ ],
+ "Noakhali": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "5:55 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "5:55 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "5:56 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "5:57 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "5:57 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "5:58 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "5:58 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "5:58 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "4:50 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:50 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:49 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:48 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:47 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:46 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:45 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:44 AM",
+   "ifter": "6:08 PM"
+  }
+ ],
+ "Chandpur": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "5:56 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "5:57 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "5:57 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "5:58 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "5:58 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:50 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:49 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:48 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:47 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:46 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:45 AM",
+   "ifter": "6:09 PM"
+  }
+ ],
+ "Chattogram": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "5:53 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "5:54 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "5:54 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "5:55 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "5:55 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "5:56 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "5:56 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "5:57 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "5:57 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "5:58 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "5:58 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "4:50 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "4:49 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "4:48 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "4:47 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:47 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:46 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:45 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:44 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:43 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:42 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:41 AM",
+   "ifter": "6:06 PM"
+  }
+ ],
+ "Khagrachhari": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "5:52 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "5:52 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "5:53 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "5:53 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "5:54 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "5:54 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "5:55 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "5:55 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "5:56 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "5:56 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "5:57 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "5:57 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "5:58 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "5:58 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "5:58 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "4:50 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "4:49 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "4:48 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "4:47 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:46 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:45 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:44 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:43 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:42 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:41 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:40 AM",
+   "ifter": "6:04 PM"
+  }
+ ],
+ "Cumilla": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "5:55 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "5:56 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "5:57 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "5:57 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "5:58 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "5:58 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:50 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:49 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:48 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:47 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:46 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:45 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:44 AM",
+   "ifter": "6:09 PM"
+  }
+ ],
+ "Cox's Bazar": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "5:52 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "5:53 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "5:53 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "5:54 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "5:54 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "5:55 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "5:55 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "5:56 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "5:56 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "5:56 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "5:57 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "5:57 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "5:58 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "5:58 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "5:59 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "4:50 AM",
+   "ifter": "6:00 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "4:49 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "4:48 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "4:47 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:46 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:46 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:45 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:44 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:43 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:42 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:41 AM",
+   "ifter": "6:04 PM"
+  }
+ ],
+ "Satkhira": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:16 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:15 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:15 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:14 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:13 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:13 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:12 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:11 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "6:13 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "6:13 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:13 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:14 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "6:14 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:15 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:15 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "6:15 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "6:16 PM"
+  }
+ ],
+ "Jashore": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:16 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:15 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:14 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:14 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:13 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:12 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:11 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:11 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "6:13 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:13 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:14 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "6:14 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:14 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:15 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "6:15 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "6:16 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "6:16 PM"
+  }
+ ],
+ "Meherpur": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:19 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:18 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:17 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:16 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:16 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:15 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:14 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:13 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "5:13 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "5:12 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "5:11 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "6:13 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:13 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "6:14 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "6:14 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "6:15 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:15 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:15 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "6:16 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:16 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:17 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "6:17 PM"
+  }
+ ],
+ "Magura": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:15 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:15 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:14 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:13 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:13 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:12 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:11 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:13 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "6:13 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "6:14 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "6:14 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:50 AM",
+   "ifter": "6:14 PM"
+  }
+ ],
+ "Bagerhat": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:14 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:13 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:12 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:12 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:11 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "6:13 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:50 AM",
+   "ifter": "6:13 PM"
+  }
+ ],
+ "Narail": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:15 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:14 AM",
+   "ifter": "6:01 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:13 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:13 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:12 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:11 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "6:13 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "6:13 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "6:13 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:50 AM",
+   "ifter": "6:14 PM"
+  }
+ ],
+ "Jhenaidah": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:16 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:16 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:15 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:14 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:14 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:13 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:12 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:11 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "5:11 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "6:13 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "6:13 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:14 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:14 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "6:15 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:15 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:15 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "6:16 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "6:16 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "6:16 PM"
+  }
+ ],
+ "Chuadanga": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:18 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:17 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:17 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:16 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:15 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:14 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:14 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:13 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "5:12 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "5:11 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "6:13 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:13 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "6:14 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "6:14 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "6:14 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:15 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:15 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "6:16 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:16 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:16 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "6:17 PM"
+  }
+ ],
+ "Khulna": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:15 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:14 AM",
+   "ifter": "6:02 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:13 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:13 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:12 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:11 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:11 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:13 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "6:13 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "6:14 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "6:14 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:50 AM",
+   "ifter": "6:14 PM"
+  }
+ ],
+ "Kushtia": [
+  {
+   "date": "19-02-26",
+   "sehar_end": "5:17 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "20-02-26",
+   "sehar_end": "5:16 AM",
+   "ifter": "6:03 PM"
+  },
+  {
+   "date": "21-02-26",
+   "sehar_end": "5:15 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "22-02-26",
+   "sehar_end": "5:15 AM",
+   "ifter": "6:04 PM"
+  },
+  {
+   "date": "23-02-26",
+   "sehar_end": "5:14 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "24-02-26",
+   "sehar_end": "5:13 AM",
+   "ifter": "6:05 PM"
+  },
+  {
+   "date": "25-02-26",
+   "sehar_end": "5:12 AM",
+   "ifter": "6:06 PM"
+  },
+  {
+   "date": "26-02-26",
+   "sehar_end": "5:12 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "27-02-26",
+   "sehar_end": "5:11 AM",
+   "ifter": "6:07 PM"
+  },
+  {
+   "date": "28-02-26",
+   "sehar_end": "5:10 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "01-03-26",
+   "sehar_end": "5:09 AM",
+   "ifter": "6:08 PM"
+  },
+  {
+   "date": "02-03-26",
+   "sehar_end": "5:08 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "03-03-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "04-03-26",
+   "sehar_end": "5:07 AM",
+   "ifter": "6:09 PM"
+  },
+  {
+   "date": "05-03-26",
+   "sehar_end": "5:06 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "06-03-26",
+   "sehar_end": "5:05 AM",
+   "ifter": "6:10 PM"
+  },
+  {
+   "date": "07-03-26",
+   "sehar_end": "5:04 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "08-03-26",
+   "sehar_end": "5:03 AM",
+   "ifter": "6:11 PM"
+  },
+  {
+   "date": "09-03-26",
+   "sehar_end": "5:02 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "10-03-26",
+   "sehar_end": "5:01 AM",
+   "ifter": "6:12 PM"
+  },
+  {
+   "date": "11-03-26",
+   "sehar_end": "5:00 AM",
+   "ifter": "6:13 PM"
+  },
+  {
+   "date": "12-03-26",
+   "sehar_end": "4:59 AM",
+   "ifter": "6:13 PM"
+  },
+  {
+   "date": "13-03-26",
+   "sehar_end": "4:58 AM",
+   "ifter": "6:14 PM"
+  },
+  {
+   "date": "14-03-26",
+   "sehar_end": "4:57 AM",
+   "ifter": "6:14 PM"
+  },
+  {
+   "date": "15-03-26",
+   "sehar_end": "4:56 AM",
+   "ifter": "6:14 PM"
+  },
+  {
+   "date": "16-03-26",
+   "sehar_end": "4:55 AM",
+   "ifter": "6:15 PM"
+  },
+  {
+   "date": "17-03-26",
+   "sehar_end": "4:54 AM",
+   "ifter": "6:15 PM"
+  },
+  {
+   "date": "18-03-26",
+   "sehar_end": "4:53 AM",
+   "ifter": "6:16 PM"
+  },
+  {
+   "date": "19-03-26",
+   "sehar_end": "4:52 AM",
+   "ifter": "6:16 PM"
+  },
+  {
+   "date": "20-03-26",
+   "sehar_end": "4:51 AM",
+   "ifter": "6:17 PM"
+  }
+ ]
+}
