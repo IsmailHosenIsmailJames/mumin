@@ -3,7 +3,10 @@ import "package:gap/gap.dart";
 import "package:get/get.dart";
 import "package:hijri/hijri_calendar.dart";
 import "package:intl/intl.dart";
+import "package:mumin/src/screens/daily_plan/get_ramadan_number.dart";
 import "package:mumin/src/screens/home/controller/model/user_calander_day_model.dart";
+import "package:mumin/src/screens/home/controller/user_location.dart";
+
 import "package:mumin/src/screens/home/controller/user_location_calender.dart";
 import "package:mumin/src/screens/ramadan_calender/model/controller.dart";
 import "package:mumin/src/theme/shapes.dart";
@@ -17,6 +20,7 @@ class RamadanCalenderPage extends StatefulWidget {
 
 class _RamadanCalenderPageState extends State<RamadanCalenderPage> {
   final UserLocationCalender userLocationCalender = Get.find();
+  final UserLocationController userLocationController = Get.find();
   final RamadanTodayTimeController ramadanTodayTimeController =
       Get.put(RamadanTodayTimeController());
   @override
@@ -47,9 +51,12 @@ class _RamadanCalenderPageState extends State<RamadanCalenderPage> {
                       DateFormat.yMMMEd().format(DateTime.now()),
                     ),
                     Text(
-                      HijriCalendar.fromDate(DateTime.now())
-                          .toFormat("dd MMMM yyyy")
-                          .toString(),
+                      (userLocationController.locationData.value?.placemark
+                                      ?.isoCountryCode ==
+                                  "BD" &&
+                              HijriCalendar.now().hMonth == 9)
+                          ? "${getRamadanNumber(ramadanTodayTimeController.ifter.value ?? const TimeOfDay(hour: 18, minute: 30))} Day of Ramadan"
+                          : HijriCalendar.now().toFormat("dd MMMM yyyy"),
                       style: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
@@ -131,11 +138,12 @@ class _RamadanCalenderPageState extends State<RamadanCalenderPage> {
           ),
           Expanded(
             child: ListView.builder(
-              itemCount:
-                  userLocationCalender.userLocationCalender.value?.length ?? 0,
+              itemCount: userLocationCalender
+                      .userLocationRamadanCalender.value?.length ??
+                  0,
               itemBuilder: (context, index) {
-                RamadanDayModel dayModel =
-                    userLocationCalender.userLocationCalender.value![index];
+                RamadanDayModel dayModel = userLocationCalender
+                    .userLocationRamadanCalender.value![index];
                 return Container(
                   decoration: BoxDecoration(
                     borderRadius: MyAppShapes.borderRadius,

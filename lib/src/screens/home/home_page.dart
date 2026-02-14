@@ -214,6 +214,10 @@ class _HomePageState extends State<HomePage> {
     log(jsonEncode(userLocationData.placemark?.toJson() ?? {}),
         name: "placemark");
     if (userLocationController.locationData.value?.placemark?.isoCountryCode ==
+        "BD") {
+      loadOnlyRamadanCalenderForBD(userLocationData);
+    }
+    if (userLocationController.locationData.value?.placemark?.isoCountryCode ==
             "BD" &&
         HijriCalendar.now().hMonth == 9) {
       log("condition true", name: "DEBUG");
@@ -293,6 +297,61 @@ class _HomePageState extends State<HomePage> {
       );
     }
     setState(() {});
+  }
+
+  Future loadOnlyRamadanCalenderForBD(
+    UserLocationData userLocationData,
+  ) async {
+    String json = await rootBundle
+        .loadString("assets/calender_data/ramadan_calendar_2026.json");
+    Map ramadanCalendar = jsonDecode(json);
+    String district = userLocationData.placemark?.subAdministrativeArea ??
+        userLocationData.placemark?.administrativeArea ??
+        "Dhaka";
+    if (Platform.isIOS) {
+      district = userLocationData.placemark?.name ??
+          userLocationData.placemark?.subAdministrativeArea ??
+          userLocationData.placemark?.administrativeArea ??
+          "Dhaka";
+    }
+    district = district.split(" ").first;
+
+    log("District : $district", name: "DEBUG");
+    List<RamadanDayModel> ramadanDaysList = [];
+    bool found = false;
+    for (String key in ramadanCalendar.keys) {
+      if (key.toString().toLowerCase() == district.toLowerCase()) {
+        found = true;
+        log("Is Found : $found", name: "DEBUG");
+        List temList = ramadanCalendar[key] as List;
+        for (int i = 0; i < (temList).length; i++) {
+          try {
+            ramadanDaysList.add(
+                RamadanDayModel.fromMap(Map<String, dynamic>.from(temList[i])));
+          } on Exception catch (e) {
+            log(jsonEncode(temList[i]), name: "DEBUG");
+            log(e.toString(), name: "DEBUG");
+          }
+        }
+      }
+    }
+    log("Is Found : $found", name: "DEBUG");
+    int ramadanDay = getRamadanNumber(ramadanTodayTimeController.ifter.value ??
+        const TimeOfDay(hour: 18, minute: 30));
+    RamadanDayModel? todaysTime;
+    try {
+      todaysTime = ramadanDaysList[ramadanDay - 1];
+    } catch (e) {
+      log(e.toString());
+    }
+    if (todaysTime != null) {
+      ramadanTodayTimeController.sehri.value = TimeOfDay.fromDateTime(
+          DateFormat("h:mm a").parse(todaysTime.seharEnd));
+      ramadanTodayTimeController.ifter.value =
+          TimeOfDay.fromDateTime(DateFormat("h:mm a").parse(todaysTime.ifter));
+      log(todaysTime.toJson());
+    }
+    userLocationCalender.userLocationRamadanCalender.value = ramadanDaysList;
   }
 
   PrayerTimes getPrayerTimes(double latitude, double longitude) {
