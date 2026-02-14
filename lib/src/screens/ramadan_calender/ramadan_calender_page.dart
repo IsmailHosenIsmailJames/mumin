@@ -48,7 +48,11 @@ class _RamadanCalenderPageState extends State<RamadanCalenderPage> {
                   children: [
                     const Text("Today's info", style: TextStyle(fontSize: 12)),
                     Text(
-                      DateFormat.yMMMEd().format(DateTime.now()),
+                      DateFormat.yMMMMEEEEd().format(getDateByRamadanNumber(
+                          getRamadanNumber(
+                                  ramadanTodayTimeController.ifter.value ??
+                                      const TimeOfDay(hour: 18, minute: 30)) -
+                              1)),
                     ),
                     Text(
                       (userLocationController.locationData.value?.placemark
