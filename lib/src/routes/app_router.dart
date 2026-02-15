@@ -1,6 +1,7 @@
 import "package:flutter/material.dart";
 import "package:go_router/go_router.dart";
 import "package:get/get.dart";
+import "package:mumin/src/core/audio/manage_audio.dart";
 import "package:mumin/src/screens/about/about_page.dart";
 import "package:mumin/src/screens/auth/controller/auth_controller.dart";
 import "package:mumin/src/screens/auth/login_page.dart";
@@ -94,19 +95,49 @@ class AppRouter {
           builder: (context, state) => const RamadanCalenderPage(),
         ),
         GoRoute(
-          path: "/surah_view",
+          path: "/surah_view/:surahIndex",
           builder: (context, state) {
-            final extra = state.extra as Map<String, dynamic>;
+            final surahIndex =
+                int.parse(state.pathParameters["surahIndex"] ?? "0");
+            final extra = state.extra as Map<String, dynamic>?;
+
+            if (extra != null) {
+              // Normal navigation from surah list — extra has all the data
+              return SurahView(
+                surahIndex: extra["surahIndex"],
+                surahName: extra["surahName"],
+                quranInfoModel:
+                    QuranSurahInfoModel.fromMap(extra["quranInfoModel"]),
+                practiceMode: extra["practiceMode"],
+                startAt: extra["startAt"],
+                start: extra["start"],
+                end: extra["end"],
+              );
+            }
+
+            // Notification tap navigation — retrieve metadata from audio controller
+            final audioController = Get.find<ManageAudioController>();
             return SurahView(
-              surahIndex: extra["surahIndex"],
-              surahName: extra["surahName"],
-              quranInfoModel:
-                  QuranSurahInfoModel.fromMap(extra["quranInfoModel"]),
-              practiceMode: extra["practiceMode"],
-              startAt: extra["startAt"],
-              start: extra["start"],
-              end: extra["end"],
+              surahIndex: surahIndex,
+              surahName: audioController.currentSurahName ?? "Surah",
+              quranInfoModel: audioController.currentQuranInfoModelMap != null
+                  ? QuranSurahInfoModel.fromMap(
+                      audioController.currentQuranInfoModelMap!)
+                  : QuranSurahInfoModel.fromMap({}),
+              practiceMode: audioController.currentPracticeMode,
+              startAt: audioController.currentStartAt ?? 0,
             );
+          },
+        ),
+        // Keep the old route path as a redirect for compatibility
+        GoRoute(
+          path: "/surah_view",
+          redirect: (context, state) {
+            final extra = state.extra as Map<String, dynamic>?;
+            if (extra != null) {
+              return "/surah_view/${extra["surahIndex"]}";
+            }
+            return "/quran";
           },
         ),
         GoRoute(

@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import "package:flutter/services.dart";
 import "package:flutter_bloc/flutter_bloc.dart";
 import "package:flutter_native_splash/flutter_native_splash.dart";
 import "package:get/get.dart";
@@ -42,11 +43,70 @@ class MyApp extends StatefulWidget {
   State<MyApp> createState() => _MyAppState();
 }
 
-class _MyAppState extends State<MyApp> {
+class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
+  AppLifecycleState? _previousState;
+  static const _notificationChannel =
+      MethodChannel("com.impala.mumin/notification_tap");
+
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance.addObserver(this);
     FlutterNativeSplash.remove();
+
+    // Listen for notification taps (in-app and cold-start)
+    _notificationChannel.setMethodCallHandler((call) async {
+      if (call.method == "onNotificationTap") {
+        // For notification taps, navigate based on metadata alone
+        // (on cold start, isPlaying may not yet be true)
+        _navigateToSurahFromNotification();
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    // Only navigate when truly returning from background (paused → resumed).
+    // This avoids triggering on notification shade pulls (inactive → resumed).
+    if (state == AppLifecycleState.resumed &&
+        _previousState == AppLifecycleState.paused) {
+      _navigateToPlayingSurahIfNeeded();
+    }
+    _previousState = state;
+  }
+
+  /// Navigate from notification tap — uses metadata only (works on cold start).
+  void _navigateToSurahFromNotification() {
+    final audioController = Get.find<ManageAudioController>();
+    if (!audioController.hasActivePlayback) return;
+
+    final currentRoute =
+        AppRouter.router.routerDelegate.currentConfiguration.uri.toString();
+    if (currentRoute.startsWith("/surah_view/")) return;
+
+    AppRouter.router.push("/surah_view/${audioController.surahNumber.value}");
+  }
+
+  /// Navigate from lifecycle resume — requires active playback.
+  void _navigateToPlayingSurahIfNeeded() {
+    final audioController = Get.find<ManageAudioController>();
+
+    if (!audioController.hasActivePlayback ||
+        !audioController.isPlaying.value) {
+      return;
+    }
+
+    final currentRoute =
+        AppRouter.router.routerDelegate.currentConfiguration.uri.toString();
+    if (currentRoute.startsWith("/surah_view/")) return;
+
+    AppRouter.router.push("/surah_view/${audioController.surahNumber.value}");
   }
 
   @override

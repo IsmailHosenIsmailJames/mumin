@@ -223,8 +223,8 @@ class _SurahViewState extends State<SurahView> {
                                       backgroundColor:
                                           Colors.orange.withValues(alpha: 0.1),
                                     ),
-                                    onPressed: () {
-                                      _checkNotificationPermission();
+                                    onPressed: () async {
+                                      await _checkNotificationPermission();
                                       if (widget.surahIndex ==
                                           audioController.surahNumber.value) {
                                         if (index !=
@@ -246,6 +246,10 @@ class _SurahViewState extends State<SurahView> {
                                           widget.quranInfoModel.nameSimple,
                                           widget.surahIndex,
                                           index,
+                                          quranInfoModelMap:
+                                              widget.quranInfoModel.toMap(),
+                                          startAt: widget.startAt,
+                                          practiceMode: widget.practiceMode,
                                         );
                                         startListingForScroll();
                                       }

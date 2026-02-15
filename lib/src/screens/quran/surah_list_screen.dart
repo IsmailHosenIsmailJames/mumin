@@ -108,7 +108,7 @@ class _SurahListScreenState extends State<SurahListScreen> {
                                   .versesCount;
                             }
                             context.push(
-                              "/surah_view",
+                              "/surah_view/${chapterModel.id - 1}",
                               extra: {
                                 "surahIndex": chapterModel.id - 1,
                                 "surahName": chapterModel.nameSimple,
