@@ -2,7 +2,6 @@ import "package:flutter/material.dart";
 import "package:gap/gap.dart";
 import "package:get/get.dart";
 import "package:go_router/go_router.dart";
-import "package:hijri/hijri_calendar.dart";
 import "package:mumin/src/screens/daily_plan/data/day_30_data.dart";
 import "package:mumin/src/screens/daily_plan/get_ramadan_number.dart";
 import "package:mumin/src/screens/quran/resources/chapters.dart";
@@ -68,9 +67,7 @@ class _DailyRamadanPlanState extends State<DailyRamadanPlan> {
         appBar: AppBar(
           titleSpacing: 5,
           title: Text(
-            HijriCalendar.fromDate(DateTime.now()).hMonth == 9
-                ? "Ramadan Day - ${widget.day}"
-                : HijriCalendar.now().toFormat("dd MMMM yyyy"),
+            "Ramadan Day - ${widget.day}",
             style: const TextStyle(fontSize: 16),
           ),
           bottom: TabBar(

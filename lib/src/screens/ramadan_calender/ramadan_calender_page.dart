@@ -132,7 +132,7 @@ class _RamadanCalenderPageState extends State<RamadanCalenderPage> {
                 children: [
                   SizedBox(width: 30, child: Text("SL")),
                   SizedBox(width: 80, child: Text("Date")),
-                  SizedBox(width: 80, child: Text("Sehri(end)")),
+                  SizedBox(width: 80, child: Text("Sehri (End)")),
                   SizedBox(width: 80, child: Text("iftar"))
                 ]),
           ),
