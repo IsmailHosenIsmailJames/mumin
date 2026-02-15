@@ -138,12 +138,20 @@ class _RamadanCalenderPageState extends State<RamadanCalenderPage> {
           ),
           Expanded(
             child: ListView.builder(
-              itemCount: userLocationCalender
-                      .userLocationRamadanCalender.value?.length ??
-                  0,
+              itemCount: userLocationController
+                          .locationData.value?.placemark?.isoCountryCode ==
+                      "BD"
+                  ? userLocationCalender
+                          .userLocationRamadanCalender.value?.length ??
+                      0
+                  : userLocationCalender.userLocationCalender.value?.length,
               itemBuilder: (context, index) {
-                RamadanDayModel dayModel = userLocationCalender
-                    .userLocationRamadanCalender.value![index];
+                RamadanDayModel dayModel = userLocationController
+                            .locationData.value?.placemark?.isoCountryCode ==
+                        "BD"
+                    ? userLocationCalender
+                        .userLocationRamadanCalender.value![index]
+                    : userLocationCalender.userLocationCalender.value![index];
                 return Container(
                   decoration: BoxDecoration(
                     borderRadius: MyAppShapes.borderRadius,
