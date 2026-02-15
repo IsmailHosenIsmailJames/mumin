@@ -233,21 +233,39 @@ class LoginScreenState extends State<LoginScreen> {
                                           ),
                                         ),
                                 ),
-                                const Gap(16),
-
-                                // Guest Button
-                                OutlinedButton(
-                                  onPressed:
-                                      _isLoading ? null : _handleGuestLogin,
-                                  style: OutlinedButton.styleFrom(
-                                    side: BorderSide(
-                                        color: MyAppColors.primaryColor),
+                                const Gap(20),
+                                const Center(
+                                  child: Text("Don't have an account? "),
+                                ),
+                                const Gap(10),
+                                // Register Button
+                                ElevatedButton(
+                                  onPressed: () => context.go("/registration"),
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: MyAppColors.secondaryColor,
+                                    foregroundColor: Colors.white,
                                     padding: const EdgeInsets.symmetric(
                                         vertical: 16),
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(16),
                                     ),
+                                    elevation: 0,
                                   ),
+                                  child: Text(
+                                    "Register Now",
+                                    style: GoogleFonts.inter(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                ),
+                                const Gap(16),
+                                const Center(child: Text("Or")),
+
+                                // Guest Button
+                                TextButton(
+                                  onPressed:
+                                      _isLoading ? null : _handleGuestLogin,
                                   child: Text(
                                     "Continue as Guest",
                                     style: GoogleFonts.inter(
@@ -274,28 +292,7 @@ class LoginScreenState extends State<LoginScreen> {
                       ],
                       child: Column(
                         children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                "Don't have an account? ",
-                                style: GoogleFonts.inter(
-                                  color: isDark ? Colors.white70 : Colors.white,
-                                ),
-                              ),
-                              TextButton(
-                                onPressed: () => context.go("/registration"),
-                                child: Text(
-                                  "Register Now",
-                                  style: GoogleFonts.inter(
-                                    fontWeight: FontWeight.bold,
-                                    color: MyAppColors.primaryColor,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                          const Gap(8),
+                          const Gap(0),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
