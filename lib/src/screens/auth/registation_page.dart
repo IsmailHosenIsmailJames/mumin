@@ -181,7 +181,7 @@ class RegistrationScreenState extends State<RegistrationScreen> {
                                   _buildTextField(
                                     controller: _pin,
                                     label: "Territory Code",
-                                    hint: "Enter your code",
+                                    hint: "Enter Territory Code",
                                     icon: Icons.pin_drop_outlined,
                                     keyboardType: TextInputType.number,
                                     isDark: isDark,
@@ -331,7 +331,6 @@ class RegistrationScreenState extends State<RegistrationScreen> {
       validator: validator,
       style: TextStyle(color: isDark ? Colors.white : Colors.black),
       decoration: InputDecoration(
-        labelText: label,
         hintText: hint,
         hintStyle: TextStyle(
             color: isDark ? Colors.white38 : Colors.black38, fontSize: 13),

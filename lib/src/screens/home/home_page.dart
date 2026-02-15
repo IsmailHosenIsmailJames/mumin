@@ -1140,92 +1140,98 @@ class _HomePageState extends State<HomePage> {
           borderRadius: const BorderRadius.vertical(top: Radius.circular(25)),
         ),
         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Container(
-              padding: const EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                color: color.withValues(alpha: 0.1),
-                shape: BoxShape.circle,
-              ),
-              child: Icon(icon, size: 48, color: color),
-            ).animate().scale(duration: 400.ms, curve: Curves.easeOutBack),
-            const Gap(24),
-            Text(
-              title,
-              style: const TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
-              textAlign: TextAlign.center,
-            ),
-            const Gap(12),
-            Text(
-              description,
-              style: TextStyle(
-                fontSize: 16,
-                color: MyAppColors.secondaryColor,
-                height: 1.5,
-              ),
-              textAlign: TextAlign.center,
-            ),
-            const Gap(16),
-            GetX<UserLocationController>(
-              builder: (controller) => CheckboxListTile(
-                value: controller.dontShowAgain.value,
-                title: const Text("Don't show again"),
-                controlAffinity: ListTileControlAffinity.leading,
-                onChanged: (value) {
-                  controller.dontShowAgain.value = value!;
-                  Hive.box("user_db").put("dont_show_again", value);
-                },
-              ),
-            ),
-            const Gap(16),
-            Row(
-              children: [
-                Expanded(
-                  child: OutlinedButton(
-                    onPressed: () => Navigator.pop(context, false),
-                    style: OutlinedButton.styleFrom(
-                      padding: const EdgeInsets.all(16),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                    ),
-                    child: Text(
-                      "Not Now",
-                      style: TextStyle(color: MyAppColors.secondaryColor),
-                    ),
-                  ),
+        child: SafeArea(
+          bottom: true,
+          top: false,
+          right: false,
+          left: false,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Container(
+                padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: color.withValues(alpha: 0.1),
+                  shape: BoxShape.circle,
                 ),
-                const Gap(16),
-                Expanded(
-                  child: ElevatedButton(
-                    onPressed: () => Navigator.pop(context, true),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: color,
-                      foregroundColor: Colors.white,
-                      padding: const EdgeInsets.all(16),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
+                child: Icon(icon, size: 48, color: color),
+              ).animate().scale(duration: 400.ms, curve: Curves.easeOutBack),
+              const Gap(24),
+              Text(
+                title,
+                style: const TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              const Gap(12),
+              Text(
+                description,
+                style: TextStyle(
+                  fontSize: 16,
+                  color: MyAppColors.secondaryColor,
+                  height: 1.5,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              const Gap(16),
+              GetX<UserLocationController>(
+                builder: (controller) => CheckboxListTile(
+                  value: controller.dontShowAgain.value,
+                  title: const Text("Don't show again"),
+                  controlAffinity: ListTileControlAffinity.leading,
+                  onChanged: (value) {
+                    controller.dontShowAgain.value = value!;
+                    Hive.box("user_db").put("dont_show_again", value);
+                  },
+                ),
+              ),
+              const Gap(16),
+              Row(
+                children: [
+                  Expanded(
+                    child: OutlinedButton(
+                      onPressed: () => Navigator.pop(context, false),
+                      style: OutlinedButton.styleFrom(
+                        padding: const EdgeInsets.all(16),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
                       ),
-                      elevation: 0,
-                    ),
-                    child: const Text(
-                      "Allow",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
+                      child: Text(
+                        "Not Now",
+                        style: TextStyle(color: MyAppColors.secondaryColor),
                       ),
                     ),
                   ),
-                ),
-              ],
-            ),
-            const Gap(16),
-          ],
+                  const Gap(16),
+                  Expanded(
+                    child: ElevatedButton(
+                      onPressed: () => Navigator.pop(context, true),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: color,
+                        foregroundColor: Colors.white,
+                        padding: const EdgeInsets.all(16),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        elevation: 0,
+                      ),
+                      child: const Text(
+                        "Allow",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              const Gap(16),
+            ],
+          ),
         ),
       ),
     );
