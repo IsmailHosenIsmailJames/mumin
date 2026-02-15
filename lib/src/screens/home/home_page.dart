@@ -472,6 +472,115 @@ class _HomePageState extends State<HomePage> {
     setState(() {});
   }
 
+  Future<void> _updateLocation() async {
+    try {
+      LocationPermission locationPermission =
+          await Geolocator.checkPermission();
+
+      if (locationPermission == LocationPermission.denied ||
+          locationPermission == LocationPermission.deniedForever) {
+        locationPermission =
+            await LocationService().requestAndGetLocationPermission();
+      }
+
+      if (locationPermission == LocationPermission.whileInUse ||
+          locationPermission == LocationPermission.always) {
+        Position? location = await LocationService().getCurrentLocation();
+        if (location != null) {
+          List<Placemark> placemarks = await placemarkFromCoordinates(
+              location.latitude, location.longitude);
+          UserLocationData userLocationData = UserLocationData(
+              latitude: location.latitude,
+              longitude: location.longitude,
+              placemark: onePlacemarkFromMulti(placemarks));
+
+          await Hive.box("user_db")
+              .put("user_location_info", userLocationData.toJson());
+          userLocationController.locationData.value = userLocationData;
+
+          if (userLocationController.locationData.value != null) {
+            await loadCalender(userLocationController.locationData.value!);
+          }
+
+          toastification.show(
+            context: context,
+            title: const Text("Location Updated Successfully"),
+            type: ToastificationType.success,
+            autoCloseDuration: const Duration(seconds: 3),
+          );
+          setState(() {
+            isLocationDeclined = false;
+          });
+        } else {
+          if (mounted) {
+            final result = await context.push("/manual_location_selection");
+            _handleManualLocationResult(result);
+          }
+        }
+      } else {
+        if (mounted) {
+          final result = await context.push("/manual_location_selection");
+          _handleManualLocationResult(result);
+        }
+      }
+    } catch (e) {
+      log(e.toString());
+      toastification.show(
+        context: context,
+        title: const Text("Location Update Failed"),
+        type: ToastificationType.error,
+        autoCloseDuration: const Duration(seconds: 3),
+      );
+    }
+  }
+
+  Future<void> _handleManualLocationResult(dynamic result) async {
+    if (result is String) {
+      try {
+        Map<String, dynamic> data = jsonDecode(result);
+        LatLon latLon = LatLon.fromMap(data);
+        UserLocationData userLocationData = UserLocationData(
+          latitude: latLon.latitude,
+          longitude: latLon.longitude,
+        );
+
+        try {
+          List<Placemark> placemarks =
+              await placemarkFromCoordinates(latLon.latitude, latLon.longitude);
+          userLocationData.placemark = onePlacemarkFromMulti(placemarks);
+        } catch (e) {
+          log("Geocoding failed: $e");
+        }
+
+        await Hive.box("user_db")
+            .put("user_location_info", userLocationData.toJson());
+        userLocationController.locationData.value = userLocationData;
+
+        if (userLocationController.locationData.value != null) {
+          await loadCalender(userLocationController.locationData.value!);
+        }
+
+        toastification.show(
+          context: context,
+          title: const Text("Location Updated Successfully"),
+          type: ToastificationType.success,
+          autoCloseDuration: const Duration(seconds: 3),
+        );
+        setState(() {
+          isLocationDeclined = false;
+        });
+      } catch (e) {
+        log("Manual location selection processing failed: $e");
+        toastification.show(
+          context: context,
+          title: const Text("Location Update Failed"),
+          type: ToastificationType.error,
+          autoCloseDuration: const Duration(seconds: 3),
+        );
+      }
+    }
+  }
+
   String formatSeconds(int totalSeconds) {
     int hours = totalSeconds ~/ 3600;
     int remainingSecondsAfterHours = totalSeconds % 3600;
@@ -582,6 +691,10 @@ class _HomePageState extends State<HomePage> {
                                         log("Manual location selection failed: $e");
                                       }
                                     }
+                                    WidgetsBinding.instance
+                                        .addPostFrameCallback((_) {
+                                      setState(() {});
+                                    });
                                   },
                                   child: const Text("Choose City Manually")),
                             ),
@@ -599,6 +712,9 @@ class _HomePageState extends State<HomePage> {
                                   LocationPermission.deniedForever) {
                             Geolocator.openAppSettings();
                           }
+                          WidgetsBinding.instance.addPostFrameCallback((_) {
+                            setState(() {});
+                          });
                         },
                         icon: const Icon(
                           Icons.settings,
@@ -663,7 +779,19 @@ class _HomePageState extends State<HomePage> {
                             ],
                           ),
                         ),
-                        const Gap(8),
+                        const Gap(4),
+                        IconButton(
+                          style: IconButton.styleFrom(
+                            backgroundColor: Colors.grey.withValues(alpha: 0.1),
+                          ),
+                          color: Colors.green.shade600,
+                          onPressed: _updateLocation,
+                          icon: const Icon(
+                            Icons.refresh,
+                            color: Colors.green,
+                          ),
+                        ),
+                        const Gap(4),
                         themeIconButton,
                       ],
                     ),
