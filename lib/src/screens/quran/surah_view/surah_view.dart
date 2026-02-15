@@ -1,3 +1,4 @@
+import "dart:async";
 import "dart:convert";
 import "dart:developer";
 import "dart:io";
@@ -49,6 +50,7 @@ class SurahView extends StatefulWidget {
 class _SurahViewState extends State<SurahView> {
   List<Map<String, String>> ayahsWithMeaning = [];
   List<GlobalKey> scrollKeys = [];
+  StreamSubscription? _scrollSubscription;
   ManageAudioController audioController = Get.find();
   final SettingsController settingsController = Get.put(SettingsController());
   @override
@@ -102,17 +104,29 @@ class _SurahViewState extends State<SurahView> {
     }
 
     setState(() {});
+    _startListeningForScroll();
   }
 
-  void startListingForScroll() {
-    audioController.audioPlayer.currentIndexStream.listen((event) async {
+  void _startListeningForScroll() {
+    _scrollSubscription?.cancel();
+    _scrollSubscription =
+        audioController.audioPlayer.currentIndexStream.listen((event) async {
       if (event != null &&
           ayahCount[widget.surahIndex] > event &&
           audioController.surahNumber.value == widget.surahIndex &&
           scrollKeys.isNotEmpty) {
-        if (scrollKeys[event].currentContext != null) {
+        // Calculate the index in the current list view
+        // The event is the absolute ayah index in the surah (0-based)
+        // widget.start is 1-based start ayah number
+        // So if we start at ayah 10 (index 9), event 9 should map to list index 0
+        final int startAyahIndex = (widget.start ?? 1) - 1;
+        final int listIndex = event - startAyahIndex;
+
+        if (listIndex >= 0 &&
+            listIndex < scrollKeys.length &&
+            scrollKeys[listIndex].currentContext != null) {
           Scrollable.ensureVisible(
-            scrollKeys[event].currentContext!,
+            scrollKeys[listIndex].currentContext!,
             curve: Curves.linear,
             duration: const Duration(milliseconds: 200),
             alignment: 0.5,
@@ -140,6 +154,7 @@ class _SurahViewState extends State<SurahView> {
 
   @override
   void dispose() {
+    _scrollSubscription?.cancel();
     WakelockPlus.disable();
     super.dispose();
   }
@@ -187,6 +202,7 @@ class _SurahViewState extends State<SurahView> {
                             (index == audioController.indexOfAyah.value);
 
                         return Container(
+                          key: scrollKeys[index],
                           padding: const EdgeInsets.only(
                               left: 8, right: 8, bottom: 8),
                           margin: const EdgeInsets.only(bottom: 10),
@@ -225,13 +241,22 @@ class _SurahViewState extends State<SurahView> {
                                     ),
                                     onPressed: () async {
                                       await _checkNotificationPermission();
+
+                                      // Calculate absolute ayah index for playback
+                                      final int absoluteAyahIndex =
+                                          (widget.start ?? 1) - 1 + index;
+
                                       if (widget.surahIndex ==
-                                          audioController.surahNumber.value) {
-                                        if (index !=
+                                              audioController
+                                                  .surahNumber.value &&
+                                          audioController.audioPlayer.sequence
+                                                  ?.isNotEmpty ==
+                                              true) {
+                                        if (absoluteAyahIndex !=
                                             audioController.indexOfAyah.value) {
                                           audioController.audioPlayer.seek(
                                             const Duration(seconds: 0),
-                                            index: index,
+                                            index: absoluteAyahIndex,
                                           );
                                           audioController.audioPlayer.play();
                                         } else {
@@ -245,13 +270,12 @@ class _SurahViewState extends State<SurahView> {
                                         audioController.playSurahAsPlaylist(
                                           widget.quranInfoModel.nameSimple,
                                           widget.surahIndex,
-                                          index,
+                                          absoluteAyahIndex,
                                           quranInfoModelMap:
                                               widget.quranInfoModel.toMap(),
                                           startAt: widget.startAt,
                                           practiceMode: widget.practiceMode,
                                         );
-                                        startListingForScroll();
                                       }
                                     },
                                     icon: Icon(
