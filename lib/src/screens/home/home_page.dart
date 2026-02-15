@@ -697,11 +697,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     Text(
-                      DateFormat.yMMMMEEEEd().format(getDateByRamadanNumber(
-                          getRamadanNumber(
-                                  ramadanTodayTimeController.ifter.value ??
-                                      const TimeOfDay(hour: 18, minute: 30)) -
-                              1)),
+                      DateFormat.yMMMMEEEEd().format(DateTime.now().toLocal()),
                       style: const TextStyle(color: Colors.white),
                     ),
                     const Gap(10),
