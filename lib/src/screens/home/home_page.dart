@@ -233,7 +233,7 @@ class _HomePageState extends State<HomePage> {
             userLocationData.placemark?.administrativeArea ??
             "Dhaka";
       }
-      district = district.split(" ").first;
+      // district = district.split(" ").first;
 
       log("District : $district", name: "RamadanCalendar");
       List<RamadanDayModel> ramadanDaysList = [];
@@ -330,7 +330,7 @@ class _HomePageState extends State<HomePage> {
           userLocationData.placemark?.administrativeArea ??
           "Dhaka";
     }
-    district = district.split(" ").first;
+    // district = district.split(" ").first;
 
     log("District (BD Loader) : $district", name: "RamadanCalendar");
     List<RamadanDayModel> ramadanDaysList = [];
