@@ -235,13 +235,13 @@ class _HomePageState extends State<HomePage> {
       }
       district = district.split(" ").first;
 
-      log("District : $district", name: "DEBUG");
+      log("District : $district", name: "RamadanCalendar");
       List<RamadanDayModel> ramadanDaysList = [];
       bool found = false;
       for (String key in ramadanCalendar.keys) {
         if (key.toString().toLowerCase() == district.toLowerCase()) {
           found = true;
-          log("Is Found : $found", name: "DEBUG");
+          log("District Found Exact Match: $key", name: "RamadanCalendar");
           List temList = ramadanCalendar[key] as List;
           for (int i = 0; i < (temList).length; i++) {
             try {
@@ -254,22 +254,38 @@ class _HomePageState extends State<HomePage> {
           }
         }
       }
-      log("Is Found : $found", name: "DEBUG");
+      log("Exact Match Found : $found", name: "RamadanCalendar");
       if (!found) {
         String? key = FuzzyMatcher.findClosestKey(
             Map<String, dynamic>.from(ramadanCalendar), district);
         if (key != null) {
+          log("Fuzzy Match Found: $key", name: "RamadanCalendar");
           List temList = ramadanCalendar[key] as List;
           for (int i = 0; i < (temList).length; i++) {
             ramadanDaysList.add(
                 RamadanDayModel.fromMap(Map<String, dynamic>.from(temList[i])));
           }
         } else {
-          calculateWithLibrary(
-            userLocationData.latitude,
-            userLocationData.longitude,
-          );
-          return;
+          log("District not found, trying nearest district",
+              name: "RamadanCalendar");
+          String? nearestKey = findNearestDistrict(ramadanCalendar,
+              userLocationData.latitude, userLocationData.longitude);
+          if (nearestKey != null) {
+            log("Found nearest district: $nearestKey", name: "RamadanCalendar");
+            List temList = ramadanCalendar[nearestKey] as List;
+            for (int i = 0; i < (temList).length; i++) {
+              ramadanDaysList.add(RamadanDayModel.fromMap(
+                  Map<String, dynamic>.from(temList[i])));
+            }
+          } else {
+            log("Nearest district not found, calculating with library",
+                name: "RamadanCalendar");
+            calculateWithLibrary(
+              userLocationData.latitude,
+              userLocationData.longitude,
+            );
+            return;
+          }
         }
       }
       int ramadanDay = getRamadanNumber(
@@ -316,7 +332,7 @@ class _HomePageState extends State<HomePage> {
     }
     district = district.split(" ").first;
 
-    log("District : $district", name: "DEBUG");
+    log("District (BD Loader) : $district", name: "RamadanCalendar");
     List<RamadanDayModel> ramadanDaysList = [];
     bool found = false;
     for (String key in ramadanCalendar.keys) {
@@ -335,7 +351,24 @@ class _HomePageState extends State<HomePage> {
         }
       }
     }
-    log("Is Found : $found", name: "DEBUG");
+    log("Is Found : $found", name: "RamadanCalendar");
+    if (!found) {
+      log("District not found in BD loader, trying nearest district",
+          name: "RamadanCalendar");
+      String? nearestKey = findNearestDistrict(ramadanCalendar,
+          userLocationData.latitude, userLocationData.longitude);
+      if (nearestKey != null) {
+        log("Found nearest district in BD loader: $nearestKey",
+            name: "RamadanCalendar");
+        List temList = ramadanCalendar[nearestKey] as List;
+        for (int i = 0; i < (temList).length; i++) {
+          ramadanDaysList.add(
+              RamadanDayModel.fromMap(Map<String, dynamic>.from(temList[i])));
+        }
+      } else {
+        log("Nearest district not found in BD loader", name: "RamadanCalendar");
+      }
+    }
     int ramadanDay = getRamadanNumber(ramadanTodayTimeController.ifter.value ??
         const TimeOfDay(hour: 18, minute: 30));
     RamadanDayModel? todaysTime;
@@ -398,7 +431,9 @@ class _HomePageState extends State<HomePage> {
                   .subtract(const Duration(minutes: 1)))
               .format(context),
           ifter: TimeOfDay.fromDateTime(prayerTimes.maghrib.toLocal())
-              .format(context)));
+              .format(context),
+          lat: latitude,
+          long: longitude));
       ramadanStart = ramadanStart.add(const Duration(days: 1));
       if (HijriCalendar.fromDate(ramadanStart).hMonth == 10) {
         break;
@@ -579,6 +614,33 @@ class _HomePageState extends State<HomePage> {
         );
       }
     }
+  }
+
+  String? findNearestDistrict(
+      Map ramadanCalendar, double userLat, double userLong) {
+    String? nearestDistrict;
+    double minDistance = double.infinity;
+
+    for (String key in ramadanCalendar.keys) {
+      List data = ramadanCalendar[key] as List;
+      if (data.isNotEmpty) {
+        var firstEntry = data.first;
+        double lat = double.tryParse(firstEntry['lat'].toString()) ?? 0.0;
+        double long = double.tryParse(firstEntry['long'].toString()) ?? 0.0;
+
+        if (lat != 0.0 && long != 0.0) {
+          double distance =
+              Geolocator.distanceBetween(userLat, userLong, lat, long);
+          if (distance < minDistance) {
+            minDistance = distance;
+            nearestDistrict = key;
+          }
+        }
+      }
+    }
+    log("Nearest District found: $nearestDistrict with distance: $minDistance",
+        name: "DEBUG");
+    return nearestDistrict;
   }
 
   String formatSeconds(int totalSeconds) {

@@ -250,7 +250,7 @@ class _SurahViewState extends State<SurahView> {
                                               audioController
                                                   .surahNumber.value &&
                                           audioController.audioPlayer.sequence
-                                                  ?.isNotEmpty ==
+                                                  .isNotEmpty ==
                                               true) {
                                         if (absoluteAyahIndex !=
                                             audioController.indexOfAyah.value) {

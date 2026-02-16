@@ -138,17 +138,23 @@ class _RamadanCalenderPageState extends State<RamadanCalenderPage> {
           ),
           Expanded(
             child: ListView.builder(
-              itemCount: userLocationController
-                          .locationData.value?.placemark?.isoCountryCode ==
-                      "BD"
+              itemCount: (userLocationController
+                              .locationData.value?.placemark?.isoCountryCode ==
+                          "BD" &&
+                      (userLocationCalender
+                              .userLocationRamadanCalender.value?.isNotEmpty ??
+                          false))
                   ? userLocationCalender
                           .userLocationRamadanCalender.value?.length ??
                       0
                   : userLocationCalender.userLocationCalender.value?.length,
               itemBuilder: (context, index) {
-                RamadanDayModel dayModel = userLocationController
-                            .locationData.value?.placemark?.isoCountryCode ==
-                        "BD"
+                RamadanDayModel dayModel = (userLocationController.locationData
+                                .value?.placemark?.isoCountryCode ==
+                            "BD" &&
+                        (userLocationCalender.userLocationRamadanCalender.value
+                                ?.isNotEmpty ??
+                            false))
                     ? userLocationCalender
                         .userLocationRamadanCalender.value![index]
                     : userLocationCalender.userLocationCalender.value![index];

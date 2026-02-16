@@ -1,13 +1,13 @@
 PODS:
-  - awesome_notifications (0.10.0):
+  - awesome_notifications (0.11.0):
     - Flutter
-    - IosAwnCore (~> 0.10.0)
+    - IosAwnCore (~> 0.11.0)
   - Flutter (1.0.0)
   - flutter_compass (0.0.1):
     - Flutter
   - fluttertoast (0.0.2):
     - Flutter
-  - IosAwnCore (0.10.0)
+  - IosAwnCore (0.11.0)
   - permission_handler_apple (9.3.0):
     - Flutter
 
@@ -35,13 +35,13 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/permission_handler_apple/ios"
 
 SPEC CHECKSUMS:
-  awesome_notifications: 0f432b28098d193920b11a44cfa9d2d9313a3888
+  awesome_notifications: 8291dd4082db761556cd8bf7977567f5c960c87e
   Flutter: cabc95a1d2626b1b06e7179b784ebcf0c0cde467
   flutter_compass: b236ab69b61545cce89fd58527f401a7587d5cc1
   fluttertoast: 2c67e14dce98bbdb200df9e1acf610d7a6264ea1
-  IosAwnCore: 653786a911089012092ce831f2945cd339855a89
+  IosAwnCore: 32019505f4a4909fa9079ee401b2c82aeeab78a8
   permission_handler_apple: 4ed2196e43d0651e8ff7ca3483a069d469701f2d
 
-PODFILE CHECKSUM: fd54e705166028b54afcd254320762b98b8fbf0e
+PODFILE CHECKSUM: d5dff30bbcc2f26db89bbe846d63e400d513d829
 
 COCOAPODS: 1.16.2

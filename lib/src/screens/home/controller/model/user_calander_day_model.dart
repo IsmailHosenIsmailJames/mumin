@@ -6,11 +6,15 @@ class RamadanDayModel {
   final DateTime date;
   final String seharEnd;
   final String ifter;
+  final double lat;
+  final double long;
 
   RamadanDayModel({
     required this.date,
     required this.seharEnd,
     required this.ifter,
+    required this.lat,
+    required this.long,
   });
 
   RamadanDayModel copyWith({
@@ -18,11 +22,15 @@ class RamadanDayModel {
     String? seharStart,
     String? seharEnd,
     String? ifter,
+    double? lat,
+    double? long,
   }) =>
       RamadanDayModel(
         date: date ?? this.date,
         seharEnd: seharEnd ?? this.seharEnd,
         ifter: ifter ?? this.ifter,
+        lat: lat ?? this.lat,
+        long: long ?? this.long,
       );
 
   factory RamadanDayModel.fromJson(String str) =>
@@ -34,6 +42,8 @@ class RamadanDayModel {
         date: DateFormat("dd-MM-yyyy").parse(json["date"]),
         seharEnd: json["sehar_end"],
         ifter: json["ifter"],
+        lat: double.tryParse(json["lat"].toString()) ?? 0.0,
+        long: double.tryParse(json["long"].toString()) ?? 0.0,
       );
 
   Map<String, dynamic> toMap() => {
@@ -41,7 +51,7 @@ class RamadanDayModel {
             "${date.year.toString().padLeft(4, '0')}-${date.month.toString().padLeft(2, '0')}-${date.day.toString().padLeft(2, '0')}",
         "sehar_end": seharEnd,
         "ifter": ifter,
+        "lat": lat,
+        "long": long,
       };
 }
-
-// {"date":"16-03-26","sehar_end":"4:51 AM","ifter":"6:11 PM"}

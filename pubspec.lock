@@ -78,10 +78,10 @@ packages:
     dependency: "direct main"
     description:
       name: awesome_notifications
-      sha256: "0d5fa4457f2ba4e536adc3ef6af709cdcecf4a05a1f3035981e9afa2f899b2a8"
+      sha256: fb4d5d6effd904720cbc85cfbe796da35f6b0ff079c0798c1a387616200bd80c
       url: "https://pub.dev"
     source: hosted
-    version: "0.10.1"
+    version: "0.11.0"
   bloc:
     dependency: transitive
     description:
@@ -533,10 +533,10 @@ packages:
     dependency: "direct main"
     description:
       name: google_fonts
-      sha256: ba03d03bcaa2f6cb7bd920e3b5027181db75ab524f8891c8bc3aa603885b8055
+      sha256: c30eef5e7cd26eb89cc8065b4390ac86ce579f2fcdbe35220891c6278b5460da
       url: "https://pub.dev"
     source: hosted
-    version: "6.3.3"
+    version: "8.0.1"
   gsettings:
     dependency: transitive
     description:
@@ -565,10 +565,10 @@ packages:
     dependency: "direct main"
     description:
       name: hive_ce_flutter
-      sha256: ff54321784b3a8f328fe159f3c14679ea0a7e6564457014a0ee60cdcb8943f28
+      sha256: "2677e95a333ff15af43ccd06af7eb7abbf1a4f154ea071997f3de4346cae913a"
       url: "https://pub.dev"
     source: hosted
-    version: "1.2.0"
+    version: "2.3.4"
   hooks:
     dependency: transitive
     description:
@@ -941,10 +941,10 @@ packages:
     dependency: transitive
     description:
       name: petitparser
-      sha256: "1a97266a94f7350d30ae522c0af07890c70b8e62c71e8e3920d1db4d23c057d1"
+      sha256: "91bd59303e9f769f108f8df05e371341b15d59e995e6806aefab827b58336675"
       url: "https://pub.dev"
     source: hosted
-    version: "7.0.1"
+    version: "7.0.2"
   platform:
     dependency: transitive
     description:

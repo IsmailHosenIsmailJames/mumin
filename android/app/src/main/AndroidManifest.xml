@@ -74,9 +74,7 @@
                 <action android:name="android.media.browse.MediaBrowserService" />
             </intent-filter>
         </service>
-        <service 
-            android:name="com.pravera.flutter_foreground_task.service.ForegroundService"
-            android:foregroundServiceType="dataSync|remoteMessaging"/>
+
         <!-- ADD THIS "RECEIVER" element -->
         <receiver android:name="com.ryanheise.audioservice.MediaButtonReceiver"
             android:exported="true"

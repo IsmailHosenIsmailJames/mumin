@@ -20,9 +20,10 @@ void main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   await JustAudioBackground.init(
-    androidNotificationChannelId: "com.ryanheise.bg_demo.channel.audio",
-    androidNotificationChannelName: "Audio playback",
+    androidNotificationChannelId: "com.impala.mumin.audio",
+    androidNotificationChannelName: "Quran Recitation",
     androidNotificationOngoing: true,
+    androidNotificationIcon: "mipmap/ic_launcher",
   );
 
   await Hive.initFlutter();
