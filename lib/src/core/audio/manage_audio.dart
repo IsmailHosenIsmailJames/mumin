@@ -112,32 +112,40 @@ class ManageAudioController extends GetxController {
     // Persist to Hive for cold-start survival
     _savePlaybackMetadata();
 
-    await audioPlayer.stop();
-    List<LockCachingAudioSource> audioSources = [];
-    int ayahNumber = ayahCount[surahIndex];
-    for (var i = 0; i < ayahNumber; i++) {
-      String id = surahIDFromNumber(
-        surahNumber: surahIndex + 1,
-        ayahNumber: i + 1,
-      );
-      String audioURL = makeAudioUrl(audioBase, id);
-      audioSources.add(
-        LockCachingAudioSource(
-          Uri.parse(audioURL),
-          tag: MediaItem(
-            id: id,
-            album: "Abdul Baset",
-            title: "$surahName ($id)",
+    try {
+      await audioPlayer.stop();
+      List<LockCachingAudioSource> audioSources = [];
+      int ayahNumber = ayahCount[surahIndex];
+      for (var i = 0; i < ayahNumber; i++) {
+        String id = surahIDFromNumber(
+          surahNumber: surahIndex + 1,
+          ayahNumber: i + 1,
+        );
+        String audioURL = makeAudioUrl(audioBase, id);
+        audioSources.add(
+          LockCachingAudioSource(
+            Uri.parse(audioURL),
+            tag: MediaItem(
+              id: id,
+              album: "Abdul Baset",
+              title: "$surahName ($id)",
+            ),
           ),
-        ),
+        );
+      }
+      await audioPlayer.setAudioSources(
+        audioSources,
+        initialIndex: ayahIndex,
+        initialPosition: Duration.zero,
+      );
+      await audioPlayer.play();
+    } catch (e) {
+      Get.snackbar(
+        "Error",
+        "Failed to play audio. Please check your internet connection.",
+        snackPosition: SnackPosition.bottom,
       );
     }
-    await audioPlayer.setAudioSources(
-      audioSources,
-      initialIndex: ayahIndex,
-      initialPosition: Duration.zero,
-    );
-    await audioPlayer.play();
   }
 
   String makeAudioUrl(String link, String surahID) {
