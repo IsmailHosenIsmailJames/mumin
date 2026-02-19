@@ -21,6 +21,7 @@ import "package:record/record.dart";
 import "package:awesome_notifications/awesome_notifications.dart";
 import "package:mumin/src/screens/quran/surah_view/widgets/notification_permission_dialog.dart";
 import "package:toastification/toastification.dart";
+import "package:share_plus/share_plus.dart";
 import "package:wakelock_plus/wakelock_plus.dart";
 
 class SurahView extends StatefulWidget {
@@ -232,6 +233,24 @@ class _SurahViewState extends State<SurahView> {
                                     ),
                                   ),
                                   const Spacer(),
+                                  IconButton(
+                                    padding: EdgeInsets.zero,
+                                    style: IconButton.styleFrom(
+                                      padding: EdgeInsets.zero,
+                                      backgroundColor:
+                                          Colors.blue.withValues(alpha: 0.1),
+                                    ),
+                                    onPressed: () {
+                                      final int ayahNumber =
+                                          (widget.start ?? 1) + index;
+                                      final String text =
+                                          "${ayahsWithMeaning[index]["quran"]}\n\n${ayahsWithMeaning[index]["bn"]}\n\n${ayahsWithMeaning[index]["en"]}\n\nReference: ${widget.surahName} : $ayahNumber\n\nShared from Mumin App";
+                                      SharePlus.instance
+                                          .share(ShareParams(text: text));
+                                    },
+                                    icon: const Icon(Icons.share),
+                                  ),
+                                  const Gap(10),
                                   IconButton(
                                     padding: EdgeInsets.zero,
                                     style: IconButton.styleFrom(

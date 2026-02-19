@@ -484,15 +484,37 @@ class _HomePageState extends State<HomePage> {
       }
       Position? location = await LocationService().getCurrentLocation();
       if (location != null) {
-        List<Placemark> placemarks = await placemarkFromCoordinates(
-            location.latitude, location.longitude);
         UserLocationData userLocationData = UserLocationData(
           latitude: location.latitude,
           longitude: location.longitude,
         );
-        userLocationData.placemark = onePlacemarkFromMulti(placemarks);
+
+        try {
+          List<Placemark> placemarks = await placemarkFromCoordinates(
+                  location.latitude, location.longitude)
+              .timeout(const Duration(seconds: 5));
+          userLocationData.placemark = onePlacemarkFromMulti(placemarks);
+        } catch (e) {
+          log("Geocoding failed or timed out: $e");
+          // If we have a previously cached address and the distance is small, maybe keep it?
+          // For now, we proceed with coords only or whatever we have.
+          // If userLocationController already has value, maybe we can reuse its placemark if close?
+          if (userLocationController.locationData.value?.placemark != null) {
+            double distance = Geolocator.distanceBetween(
+                location.latitude,
+                location.longitude,
+                userLocationController.locationData.value!.latitude,
+                userLocationController.locationData.value!.longitude);
+            if (distance < 2000) {
+              // < 2km
+              userLocationData.placemark =
+                  userLocationController.locationData.value!.placemark;
+            }
+          }
+        }
+
         await Hive.box("user_db")
-            .put("user_location", userLocationData.toJson());
+            .put("user_location_info", userLocationData.toJson());
         userLocationController.locationData.value = userLocationData;
         if (userLocationController.locationData.value != null) {
           await loadCalender(userLocationController.locationData.value!);
@@ -581,7 +603,8 @@ class _HomePageState extends State<HomePage> {
 
         try {
           List<Placemark> placemarks =
-              await placemarkFromCoordinates(latLon.latitude, latLon.longitude);
+              await placemarkFromCoordinates(latLon.latitude, latLon.longitude)
+                  .timeout(const Duration(seconds: 5));
           userLocationData.placemark = onePlacemarkFromMulti(placemarks);
         } catch (e) {
           log("Geocoding failed: $e");
