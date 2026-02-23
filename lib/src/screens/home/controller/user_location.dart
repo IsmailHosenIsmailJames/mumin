@@ -7,10 +7,23 @@ class UserLocationController extends GetxController {
   RxBool dontShowAgain = RxBool(false);
   @override
   void onInit() {
-    final userLocation =
-        Hive.box("user_db").get("user_location_info", defaultValue: null);
+    final box = Hive.box("user_db");
+    var userLocation = box.get("user_location_info", defaultValue: null);
+
+    // Migration for old users who have data under "user_location"
+    if (userLocation == null) {
+      userLocation = box.get("user_location", defaultValue: null);
+      if (userLocation != null) {
+        box.put("user_location_info", userLocation);
+      }
+    }
+
     if (userLocation != null) {
-      locationData.value = UserLocationData.fromJson(userLocation);
+      try {
+        locationData.value = UserLocationData.fromJson(userLocation);
+      } catch (e) {
+        // ignore errors
+      }
     }
     super.onInit();
   }
