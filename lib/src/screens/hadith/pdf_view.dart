@@ -136,9 +136,9 @@ class _HadithPdfViewState extends State<HadithPdfView> {
                       autoSpacing: false,
                       pageFling: true,
                       backgroundColor: Colors.grey[200],
-                      onRender: (pages) {
+                      onRender: (totalPages) {
                         setState(() {
-                          pages = pages;
+                          pages = totalPages;
                           isReady = true;
                         });
                       },

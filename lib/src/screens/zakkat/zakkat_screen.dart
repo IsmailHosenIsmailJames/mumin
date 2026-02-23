@@ -12,7 +12,7 @@ class ZakatScreen extends StatefulWidget {
 
 class ZakatScreenState extends State<ZakatScreen> {
   // Config
-  double nisab = 55000; // Default baseline, can be edited by user
+  double nisab = 199500; // Default baseline, can be edited by user
 
   // Controllers
   final TextEditingController _nisabController = TextEditingController();
