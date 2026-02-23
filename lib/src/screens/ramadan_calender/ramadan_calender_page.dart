@@ -55,7 +55,7 @@ class _RamadanCalenderPageState extends State<RamadanCalenderPage> {
                                       ?.isoCountryCode ==
                                   "BD" &&
                               HijriCalendar.now().hMonth == 9)
-                          ? "${getRamadanNumber(ramadanTodayTimeController.ifter.value ?? const TimeOfDay(hour: 18, minute: 30))} Day of Ramadan"
+                          ? "Ramadan ${getRamadanNumber(ramadanTodayTimeController.ifter.value ?? const TimeOfDay(hour: 18, minute: 30))}"
                           : HijriCalendar.now().toFormat("dd MMMM yyyy"),
                       style: const TextStyle(
                         fontSize: 16,
