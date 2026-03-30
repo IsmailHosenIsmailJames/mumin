@@ -115,50 +115,58 @@ class _HomePageState extends State<HomePage> {
 
     bool isNotificationAllowed =
         await AwesomeNotifications().isNotificationAllowed();
-    if (!isNotificationAllowed && !dontShowAgain) {
-      bool userAgreed = await _showPermissionRationale(
-        icon: Icons.notifications_active_outlined,
-        title: "Stay Notified!",
-        description:
-            "Enable notifications to receive daily Ramadan reminders, prayer times, and important updates directly on your device.",
-        color: MyAppColors.primaryColor,
-      );
+    if (HijriCalendar.now().hMonth != 9) {
+      log("is Ramadan: false");
+      await AwesomeNotifications().cancelAll();
+    } else {
+      log("is Ramadan: true");
+      log("isNotificationAllowed: $isNotificationAllowed");
 
-      if (userAgreed) {
-        if (await requestPermissionsAwesomeNotifications()) {
-          await NotificationService.initializeNotifications();
-          if (Hive.box("user_db")
-                  .get("close_notification", defaultValue: null) ==
-              null) {
-            await AwesomeNotifications().cancelAll();
-            await Hive.box("user_db").put("close_notification", true);
-            log("AwesomeNotifications().cancelAll()");
+      if (!isNotificationAllowed && !dontShowAgain) {
+        bool userAgreed = await _showPermissionRationale(
+          icon: Icons.notifications_active_outlined,
+          title: "Stay Notified!",
+          description:
+              "Enable notifications to receive daily Ramadan reminders, prayer times, and important updates directly on your device.",
+          color: MyAppColors.primaryColor,
+        );
+
+        if (userAgreed) {
+          if (await requestPermissionsAwesomeNotifications()) {
+            await NotificationService.initializeNotifications();
+            if (Hive.box("user_db")
+                    .get("close_notification", defaultValue: null) ==
+                null) {
+              await AwesomeNotifications().cancelAll();
+              await Hive.box("user_db").put("close_notification", true);
+              log("AwesomeNotifications().cancelAll()");
+            }
+            await NotificationService.scheduleDailyRamadanNotification();
           }
-          await NotificationService.scheduleDailyRamadanNotification();
         }
+      } else if (!dontShowAgain) {
+        await NotificationService.initializeNotifications();
+        await NotificationService.scheduleDailyRamadanNotification();
       }
-    } else if (!dontShowAgain) {
-      await NotificationService.initializeNotifications();
-      await NotificationService.scheduleDailyRamadanNotification();
-    }
-    setState(() {});
-    WidgetsBinding.instance.addPostFrameCallback((_) async {
-      if (userBox.get(
+      setState(() {});
+      WidgetsBinding.instance.addPostFrameCallback((_) async {
+        if (userBox.get(
+                "daily_plan_popup_${getRamadanNumber(
+                  ramadanTodayTimeController.ifter.value ??
+                      const TimeOfDay(hour: 18, minute: 30),
+                )}",
+                defaultValue: null) ==
+            null) {
+          await showDailyPlanDialog();
+          userBox.put(
               "daily_plan_popup_${getRamadanNumber(
                 ramadanTodayTimeController.ifter.value ??
                     const TimeOfDay(hour: 18, minute: 30),
               )}",
-              defaultValue: null) ==
-          null) {
-        await showDailyPlanDialog();
-        userBox.put(
-            "daily_plan_popup_${getRamadanNumber(
-              ramadanTodayTimeController.ifter.value ??
-                  const TimeOfDay(hour: 18, minute: 30),
-            )}",
-            true);
-      }
-    });
+              true);
+        }
+      });
+    }
 
     callApiAnalytics();
     setState(() {});
@@ -1074,34 +1082,35 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
-          GestureDetector(
-            onTap: () async {
-              await routeTo30DayPlan(context);
-            },
-            child: Container(
-              padding: const EdgeInsets.all(15),
-              margin: const EdgeInsets.only(top: 10, bottom: 10),
-              decoration: BoxDecoration(
-                color: Colors.grey.withValues(alpha: 0.2),
-                borderRadius: MyAppShapes.borderRadius,
-              ),
-              child: const Row(
-                children: [
-                  Icon(Icons.calendar_month),
-                  Gap(10),
-                  Text(
-                    "Ramadan Plan",
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
+          if (HijriCalendar.now().hMonth == 9)
+            GestureDetector(
+              onTap: () async {
+                await routeTo30DayPlan(context);
+              },
+              child: Container(
+                padding: const EdgeInsets.all(15),
+                margin: const EdgeInsets.only(top: 10, bottom: 10),
+                decoration: BoxDecoration(
+                  color: Colors.grey.withValues(alpha: 0.2),
+                  borderRadius: MyAppShapes.borderRadius,
+                ),
+                child: const Row(
+                  children: [
+                    Icon(Icons.calendar_month),
+                    Gap(10),
+                    Text(
+                      "Ramadan Plan",
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  ),
-                  Spacer(),
-                  Icon(Icons.arrow_forward)
-                ],
+                    Spacer(),
+                    Icon(Icons.arrow_forward)
+                  ],
+                ),
               ),
             ),
-          ),
           const Gap(10),
           GridView(
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
